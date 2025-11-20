@@ -2,8 +2,7 @@
 
 ## 📌 Introduction
 
-This is the official PyTorch implementation of the paper **""** (NeurIPS 2025).
-
+This is the official PyTorch implementation of the paper **DMease: AI-based Assistant for Chinese Medicine Doctors to Diagnose Diabetes Mellitus** BIBM 2025
 **Abstract**
 
 ## 🛠️ Installation
