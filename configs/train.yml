@@ -1,0 +1,15 @@
+defaults:
+  - _self_
+  - data: default_data
+  - model: resnet_baseline
+  - training: default_train
+
+seed: 42
+
+paths:
+  raw_data_dir: "data/raw"
+  processed_data_dir: "data/processed"
+  checkpoint_dir: "checkpoints/"
+
+logger:
+  project_name: "deep-learning-paper-2025"
