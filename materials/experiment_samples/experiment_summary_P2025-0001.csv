@@ -1,0 +1,7 @@
+﻿metric,value
+patient_id,P2025-0001
+syndrome,气阴两虚证
+target_count,6
+candidate_herb_count,8
+selected_herb_count,5
+target_consistency_score,0.833333

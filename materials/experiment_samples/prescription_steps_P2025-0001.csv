@@ -1,0 +1,6 @@
+﻿step,herb,marginal_relief,residual_symptoms,trace,covered_targets,provenance
+1,黄芪,1.7705,"{'口渴多饮': 0.1995, '倦怠乏力': 0.0, '尿频': 0.65}","{'口渴多饮': 0.7505, '倦怠乏力': 1.02, '尿频': 0.0}","['AKT1', 'GLUT4', 'IRS1']","['Configured KG / TCMSP-SymMap schema', 'Configured KG / formula schema', 'Configured herb-target affinity matrix']"
+2,人参,0.705085,"{'口渴多饮': 0.033915, '倦怠乏力': 0.0, '尿频': 0.1105}","{'口渴多饮': 0.165585, '倦怠乏力': 0.0, '尿频': 0.5395}","['AKT1', 'INSR']","['Configured KG / TCMSP-SymMap schema', 'Configured KG / formula schema', 'Configured herb-target affinity matrix']"
+3,麦冬,0.02408,"{'口渴多饮': 0.009835, '倦怠乏力': 0.0, '尿频': 0.1105}","{'口渴多饮': 0.02408, '倦怠乏力': 0.0, '尿频': 0.0}","['GLUT4', 'PPARG']","['Configured KG / TCMSP-SymMap schema', 'Configured KG / formula schema', 'Configured herb-target affinity matrix']"
+4,葛根,0.007278,"{'口渴多饮': 0.002557, '倦怠乏力': 0.0, '尿频': 0.1105}","{'口渴多饮': 0.007278, '倦怠乏力': 0.0, '尿频': 0.0}","['GLUT4', 'PPARG']","['Configured KG / TCMSP-SymMap schema', 'Configured KG / formula schema', 'Configured herb-target affinity matrix']"
+5,知母,0.072709,"{'口渴多饮': 0.0, '倦怠乏力': 0.0, '尿频': 0.040885}","{'口渴多饮': 0.003094, '倦怠乏力': 0.0, '尿频': 0.069615}","['INSR', 'PPARG']","['Configured KG / TCMSP-SymMap schema', 'Configured KG / formula schema', 'Configured herb-target affinity matrix']"

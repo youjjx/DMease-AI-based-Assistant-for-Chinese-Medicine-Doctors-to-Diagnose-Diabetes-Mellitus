@@ -1,0 +1,9 @@
+﻿herb,score,covered_targets,matched_symptoms,contraindications,provenance
+黄芪,0.732087,"['AKT1', 'GLUT4', 'IRS1']","['倦怠乏力', '口渴多饮']",[],"['Configured KG / TCMSP-SymMap schema', 'Configured KG / formula schema', 'Configured herb-target affinity matrix']"
+人参,0.669755,"['AKT1', 'INSR']","['倦怠乏力', '口渴多饮', '尿频']",[],"['Configured KG / TCMSP-SymMap schema', 'Configured KG / formula schema', 'Configured herb-target affinity matrix']"
+麦冬,0.650048,"['GLUT4', 'PPARG']","['倦怠乏力', '口渴多饮']",[],"['Configured KG / TCMSP-SymMap schema', 'Configured KG / formula schema', 'Configured herb-target affinity matrix']"
+葛根,0.594149,"['GLUT4', 'PPARG']","['倦怠乏力', '口渴多饮']",[],"['Configured KG / TCMSP-SymMap schema', 'Configured KG / formula schema', 'Configured herb-target affinity matrix']"
+知母,0.585745,"['INSR', 'PPARG']","['口渴多饮', '尿频']",[],"['Configured KG / TCMSP-SymMap schema', 'Configured KG / formula schema', 'Configured herb-target affinity matrix']"
+黄连,0.545027,"['INSR', 'PPARG']","['口渴多饮', '尿频']",[],['Configured herb-target affinity matrix']
+天花粉,0.437212,['AQP2'],['尿频'],[],"['Configured KG / TCMSP-SymMap schema', 'Configured KG / formula schema', 'Configured herb-target affinity matrix']"
+五味子,0.416495,['GLUT4'],['倦怠乏力'],[],"['Configured KG / TCMSP-SymMap schema', 'Configured KG / formula schema', 'Configured herb-target affinity matrix']"

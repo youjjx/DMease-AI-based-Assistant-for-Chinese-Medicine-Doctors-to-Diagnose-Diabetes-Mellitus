@@ -1,0 +1,29 @@
+﻿subject,predicate,object,source,confidence
+口渴多饮,associated with,INSR,Configured KG / SymMap schema,0.91
+口渴多饮,associated with,IRS1,Configured KG / SymMap schema,0.86
+口渴多饮,associated with,PPARG,Configured KG / SymMap schema,0.82
+倦怠乏力,associated with,AKT1,Configured KG / literature schema,0.78
+倦怠乏力,associated with,GLUT4,Configured KG / literature schema,0.76
+尿频,associated with,AQP2,Configured KG / literature schema,0.73
+尿频,associated with,INSR,Configured KG / literature schema,0.69
+口渴多饮,indicates,气阴两虚证,Configured KG / TCM guideline schema,0.92
+倦怠乏力,indicates,气阴两虚证,Configured KG / TCM guideline schema,0.88
+尿频,indicates,气阴两虚证,Configured KG / TCM guideline schema,0.76
+气阴两虚证,treatedBy,人参,Configured KG / formula schema,0.86
+气阴两虚证,treatedBy,麦冬,Configured KG / formula schema,0.83
+气阴两虚证,treatedBy,黄芪,Configured KG / formula schema,0.8
+气阴两虚证,treatedBy,天花粉,Configured KG / formula schema,0.78
+气阴两虚证,treatedBy,葛根,Configured KG / formula schema,0.75
+气阴两虚证,treatedBy,知母,Configured KG / formula schema,0.72
+气阴两虚证,treatedBy,五味子,Configured KG / formula schema,0.68
+人参,affect by,INSR,Configured KG / TCMSP-SymMap schema,0.83
+人参,affect by,AKT1,Configured KG / TCMSP-SymMap schema,0.78
+麦冬,affect by,GLUT4,Configured KG / TCMSP-SymMap schema,0.75
+麦冬,affect by,PPARG,Configured KG / TCMSP-SymMap schema,0.71
+黄芪,affect by,IRS1,Configured KG / TCMSP-SymMap schema,0.79
+黄芪,affect by,AKT1,Configured KG / TCMSP-SymMap schema,0.82
+天花粉,affect by,AQP2,Configured KG / TCMSP-SymMap schema,0.66
+葛根,affect by,PPARG,Configured KG / TCMSP-SymMap schema,0.7
+知母,affect by,INSR,Configured KG / TCMSP-SymMap schema,0.63
+五味子,affect by,GLUT4,Configured KG / TCMSP-SymMap schema,0.64
+甘草,contraindicatedWith,甘遂,Configured KG / classical compatibility schema,1.0
