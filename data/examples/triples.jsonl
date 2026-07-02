@@ -1,0 +1,28 @@
+{"subject":"口渴多饮","predicate":"associated with","object":"INSR","source":"Configured KG / SymMap schema","confidence":0.91}
+{"subject":"口渴多饮","predicate":"associated with","object":"IRS1","source":"Configured KG / SymMap schema","confidence":0.86}
+{"subject":"口渴多饮","predicate":"associated with","object":"PPARG","source":"Configured KG / SymMap schema","confidence":0.82}
+{"subject":"倦怠乏力","predicate":"associated with","object":"AKT1","source":"Configured KG / literature schema","confidence":0.78}
+{"subject":"倦怠乏力","predicate":"associated with","object":"GLUT4","source":"Configured KG / literature schema","confidence":0.76}
+{"subject":"尿频","predicate":"associated with","object":"AQP2","source":"Configured KG / literature schema","confidence":0.73}
+{"subject":"尿频","predicate":"associated with","object":"INSR","source":"Configured KG / literature schema","confidence":0.69}
+{"subject":"口渴多饮","predicate":"indicates","object":"气阴两虚证","source":"Configured KG / TCM guideline schema","confidence":0.92}
+{"subject":"倦怠乏力","predicate":"indicates","object":"气阴两虚证","source":"Configured KG / TCM guideline schema","confidence":0.88}
+{"subject":"尿频","predicate":"indicates","object":"气阴两虚证","source":"Configured KG / TCM guideline schema","confidence":0.76}
+{"subject":"气阴两虚证","predicate":"treatedBy","object":"人参","source":"Configured KG / formula schema","confidence":0.86}
+{"subject":"气阴两虚证","predicate":"treatedBy","object":"麦冬","source":"Configured KG / formula schema","confidence":0.83}
+{"subject":"气阴两虚证","predicate":"treatedBy","object":"黄芪","source":"Configured KG / formula schema","confidence":0.80}
+{"subject":"气阴两虚证","predicate":"treatedBy","object":"天花粉","source":"Configured KG / formula schema","confidence":0.78}
+{"subject":"气阴两虚证","predicate":"treatedBy","object":"葛根","source":"Configured KG / formula schema","confidence":0.75}
+{"subject":"气阴两虚证","predicate":"treatedBy","object":"知母","source":"Configured KG / formula schema","confidence":0.72}
+{"subject":"气阴两虚证","predicate":"treatedBy","object":"五味子","source":"Configured KG / formula schema","confidence":0.68}
+{"subject":"人参","predicate":"affect by","object":"INSR","source":"Configured KG / TCMSP-SymMap schema","confidence":0.83}
+{"subject":"人参","predicate":"affect by","object":"AKT1","source":"Configured KG / TCMSP-SymMap schema","confidence":0.78}
+{"subject":"麦冬","predicate":"affect by","object":"GLUT4","source":"Configured KG / TCMSP-SymMap schema","confidence":0.75}
+{"subject":"麦冬","predicate":"affect by","object":"PPARG","source":"Configured KG / TCMSP-SymMap schema","confidence":0.71}
+{"subject":"黄芪","predicate":"affect by","object":"IRS1","source":"Configured KG / TCMSP-SymMap schema","confidence":0.79}
+{"subject":"黄芪","predicate":"affect by","object":"AKT1","source":"Configured KG / TCMSP-SymMap schema","confidence":0.82}
+{"subject":"天花粉","predicate":"affect by","object":"AQP2","source":"Configured KG / TCMSP-SymMap schema","confidence":0.66}
+{"subject":"葛根","predicate":"affect by","object":"PPARG","source":"Configured KG / TCMSP-SymMap schema","confidence":0.70}
+{"subject":"知母","predicate":"affect by","object":"INSR","source":"Configured KG / TCMSP-SymMap schema","confidence":0.63}
+{"subject":"五味子","predicate":"affect by","object":"GLUT4","source":"Configured KG / TCMSP-SymMap schema","confidence":0.64}
+{"subject":"甘草","predicate":"contraindicatedWith","object":"甘遂","source":"Configured KG / classical compatibility schema","confidence":1.0}

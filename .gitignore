@@ -9,8 +9,12 @@ __pycache__/
 !.idea/misc.xml
 *.iml
 
-data/*
-!data/.gitkeep
+data/raw/
+data/processed/
+data/private/
+!data/README.md
+!data/examples/
+!data/examples/**
 
 checkpoints/
 *.pth
@@ -21,6 +25,7 @@ logs/
 wandb/
 lightning_logs/
 outputs/
+.pytest_cache/
 
 venv/
 env/

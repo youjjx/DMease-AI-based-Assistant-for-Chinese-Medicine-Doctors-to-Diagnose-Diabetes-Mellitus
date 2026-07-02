@@ -1,0 +1,2 @@
+{"patient_id":"P2025-0001","symptoms":{"口渴多饮":0.95,"倦怠乏力":0.75,"尿频":0.65},"constitution":{"气虚":0.7,"阴虚":0.8,"湿热":0.2},"history":["Type-2 diabetes mellitus","fasting glucose 7.8 mmol/L"],"targets":[],"previous_herbs":[],"constraints":{"allergy":[],"pregnancy_forbidden":[]}}
+{"patient_id":"P2025-0002","symptoms":{"口干":0.7,"乏力":0.8,"尿多":0.5},"constitution":{"气虚":0.8,"阴虚":0.6,"湿热":0.3},"history":["De-identified record"],"targets":[],"previous_herbs":["甘草"],"constraints":{"allergy":["黄连"],"pregnancy_forbidden":[]}}

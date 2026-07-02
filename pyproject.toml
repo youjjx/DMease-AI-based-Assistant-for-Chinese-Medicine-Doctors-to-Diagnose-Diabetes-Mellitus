@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dmease"
+version = "0.1.0"
+description = "AI-based assistant framework for TCM doctors diagnosing and treating diabetes mellitus."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  { name = "DMease Authors" }
+]
+dependencies = [
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "networkx>=3.0",
+  "pyyaml>=6.0",
+  "scikit-learn>=1.3",
+  "torch>=2.0"
+]
+
+[project.optional-dependencies]
+ui = ["streamlit>=1.30"]
+dev = ["pytest>=8.0", "ruff>=0.5"]
+
+[project.scripts]
+dmease = "dmease.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+

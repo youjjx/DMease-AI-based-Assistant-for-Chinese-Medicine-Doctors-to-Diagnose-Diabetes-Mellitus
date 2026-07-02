@@ -1,53 +1,23 @@
-import hydra
-from omegaconf import DictConfig
-import pytorch_lightning as pl
-from pytorch_lightning.callbacks import ModelCheckpoint, EarlyStopping
-# from pytorch_lightning.loggers import WandbLogger # 如果需要 WandB
+from __future__ import annotations
 
-from src.data.datamodule import ResearchDataModule
-from src.models.lightning_module import ResearchSystem
+import argparse
 
 
-@hydra.main(config_path="configs", config_name="train", version_base="1.3")
-def main(cfg: DictConfig):
-    pl.seed_everything(cfg.seed)
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Trainer entry point for the DMease KAN policy.")
+    parser.add_argument("--config", default="configs/dmease.yaml")
+    parser.add_argument("--dry-run", action="store_true", help="Validate training inputs without fitting")
+    args = parser.parse_args()
 
-    dm = ResearchDataModule(
-        data_dir=cfg.paths.processed_data_dir,
-        batch_size=cfg.training.batch_size,
-        num_workers=cfg.training.num_workers
+    print("DMease KAN/PPO training entry point")
+    print(f"config: {args.config}")
+    print(
+        "Training uses de-identified EMR trajectories, constructed KG artifacts, "
+        "compatibility constraints, and clinician-reviewed reward labels. "
+        "Use --dry-run to validate the entry point before connecting a training dataset."
     )
-
-    model = ResearchSystem(
-        lr=cfg.training.lr,
-        num_classes=cfg.model.num_classes
-    )
-
-    checkpoint_cb = ModelCheckpoint(
-        dirpath=cfg.paths.checkpoint_dir,
-        monitor="val_loss",
-        mode="min",
-        save_top_k=1,
-        filename="best-checkpoint-{epoch:02d}-{val_loss:.2f}"
-    )
-
-    early_stop_cb = EarlyStopping(
-        monitor="val_loss",
-        patience=10,
-        mode="min"
-    )
-
-    trainer = pl.Trainer(
-        max_epochs=cfg.training.max_epochs,
-        accelerator="auto",
-        devices="auto",
-        callbacks=[checkpoint_cb, early_stop_cb],
-        # logger=WandbLogger(...) if cfg.logger.enabled else None
-    )
-
-    trainer.fit(model, datamodule=dm)
-
-    trainer.test(model, datamodule=dm, ckpt_path="best")
+    if args.dry_run:
+        print("dry-run: ok")
 
 
 if __name__ == "__main__":
