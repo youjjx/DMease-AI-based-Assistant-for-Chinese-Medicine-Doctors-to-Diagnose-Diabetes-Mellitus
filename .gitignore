@@ -12,6 +12,7 @@ __pycache__/
 data/raw/
 data/processed/
 data/private/
+data/*.db
 !data/README.md
 !data/examples/
 !data/examples/**
@@ -26,6 +27,7 @@ wandb/
 lightning_logs/
 outputs/
 .pytest_cache/
+.pytest-tmp/
 
 venv/
 env/

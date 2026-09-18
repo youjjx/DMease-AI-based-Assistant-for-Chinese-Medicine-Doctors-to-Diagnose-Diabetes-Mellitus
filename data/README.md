@@ -27,5 +27,5 @@ data/
     herb_target_affinity.csv
 ```
 
-The `examples/` directory contains a compact paper-aligned sample dataset for reproducible demos and tests.
+The `examples/` directory contains a compact paper-aligned non-clinical sample dataset for reproducible validation and tests.
 It is not clinical evidence and must not be used for real medical decisions.

@@ -1,0 +1,196 @@
+{
+  "metadata": {
+    "name": "DMease 非临床研究知识图谱",
+    "version": "1.0.0-nonclinical",
+    "source": "依据论文系统结构整理的可替换非临床样例数据",
+    "license": "research-nonclinical"
+  },
+  "compounds": ["黄芪甲苷IV", "毛蕊异黄酮", "麦冬皂苷D", "丹参酮IIA", "丹酚酸B", "葛根素"],
+  "targets": ["AKT1", "PPARG", "AMPK", "TNF", "IL6"],
+  "pathways": ["胰岛素信号通路", "AMPK信号通路", "炎症反应调控", "氧化应激调控"],
+  "mechanism_edges": [
+    {"source": "黄芪", "relation": "含有成分", "target": "黄芪甲苷IV"},
+    {"source": "黄芪", "relation": "含有成分", "target": "毛蕊异黄酮"},
+    {"source": "黄芪甲苷IV", "relation": "关联靶点", "target": "AKT1"},
+    {"source": "毛蕊异黄酮", "relation": "关联靶点", "target": "PPARG"},
+    {"source": "AKT1", "relation": "参与通路", "target": "胰岛素信号通路"},
+    {"source": "PPARG", "relation": "参与通路", "target": "胰岛素信号通路"},
+    {"source": "麦冬", "relation": "含有成分", "target": "麦冬皂苷D"},
+    {"source": "麦冬皂苷D", "relation": "关联靶点", "target": "AMPK"},
+    {"source": "AMPK", "relation": "参与通路", "target": "AMPK信号通路"},
+    {"source": "丹参", "relation": "含有成分", "target": "丹参酮IIA"},
+    {"source": "丹参", "relation": "含有成分", "target": "丹酚酸B"},
+    {"source": "丹参酮IIA", "relation": "关联靶点", "target": "TNF"},
+    {"source": "丹酚酸B", "relation": "关联靶点", "target": "IL6"},
+    {"source": "TNF", "relation": "参与通路", "target": "炎症反应调控"},
+    {"source": "IL6", "relation": "参与通路", "target": "炎症反应调控"},
+    {"source": "葛根", "relation": "含有成分", "target": "葛根素"},
+    {"source": "葛根素", "relation": "关联靶点", "target": "AKT1"}
+  ],
+  "symptoms": [
+    {"name": "口渴多饮", "aliases": ["口渴", "多饮", "饮水多"]},
+    {"name": "多食易饥", "aliases": ["多食", "易饥", "容易饿", "吃得多"]},
+    {"name": "尿频量多", "aliases": ["尿频", "多尿", "小便多"]},
+    {"name": "形体消瘦", "aliases": ["消瘦", "体重下降", "变瘦"]},
+    {"name": "五心烦热", "aliases": ["手足心热", "烦热"]},
+    {"name": "盗汗", "aliases": ["夜间出汗", "睡后汗出"]},
+    {"name": "乏力", "aliases": ["疲乏", "疲劳", "没力气", "倦怠"]},
+    {"name": "气短", "aliases": ["呼吸短促", "少气"]},
+    {"name": "自汗", "aliases": ["容易出汗", "动则汗出"]},
+    {"name": "口干咽燥", "aliases": ["口干", "咽干", "咽燥"]},
+    {"name": "便溏", "aliases": ["大便稀", "稀便", "腹泻"]},
+    {"name": "腹胀", "aliases": ["腹部胀满", "肚子胀"]},
+    {"name": "肢体困重", "aliases": ["身体困重", "四肢沉重"]},
+    {"name": "胸胁胀满", "aliases": ["胁胀", "胸闷胁胀"]},
+    {"name": "情志抑郁", "aliases": ["情绪低落", "抑郁", "心情郁闷"]},
+    {"name": "腰膝酸软", "aliases": ["腰酸", "膝软", "腰膝无力"]},
+    {"name": "畏寒肢冷", "aliases": ["怕冷", "手脚冰凉", "肢冷"]},
+    {"name": "夜尿频多", "aliases": ["夜尿多", "夜间尿频"]},
+    {"name": "肢体麻木", "aliases": ["手脚麻木", "麻木"]},
+    {"name": "刺痛", "aliases": ["针刺样疼痛", "固定痛"]},
+    {"name": "视物模糊", "aliases": ["视力模糊", "看不清"]},
+    {"name": "失眠", "aliases": ["睡不着", "睡眠差"]},
+    {"name": "心悸", "aliases": ["心慌", "心跳不适"]},
+    {"name": "水肿", "aliases": ["浮肿", "下肢肿"]}
+  ],
+  "syndromes": [
+    {
+      "name": "阴虚燥热证",
+      "description": "以津液亏耗、燥热偏盛相关表现为主要证候线索。",
+      "constitutions": ["阴虚质"],
+      "symptoms": {"口渴多饮": 1.0, "多食易饥": 0.85, "尿频量多": 0.75, "形体消瘦": 0.75, "五心烦热": 0.7, "盗汗": 0.55, "口干咽燥": 0.9}
+    },
+    {
+      "name": "气阴两虚证",
+      "description": "气虚与阴津不足并见，常表现为疲乏、气短与口干等组合。",
+      "constitutions": ["气虚质", "阴虚质"],
+      "symptoms": {"乏力": 1.0, "气短": 0.85, "自汗": 0.7, "口干咽燥": 0.85, "口渴多饮": 0.7, "心悸": 0.5, "尿频量多": 0.55}
+    },
+    {
+      "name": "脾虚湿盛证",
+      "description": "脾运失健与湿邪内停相关的证候组合。",
+      "constitutions": ["气虚质", "痰湿质"],
+      "symptoms": {"乏力": 0.85, "便溏": 1.0, "腹胀": 0.8, "肢体困重": 0.95, "水肿": 0.65, "多食易饥": 0.25}
+    },
+    {
+      "name": "肝郁气滞证",
+      "description": "情志不畅、气机郁滞相关的证候组合。",
+      "constitutions": ["气郁质"],
+      "symptoms": {"胸胁胀满": 1.0, "情志抑郁": 1.0, "腹胀": 0.5, "失眠": 0.55, "口干咽燥": 0.3}
+    },
+    {
+      "name": "阴阳两虚证",
+      "description": "病程较久，阴津与阳气均虚的复合证候线索。",
+      "constitutions": ["阳虚质", "阴虚质"],
+      "symptoms": {"腰膝酸软": 1.0, "畏寒肢冷": 0.9, "夜尿频多": 0.9, "乏力": 0.7, "口干咽燥": 0.45, "水肿": 0.4}
+    },
+    {
+      "name": "瘀血阻络证",
+      "description": "血行不畅、络脉受阻相关表现，需结合病程及舌脉判断。",
+      "constitutions": ["血瘀质"],
+      "symptoms": {"肢体麻木": 1.0, "刺痛": 1.0, "视物模糊": 0.65, "心悸": 0.4, "失眠": 0.3}
+    }
+  ],
+  "herbs": [
+    {
+      "name": "黄芪", "aliases": ["炙黄芪"], "actions": ["补气升阳", "益卫固表"],
+      "syndromes": {"气阴两虚证": 0.95, "脾虚湿盛证": 0.75, "阴阳两虚证": 0.45},
+      "contraindications": [], "interactions": {"华法林": "可能影响抗凝监测，需专业评估"}, "incompatible": [], "notes": ["非临床样例关联，不包含剂量建议"]
+    },
+    {
+      "name": "生地黄", "aliases": ["生地"], "actions": ["清热凉血", "养阴生津"],
+      "syndromes": {"阴虚燥热证": 0.95, "气阴两虚证": 0.65},
+      "contraindications": ["慢性腹泻"], "interactions": {}, "incompatible": [], "notes": []
+    },
+    {
+      "name": "麦冬", "aliases": [], "actions": ["养阴生津", "润肺清心"],
+      "syndromes": {"阴虚燥热证": 0.9, "气阴两虚证": 0.85},
+      "contraindications": ["慢性腹泻"], "interactions": {}, "incompatible": [], "notes": []
+    },
+    {
+      "name": "天花粉", "aliases": [], "actions": ["清热泻火", "生津止渴"],
+      "syndromes": {"阴虚燥热证": 0.9},
+      "contraindications": ["妊娠"], "interactions": {}, "incompatible": ["乌头"], "notes": ["妊娠相关安全规则为硬约束"]
+    },
+    {
+      "name": "知母", "aliases": [], "actions": ["清热泻火", "滋阴润燥"],
+      "syndromes": {"阴虚燥热证": 0.82},
+      "contraindications": ["慢性腹泻"], "interactions": {}, "incompatible": [], "notes": []
+    },
+    {
+      "name": "山药", "aliases": ["怀山药"], "actions": ["补脾养胃", "生津益肺", "补肾涩精"],
+      "syndromes": {"气阴两虚证": 0.75, "脾虚湿盛证": 0.88, "阴阳两虚证": 0.55},
+      "contraindications": [], "interactions": {}, "incompatible": [], "notes": []
+    },
+    {
+      "name": "太子参", "aliases": [], "actions": ["益气健脾", "生津润肺"],
+      "syndromes": {"气阴两虚证": 0.9, "脾虚湿盛证": 0.6},
+      "contraindications": [], "interactions": {}, "incompatible": ["藜芦"], "notes": []
+    },
+    {
+      "name": "白术", "aliases": ["炒白术"], "actions": ["健脾益气", "燥湿利水"],
+      "syndromes": {"脾虚湿盛证": 1.0, "气阴两虚证": 0.45},
+      "contraindications": [], "interactions": {}, "incompatible": [], "notes": []
+    },
+    {
+      "name": "茯苓", "aliases": [], "actions": ["利水渗湿", "健脾宁心"],
+      "syndromes": {"脾虚湿盛证": 0.95, "阴阳两虚证": 0.35},
+      "contraindications": [], "interactions": {}, "incompatible": [], "notes": []
+    },
+    {
+      "name": "薏苡仁", "aliases": ["薏米"], "actions": ["利水渗湿", "健脾"],
+      "syndromes": {"脾虚湿盛证": 0.85},
+      "contraindications": ["妊娠"], "interactions": {}, "incompatible": [], "notes": []
+    },
+    {
+      "name": "柴胡", "aliases": [], "actions": ["疏肝解郁", "升举阳气"],
+      "syndromes": {"肝郁气滞证": 0.95},
+      "contraindications": [], "interactions": {}, "incompatible": [], "notes": []
+    },
+    {
+      "name": "香附", "aliases": [], "actions": ["疏肝解郁", "理气宽中"],
+      "syndromes": {"肝郁气滞证": 0.9},
+      "contraindications": [], "interactions": {}, "incompatible": [], "notes": []
+    },
+    {
+      "name": "白芍", "aliases": [], "actions": ["养血敛阴", "柔肝止痛"],
+      "syndromes": {"肝郁气滞证": 0.78, "气阴两虚证": 0.4},
+      "contraindications": [], "interactions": {}, "incompatible": ["藜芦"], "notes": []
+    },
+    {
+      "name": "熟地黄", "aliases": ["熟地"], "actions": ["补血滋阴", "益精填髓"],
+      "syndromes": {"阴阳两虚证": 0.9, "气阴两虚证": 0.5},
+      "contraindications": ["慢性腹泻"], "interactions": {}, "incompatible": [], "notes": []
+    },
+    {
+      "name": "山茱萸", "aliases": [], "actions": ["补益肝肾", "收涩固脱"],
+      "syndromes": {"阴阳两虚证": 0.88, "气阴两虚证": 0.35},
+      "contraindications": [], "interactions": {}, "incompatible": [], "notes": []
+    },
+    {
+      "name": "淫羊藿", "aliases": [], "actions": ["补肾阳", "强筋骨"],
+      "syndromes": {"阴阳两虚证": 0.82},
+      "contraindications": ["妊娠", "高血压未控制"], "interactions": {}, "incompatible": [], "notes": []
+    },
+    {
+      "name": "丹参", "aliases": [], "actions": ["活血祛瘀", "通经止痛"],
+      "syndromes": {"瘀血阻络证": 1.0},
+      "contraindications": ["妊娠", "活动性出血"], "interactions": {"华法林": "可能增强抗凝作用"}, "incompatible": ["藜芦"], "notes": []
+    },
+    {
+      "name": "川芎", "aliases": [], "actions": ["活血行气", "祛风止痛"],
+      "syndromes": {"瘀血阻络证": 0.9, "肝郁气滞证": 0.45},
+      "contraindications": ["妊娠", "活动性出血"], "interactions": {"华法林": "可能增加出血风险"}, "incompatible": [], "notes": []
+    },
+    {
+      "name": "鸡血藤", "aliases": [], "actions": ["行血补血", "舒筋活络"],
+      "syndromes": {"瘀血阻络证": 0.82},
+      "contraindications": ["妊娠"], "interactions": {}, "incompatible": [], "notes": []
+    },
+    {
+      "name": "葛根", "aliases": [], "actions": ["解肌生津", "升阳止泻"],
+      "syndromes": {"阴虚燥热证": 0.65, "气阴两虚证": 0.55},
+      "contraindications": [], "interactions": {}, "incompatible": [], "notes": []
+    }
+  ]
+}

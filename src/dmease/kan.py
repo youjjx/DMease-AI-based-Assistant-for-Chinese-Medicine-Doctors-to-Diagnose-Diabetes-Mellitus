@@ -7,10 +7,8 @@ from torch import nn
 class SplineEdgeLayer(nn.Module):
     """A compact KAN-style layer with learnable edge-wise univariate functions.
 
-    This is intentionally lightweight. It preserves the paper's KAN interface
-    while keeping the repository runnable before the full PPO training data is
-    available. A production run can replace this module with pykan or another
-    spline implementation without changing policy inputs and outputs.
+    The module preserves the paper's KAN interface and can be replaced with
+    another spline implementation without changing policy inputs and outputs.
     """
 
     def __init__(self, in_features: int, out_features: int, grid_size: int = 8):
@@ -46,4 +44,55 @@ class KANPolicyNetwork(nn.Module):
         if mask is not None:
             logits = logits.masked_fill(~mask.bool(), torch.finfo(logits.dtype).min)
         return logits
+
+
+class KANLayer(nn.Module):
+    """Edge-function KAN layer using trainable Gaussian basis functions."""
+
+    def __init__(self, in_features: int, out_features: int, grid_size: int = 8):
+        super().__init__()
+        self.in_features = in_features
+        self.out_features = out_features
+        self.grid_size = grid_size
+        self.register_buffer("grid", torch.linspace(-1.0, 1.0, grid_size))
+        self.coefficients = nn.Parameter(torch.empty(out_features, in_features, grid_size))
+        self.base_weight = nn.Parameter(torch.empty(out_features, in_features))
+        self.bias = nn.Parameter(torch.zeros(out_features))
+        self.reset_parameters()
+
+    def reset_parameters(self) -> None:
+        nn.init.normal_(self.coefficients, mean=0.0, std=0.04)
+        nn.init.xavier_uniform_(self.base_weight)
+
+    def forward(self, inputs: torch.Tensor) -> torch.Tensor:
+        basis = torch.exp(-8.0 * (inputs.unsqueeze(-1) - self.grid) ** 2)
+        nonlinear = torch.einsum("big,oig->bo", basis, self.coefficients)
+        base = torch.nn.functional.silu(inputs) @ self.base_weight.t()
+        return nonlinear + base + self.bias
+
+
+class KANPolicy(nn.Module):
+    """KAN actor-critic used by the PPO training workflow."""
+
+    def __init__(self, state_dim: int, action_dim: int, hidden_dim: int = 32, grid_size: int = 8):
+        super().__init__()
+        self.actor = nn.Sequential(
+            KANLayer(state_dim, hidden_dim, grid_size),
+            nn.LayerNorm(hidden_dim),
+            KANLayer(hidden_dim, action_dim, grid_size),
+        )
+        self.critic = nn.Sequential(
+            KANLayer(state_dim, hidden_dim, grid_size),
+            nn.LayerNorm(hidden_dim),
+            KANLayer(hidden_dim, 1, grid_size),
+        )
+
+    def forward(self, state: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
+        return self.actor(state), self.critic(state).squeeze(-1)
+
+    def distribution(self, state: torch.Tensor, action_mask: torch.Tensor | None = None):
+        logits, value = self(state)
+        if action_mask is not None:
+            logits = logits.masked_fill(~action_mask.bool(), -1e9)
+        return torch.distributions.Categorical(logits=logits), value
 

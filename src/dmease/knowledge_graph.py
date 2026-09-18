@@ -1,7 +1,10 @@
 from __future__ import annotations
 
 from collections import Counter, defaultdict
+import json
 from math import log
+from pathlib import Path
+from typing import Iterable
 
 import networkx as nx
 
@@ -105,4 +108,112 @@ class TCMKnowledgeGraph:
             for triple in self.triples
             if triple.subject == subject and triple.predicate == predicate and triple.object == object_
         ]
+
+
+class KnowledgeGraph:
+    """JSON-backed clinical research graph used by the interactive workflow."""
+
+    def __init__(self, path: str | Path):
+        self.path = Path(path)
+        with self.path.open("r", encoding="utf-8") as handle:
+            payload = json.load(handle)
+        self.metadata = payload.get("metadata", {})
+        self.symptoms = payload["symptoms"]
+        self.syndromes = payload["syndromes"]
+        self.herbs = payload["herbs"]
+        self.compounds = payload.get("compounds", [])
+        self.targets = payload.get("targets", [])
+        self.pathways = payload.get("pathways", [])
+        self.mechanism_edges = payload.get("mechanism_edges", [])
+        self._symptom = {item["name"]: item for item in self.symptoms}
+        self._syndrome = {item["name"]: item for item in self.syndromes}
+        self._herb = {item["name"]: item for item in self.herbs}
+        self._herbs_by_syndrome: dict[str, list[dict]] = defaultdict(list)
+        for herb in self.herbs:
+            for syndrome, weight in herb.get("syndromes", {}).items():
+                self._herbs_by_syndrome[syndrome].append({"herb": herb, "weight": float(weight)})
+        self._validate()
+
+    def _validate(self) -> None:
+        for label, values in (
+            ("symptom", [item["name"] for item in self.symptoms]),
+            ("syndrome", [item["name"] for item in self.syndromes]),
+            ("herb", [item["name"] for item in self.herbs]),
+        ):
+            if len(values) != len(set(values)):
+                raise ValueError(f"Duplicate {label} name in knowledge graph")
+        for syndrome in self.syndromes:
+            unknown = set(syndrome.get("symptoms", {})) - set(self._symptom)
+            if unknown:
+                raise ValueError(f"Unknown symptoms in {syndrome['name']}: {sorted(unknown)}")
+        for herb in self.herbs:
+            unknown = set(herb.get("syndromes", {})) - set(self._syndrome)
+            if unknown:
+                raise ValueError(f"Unknown syndromes in {herb['name']}: {sorted(unknown)}")
+        known_nodes = set(self._herb) | set(self.compounds) | set(self.targets) | set(self.pathways)
+        for edge in self.mechanism_edges:
+            if edge["source"] not in known_nodes or edge["target"] not in known_nodes:
+                raise ValueError(f"Unknown node in mechanism edge: {edge}")
+
+    @property
+    def symptom_names(self) -> list[str]:
+        return sorted(self._symptom)
+
+    @property
+    def syndrome_names(self) -> list[str]:
+        return sorted(self._syndrome)
+
+    @property
+    def herb_names(self) -> list[str]:
+        return sorted(self._herb)
+
+    def syndrome(self, name: str) -> dict:
+        return self._syndrome[name]
+
+    def herb(self, name: str) -> dict:
+        return self._herb[name]
+
+    def herbs_for_syndrome(self, name: str) -> list[dict]:
+        return sorted(self._herbs_by_syndrome.get(name, []), key=lambda item: item["weight"], reverse=True)
+
+    def paths(self, symptoms: Iterable[str], syndrome: str, herb: str) -> list[str]:
+        recognized = self._syndrome.get(syndrome, {}).get("symptoms", {})
+        return [
+            f"{symptom} → 支持证候 → {syndrome} → 关联用药 → {herb}"
+            for symptom in symptoms
+            if symptom in recognized
+        ][:3]
+
+    def mechanism_paths(self, herb: str) -> list[str]:
+        adjacency: dict[str, list[tuple[str, str]]] = defaultdict(list)
+        for edge in self.mechanism_edges:
+            adjacency[edge["source"]].append((edge["relation"], edge["target"]))
+        paths = []
+        for relation_1, compound in adjacency.get(herb, []):
+            for relation_2, target in adjacency.get(compound, []):
+                downstream = adjacency.get(target, [])
+                if downstream:
+                    for relation_3, pathway in downstream:
+                        paths.append(
+                            f"{herb} —{relation_1}→ {compound} —{relation_2}→ "
+                            f"{target} —{relation_3}→ {pathway}"
+                        )
+                else:
+                    paths.append(f"{herb} —{relation_1}→ {compound} —{relation_2}→ {target}")
+        return paths
+
+    def summary(self) -> dict[str, int | str]:
+        relations = sum(len(item.get("symptoms", {})) for item in self.syndromes)
+        relations += sum(len(item.get("syndromes", {})) for item in self.herbs)
+        relations += len(self.mechanism_edges)
+        return {
+            "version": self.metadata.get("version", "unknown"),
+            "symptoms": len(self.symptoms),
+            "syndromes": len(self.syndromes),
+            "herbs": len(self.herbs),
+            "compounds": len(self.compounds),
+            "targets": len(self.targets),
+            "pathways": len(self.pathways),
+            "relations": relations,
+        }
 
