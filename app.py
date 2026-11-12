@@ -13,6 +13,7 @@ from dmease import DMeasePipeline, DMeaseService
 from dmease.auth import AuthStore
 from dmease.exports import SOFTWARE_NAME, VERSION, csv_export, json_export, report_html
 from dmease.types import PatientProfile
+from dmease.public_data import PublicEvidenceStore
 
 ROOT = Path(__file__).resolve().parent
 DATA = Path(os.environ.get("DMEASE_DATA_DIR", str(ROOT / "runtime")))
@@ -254,6 +255,17 @@ def analysis(service, owner):
                 st.write("• " + path)
             for warning in herb.warnings:
                 st.caption(warning)
+            evidence_store = PublicEvidenceStore(ROOT / "data/processed/public_evidence.sqlite")
+            if evidence_store.available:
+                with st.expander("核对公开数据库中的成分与靶点"):
+                    evidence = evidence_store.herb_paths(herb.name)
+                    if evidence:
+                        st.dataframe([{k: v for k, v in row.items() if k != "provenance"} for row in evidence],
+                                     hide_index=True, width="stretch")
+                        st.caption("来源：TCMSP 2.3。按药材名称精确匹配，最多显示20条；数据库关联用于核查，不代表疗效或结合概率。")
+                        st.download_button("导出此药材公开依据", json_export(evidence), "herb_evidence.json", "application/json")
+                    else:
+                        st.info("当前公开数据索引未收录该名称对应的完整路径。")
         st.button("下一步：约束与保存", on_click=go, args=("辅助分析", STEPS[3]), type="primary")
     else:
         st.subheader("安全约束核对")
@@ -347,7 +359,10 @@ def records(service, owner):
 def graph_page(service):
     graph = service.graph
     st.subheader("知识图谱")
-    view = st.radio("图谱视图", ["证候关联", "机制路径", "知识子图"], horizontal=True)
+    view = st.radio("图谱视图", ["证候关联", "机制路径", "知识子图", "公开数据检索"], horizontal=True)
+    if view == "公开数据检索":
+        public_evidence_page()
+        return
     st.caption(f"知识版本：{graph.summary()['version']} · {graph.summary()['relations']}条关系 · 非临床构造知识数据")
     if view in ("证候关联", "知识子图"):
         name = st.selectbox("选择证候", graph.syndrome_names)
@@ -377,6 +392,52 @@ def graph_page(service):
             st.write("合并情况禁忌：" + ("、".join(info.get("contraindications", [])) or "未配置"))
             st.write("配伍禁忌：" + ("、".join(info.get("incompatible", [])) or "未配置"))
             st.json(info.get("interactions", {}))
+
+
+def public_evidence_page():
+    st.caption("查询官方公开数据的实体与蛋白关联，查看版本、来源和导入范围。")
+    registry_path = ROOT / "data/public_registry.json"
+    store = PublicEvidenceStore(ROOT / "data/processed/public_evidence.sqlite")
+    if registry_path.exists():
+        registry = json.loads(registry_path.read_text(encoding="utf8"))
+        st.caption("以下为最近一次公开数据导入报告；本机索引可用性在下方单独检查。")
+        labels = {"human_network_imported": "人类蛋白网络已导入", "official_entity_catalogues_imported": "实体及标识表已导入",
+                  "official_browse_catalogues_imported": "公开浏览目录已导入", "failed": "导入失败"}
+        scope_labels = {"string": "12.0版人类蛋白网络，保留综合分数≥0.7的去重关联",
+                        "symmap": "1.0/2.0版公开实体与标识表；关联关系尚待补充",
+                        "tcmsp": "四类公开目录及与系统药材名称精确匹配的成分—靶点详情"}
+        st.dataframe([{"数据库": name.upper(), "状态": labels.get(item["status"], item["status"]),
+                       "范围": item.get("error", scope_labels.get(name, "见来源报告"))}
+                      for name, item in registry["sources"].items()], hide_index=True, width="stretch")
+        with st.expander("查看下载来源与文件校验信息"):
+            st.json(registry)
+    if not store.available:
+        st.info("此部署尚未建立公开数据索引，请按项目说明完成数据初始化。")
+        return
+    st.info("公开数据库关联是研究证据；当前候选推荐仍使用单独标明的非临床知识与模型。")
+    source = st.selectbox("公开数据来源", ["全部", "SymMap", "STRING", "TCMSP"])
+    query = st.text_input("检索名称或原始标识", placeholder="例如：黄芪、AKT1、INSR")
+    rows = store.search(query, "" if source == "全部" else source)
+    if not rows:
+        st.caption("输入检索词查看结果。未匹配时可尝试英文名或原始数据库标识。")
+        return
+    st.dataframe([{"来源": row["source"], "版本": row["version"], "类别": row["kind"],
+                   "原始标识": row["id"], "名称": row["name"]} for row in rows], hide_index=True, width="stretch")
+    chosen = st.selectbox("选择公开条目", range(len(rows)),
+                          format_func=lambda i: f"{rows[i]['source']} {rows[i]['version']} · {rows[i]['id']} · {rows[i]['name'][:70]}")
+    item = rows[chosen]
+    st.json(json.loads(item["payload"]))
+    if item["source"] == "STRING":
+        edges = store.neighbors(item["id"])
+        st.write("高置信度功能关联（综合分数≥0.7；最多显示30条）")
+        st.dataframe(edges, hide_index=True, width="stretch")
+        st.caption("功能关联可包含间接关联与预测证据，不能直接解释为已验证的物理结合。")
+    elif item["source"] == "TCMSP":
+        edges = store.neighbors(item["id"])
+        st.write("已导入的成分与靶点关联（最多显示30条）")
+        st.dataframe(edges, hide_index=True, width="stretch")
+        st.caption("仅展示已下载药材详情中的关联；空结果表示当前索引未收录。原始验证标记和预测分数保存在来源字段中。")
+    st.download_button("导出当前公开检索结果", json_export(rows), "public_evidence.json", "application/json")
 
 
 def research():

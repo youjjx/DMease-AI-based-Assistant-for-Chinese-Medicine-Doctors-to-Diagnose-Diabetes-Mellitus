@@ -1,0 +1,715 @@
+{
+  "created_at": "2026-11-12T01:19:40.278751+00:00",
+  "clinical_records": 0,
+  "sources": {
+    "string": {
+      "status": "human_network_imported",
+      "species": 9606,
+      "version": "12.0",
+      "proteins": 19699,
+      "source_rows": 13715404,
+      "undirected_edges": 236930,
+      "unknown_endpoints": 0,
+      "minimum_combined_score": 700,
+      "scope": "Complete human links file, filtered >=700; functional associations include predicted and indirect evidence, not physical interactions only",
+      "license": "CC-BY-4.0",
+      "license_url": "https://string-db.org/cgi/access"
+    },
+    "symmap": {
+      "status": "official_entity_catalogues_imported",
+      "tables": {
+        "SymMap v2.0, SMHB file.xlsx": 703,
+        "SymMap v2.0, SMHB key file.xlsx": 2556,
+        "SymMap v2.0, SMTS file.xlsx": 2364,
+        "SymMap v2.0, SMTS key file.xlsx": 4728,
+        "SymMap v2.0, SMMS file.xlsx": 1148,
+        "SymMap v2.0, SMMS key file.xlsx": 15142,
+        "SymMap v2.0, SMIT file.xlsx": 27690,
+        "SymMap v2.0, SMIT key file.xlsx": 148636,
+        "SymMap v2.0, SMTT file.xlsx": 20965,
+        "SymMap v2.0, SMTT key file.xlsx": 59343,
+        "SymMap v2.0, SMDE file.xlsx": 14434,
+        "SymMap v2.0, SMDE key file.xlsx": 28497,
+        "SymMap v2.0, SMSY file.xlsx": 233,
+        "SymMap v2.0, SMSY key file.xlsx": 697,
+        "SymMap v1.0, SMHB file.xlsx": 499,
+        "SymMap v1.0, SMHB key file.xlsx": 1996,
+        "SymMap v1.0, SMTS file.xlsx": 1717,
+        "SymMap v1.0, SMTS key file.xlsx": 3434,
+        "SymMap v1.0, SMMS file.xlsx": 961,
+        "SymMap v1.0, SMMS key file.xlsx": 14765,
+        "SymMap v1.0, SMIT file.xlsx": 19595,
+        "SymMap v1.0, SMIT key file.xlsx": 125202,
+        "SymMap v1.0, SMTT file.xlsx": 4302,
+        "SymMap v1.0, SMTT key file.xlsx": 27796,
+        "SymMap v1.0, SMDE file.xlsx": 5235,
+        "SymMap v1.0, SMDE key file.xlsx": 19311
+      },
+      "scope": "All XLSX links exposed on the captured download page; entity and identifier tables, not a full relationship dump",
+      "license": "No explicit redistribution license identified on download page; raw files are not republished",
+      "transport": "Official HTTP endpoint; HTTPS failed during verification"
+    },
+    "tcmsp": {
+      "status": "official_browse_catalogues_imported",
+      "tables": {
+        "herbs": 502,
+        "ingredients": 13729,
+        "targets": 3339,
+        "diseases": 867
+      },
+      "herb_details": {
+        "黄芪": {
+          "ingredients": 87,
+          "compound_target_rows": 953
+        },
+        "天花粉": {
+          "ingredients": 15,
+          "compound_target_rows": 70
+        },
+        "知母": {
+          "ingredients": 81,
+          "compound_target_rows": 407
+        },
+        "山药": {
+          "ingredients": 71,
+          "compound_target_rows": 851
+        },
+        "太子参": {
+          "ingredients": 25,
+          "compound_target_rows": 328
+        },
+        "白术": {
+          "ingredients": 55,
+          "compound_target_rows": 774
+        },
+        "茯苓": {
+          "ingredients": 34,
+          "compound_target_rows": 121
+        },
+        "薏苡仁": {
+          "ingredients": 38,
+          "compound_target_rows": 246
+        },
+        "柴胡": {
+          "ingredients": 349,
+          "compound_target_rows": 2737
+        },
+        "香附": {
+          "ingredients": 104,
+          "compound_target_rows": 1029
+        },
+        "白芍": {
+          "ingredients": 85,
+          "compound_target_rows": 990
+        },
+        "熟地黄": {
+          "ingredients": 76,
+          "compound_target_rows": 327
+        },
+        "山茱萸": {
+          "ingredients": 226,
+          "compound_target_rows": 1843
+        },
+        "淫羊藿": {
+          "ingredients": 130,
+          "compound_target_rows": 1620
+        },
+        "丹参": {
+          "ingredients": 202,
+          "compound_target_rows": 2566
+        },
+        "川芎": {
+          "ingredients": 189,
+          "compound_target_rows": 1356
+        },
+        "鸡血藤": {
+          "ingredients": 68,
+          "compound_target_rows": 1142
+        },
+        "葛根": {
+          "ingredients": 18,
+          "compound_target_rows": 398
+        }
+      },
+      "unmatched_application_herbs": [
+        "生地黄",
+        "麦冬"
+      ],
+      "scope": "Four complete public browse tables plus exact-matched application herbs' ingredient/target relations; not a complete relationship export",
+      "license": "ODbL-1.0 / DbCL-1.0",
+      "license_url": "https://old.tcmsp-e.com/tcmsp.php"
+    }
+  },
+  "files": [
+    {
+      "file": "data/raw/public/string/9606.protein.info.v12.0.txt.gz",
+      "url": "https://stringdb-downloads.org/download/protein.info.v12.0/9606.protein.info.v12.0.txt.gz",
+      "retrieved_at": "2026-11-12T01:07:35.544906+00:00",
+      "sha256": "144de4b0d98c6a7dfde6ddc2591cf88657f27b989eadff4f501450c3ed1f0f1c",
+      "bytes": 1970090
+    },
+    {
+      "file": "data/raw/public/string/9606.protein.links.v12.0.txt.gz",
+      "url": "https://stringdb-downloads.org/download/protein.links.v12.0/9606.protein.links.v12.0.txt.gz",
+      "retrieved_at": "2026-11-12T01:09:46.170679+00:00",
+      "sha256": "3e22f32572211aa341d5b4bd08d30c32e693e294603202120936872f87719d4f",
+      "bytes": 83164437
+    },
+    {
+      "file": "data/raw/public/symmap/download.html",
+      "url": "http://www.symmap.org/download/",
+      "retrieved_at": "2026-11-12T01:09:59.037348+00:00",
+      "sha256": "47a5a470752c27ccace5ce3721e72f8e86ab634dfca4c21c5225da954ad67b37",
+      "bytes": 32621
+    },
+    {
+      "file": "data/raw/public/symmap/SymMap v2.0, SMHB file.xlsx",
+      "url": "http://www.symmap.org/static/download/V2.0/SymMap%20v2.0%2C%20SMHB%20file.xlsx",
+      "retrieved_at": "2026-11-12T01:10:00.626152+00:00",
+      "sha256": "aafa7a2dca0298eca73ae3add133110ff9f114f23480aae204b94e95800c0288",
+      "bytes": 99614
+    },
+    {
+      "file": "data/raw/public/symmap/SymMap v2.0, SMHB key file.xlsx",
+      "url": "http://www.symmap.org/static/download/V2.0/SymMap%20v2.0%2C%20SMHB%20key%20file.xlsx",
+      "retrieved_at": "2026-11-12T01:10:02.050785+00:00",
+      "sha256": "7b521fc01582a423999e646fc2ca750399f7c86a6bf2158c726cb7d63703043f",
+      "bytes": 65615
+    },
+    {
+      "file": "data/raw/public/symmap/SymMap v2.0, SMTS file.xlsx",
+      "url": "http://www.symmap.org/static/download/V2.0/SymMap%20v2.0%2C%20SMTS%20file.xlsx",
+      "retrieved_at": "2026-11-12T01:11:45.548614+00:00",
+      "sha256": "cb548f0ff63aba55a371ee644fb967f9810567bbd9602366354f6a461dd0c9ff",
+      "bytes": 225683
+    },
+    {
+      "file": "data/raw/public/symmap/SymMap v2.0, SMTS key file.xlsx",
+      "url": "http://www.symmap.org/static/download/V2.0/SymMap%20v2.0%2C%20SMTS%20key%20file.xlsx",
+      "retrieved_at": "2026-11-12T01:11:54.067869+00:00",
+      "sha256": "faef8b3bf4dedfad741002e28cf4e33c7c19ad01a1db240e142d8ca5af8c3da3",
+      "bytes": 103155
+    },
+    {
+      "file": "data/raw/public/symmap/SymMap v2.0, SMMS file.xlsx",
+      "url": "http://www.symmap.org/static/download/V2.0/SymMap%20v2.0%2C%20SMMS%20file.xlsx",
+      "retrieved_at": "2026-11-12T01:12:02.897580+00:00",
+      "sha256": "c83d52386f7f723ac252d4d5adc71c0f64587ea3ffc3d0b7ab87ef3e6e5d37c9",
+      "bytes": 262393
+    },
+    {
+      "file": "data/raw/public/symmap/SymMap v2.0, SMMS key file.xlsx",
+      "url": "http://www.symmap.org/static/download/V2.0/SymMap%20v2.0%2C%20SMMS%20key%20file.xlsx",
+      "retrieved_at": "2026-11-12T01:12:05.151432+00:00",
+      "sha256": "271e56c3ef0c43e2e597f729a12ad8c981b8f3ae0f2dd5175ea98736f447b105",
+      "bytes": 300757
+    },
+    {
+      "file": "data/raw/public/symmap/SymMap v2.0, SMIT file.xlsx",
+      "url": "http://www.symmap.org/static/download/V2.0/SymMap%20v2.0%2C%20SMIT%20file.xlsx",
+      "retrieved_at": "2026-11-12T01:12:08.905869+00:00",
+      "sha256": "2cadefea5a598d6d7ae39360a8f5ac9bbbcc4f9e62d8f9546a4eab8679b31dbf",
+      "bytes": 1889366
+    },
+    {
+      "file": "data/raw/public/symmap/SymMap v2.0, SMIT key file.xlsx",
+      "url": "http://www.symmap.org/static/download/V2.0/SymMap%20v2.0%2C%20SMIT%20key%20file.xlsx",
+      "retrieved_at": "2026-11-12T01:12:33.275641+00:00",
+      "sha256": "503cb997da5719566fcb6e046b1b027aa84b8fb36fecfe347c452d6357608c38",
+      "bytes": 3687312
+    },
+    {
+      "file": "data/raw/public/symmap/SymMap v2.0, SMTT file.xlsx",
+      "url": "http://www.symmap.org/static/download/V2.0/SymMap%20v2.0%2C%20SMTT%20file.xlsx",
+      "retrieved_at": "2026-11-12T01:14:38.776579+00:00",
+      "sha256": "9a1c03b22c3ea09fc417206e43e44a378f72e975805d66fcfabd72e38e3895f8",
+      "bytes": 1677922
+    },
+    {
+      "file": "data/raw/public/symmap/SymMap v2.0, SMTT key file.xlsx",
+      "url": "http://www.symmap.org/static/download/V2.0/SymMap%20v2.0%2C%20SMTT%20key%20file.xlsx",
+      "retrieved_at": "2026-11-12T01:14:45.104508+00:00",
+      "sha256": "6c25ef5d77da614e7d4a76f2a1e2124615666e8bbab8a88198878b6186ad8295",
+      "bytes": 1275988
+    },
+    {
+      "file": "data/raw/public/symmap/SymMap v2.0, SMDE file.xlsx",
+      "url": "http://www.symmap.org/static/download/V2.0/SymMap%20v2.0%2C%20SMDE%20file.xlsx",
+      "retrieved_at": "2026-11-12T01:14:52.115368+00:00",
+      "sha256": "05545f8cecbafe8734bce804bd062791fcf72e9c17bce52e7d75137e264dbe4f",
+      "bytes": 2255321
+    },
+    {
+      "file": "data/raw/public/symmap/SymMap v2.0, SMDE key file.xlsx",
+      "url": "http://www.symmap.org/static/download/V2.0/SymMap%20v2.0%2C%20SMDE%20key%20file.xlsx",
+      "retrieved_at": "2026-11-12T01:14:55.812782+00:00",
+      "sha256": "cb820976e66761a6bd60ad2462219fffa3c2317f02d62d94781be6ce340191b9",
+      "bytes": 735937
+    },
+    {
+      "file": "data/raw/public/symmap/SymMap v2.0, SMSY file.xlsx",
+      "url": "http://www.symmap.org/static/download/V2.0/SymMap%20v2.0%2C%20SMSY%20file.xlsx",
+      "retrieved_at": "2026-11-12T01:14:58.201902+00:00",
+      "sha256": "6d91b4bfae9752f42cb51d1c049f204ce61b7349c77dd0c2673b97519e25d9a2",
+      "bytes": 31666
+    },
+    {
+      "file": "data/raw/public/symmap/SymMap v2.0, SMSY key file.xlsx",
+      "url": "http://www.symmap.org/static/download/V2.0/SymMap%20v2.0%2C%20SMSY%20key%20file.xlsx",
+      "retrieved_at": "2026-11-12T01:14:59.048775+00:00",
+      "sha256": "62b38cc3d8804566e3722a77af010c22ca84924e6598b569d4b7871daa59966d",
+      "bytes": 20654
+    },
+    {
+      "file": "data/raw/public/symmap/SymMap v1.0, SMHB file.xlsx",
+      "url": "http://www.symmap.org/static/download/SymMap%20v1.0%2C%20SMHB%20file.xlsx",
+      "retrieved_at": "2026-11-12T01:15:00.112893+00:00",
+      "sha256": "47f64bd1e067ea5fa621660a8072eb444330cd7cd9b3bd5b153ad27eac06afcd",
+      "bytes": 74079
+    },
+    {
+      "file": "data/raw/public/symmap/SymMap v1.0, SMHB key file.xlsx",
+      "url": "http://www.symmap.org/static/download/SymMap%20v1.0%2C%20SMHB%20key%20file.xlsx",
+      "retrieved_at": "2026-11-12T01:15:01.240790+00:00",
+      "sha256": "adc2c00e8869b1a9c1437ba2523d54e6491db769364f862ea54a186c6329efcf",
+      "bytes": 60464
+    },
+    {
+      "file": "data/raw/public/symmap/SymMap v1.0, SMTS file.xlsx",
+      "url": "http://www.symmap.org/static/download/SymMap%20v1.0%2C%20SMTS%20file.xlsx",
+      "retrieved_at": "2026-11-12T01:15:11.417642+00:00",
+      "sha256": "c3e52d20f1707eac57e474c77faef9734c011b13da798dca9fb77a574c7cef3f",
+      "bytes": 178541
+    },
+    {
+      "file": "data/raw/public/symmap/SymMap v1.0, SMTS key file.xlsx",
+      "url": "http://www.symmap.org/static/download/SymMap%20v1.0%2C%20SMTS%20key%20file.xlsx",
+      "retrieved_at": "2026-11-12T01:15:12.752634+00:00",
+      "sha256": "fdc954cb29965f62859937ac8b4b2aac6d8df218e7eba87ad8b682460c2801d4",
+      "bytes": 91009
+    },
+    {
+      "file": "data/raw/public/symmap/SymMap v1.0, SMMS file.xlsx",
+      "url": "http://www.symmap.org/static/download/SymMap%20v1.0%2C%20SMMS%20file.xlsx",
+      "retrieved_at": "2026-11-12T01:15:14.193704+00:00",
+      "sha256": "911643eba6648a4710ae56fcb2cd70282ce9a59f74c79431acc8b3e795723d31",
+      "bytes": 114695
+    },
+    {
+      "file": "data/raw/public/symmap/SymMap v1.0, SMMS key file.xlsx",
+      "url": "http://www.symmap.org/static/download/SymMap%20v1.0%2C%20SMMS%20key%20file.xlsx",
+      "retrieved_at": "2026-11-12T01:15:16.059108+00:00",
+      "sha256": "c038b89fc17c81bbb6ab9c84135ffe035ff8cbc9aa9b6a115b5732d08a668942",
+      "bytes": 352812
+    },
+    {
+      "file": "data/raw/public/symmap/SymMap v1.0, SMIT file.xlsx",
+      "url": "http://www.symmap.org/static/download/SymMap%20v1.0%2C%20SMIT%20file.xlsx",
+      "retrieved_at": "2026-11-12T01:15:21.704571+00:00",
+      "sha256": "0c2c4271607366df3aeeca09b4492706f95a619cb275fb5f48ff94a8bb6de6d3",
+      "bytes": 1975875
+    },
+    {
+      "file": "data/raw/public/symmap/SymMap v1.0, SMIT key file.xlsx",
+      "url": "http://www.symmap.org/static/download/SymMap%20v1.0%2C%20SMIT%20key%20file.xlsx",
+      "retrieved_at": "2026-11-12T01:15:34.490663+00:00",
+      "sha256": "4907a65f67ed349e988547d341d661347fcf9fe45498456e5e4d312b0e5767e3",
+      "bytes": 3219584
+    },
+    {
+      "file": "data/raw/public/symmap/SymMap v1.0, SMTT file.xlsx",
+      "url": "http://www.symmap.org/static/download/SymMap%20v1.0%2C%20SMTT%20file.xlsx",
+      "retrieved_at": "2026-11-12T01:15:43.705133+00:00",
+      "sha256": "7df81f3f85c80f40c550ee71801482cff302e79b4c11ad387a0d9a6ad4b2eaa9",
+      "bytes": 625724
+    },
+    {
+      "file": "data/raw/public/symmap/SymMap v1.0, SMTT key file.xlsx",
+      "url": "http://www.symmap.org/static/download/SymMap%20v1.0%2C%20SMTT%20key%20file.xlsx",
+      "retrieved_at": "2026-11-12T01:15:47.583261+00:00",
+      "sha256": "607e091c2700ecb128a65d7ba2e951dc491b1199a4f458a5251f4c653fc824ee",
+      "bytes": 637688
+    },
+    {
+      "file": "data/raw/public/symmap/SymMap v1.0, SMDE file.xlsx",
+      "url": "http://www.symmap.org/static/download/SymMap%20v1.0%2C%20SMDE%20file.xlsx",
+      "retrieved_at": "2026-11-12T01:16:02.017495+00:00",
+      "sha256": "c86e947fb93ff18f9479349ebff74852e352be4cbddaf01533493841384e31b8",
+      "bytes": 425514
+    },
+    {
+      "file": "data/raw/public/symmap/SymMap v1.0, SMDE key file.xlsx",
+      "url": "http://www.symmap.org/static/download/SymMap%20v1.0%2C%20SMDE%20key%20file.xlsx",
+      "retrieved_at": "2026-11-12T01:16:08.607269+00:00",
+      "sha256": "cc0d015104a2b4f90ed4cba4c179e3f19ece7e5b3fac2cdc1384121f485bf8f5",
+      "bytes": 586727
+    },
+    {
+      "file": "data/raw/public/tcmsp/herbs.html",
+      "url": "https://old.tcmsp-e.com/browse.php?qc=herbs",
+      "retrieved_at": "2026-11-12T01:10:03.315723+00:00",
+      "sha256": "a15cf6049de5563c26d6d6ffe8a61dc1805d87379bf3863f66a3ed5dc6030c0d",
+      "bytes": 114988
+    },
+    {
+      "file": "data/raw/public/tcmsp/ingredients.html",
+      "url": "https://old.tcmsp-e.com/browse.php?qc=ingredients",
+      "retrieved_at": "2026-11-12T01:10:35.026847+00:00",
+      "sha256": "350bf951ca4f9c12b58b1454fb9f187bd9430d1bc31b6c32fd04221f0635ed77",
+      "bytes": 3793373
+    },
+    {
+      "file": "data/raw/public/tcmsp/targets.html",
+      "url": "https://old.tcmsp-e.com/browse.php?qc=targets",
+      "retrieved_at": "2026-11-12T01:11:03.549287+00:00",
+      "sha256": "ac213c40ba86c41f8ac53555b959c24b6583ec93d10d666637be592ff7ef78c5",
+      "bytes": 419459
+    },
+    {
+      "file": "data/raw/public/tcmsp/diseases.html",
+      "url": "https://old.tcmsp-e.com/browse.php?qc=diseases",
+      "retrieved_at": "2026-11-12T01:11:04.873300+00:00",
+      "sha256": "6212390700f3411b6266abd55f7018ef27bb6cb8dc39ad5968f5cd611c97959e",
+      "bytes": 120013
+    },
+    {
+      "file": "data/raw/public/tcmsp/herbs/黄芪.html",
+      "url": "https://old.tcmsp-e.com/tcmspsearch.php?qr=Hedysarum+Multijugum+Maxim.&qsr=herb_en_name&token=6a3c4a95bb0a26ff3f5f395e20d65048",
+      "retrieved_at": "2026-11-12T01:16:15.383983+00:00",
+      "sha256": "ebfeb5cd5b704f2776e040f9caa1843435e81939ce31a7f6a78dc2c1a87d4c99",
+      "bytes": 912694
+    },
+    {
+      "file": "data/raw/public/tcmsp/herbs/天花粉.html",
+      "url": "https://old.tcmsp-e.com/tcmspsearch.php?qr=Trichosanthis+Radix&qsr=herb_en_name&token=6a3c4a95bb0a26ff3f5f395e20d65048",
+      "retrieved_at": "2026-11-12T01:16:16.919879+00:00",
+      "sha256": "3a4d75699b22a8b0693a25d5979d5e83755d98e5fa97f634e0907eb536c14e61",
+      "bytes": 121942
+    },
+    {
+      "file": "data/raw/public/tcmsp/herbs/知母.html",
+      "url": "https://old.tcmsp-e.com/tcmspsearch.php?qr=Anemarrhenae+Rhizoma&qsr=herb_en_name&token=6a3c4a95bb0a26ff3f5f395e20d65048",
+      "retrieved_at": "2026-11-12T01:16:21.364191+00:00",
+      "sha256": "ee4ff4ff7ecd31f532d6eacc1456ceb9538f98c9137be4a1f83eabd580c0d940",
+      "bytes": 565352
+    },
+    {
+      "file": "data/raw/public/tcmsp/herbs/山药.html",
+      "url": "https://old.tcmsp-e.com/tcmspsearch.php?qr=Rhizoma+Dioscoreae&qsr=herb_en_name&token=6a3c4a95bb0a26ff3f5f395e20d65048",
+      "retrieved_at": "2026-11-12T01:16:27.451526+00:00",
+      "sha256": "5f128d1498378246b34a3e37517aaf2ea963f9c93431cecac8c2d6db7ede4789",
+      "bytes": 747209
+    },
+    {
+      "file": "data/raw/public/tcmsp/herbs/太子参.html",
+      "url": "https://old.tcmsp-e.com/tcmspsearch.php?qr=Pseudostellariae+Radix&qsr=herb_en_name&token=6a3c4a95bb0a26ff3f5f395e20d65048",
+      "retrieved_at": "2026-11-12T01:16:30.754536+00:00",
+      "sha256": "2193f8d99c1d03bcaac6b547398b5c7e34fe41ed30235991cf18a1446538ece3",
+      "bytes": 468698
+    },
+    {
+      "file": "data/raw/public/tcmsp/herbs/白术.html",
+      "url": "https://old.tcmsp-e.com/tcmspsearch.php?qr=Atractylodes+Macrocephala+Koidz.&qsr=herb_en_name&token=6a3c4a95bb0a26ff3f5f395e20d65048",
+      "retrieved_at": "2026-11-12T01:16:34.093631+00:00",
+      "sha256": "a09abd585819dc46f645129e8d117d2963553344199ffdef4b2dc58e62fde8a5",
+      "bytes": 696931
+    },
+    {
+      "file": "data/raw/public/tcmsp/herbs/茯苓.html",
+      "url": "https://old.tcmsp-e.com/tcmspsearch.php?qr=Poria+Cocos%28Schw.%29+Wolf.&qsr=herb_en_name&token=6a3c4a95bb0a26ff3f5f395e20d65048",
+      "retrieved_at": "2026-11-12T01:16:36.202961+00:00",
+      "sha256": "beb0c4775f6e202bd29c150713ca2e8143fceb6fe2e9b233b5c1a756cb9a70b4",
+      "bytes": 218271
+    },
+    {
+      "file": "data/raw/public/tcmsp/herbs/薏苡仁.html",
+      "url": "https://old.tcmsp-e.com/tcmspsearch.php?qr=Coicis+Semen&qsr=herb_en_name&token=6a3c4a95bb0a26ff3f5f395e20d65048",
+      "retrieved_at": "2026-11-12T01:16:39.885148+00:00",
+      "sha256": "8840c022d17ba4a8af02c824447213e3516f356a12185f1d84a0dbdd823c3510",
+      "bytes": 340255
+    },
+    {
+      "file": "data/raw/public/tcmsp/herbs/柴胡.html",
+      "url": "https://old.tcmsp-e.com/tcmspsearch.php?qr=Radix+Bupleuri&qsr=herb_en_name&token=6a3c4a95bb0a26ff3f5f395e20d65048",
+      "retrieved_at": "2026-11-12T01:16:55.149310+00:00",
+      "sha256": "c3c627458fa19cb61cdea3ce7acb159993b4a8f6f2184bea6d99a5b1a2c7bd3d",
+      "bytes": 2004351
+    },
+    {
+      "file": "data/raw/public/tcmsp/herbs/香附.html",
+      "url": "https://old.tcmsp-e.com/tcmspsearch.php?qr=Cyperi+Rhizoma&qsr=herb_en_name&token=6a3c4a95bb0a26ff3f5f395e20d65048",
+      "retrieved_at": "2026-11-12T01:17:03.149489+00:00",
+      "sha256": "509f0a42d084b9b0ecea3d0fca802fc5443d8c6633f377928efb8e31ae17ffdb",
+      "bytes": 951791
+    },
+    {
+      "file": "data/raw/public/tcmsp/herbs/白芍.html",
+      "url": "https://old.tcmsp-e.com/tcmspsearch.php?qr=Paeoniae+Radix+Alba&qsr=herb_en_name&token=6a3c4a95bb0a26ff3f5f395e20d65048",
+      "retrieved_at": "2026-11-12T01:17:12.308747+00:00",
+      "sha256": "5d1db6f3cdd473798f41aebe8e3d614254835054db7eb18c5dd499793483d044",
+      "bytes": 1000099
+    },
+    {
+      "file": "data/raw/public/tcmsp/herbs/熟地黄.html",
+      "url": "https://old.tcmsp-e.com/tcmspsearch.php?qr=Rehmanniae+Radix+Praeparata&qsr=herb_en_name&token=6a3c4a95bb0a26ff3f5f395e20d65048",
+      "retrieved_at": "2026-11-12T01:17:16.289642+00:00",
+      "sha256": "277deff9e4dc7be77872fce0902b9d4a28b01f183803afb017c683b48ad2199b",
+      "bytes": 445191
+    },
+    {
+      "file": "data/raw/public/tcmsp/herbs/山茱萸.html",
+      "url": "https://old.tcmsp-e.com/tcmspsearch.php?qr=Cornus+Officinalis+Sieb.+Et+Zucc.&qsr=herb_en_name&token=6a3c4a95bb0a26ff3f5f395e20d65048",
+      "retrieved_at": "2026-11-12T01:17:26.744764+00:00",
+      "sha256": "4b1764246905af7ecd1fee09761da86340cf1e85a31064c48112f2f9aa0a9ebd",
+      "bytes": 1382042
+    },
+    {
+      "file": "data/raw/public/tcmsp/herbs/淫羊藿.html",
+      "url": "https://old.tcmsp-e.com/tcmspsearch.php?qr=Epimrdii+Herba&qsr=herb_en_name&token=6a3c4a95bb0a26ff3f5f395e20d65048",
+      "retrieved_at": "2026-11-12T01:17:33.184214+00:00",
+      "sha256": "16aaea55d9fe07bb66f25d14cbf4ec6cc1fae533f22a34ccf513660785791cd2",
+      "bytes": 1281562
+    },
+    {
+      "file": "data/raw/public/tcmsp/herbs/丹参.html",
+      "url": "https://old.tcmsp-e.com/tcmspsearch.php?qr=Radix+Salviae&qsr=herb_en_name&token=6a3c4a95bb0a26ff3f5f395e20d65048",
+      "retrieved_at": "2026-11-12T01:17:46.304520+00:00",
+      "sha256": "ecc8c42d10468934be253ce29bac407a4877c95b33124bac887f4ea4bed39f55",
+      "bytes": 1796741
+    },
+    {
+      "file": "data/raw/public/tcmsp/herbs/川芎.html",
+      "url": "https://old.tcmsp-e.com/tcmspsearch.php?qr=Chuanxiong+Rhizoma&qsr=herb_en_name&token=6a3c4a95bb0a26ff3f5f395e20d65048",
+      "retrieved_at": "2026-11-12T01:17:53.777501+00:00",
+      "sha256": "bc99fc29fc7f6ce6efa2aae7a7700bdf7926cfe67bbded5d3b0b80767560b735",
+      "bytes": 1072060
+    },
+    {
+      "file": "data/raw/public/tcmsp/herbs/鸡血藤.html",
+      "url": "https://old.tcmsp-e.com/tcmspsearch.php?qr=Spatholobus+Suberectus+Dunn&qsr=herb_en_name&token=6a3c4a95bb0a26ff3f5f395e20d65048",
+      "retrieved_at": "2026-11-12T01:18:06.390671+00:00",
+      "sha256": "9f5140ef80e4dc9583b78400561507884b42721a3fe8c4ce5029dce9c9bdbaf7",
+      "bytes": 978012
+    },
+    {
+      "file": "data/raw/public/tcmsp/herbs/葛根.html",
+      "url": "https://old.tcmsp-e.com/tcmspsearch.php?qr=Radix+Puerariae&qsr=herb_en_name&token=6a3c4a95bb0a26ff3f5f395e20d65048",
+      "retrieved_at": "2026-11-12T01:18:16.928460+00:00",
+      "sha256": "9438405ec5af3af4385a1038c9fe5e6253b3aa447580e6e48e4d0cd625621983",
+      "bytes": 529035
+    }
+  ],
+  "recommendation_integration": "Public evidence search only; does not replace nonclinical training/recommendation data",
+  "index_promoted": true,
+  "index_sha256": "008601eca69a9f049286b46dc6d813ed67c2209defe59a5b3a0d2e6c970e7d7e",
+  "index_counts": {
+    "entity_rows": [
+      {
+        "source": "STRING",
+        "version": "12.0",
+        "kind": "human_protein",
+        "rows": 19699
+      },
+      {
+        "source": "SymMap",
+        "version": "1.0",
+        "kind": "SMDE",
+        "rows": 5235
+      },
+      {
+        "source": "SymMap",
+        "version": "1.0",
+        "kind": "SMDE_keys",
+        "rows": 19311
+      },
+      {
+        "source": "SymMap",
+        "version": "1.0",
+        "kind": "SMHB",
+        "rows": 499
+      },
+      {
+        "source": "SymMap",
+        "version": "1.0",
+        "kind": "SMHB_keys",
+        "rows": 1996
+      },
+      {
+        "source": "SymMap",
+        "version": "1.0",
+        "kind": "SMIT",
+        "rows": 19595
+      },
+      {
+        "source": "SymMap",
+        "version": "1.0",
+        "kind": "SMIT_keys",
+        "rows": 125202
+      },
+      {
+        "source": "SymMap",
+        "version": "1.0",
+        "kind": "SMMS",
+        "rows": 961
+      },
+      {
+        "source": "SymMap",
+        "version": "1.0",
+        "kind": "SMMS_keys",
+        "rows": 14765
+      },
+      {
+        "source": "SymMap",
+        "version": "1.0",
+        "kind": "SMTS",
+        "rows": 1717
+      },
+      {
+        "source": "SymMap",
+        "version": "1.0",
+        "kind": "SMTS_keys",
+        "rows": 3434
+      },
+      {
+        "source": "SymMap",
+        "version": "1.0",
+        "kind": "SMTT",
+        "rows": 4302
+      },
+      {
+        "source": "SymMap",
+        "version": "1.0",
+        "kind": "SMTT_keys",
+        "rows": 27796
+      },
+      {
+        "source": "SymMap",
+        "version": "2.0",
+        "kind": "SMDE",
+        "rows": 14434
+      },
+      {
+        "source": "SymMap",
+        "version": "2.0",
+        "kind": "SMDE_keys",
+        "rows": 28497
+      },
+      {
+        "source": "SymMap",
+        "version": "2.0",
+        "kind": "SMHB",
+        "rows": 703
+      },
+      {
+        "source": "SymMap",
+        "version": "2.0",
+        "kind": "SMHB_keys",
+        "rows": 2556
+      },
+      {
+        "source": "SymMap",
+        "version": "2.0",
+        "kind": "SMIT",
+        "rows": 27690
+      },
+      {
+        "source": "SymMap",
+        "version": "2.0",
+        "kind": "SMIT_keys",
+        "rows": 148636
+      },
+      {
+        "source": "SymMap",
+        "version": "2.0",
+        "kind": "SMMS",
+        "rows": 1148
+      },
+      {
+        "source": "SymMap",
+        "version": "2.0",
+        "kind": "SMMS_keys",
+        "rows": 15142
+      },
+      {
+        "source": "SymMap",
+        "version": "2.0",
+        "kind": "SMSY",
+        "rows": 233
+      },
+      {
+        "source": "SymMap",
+        "version": "2.0",
+        "kind": "SMSY_keys",
+        "rows": 697
+      },
+      {
+        "source": "SymMap",
+        "version": "2.0",
+        "kind": "SMTS",
+        "rows": 2364
+      },
+      {
+        "source": "SymMap",
+        "version": "2.0",
+        "kind": "SMTS_keys",
+        "rows": 4728
+      },
+      {
+        "source": "SymMap",
+        "version": "2.0",
+        "kind": "SMTT",
+        "rows": 20965
+      },
+      {
+        "source": "SymMap",
+        "version": "2.0",
+        "kind": "SMTT_keys",
+        "rows": 59343
+      },
+      {
+        "source": "TCMSP",
+        "version": "2.3",
+        "kind": "diseases",
+        "rows": 867
+      },
+      {
+        "source": "TCMSP",
+        "version": "2.3",
+        "kind": "herbs",
+        "rows": 502
+      },
+      {
+        "source": "TCMSP",
+        "version": "2.3",
+        "kind": "ingredients",
+        "rows": 13729
+      },
+      {
+        "source": "TCMSP",
+        "version": "2.3",
+        "kind": "targets",
+        "rows": 3339
+      }
+    ],
+    "relations": [
+      {
+        "source": "STRING",
+        "version": "12.0",
+        "relation": "functional_association",
+        "rows": 236930
+      },
+      {
+        "source": "TCMSP",
+        "version": "2.3",
+        "relation": "compound_target_association",
+        "rows": 10456
+      },
+      {
+        "source": "TCMSP",
+        "version": "2.3",
+        "relation": "contains",
+        "rows": 1853
+      }
+    ]
+  }
+}

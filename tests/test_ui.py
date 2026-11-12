@@ -69,6 +69,14 @@ def test_research_and_knowledge_pages(tmp_path, monkeypatch):
     assert not app.exception
     widget(app.radio, "图谱视图").set_value("机制路径").run()
     assert not app.exception
+    widget(app.radio, "图谱视图").set_value("公开数据检索").run()
+    assert not app.exception
+    if any(x.label == "检索名称或原始标识" for x in app.text_input):
+        widget(app.text_input, "检索名称或原始标识").set_value("AKT1").run()
+        assert not app.exception
+        widget(app.selectbox, "公开数据来源").set_value("TCMSP").run()
+        widget(app.text_input, "检索名称或原始标识").set_value("黄芪").run()
+        assert not app.exception
     app.sidebar.radio[0].set_value("研究复现").run()
     widget(app.button, "运行序贯推理").click().run()
     assert not app.exception
