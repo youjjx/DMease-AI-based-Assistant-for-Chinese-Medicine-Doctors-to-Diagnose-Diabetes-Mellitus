@@ -66,3 +66,18 @@ def test_export_escapes_markup_and_spreadsheet_formulas():
     text = csv_export([{"患者": "=cmd", "分数": -0.2}]).decode("utf-8-sig")
     assert "'=cmd" in text
     assert "-0.2" in text
+
+
+def test_database_handles_are_closed_before_backup_or_cleanup(tmp_path):
+    auth = AuthStore(tmp_path / "accounts.db")
+    auth.bootstrap("operator", "Test-password1234")
+    assert auth.authenticate("operator", "Test-password1234") == 1
+    records = PatientDatabase(tmp_path / "patients.db")
+    record_id = records.save(result(), "operator")
+    assert records.get(record_id, owner="operator")
+    assert records.list(owner="operator")
+    # Windows refuses these renames while SQLite connections retain open handles.
+    for path in (auth.path, records.path):
+        renamed = path.with_suffix(".backup.db")
+        path.rename(renamed)
+        renamed.rename(path)

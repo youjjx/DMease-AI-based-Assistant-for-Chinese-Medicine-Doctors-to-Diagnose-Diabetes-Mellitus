@@ -11,7 +11,8 @@ def widget(elements, label):
     return next(x for x in elements if x.label == label)
 
 
-def test_login_analysis_save_reuse_and_logout(tmp_path, monkeypatch):
+def test_login_analysis_save_reuse_and_logout(tmp_path, monkeypatch, evidence_path):
+    monkeypatch.setenv("DMEASE_EVIDENCE_BUNDLE", str(evidence_path))
     monkeypatch.setenv("DMEASE_DATA_DIR", str(tmp_path))
     monkeypatch.setenv("DMEASE_CHECKPOINT", str(tmp_path / "absent.pt"))
     AuthStore(tmp_path / "accounts.db").bootstrap("operator", "Test-password1234")
@@ -55,7 +56,8 @@ def test_login_analysis_save_reuse_and_logout(tmp_path, monkeypatch):
     assert "draft" not in app.session_state and "account" not in app.session_state
 
 
-def test_research_and_knowledge_pages(tmp_path, monkeypatch):
+def test_research_and_knowledge_pages(tmp_path, monkeypatch, evidence_path):
+    monkeypatch.setenv("DMEASE_EVIDENCE_BUNDLE", str(evidence_path))
     monkeypatch.setenv("DMEASE_DATA_DIR", str(tmp_path))
     monkeypatch.setenv("DMEASE_CHECKPOINT", str(tmp_path / "absent.pt"))
     AuthStore(tmp_path / "accounts.db").bootstrap("operator", "Test-password1234")

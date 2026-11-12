@@ -32,7 +32,7 @@ It is not clinical evidence and must not be used for real medical decisions.
 
 ## 实际数据来源与边界
 
-`knowledge_graph.json`、`examples/patients.jsonl`、`examples/triples.jsonl` 和 `examples/herb_target_affinity.csv` 是人工构造的非临床数据。亲和度数值不是实验测量或由公开数据库训练出的预测值。KAN/PPO 的已发布权重由这些构造关系生成的任务训练而来。
+`knowledge_graph.json`、`examples/patients.jsonl`、`examples/triples.jsonl` 和 `examples/herb_target_affinity.csv` 是人工构造的非临床数据。亲和度数值不是实验测量或由公开数据库训练出的预测值。历史权重 `models/nonclinical_kan_ppo.pt` 由这些构造关系训练，正式入口已不再使用。新权重见 `models/public_model_manifest.json`。
 
 `scripts/import_public_data.py` 新增独立的官方数据获取流程：
 
@@ -50,4 +50,4 @@ It is not clinical evidence and must not be used for real medical decisions.
 
 STRING 的综合关联分数不是结合亲和度，功能关联也不一定是物理相互作用。TCMSP 的关联包含预测信息，原始 validated、SVM_score、RF_score 保存在关系来源中；缺失值不会伪造为已验证。精确名称未匹配的药材列在报告中，不擅自合并生地黄/地黄等可能存在炮制差异的名称。
 
-公开数据查询与非临床推荐数据目前分开。逐步接入推荐前仍需跨库标识核验、症状本体对应、关系证据分级和独立评价。本次导入不包含原论文的108,746条门诊记录或50例专家标注，也不构成论文实验复现。
+正式分析现在使用 `build_evidence_bundle.py` 取得的SymMap关系与STRING关联。语义指纹排除下载时间，关系与显著性字段保持可追溯。TCMSP用于独立路径核查；亲和度预测、完整实体对齐与独立病例评价仍未完成。本次导入不包含原论文的108,746条门诊记录或50例专家标注，也不构成论文实验复现。

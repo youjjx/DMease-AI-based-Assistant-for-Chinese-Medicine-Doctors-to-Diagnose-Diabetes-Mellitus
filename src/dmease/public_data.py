@@ -1,6 +1,8 @@
 """Read-only queries and parsers for separately stored public research evidence."""
 from __future__ import annotations
 
+from contextlib import closing
+
 import json
 from pathlib import Path
 import re
@@ -49,7 +51,7 @@ class PublicEvidenceStore:
         if not self.available or not query.strip():
             return []
         # instr treats %, _, quotes and user text literally.
-        with self._connect() as connection:
+        with closing(self._connect()) as connection, connection:
             connection.row_factory = sqlite3.Row
             rows = connection.execute(
                 "SELECT source,version,kind,id,name,payload FROM entities "
@@ -63,7 +65,7 @@ class PublicEvidenceStore:
     def neighbors(self, entity_id: str, limit: int = 30) -> list[dict]:
         if not self.available:
             return []
-        with self._connect() as connection:
+        with closing(self._connect()) as connection, connection:
             connection.row_factory = sqlite3.Row
             rows = connection.execute(
                 "SELECT * FROM edges WHERE subject=? OR object=? "
@@ -76,7 +78,7 @@ class PublicEvidenceStore:
         """Exact TCMSP herb name only; no guessed synonym or efficacy conversion."""
         if not self.available:
             return []
-        with self._connect() as connection:
+        with closing(self._connect()) as connection, connection:
             connection.row_factory = sqlite3.Row
             rows = connection.execute(
                 "SELECT a.subject AS herb_id,c.id AS compound_id,c.name AS compound,"

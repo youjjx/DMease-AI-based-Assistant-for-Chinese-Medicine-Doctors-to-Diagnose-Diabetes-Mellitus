@@ -27,6 +27,7 @@ class PatientProfile:
     medications: list[str] = field(default_factory=list)
     forbidden_herbs: list[str] = field(default_factory=list)
     notes: str = ""
+    forbidden_pairs: list[list[str]] = field(default_factory=list)
 
 
 @dataclass(slots=True)

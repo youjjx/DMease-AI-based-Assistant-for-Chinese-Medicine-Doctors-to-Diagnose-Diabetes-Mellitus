@@ -12,7 +12,7 @@ from .symptom_parser import SymptomParser
 from .types import AnalysisResult, PatientProfile
 
 
-class DMeaseService:
+class LegacyDMeaseService:
     """Facade used by Streamlit, tests, and future API integrations."""
 
     def __init__(
@@ -60,3 +60,8 @@ class DMeaseService:
                       "selected_symptoms": list(selected_symptoms or []),
                       "model": self.recommender.model_metadata},
         )
+
+
+# The application entry point uses public evidence only. The legacy class remains
+# explicitly named for regression tests and comparisons of historical records.
+from .evidence_service import PublicEvidenceService as DMeaseService

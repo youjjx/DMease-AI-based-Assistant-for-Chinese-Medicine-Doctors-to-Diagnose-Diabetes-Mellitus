@@ -3,13 +3,12 @@ from __future__ import annotations
 import json
 import os
 import time
-from dataclasses import asdict
 from pathlib import Path
 
 import pandas as pd
 import streamlit as st
 
-from dmease import DMeasePipeline, DMeaseService
+from dmease import DMeaseService
 from dmease.auth import AuthStore
 from dmease.exports import SOFTWARE_NAME, VERSION, csv_export, json_export, report_html
 from dmease.types import PatientProfile
@@ -17,10 +16,9 @@ from dmease.public_data import PublicEvidenceStore
 
 ROOT = Path(__file__).resolve().parent
 DATA = Path(os.environ.get("DMEASE_DATA_DIR", str(ROOT / "runtime")))
-DEFAULT_CHECKPOINT = ROOT / "checkpoints/kan_ppo.pt"
-if not DEFAULT_CHECKPOINT.exists():
-    DEFAULT_CHECKPOINT = ROOT / "models/nonclinical_kan_ppo.pt"
+DEFAULT_CHECKPOINT = ROOT / "models/public_evidence_kan_ppo.pt"
 CHECKPOINT = Path(os.environ.get("DMEASE_CHECKPOINT", str(DEFAULT_CHECKPOINT)))
+BUNDLE = Path(os.environ.get("DMEASE_EVIDENCE_BUNDLE", str(ROOT / "data/processed/evidence_bundle.json")))
 PAGES = ["首页", "辅助分析", "患者记录", "知识图谱", "研究复现", "系统与账号"]
 STEPS = ["1 资料录入", "2 症状与证候", "3 候选与解释", "4 约束与保存"]
 CONSTITUTIONS = ["平和质", "气虚质", "阴虚质", "阳虚质", "痰湿质", "湿热质", "血瘀质", "气郁质", "特禀质"]
@@ -40,13 +38,8 @@ def load_auth(path):
 
 
 @st.cache_resource
-def load_service(path, checkpoint, modified):
-    return DMeaseService(ROOT / "data/knowledge_graph.json", Path(path) / "patients.db", checkpoint)
-
-
-@st.cache_resource
-def load_pipeline():
-    return DMeasePipeline.from_config(ROOT / "configs/dmease.yaml")
+def load_service(path, checkpoint, modified, bundle, bundle_modified):
+    return DMeaseService(bundle, Path(path) / "patients.db", checkpoint)
 
 
 def go(page, step=None):
@@ -78,7 +71,7 @@ def authenticate(auth):
         st.subheader("欢迎使用 DMease")
         st.write("登录后进入工作台，完成资料录入、辅助分析、记录管理与知识查询。")
         st.markdown("1. 录入患者资料与中文主诉\n2. 查看证候依据与中药候选\n3. 核对约束、保存和导出结果")
-        st.info("内置知识数据为非临床构造数据。系统输出用于研究与工程验证。")
+        st.info("系统使用可追溯的公开数据库关联进行辅助检索。结果须由专业人员核查。")
     with right:
         if not auth.initialized():
             st.subheader("首次使用 · 创建账号")
@@ -180,8 +173,11 @@ def input_form(service):
             medications = st.text_input("当前用药", "、".join(draft.get("medications", [])), max_chars=300)
             notes = st.text_area("补充说明", draft.get("notes", ""), height=105, max_chars=2000)
         complaint = st.text_area("主诉与症状描述 *", draft.get("complaint", ""), height=100, max_chars=4000)
-        selected = st.multiselect("补充勾选症状", service.graph.symptom_names, default=st.session_state.get("draft_symptoms", []))
-        forbidden = st.multiselect("本次明确禁用中药", service.graph.herb_names, default=draft.get("forbidden_herbs", []))
+        selected = st.multiselect("补充勾选症状", service.graph.symptom_names, default=[x for x in st.session_state.get("draft_symptoms", []) if x in service.graph.symptom_names])
+        forbidden = st.multiselect("本次明确禁用中药", service.graph.herb_names, default=[x for x in draft.get("forbidden_herbs", []) if x in service.graph.herb_names])
+        pair_text = st.text_area("本次配伍排除", "\n".join("、".join(x) for x in draft.get("forbidden_pairs", [])),
+                                placeholder="每行填写两味当前范围内的中药，用顿号或逗号分隔；填写后不会同时入选。", height=80)
+        strategy = st.selectbox("选择策略", ["默认（依据验证集表现）", "公开证据增益", "KAN/PPO对照"])
         top_k = st.slider("候选中药数量上限", 1, 12, int(st.session_state.get("draft_top_k", 8)))
         submitted = st.form_submit_button("开始辅助分析", type="primary", width="stretch")
         saved_draft = st.form_submit_button("保存输入草稿")
@@ -190,7 +186,9 @@ def input_form(service):
         split = lambda value: [x.strip() for x in value.replace("，", ",").replace("、", ",").split(",") if x.strip()]
         draft = dict(name=name.strip(), age=age, sex=sex, constitution=constitution,
                      pregnant=pregnant, allergies=split(allergies), conditions=split(conditions),
-                     medications=split(medications), forbidden_herbs=forbidden, notes=notes.strip(), complaint=complaint.strip())
+                     medications=split(medications), forbidden_herbs=forbidden,
+                     forbidden_pairs=[split(line) for line in pair_text.splitlines() if line.strip()],
+                     notes=notes.strip(), complaint=complaint.strip())
         st.session_state.update(draft=draft, draft_symptoms=selected, draft_top_k=top_k)
         # A submitted edit invalidates every previous result, including when validation fails.
         st.session_state.pop("analysis_result", None)
@@ -205,8 +203,13 @@ def input_form(service):
         elif pregnant and sex == "男":
             st.error("性别与妊娠状态不一致，请核对。")
         else:
-            result = service.analyze(PatientProfile(**draft), selected, top_k)
-            if not result.syndromes:
+            try:
+                result = service.analyze(PatientProfile(**draft), selected, top_k,
+                                         strategy={"默认（依据验证集表现）": None, "公开证据增益": "greedy", "KAN/PPO对照": "kan"}[strategy])
+            except ValueError as error:
+                st.error(str(error))
+                return
+            if not any(x.present for x in result.parsed_symptoms):
                 st.warning("未识别到阳性症状。请补充主诉或勾选标准症状后重新分析。")
             else:
                 st.session_state["analysis_result"] = result
@@ -231,9 +234,11 @@ def analysis(service, owner):
         return
     st.caption(f"患者：{result.patient.name} · 分析时间：{result.created_at} · {result.metadata['ranking_mode']}")
     if step == STEPS[1]:
-        columns = st.columns(len(result.syndromes))
+        columns = st.columns(max(1, len(result.syndromes)))
         for col, syndrome in zip(columns, result.syndromes):
             col.metric(syndrome.name, f"{syndrome.confidence:.1%}")
+        if not result.syndromes:
+            st.info("当前阳性症状没有已取得的证候关联，仍可查看药材检索结果与证据缺口。")
         st.caption("展示前3个证候；支持度按全部候选归一化，三项之和可能小于100%，不代表临床诊断概率。")
         st.dataframe([{"标准症状": x.canonical, "状态": "阳性" if x.present else "否定", "原文证据": x.evidence}
                       for x in result.parsed_symptoms], hide_index=True, width="stretch")
@@ -246,11 +251,11 @@ def analysis(service, owner):
         if not result.recommendations:
             st.info("在当前约束下没有可展示的候选中药。请前往“约束与保存”查看排除原因。")
         else:
-            st.dataframe([{"排名": x.rank, "中药": x.name, "综合得分": round(x.score, 3), "功效": "、".join(x.actions)}
+            st.dataframe([{"步骤": x.rank, "中药": x.name, "新增证据增益": round(x.score, 4)}
                           for x in result.recommendations], hide_index=True, width="stretch")
             chosen = st.selectbox("选择候选查看解释", [x.name for x in result.recommendations])
             herb = next(x for x in result.recommendations if x.name == chosen)
-            st.write("关联证候：" + "、".join(herb.matched_syndromes))
+            st.caption("排序依据公开数据库的关联覆盖；不能将入选顺序解释为处方或疗效优劣。")
             for path in herb.evidence_paths:
                 st.write("• " + path)
             for warning in herb.warnings:
@@ -266,6 +271,19 @@ def analysis(service, owner):
                         st.download_button("导出此药材公开依据", json_export(evidence), "herb_evidence.json", "application/json")
                     else:
                         st.info("当前公开数据索引未收录该名称对应的完整路径。")
+        trace = result.metadata.get("trace", {})
+        st.write("逐步选择过程")
+        st.dataframe([{"步骤": x["step"], "中药": x["herb"], "新增证据增益": x["marginal_evidence_gain"],
+                       "策略概率": x.get("policy_probability"), "未覆盖证据量": sum(x["residual_evidence"].values())}
+                      for x in trace.get("steps", [])], hide_index=True, width="stretch")
+        st.caption("停止原因：" + trace.get("stop_reason", "未记录"))
+        if trace.get("strategy_notice"):
+            st.warning(trace["strategy_notice"])
+        if result.metadata.get("evidence_gaps"):
+            st.warning("缺少可用药材或靶点关系的症状：" + "、".join(result.metadata["evidence_gaps"]))
+        with st.expander("查看策略梯度与完整轨迹"):
+            st.caption("梯度是当前策略对未覆盖症状状态的局部敏感度，不是医学因果解释；证据增益策略不产生梯度。")
+            st.json(trace)
         st.button("下一步：约束与保存", on_click=go, args=("辅助分析", STEPS[3]), type="primary")
     else:
         st.subheader("安全约束核对")
@@ -363,7 +381,7 @@ def graph_page(service):
     if view == "公开数据检索":
         public_evidence_page()
         return
-    st.caption(f"知识版本：{graph.summary()['version']} · {graph.summary()['relations']}条关系 · 非临床构造知识数据")
+    st.caption(f"知识版本：{graph.summary()['version']} · {graph.summary()['relations']}条取得的关系 · 公开数据库证据")
     if view in ("证候关联", "知识子图"):
         name = st.selectbox("选择证候", graph.syndrome_names)
         syndrome = graph.syndrome(name)
@@ -371,27 +389,26 @@ def graph_page(service):
         herbs = graph.herbs_for_syndrome(name)
         if view == "证候关联":
             a,b = st.columns(2)
-            a.dataframe([{"症状": n, "权重": w} for n,w in syndrome["symptoms"].items()], hide_index=True, width="stretch")
-            b.dataframe([{"关联中药": h["herb"]["name"], "权重": h["weight"]} for h in herbs], hide_index=True, width="stretch")
+            a.dataframe([{"症状": n, "公开关联": "已收录"} for n in syndrome["symptoms"]], hide_index=True, width="stretch")
+            b.dataframe([{"共享症状关联的中药": h["herb"]["name"], "共享症状数": h["weight"]} for h in herbs], hide_index=True, width="stretch")
+            st.caption("右侧为经共同症状连接的药材，不表示已验证的证候治疗关系。")
         else:
             quote = lambda x: json.dumps(x, ensure_ascii=False)
             edges = [f'{quote(s)} -> {quote(name)} [label="支持"];' for s in syndrome["symptoms"]]
-            edges += [f'{quote(name)} -> {quote(h["herb"]["name"])} [label="关联"];' for h in herbs]
+            edges += [f'{quote(name)} -> {quote(h["herb"]["name"])} [label="共享症状路径"];' for h in herbs]
             st.graphviz_chart('digraph { rankdir=LR; node [shape=box,fontname="Microsoft YaHei"]; edge [fontname="Microsoft YaHei"]; ' + ''.join(edges) + '}', width="stretch", height=430)
     else:
         herb = st.selectbox("选择中药", graph.herb_names)
         info = graph.herb(herb)
-        st.write("功效标签：" + "、".join(info.get("actions", [])))
+        st.caption("展示已取得且满足筛选条件的公开靶点关联。")
         paths = graph.mechanism_paths(herb)
         if paths:
             for path in paths:
                 st.write(path)
         else:
-            st.info("当前知识库尚未配置该中药的成分—靶点—通路路径。")
+            st.info("当前范围未取得满足筛选条件的共同靶点关系。")
         with st.expander("查看知识库中的约束信息", expanded=True):
-            st.write("合并情况禁忌：" + ("、".join(info.get("contraindications", [])) or "未配置"))
-            st.write("配伍禁忌：" + ("、".join(info.get("incompatible", [])) or "未配置"))
-            st.json(info.get("interactions", {}))
+            st.write("公开关联库不包含完整禁忌与相互作用规则。当前自动执行填写的过敏、明确禁用及妊娠停止规则；其他适用性需专业核查。")
 
 
 def public_evidence_page():
@@ -414,7 +431,7 @@ def public_evidence_page():
     if not store.available:
         st.info("此部署尚未建立公开数据索引，请按项目说明完成数据初始化。")
         return
-    st.info("公开数据库关联是研究证据；当前候选推荐仍使用单独标明的非临床知识与模型。")
+    st.info("实际候选流程使用已构建的SymMap/STRING证据版本；本页另可查询完整已下载目录及TCMSP补充依据。")
     source = st.selectbox("公开数据来源", ["全部", "SymMap", "STRING", "TCMSP"])
     query = st.text_input("检索名称或原始标识", placeholder="例如：黄芪、AKT1、INSR")
     rows = store.search(query, "" if source == "全部" else source)
@@ -440,39 +457,60 @@ def public_evidence_page():
     st.download_button("导出当前公开检索结果", json_export(rows), "public_evidence.json", "application/json")
 
 
-def research():
+def research(service):
     st.subheader("研究复现")
-    st.caption("此模块使用独立的JSONL样例与确定性序贯策略，展示靶点检索和逐味选择轨迹。")
-    pipeline = load_pipeline()
-    patient_id = st.selectbox("选择研究样例", pipeline.patient_db.list_ids())
+    st.caption("选择公开症状检索组合，使用与辅助分析相同的证据、约束和序贯策略；这里不是临床病例评价。")
+    defaults = [x for x in ["口渴", "乏力", "尿频"] if x in service.graph.symptom_names]
+    selected = st.multiselect("选择研究症状", service.graph.symptom_names, default=defaults)
+    forbidden = st.multiselect("研究排除中药", service.graph.herb_names)
+    strategy = st.selectbox("研究策略", ["默认（依据验证集表现）", "公开证据增益", "KAN/PPO对照"])
+    request_key = (tuple(selected), tuple(forbidden), service.evidence.signature, strategy)
     if st.button("运行序贯推理", type="primary"):
-        st.session_state["research_result"] = pipeline.infer(patient_id)
-    result = st.session_state.get("research_result")
-    if not result or result.patient_id != patient_id:
-        st.info("选择样例后点击运行，结果将显示在下方。")
+        result = service.analyze(PatientProfile(name="公开证据检索组合", forbidden_herbs=forbidden), selected,
+                                 strategy={"默认（依据验证集表现）": None, "公开证据增益": "greedy", "KAN/PPO对照": "kan"}[strategy])
+        st.session_state["research_result"] = (request_key, result)
+    stored = st.session_state.get("research_result")
+    if not stored or not isinstance(stored, tuple) or stored[0] != request_key:
+        st.info("选择症状后点击运行。修改查询条件将要求重新运行。")
         return
-    view = st.radio("研究结果", ["推理摘要", "选择轨迹", "关联矩阵"], horizontal=True)
+    result = stored[1]
+    trace = result.metadata["trace"]
+    st.caption("实际策略：" + trace["mode"])
+    if trace.get("strategy_notice"):
+        st.warning(trace["strategy_notice"])
+    view = st.radio("研究结果", ["推理摘要", "选择轨迹", "关联矩阵", "离线评价"], horizontal=True)
     if view == "推理摘要":
         a,b,c = st.columns(3)
-        a.metric("首选证候", result.syndrome.syndrome)
-        b.metric("关联靶点", len(result.targets))
-        c.metric("入选中药", len(result.prescription))
-        st.write("检索靶点：" + "、".join(result.targets))
-        st.dataframe([{"中药": x.herb, "候选分数": x.score, "约束命中": "；".join(x.contraindications)} for x in result.ranked_candidates], hide_index=True, width="stretch")
+        a.metric("症状证据覆盖", f"{trace['metrics']['symptom_evidence_coverage']:.1%}")
+        b.metric("靶点证据覆盖", f"{trace['metrics']['target_evidence_coverage']:.1%}")
+        c.metric("入选中药", len(result.recommendations))
+        st.write("停止原因：" + trace["stop_reason"])
+        st.caption("无相关靶点证据时靶点覆盖记为0，不表示疗效为0。证据覆盖不表示症状改善。")
+        st.dataframe([{"中药": x.name, "证据增益": x.score} for x in result.recommendations], hide_index=True, width="stretch")
     elif view == "选择轨迹":
-        rows = [{"步骤": x.step, "中药": x.herb, "模型症状减量": x.marginal_relief,
-                 "覆盖靶点": "、".join(x.covered_targets), "剩余症状总量": round(sum(x.residual_symptoms.values()), 4)} for x in result.prescription]
+        rows = [{"步骤": x["step"], "中药": x["herb"], "证据增益": x["marginal_evidence_gain"],
+                 "新增靶点": "、".join(x["new_targets"]), "未覆盖证据量": sum(x["residual_evidence"].values())} for x in trace["steps"]]
         st.dataframe(rows, hide_index=True, width="stretch")
-        st.line_chart(pd.DataFrame(rows).set_index("步骤")[["剩余症状总量"]], height=220)
-        st.caption("模型症状减量与剩余量为算法内部数值，不表示已观察到的治疗效果。")
+        if rows:
+            st.line_chart(pd.DataFrame(rows).set_index("步骤")[["未覆盖证据量"]], height=220)
+    elif view == "关联矩阵":
+        attribution = pd.DataFrame({x["herb"]: x["gradient_attribution"] for x in trace["steps"]}).fillna(0)
+        st.write("策略对当前未覆盖症状状态的梯度")
+        st.dataframe(attribution, width="stretch")
+        st.caption("梯度属于模型局部敏感度，不是医学因果关系。无匹配KAN模型时使用证据增益策略，梯度为空。")
     else:
-        # Trace values are computed by the same selection policy and shown with explicit provenance.
-        trace = pd.DataFrame({x.herb: x.trace for x in result.prescription}).fillna(0)
-        st.write("症状—入选中药模型贡献矩阵")
-        st.dataframe(trace, width="stretch")
-        st.caption("行是标准症状，列是入选中药；数值来自每一步保存的模型贡献。")
-    st.download_button("导出研究结果 JSON", json_export(asdict(result)), "dmease_research.json", "application/json")
-    st.download_button("导出选择轨迹 CSV", csv_export([asdict(x) for x in result.prescription]), "dmease_trace.csv", "text/csv")
+        path = ROOT / "models/public_evidence_evaluation.json"
+        if path.exists():
+            report = json.loads(path.read_text(encoding="utf8"))
+            if report["metadata"]["signature"] != service.evidence.signature:
+                st.warning("下列报告属于其他证据版本。")
+            st.dataframe([{"策略": name, "测试查询数": item["queries"], **item["mean"]}
+                          for name, item in report["evaluation"].items()], hide_index=True, width="stretch")
+            st.caption("按查询组合划分训练、验证、测试，底层知识图谱共享；指标是同一公开图谱上的覆盖与约束检查，不代表独立临床验证。")
+        else:
+            st.info("当前部署尚无训练评价报告。")
+    st.download_button("导出研究结果 JSON", json_export(result.to_dict()), "dmease_research.json", "application/json")
+    st.download_button("导出选择轨迹 CSV", csv_export(trace["steps"]), "dmease_trace.csv", "text/csv")
 
 
 def settings(service, auth, owner):
@@ -511,21 +549,22 @@ def settings(service, auth, owner):
     else:
         st.markdown("""### 使用范围
 系统提供症状解析、证候判断、中药候选排序、约束解释、知识查询和记录管理。
-内置知识数据与研究样例为非临床构造数据，输出用于研究与工程验证，不构成处方或剂量建议。
+正式流程使用从官方入口取得并校验的公开数据库关系。训练数据是公开证据检索任务，不是患者病例。结果不构成处方或剂量建议。
 ### 记录与导出
 分析结果在核对后保存；复用旧资料会创建新分析，保留旧记录。JSON保存完整结构，CSV用于表格分析，HTML报告可打印。
 ### 部署维护
 账号密码以随机盐和PBKDF2摘要保存。部署者应备份运行数据目录，并在共享网络部署时配置HTTPS与访问控制。
 ### 模型运行
-KAN/PPO训练入口为train.py。加载匹配的检查点后，候选排序使用图谱与KAN混合评分；研究复现页使用确定性序贯策略。""")
+公开证据KAN/PPO训练入口为scripts/train_evidence_policy.py。辅助分析与研究页使用同一个序贯环境，每一步更新证据覆盖、已选药材与约束。缺少匹配模型时使用同一公开证据的增益策略，不使用构造数据。体质与病史仅记录，尚未完成经验证的个体化学习。""")
 
 
 auth = load_auth(str(DATA))
 owner = authenticate(auth)
 try:
-    service = load_service(str(DATA), str(CHECKPOINT), CHECKPOINT.stat().st_mtime_ns if CHECKPOINT.exists() else 0)
+    service = load_service(str(DATA), str(CHECKPOINT), CHECKPOINT.stat().st_mtime_ns if CHECKPOINT.exists() else 0,
+                           str(BUNDLE), BUNDLE.stat().st_mtime_ns if BUNDLE.exists() else 0)
 except (ValueError, OSError, RuntimeError, KeyError) as error:
-    st.error("运行资源加载失败，请部署者检查知识库、数据库权限和模型检查点。")
+    st.error("公开证据尚未初始化或校验失败。请按项目说明下载公开数据并构建证据，再启动分析；系统不会改用构造知识库。")
     st.caption(type(error).__name__)
     st.stop()
 if "pending_navigation" in st.session_state:
@@ -536,7 +575,7 @@ with st.sidebar:
     st.caption(f"{VERSION} · 当前账号：{owner}")
     page = st.radio("功能导航", PAGES, key="navigation")
     st.divider()
-    st.caption("数据：非临床构造知识库")
+    st.caption("数据：SymMap / STRING公开关联")
     st.button("退出登录", on_click=clear_session, args=("已退出登录。",), width="stretch")
 st.title(SOFTWARE_NAME)
 st.caption(f"{VERSION}  /  {page}")
@@ -544,5 +583,5 @@ if page == "首页": home(service, owner)
 elif page == "辅助分析": analysis(service, owner)
 elif page == "患者记录": records(service, owner)
 elif page == "知识图谱": graph_page(service)
-elif page == "研究复现": research()
+elif page == "研究复现": research(service)
 else: settings(service, auth, owner)

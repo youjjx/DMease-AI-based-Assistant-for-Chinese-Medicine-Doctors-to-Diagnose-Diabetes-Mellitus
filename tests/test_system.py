@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from dmease.service import DMeaseService
+from dmease.service import LegacyDMeaseService as DMeaseService
 from dmease.types import PatientProfile
 
 

@@ -1,248 +1,126 @@
 # DMease中医糖尿病智能辅助诊疗系统 V1.0
 
-DMease is a working research system being developed toward the methods in **"DMease: AI-based Assistant Tool for Traditional Chinese Medicine Doctors in Diagnosing and Treating Diabetes Mellitus"**. The interface and main workflows are implemented; the current algorithms and validation do not yet constitute a full reproduction of the paper.
+DMease 是围绕同名论文持续完善的研究辅助系统。当前正式分析使用从官方入口取得的 SymMap / STRING 公开关系，TCMSP 提供可追溯的成分—靶点核查。数据不足时保留缺口，不生成替代知识或亲和度数值。
 
-The repository has been rebuilt around the method described in the paper:
+## 安装与启动
 
-1. Multi-source TCM text is normalized and converted into structured triples.
-2. Triples are stored as a symptom-target-herb knowledge graph.
-3. A PatientDB provides patient-ID based records.
-4. The system predicts a TCM syndrome from symptoms.
-5. A sequential single-herb policy ranks and selects herbs under compatibility constraints.
-6. The output includes target coverage, marginal symptom relief, and provenance traces.
-
-The repository includes directly runnable non-clinical sample data. The software is for research and engineering validation; clinical deployment requires authorized data, governance review, and clinician oversight.
-
-## 中文操作入口
-
-安装 Python 3.10+ 后，在项目根目录执行：
+使用 Python 3.10+，在仓库根目录执行：
 
 ```bash
 python -m pip install -r requirements.txt
 python -m pip install -e . --no-deps
+python scripts/import_public_data.py
+python scripts/build_evidence_bundle.py
 python -m streamlit run app.py
 ```
 
-Windows 也可双击 `start_app.bat`。默认仅监听本机 `127.0.0.1:8501`。首次部署应先在受控环境完成账号初始化，再由部署者配置网络访问。浏览器进入后创建账号（3—32位字母、数字或下划线）和密码（12—128位，包含字母与数字）。仓库不含默认账号或密码。
+前两个数据步骤首次需要联网。原始文件与索引存放在忽略上传的 `data/raw/` 和 `data/processed/`；普通 Git 克隆不包含这些文件，须完成初始化。分析时从本地证据读取，不把患者输入发送到数据库网站。默认仅监听 `127.0.0.1:8501`。
 
-登录后的功能导航：
+首次运行创建操作账号。密码为12—128位并包含字母与数字；仓库没有默认账号或密码。部署提供一个初始化操作账号，没有开放注册或多角色管理。
 
-| 功能 | 使用方式 |
+## 已实现的操作流程
+
+| 页面 | 功能 |
 | --- | --- |
-| 首页 | 查看当前账号的保存数量、知识规模、排序模式和最近记录 |
-| 辅助分析 | 资料录入 → 症状与证候 → 候选与解释 → 约束与保存 |
-| 患者记录 | 按患者标识、主诉和证候筛选；查看、导出、复用或确认删除记录 |
-| 知识图谱 | 查询证候关联、中药机制路径与可视化知识子图 |
-| 公开数据检索 | 在知识图谱页面查看官方数据库实体、STRING人类蛋白关联、TCMSP药材成分与靶点；展示版本和来源 |
-| 研究复现 | 执行已有JSONL样例的靶点检索与确定性序贯推理，查看轨迹和贡献矩阵 |
-| 系统与账号 | 查看实际模型状态和知识版本，修改密码、阅读使用说明 |
+| 首页 | 知识规模、实际策略、当前账号记录、工作入口 |
+| 辅助分析 | 输入资料 → 阳性/否定症状及公开证候关联 → 逐步候选与来源 → 约束核查、保存与导出 |
+| 患者记录 | 查询、复用、版本关联、对比、确认删除和导出 |
+| 知识图谱 | 症状—证候关系、共享症状路径、靶点关系、官方公开目录查询 |
+| 研究复现 | 与辅助分析共用同一环境和策略；对照KAN/PPO与证据增益，显示梯度、轨迹和离线评价 |
+| 系统与账号 | 模型状态、知识版本、密码修改和使用范围 |
 
-输入草稿可保留在当前会话中；切换页面前点击“保存输入草稿”。刷新、关闭浏览器或退出登录会结束当前会话，已保存数据库记录不受影响。修改输入后重新分析；从历史记录复用资料会创建关联的新记录，原始结果保留。同一分析重复保存不会插入重复记录。保存前需勾选核对提示。
+支持JSON、CSV、HTML打印报告。保存前需核查；重复保存同一次分析不会重复插入。复用后产生新记录，原记录保留。输入草稿保留在当前会话；退出、刷新或关闭会话后草稿不再保证保留。持久记录保存在 `runtime/patients.db`。
 
-结果支持完整JSON、候选CSV、记录列表CSV和HTML打印报告。HTML报告下载后在浏览器中打印或另存为PDF。CSV使用UTF-8 BOM并处理可能被表格软件识别为公式的文本。
+自动约束覆盖填写的过敏名称、明确禁用、输入的配伍排除、妊娠状态。妊娠情况下停止生成候选，因为现有数据不提供适用性依据。公开关联库并非完整禁忌、相互作用或处方数据库，未命中约束不等于安全。年龄、体质、病史和当前用药保留为输入记录，尚无足够证据用于学习个体化药效。
 
-### 账号与数据
+## 正式推荐使用的证据
 
-密码以随机盐和PBKDF2-HMAC-SHA256摘要保存；连续5次失败暂停验证60秒。30分钟无操作后，下次交互要求重新登录。密码修改使其他旧会话在下次交互时失效。退出会清除当前会话的患者资料、结果和草稿。当前部署提供一个初始化操作账号；没有开放注册或多角色管理。
+本次构建范围包含24个症状、19味名称匹配的中药、111个关联证候、48条症状—药材关系、203条症状—证候关系。取得889条症状—靶点、11,441条药材—靶点关系，并保留全部原始显著性与推断类型。满足FDR(BH)<0.05且症状与药材共同覆盖的靶点为49个；对应STRING范围内有52条高置信度关联。
 
-运行数据默认位于忽略上传的 `runtime/`，包括 `accounts.db` 和 `patients.db`。可通过 `DMEASE_DATA_DIR`指定独立目录。请由部署者定期备份该目录，关闭写入后复制两个数据库；恢复时保持账号数据库与患者数据库配套。旧版 `data/patients.db` 不会自动搬入新目录；其旧记录无账号归属，不会自动向登录账号开放。部署者应先备份，再按实际数据归属制定迁移方案。
+统计是**当前查询范围**，不是整个数据库或原论文最终图谱规模。生地黄没有被自动合并为地黄；麦冬在SymMap中有可核查条目，已进入该来源的计算范围。TCMSP未匹配项仍保留其来源特有的缺口。
 
-### KAN/PPO模型
+- `data/public_registry.json`：官方文件下载、字节数、指纹及索引规模。
+- `data/evidence_build_report.json`：实际关系请求、范围、未匹配项与语义指纹。
+- `data/processed/evidence_bundle.json`：正式计算数据，独立存放，不随Git分发。
+- `models/public_model_manifest.json`：实际模型指纹、训练参数与评价位置。
 
-仓库包含 `models/nonclinical_kan_ppo.pt`，由本仓库训练程序使用非临床构造知识图谱训练生成。应用默认加载该检查点；若存在 `checkpoints/kan_ppo.pt` 则优先加载，环境变量 `DMEASE_CHECKPOINT`可覆盖路径。模型加载时核对实体顺序与图谱版本。损坏或不匹配时显示原因并使用图谱评分；运行状态和每次结果元数据记录实际模式与模型指纹。
+原始构造图谱仅作为历史回归对照保留。其症状/证候权重、机制关系、亲和度数值和模型均不进入正式推荐。构建程序只使用其中的词表定义查询范围和声明的文字别名，随后从官方响应获得实际关系；该文字对应仍有待专业核查。
 
-默认混合得分为85%图谱评分和15%KAN策略概率，硬约束始终参与候选过滤。非临床训练权重可证明训练、加载和推理流程运行，不能作为临床效果证据。研究复现页采用独立的确定性序贯算法，其模型症状减量不表示实际治疗效果。
+## 统一的逐步计算与解释
 
-### 官方公开数据初始化
+状态包含原始症状查询、未覆盖症状证据、相关靶点及覆盖、已选药材和硬约束可用性。每选一味都更新状态、重新计算候选，达到数量上限、没有有效证据增益或全部被约束排除时停止。
 
-安装项目后运行：
+优化目标是公开关联的**证据覆盖**：症状关联覆盖权重0.65、相关靶点覆盖0.30、PPI关联覆盖0.05；缺少相应证据时重新归一化，每味候选成本0.02。这些是公开的工程参数，均不是临床效应参数。关联按存在性建模，不把FDR、SVM、RF或STRING综合分数当成结合概率，不把覆盖变化称为症状缓解。
 
-```bash
-python scripts/import_public_data.py
-```
+提供两种同源策略：
 
-程序从官方入口获取 STRING 12.0 人类蛋白目录及关系、SymMap 下载页提供的 1.0/2.0 实体和标识表，以及 TCMSP 2.3 的四类公开目录和与当前软件药材名称精确匹配的详情。STRING 按论文设置保留综合分数≥700的关系，并合并双向重复记录。下载有重试、文件指纹、缓存核验和按数据源回滚；已有完整索引不会被失败的重建覆盖。
+1. 公开证据增益：每步选择当前边际目标增益最大的可用候选。
+2. KAN/PPO：边函数网络输出逐步策略，训练与推理使用同一环境和动作掩码；可输出对当前未覆盖症状状态的局部梯度。
 
-原始文件位于 `data/raw/public/`，查询索引位于 `data/processed/public_evidence.sqlite`，均不上传到 Git。`data/public_registry.json` 记录本次实际获取范围、来源、版本、数量和指纹。其他部署需运行上述初始化命令才能使用索引，仓库中的导入报告不表示该部署已经下载数据。
+默认策略依据**验证集**与证据增益基线的比较选择。当前验证结果未支持KAN/PPO优于基线，因此默认使用证据增益；可在输入页或研究页明确选择KAN/PPO对照。缺少模型时仍仅使用真实公开证据；缺少或损坏证据包时停止初始化，绝不退回构造图谱。梯度是模型敏感度，不是医学因果解释。
 
-在“知识图谱 → 公开数据检索”中检索药材、靶点或原始标识；在候选解释页展开“核对公开数据库中的成分与靶点”查看药材对应的可追溯路径。公开数据是研究证据，当前推荐模型仍使用独立的非临床构造数据。TCMSP 的关系、验证标记和预测分数保留原义，不将数据库关联转换成结合概率或疗效结论。
-
-**范围说明：** STRING 为人类网络，不含其他物种；SymMap 为公开实体/标识表，并非全部关系；TCMSP 为完整公开浏览目录加当前药材详情，并非全库关系。原论文的门诊记录和专家标注不包含在这些公共数据库中，也未被本项目取得。详见 `data/README.md`。
-
-### 与论文的实现对应
-
-| 论文组成 | 当前状态 | 后续工作 |
-| --- | --- | --- |
-| Streamlit、患者数据库、约束检查 | 主要流程及工程测试已完成 | 持续完善输入校验和规则覆盖 |
-| 公开数据库接入 | 官方下载、来源索引与界面查询 | 更多关系获取、跨库标识核对、可追溯症状—靶点关系 |
-| 大模型解析和图谱构建 | 词典解析、提示模板和JSON解析器 | 实际模型调用、抽取评价、语义向量归一化 |
-| KAN/PPO序贯策略 | 网络、简化训练环境、模型加载已运行；界面采用混合排序 | 将完整状态、边际奖励、体质编码和逐步推理统一到同一策略 |
-| 可解释性 | 图谱路径与规则轨迹 | 策略梯度贡献解释 |
-| 论文实验 | 工程测试和部分指标代码 | 同源数据划分、基线/消融、重复实验；实际结果单独报告 |
-
-论文中的数据规模、86%准确率、0.83 F1、0.67 TCS为论文报告值，不是当前仓库重新测得的结果。
-
-
-## Repository Structure
-
-```text
-configs/
-  dmease.yaml                  # Main configuration
-data/
-  README.md                    # Expected data layout
-  examples/                    # Non-clinical sample data for validation and tests
-  knowledge_graph.json         # Structured symptom-syndrome-herb-mechanism graph
-prompts/
-  triplet_extraction_zh.md     # LLM triplet extraction prompt
-src/dmease/
-  schemas.py                   # Patient, triple, diagnosis, prescription schemas
-  patient_db.py                # Lightweight PatientDB
-  semantic_parser.py           # Surface-to-concept mapping and JSON triplet parser
-  knowledge_graph.py           # Symptom-target-herb KG and PMI-style retrieval
-  diagnosis.py                 # Syndrome diagnosis module
-  constraints.py               # Classical and patient-specific hard constraints
-  kan.py                       # KAN actor, critic, and edge-function layers
-  ppo.py                       # Clipped PPO environment and trainer
-  policy.py                    # Current greedy single-herb policy
-  recommender.py               # Hybrid graph/KAN ranking and constraints
-  symptom_parser.py            # Chinese symptom normalization and negation
-  auth.py                      # Local account verification and credential lifecycle
-  exports.py                   # JSON/CSV export and escaped printable HTML
-  service.py                   # Interactive end-to-end service facade
-  types.py                     # Interactive workflow data structures
-  pipeline.py                  # End-to-end inference workflow
-  cli.py                       # Command line interface
-scripts/
-  build_kg.py                  # Convert LLM JSON output to triples.jsonl
-  infer_example.py             # Minimal inference example
-app/
-  streamlit_app.py             # Patient-ID workflow
-app.py                         # Full Chinese Streamlit workflow
-tests/
-  test_pipeline.py             # Smoke tests for the example pipeline
-```
-
-## Installation
+## 训练与评价
 
 ```bash
-conda env create -f environment.yml
-conda activate dmease
-pip install -e .
-```
-
-The included non-clinical sample assets under `data/examples/` and `data/knowledge_graph.json` make both inference workflows directly reproducible.
-
-## Quick Start
-
-List example patients:
-
-```bash
-dmease --config configs/dmease.yaml patients
-```
-
-Run the paper-style sample case:
-
-```bash
-dmease --config configs/dmease.yaml infer --patient-id P2025-0001
-```
-
-Or run directly from source:
-
-```bash
-PYTHONPATH=src python scripts/infer_example.py
-```
-
-On Windows PowerShell:
-
-```powershell
-$env:PYTHONPATH="src"; python scripts/infer_example.py
-```
-
-## Data Expected by the Paper
-
-The paper describes the following sources:
-
-- SymMap: TCM symptoms and gene/protein targets.
-- STRING v12.0: human PPI network with confidence filtering.
-- TCMSP: herbs and chemical ingredients.
-- Classical literature: 30 foundational TCM texts after OCR correction.
-- Guidelines: 5 national TCM guidelines.
-- De-identified EMR: 108,746 TCM outpatient records.
-
-Keep licensed or private datasets outside Git. For local experiments, put source files under `data/raw/`, then generate:
-
-```text
-data/processed/patients.jsonl
-data/processed/triples.jsonl
-data/processed/herb_target_affinity.csv
-```
-
-The included `data/examples/` files are compact non-clinical sample assets aligned with the paper's case structure. They make the repository runnable out of the box for tests and engineering review.
-
-## Knowledge Graph Triples
-
-The graph uses the ten relation templates from the paper:
-
-| ID | Template |
-| --- | --- |
-| R1 | Herb-affect by-Target |
-| R2 | Symptom-associated with-Target |
-| R3 | Symptom-indicates-Syndrome |
-| R4 | Syndrome-treatedBy-Herb |
-| R5 | Herb-contains-Compound |
-| R6 | Compound-targets-Gene |
-| R7 | Gene-associatedWith-Symptom |
-| R8 | Herb-contraindicatedWith-Herb |
-| R9 | Syndrome-hasStage-DiseaseStage |
-| R10 | Gene-participatesIn-Pathway |
-
-LLM output should be strict JSON. See `prompts/triplet_extraction_zh.md`.
-
-## Inference Policy
-
-The paper describes a KAN policy trained with PPO for sequential single-herb prescription.
-
-This repository implements:
-
-- KAN actor and critic networks with trainable edge-wise basis functions in `src/dmease/kan.py`.
-- A clipped PPO environment, rollout collector, optimizer, and checkpoint writer in `src/dmease/ppo.py`.
-- A deterministic sequential policy for reproducible PatientDB inference in `src/dmease/policy.py`.
-- A graph/KAN hybrid ranking service with hard safety constraints and evidence paths in `src/dmease/recommender.py`.
-- A `train.py` workflow that trains the KAN/PPO policy on graph-derived sequential herb-selection tasks.
-
-The interactive workflow uses the JSON syndrome/herb graph with optional KAN probabilities and hard constraints. The research reproduction workflow separately uses JSONL triples, target affinity and a deterministic sequential policy. Their output structures are documented separately; graph-derived training is not clinical validation.
-
-Train and save a KAN/PPO checkpoint:
-
-```bash
-python train.py --iterations 50 --episodes 8
-```
-
-## Streamlit UI
-
-```bash
-streamlit run app.py
-```
-
-The Chinese UI supports free-text symptom parsing, syndrome inference, constrained herb ranking, evidence paths, knowledge graph browsing, and persistent SQLite patient records. `app/streamlit_app.py` opens the same authenticated interface; the paper-style patient-ID workflow is available on the 研究复现 page.
-
-## Validation
-
-```bash
+python train.py --iterations 120 --warmup 60 --seed 42
 pytest
 ```
 
-The tests verify both workflows: symptom negation, syndrome reasoning, evidence paths, safety constraints, SQLite persistence, target retrieval, sequential selection, and patient-specific allergy handling.
+已发布模型使用464个训练查询、49个验证查询、62个测试查询。查询来自本次公开症状范围的单项、双项与确定性抽样的三项组合；它们是检索任务，**不是患者病例**。知识关系不由程序生成，训练任务只选择要查询哪些已存在的实体。
 
-## Citation
+按完整查询组合的稳定指纹先划分，再训练。先用训练集上的证据增益策略预训练60轮，随后执行120轮PPO，在验证集选择PPO后的检查点。另以随机种子43、44重复训练，结果分别保存在 `models/evaluation_seed43.json` 和 `models/evaluation_seed44.json`。主版本固定使用种子42，不按测试结果挑选种子。
 
-Please cite the paper if this repository is useful for your work:
+主版本在62个测试查询上的结果：
+
+| 策略 | 症状证据覆盖 | 综合目标 | 平均候选数 |
+| --- | --- | --- | --- |
+| KAN/PPO | 0.8683 | 0.8183 | 3.7903 |
+| 证据增益 | 0.8683 | 0.8212 | 3.6290 |
+| 随机可用候选 | 0.8548 | 0.7897 | 4.7419 |
+
+KAN/PPO没有超过证据增益基线，故不宣称优势。约束压力测试未出现明确禁用项入选；该结果只覆盖测试的约束，不代表完整临床安全性。底层图谱在训练/验证/测试间共享，指标也由同一图谱计算，因此这是查询泛化与工程验证，不能解释为未见知识泛化、临床准确率或治疗效果。
+
+## 命令行
+
+```bash
+dmease analyze --symptoms "口渴，乏力，尿频" --exclude 黄芪
+```
+
+历史合成样例仅在显式指定时运行：
+
+```bash
+dmease --legacy-nonclinical infer --patient-id P2025-0001
+python scripts/train_legacy_policy.py --iterations 50 --episodes 8
+```
+
+`DMEASE_EVIDENCE_BUNDLE`可指定界面证据包；`DMEASE_CHECKPOINT`可指定模型；`DMEASE_DATA_DIR`指定账号和患者记录目录。模型须匹配实际语义指纹、实体顺序及状态结构；下载时间不影响语义一致性。
+
+## 与论文仍存在的差距
+
+| 论文部分 | 当前状态 |
+| --- | --- |
+| 知识图谱和患者界面 | 公开数据取得、逐条来源、持久记录和操作流程已接通；范围小于论文 |
+| 症状和证候 | 可审查的词表、否定处理、公开症状—证候关系；未完成论文的大模型抽取与向量归一化 |
+| KAN/PPO序贯决策 | 已训练并与应用共用状态更新、约束和停止流程；当前目标为证据覆盖，非论文的亲和度/症状缓解目标 |
+| 可解释性 | 公开路径、每步新增覆盖、状态和策略梯度已实现 |
+| 体质适配 | 资料记录已实现；缺少经验证数据，不施加编造的体质药效权重 |
+| 临床与论文实验 | 未取得原论文门诊记录和专家标注；未复现论文的86%准确率、0.83 F1或0.67 TCS |
+
+完整方法复现仍需可验证的亲和度预测数据与模型、大模型抽取评价、体质适配证据、完整禁忌规则和独立病例标注。不能用本次检索指标替代这些验证。
+
+## 账号与数据维护
+
+密码使用随机盐与PBKDF2-HMAC-SHA256保存；连续5次失败锁定60秒，30分钟无操作后下次交互重新登录。密码修改使旧会话在下次交互时失效。数据库记录按账号访问，退出清除会话数据。部署者应在停止写入后配套备份账号和患者数据库。部署环境的HTTPS、网络访问控制由部署者配置。
+
+## 引用与数据许可
+
+数据获取及许可证说明见 `data/README.md`，原始数据库内容不随源码重新发布。请分别引用SymMap、STRING和TCMSP的官方文献，并注明使用版本及筛选方式。
 
 ```bibtex
 @inproceedings{jia2025dmease,
-  title     = {DMease: AI-based Assistant Tool for Traditional Chinese Medicine Doctors in Diagnosing and Treating Diabetes Mellitus},
-  author    = {Jia, Junxiang and Hao, Xinyi and Hu, Yizhong and Meng, Haoyang and Zhao, Cong and Guan, Jianfeng and Sun, Weiwei},
+  title = {DMease: AI-based Assistant Tool for Traditional Chinese Medicine Doctors in Diagnosing and Treating Diabetes Mellitus},
+  author = {Jia, Junxiang and Hao, Xinyi and Hu, Yizhong and Meng, Haoyang and Zhao, Cong and Guan, Jianfeng and Sun, Weiwei},
   booktitle = {IEEE BIBM},
-  year      = {2025}
+  year = {2025}
 }
 ```

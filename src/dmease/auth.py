@@ -1,6 +1,8 @@
 """Local account authentication without bundled credentials."""
 from __future__ import annotations
 
+from contextlib import closing
+
 import hashlib
 import hmac
 import re
@@ -16,7 +18,7 @@ class AuthStore:
     def __init__(self, path: str | Path):
         self.path = Path(path)
         self.path.parent.mkdir(parents=True, exist_ok=True)
-        with self._connect() as db:
+        with closing(self._connect()) as db, db:
             db.execute("""CREATE TABLE IF NOT EXISTS accounts (
                 username TEXT PRIMARY KEY, salt TEXT NOT NULL, digest TEXT NOT NULL,
                 iterations INTEGER NOT NULL, failures INTEGER NOT NULL DEFAULT 0,
@@ -38,7 +40,7 @@ class AuthStore:
         return hashlib.pbkdf2_hmac("sha256", password.encode(), bytes.fromhex(salt), iterations).hex()
 
     def initialized(self) -> bool:
-        with self._connect() as db:
+        with closing(self._connect()) as db, db:
             return db.execute("SELECT 1 FROM accounts LIMIT 1").fetchone() is not None
 
     def bootstrap(self, username: str, password: str) -> None:
@@ -49,7 +51,7 @@ class AuthStore:
         self.validate_password(password)
         salt = secrets.token_hex(16)
         digest = self._digest(password, salt, self.iterations)
-        with self._connect() as db:
+        with closing(self._connect()) as db, db:
             db.execute("BEGIN IMMEDIATE")
             if db.execute("SELECT 1 FROM accounts LIMIT 1").fetchone():
                 raise ValueError("系统已完成初始化，请返回登录。")
@@ -59,7 +61,7 @@ class AuthStore:
     def authenticate(self, username: str, password: str) -> int | None:
         """Return credential revision on success; persist failed-attempt throttling."""
         username = username.strip()
-        with self._connect() as db:
+        with closing(self._connect()) as db, db:
             db.execute("BEGIN IMMEDIATE")
             row = db.execute("SELECT * FROM accounts WHERE username=?", (username,)).fetchone()
             if row is None:
@@ -79,7 +81,7 @@ class AuthStore:
             return int(row["revision"])
 
     def revision(self, username: str) -> int | None:
-        with self._connect() as db:
+        with closing(self._connect()) as db, db:
             row = db.execute("SELECT revision FROM accounts WHERE username=?", (username,)).fetchone()
         return int(row[0]) if row else None
 
@@ -90,7 +92,7 @@ class AuthStore:
             raise ValueError("当前密码不正确或账号暂时锁定。")
         salt = secrets.token_hex(16)
         digest = self._digest(new, salt, self.iterations)
-        with self._connect() as db:
+        with closing(self._connect()) as db, db:
             cur = db.execute("UPDATE accounts SET salt=?,digest=?,iterations=?,revision=revision+1 "
                              "WHERE username=? AND revision=?",
                              (salt, digest, self.iterations, username, revision))

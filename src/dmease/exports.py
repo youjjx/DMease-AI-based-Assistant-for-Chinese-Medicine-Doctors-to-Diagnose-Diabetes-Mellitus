@@ -47,12 +47,12 @@ def report_html(payload: dict) -> str:
                     [[s['canonical'], '阳性' if s['present'] else '否定', s['evidence']] for s in payload['parsed_symptoms']]),
                 "<h2>证候判断</h2>", table(["证候", "相对支持度", "判断依据"],
                     [[s['name'], f"{s['confidence']:.1%}", s['rationale']] for s in payload['syndromes']]),
-                "<h2>中药候选与解释</h2>", table(["序号", "中药", "得分", "证据路径"],
+                "<h2>中药候选与解释</h2>", table(["序号", "中药", "计算得分（见运行模式）", "证据路径"],
                     [[s['rank'], s['name'], f"{s['score']:.3f}", '；'.join(s['evidence_paths'])] for s in payload['recommendations']]),
                 "<h2>约束排除结果</h2>", table(["中药", "原因"],
                     [[h, '；'.join(v)] for h,v in payload['excluded_herbs'].items()]),
                 "<h2>运行信息</h2><p>" + esc(json_export(payload.get('metadata', {}))) + "</p>",
-                "<h2>数据与使用说明</h2><p>内置知识数据为非临床构造数据。相对支持度不代表临床诊断概率。</p>",
+                "<h2>数据与使用说明</h2><p>数据范围：" + esc(payload.get('metadata', {}).get('data_scope', '历史记录，数据范围请参照原版本')) + "。相对支持度不代表临床诊断概率；证据覆盖不代表疗效。</p>",
                 *[f"<p>{esc(note)}</p>" for note in payload['safety_notes']]]
     return '<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>DMease辅助分析报告</title><style>' \
         'body{font-family:"Microsoft YaHei",sans-serif;max-width:1000px;margin:36px auto;line-height:1.65;color:#111}' \

@@ -67,7 +67,7 @@ class PPOTrainer:
         for _ in range(episodes):
             state = env.reset()
             episode = []
-            done = False
+            done = getattr(env, "done", False)
             while not done:
                 mask = env.action_mask()
                 with torch.no_grad():
@@ -85,8 +85,10 @@ class PPOTrainer:
             for item, ret in zip(episode, reversed(episode_returns)):
                 states.append(item[0]); actions.append(item[1]); log_probs.append(item[2])
                 returns.append(torch.tensor(ret)); advantages.append(torch.tensor(ret) - item[3]); masks.append(item[5])
+        if not advantages:
+            raise ValueError("No actionable states in the sampled retrieval tasks")
         advantage_tensor = torch.stack(advantages)
-        advantage_tensor = (advantage_tensor - advantage_tensor.mean()) / advantage_tensor.std().clamp_min(1e-6)
+        advantage_tensor = (advantage_tensor - advantage_tensor.mean()) / advantage_tensor.std(unbiased=False).clamp_min(1e-6)
         return Rollout(states, actions, log_probs, returns, list(advantage_tensor), masks)
 
     def update(self, rollout: Rollout, epochs: int = 4) -> dict[str, float]:

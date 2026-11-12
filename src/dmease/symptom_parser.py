@@ -40,7 +40,7 @@ class SymptomParser:
 
     @staticmethod
     def _negated(text: str, start: int) -> bool:
-        prefix = text[max(0, start - 6) : start]
+        prefix = re.split(r"[，,。；;！？!?]|但是|但|然而|不过|却", text[:start])[-1]
         return any(token in prefix for token in NEGATIONS)
 
     @staticmethod
@@ -52,7 +52,7 @@ class SymptomParser:
         return 1.0
 
     def parse(self, text: str, selected: list[str] | None = None) -> list[ParsedSymptom]:
-        text = re.sub(r"\s+", "", text or "")
+        text = re.sub(r"\s+", "", (text or "").replace("\n", "，"))
         matches: dict[str, list[ParsedSymptom]] = defaultdict(list)
 
         for item in self.lexicon:

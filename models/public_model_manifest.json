@@ -1,0 +1,29 @@
+{
+  "file": "public_evidence_kan_ppo.pt",
+  "sha256": "baabd049670fdfa9bc6b49d665fed6723e9018ab84c008b5663a70fa773216a3",
+  "metadata": {
+    "architecture": "KANPolicy",
+    "signature": "627f571f899b39a8b11d0a12db722db45e8ef90c0a4d983cad9a536530b7dcdb",
+    "evidence_fingerprint": "f9d7cca2be94fa8a5f52036de8b0ff8fe74031ce0d9b6f0ab469a9372d272af7",
+    "data_scope": "public-database-associations",
+    "training_tasks": "Evidence retrieval queries, not patient records",
+    "seed": 42,
+    "iterations": 120,
+    "warmup_epochs": 60,
+    "selected_iteration": 40,
+    "selection_metric": "validation evidence objective",
+    "objective": "0.65 symptom association coverage + 0.30 target coverage + 0.05 PPI coverage, normalized for missing evidence; 0.02 herb cost",
+    "state_dim": 184,
+    "action_dim": 19,
+    "clinical_validation": false,
+    "constitution_adaptation": false,
+    "preferred_strategy": "greedy",
+    "validation_objective": 0.8330952421743043,
+    "greedy_validation_objective": 0.8343197332353008,
+    "deployment_rule": "Use KAN by default only when its validation objective meets the evidence-greedy baseline",
+    "checkpoint_sha256": "baabd049670fdfa9bc6b49d665fed6723e9018ab84c008b5663a70fa773216a3"
+  },
+  "command": "python train.py --iterations 120 --warmup 60 --seed 42",
+  "evidence_report": "data/evidence_build_report.json",
+  "evaluation": "models/public_evidence_evaluation.json"
+}

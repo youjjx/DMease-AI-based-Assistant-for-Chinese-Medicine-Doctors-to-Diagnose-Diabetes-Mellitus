@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from contextlib import closing
+
 import json
 import hashlib
 import sqlite3
@@ -55,7 +57,7 @@ class PatientDatabase:
     def __init__(self, path: str | Path):
         self.path = Path(path)
         self.path.parent.mkdir(parents=True, exist_ok=True)
-        with self._connect() as connection:
+        with closing(self._connect()) as connection, connection:
             connection.executescript(SCHEMA)
             columns = {row[1] for row in connection.execute("PRAGMA table_info(patient_records)")}
             for name, definition in (("owner", "TEXT NOT NULL DEFAULT ''"),
@@ -74,7 +76,7 @@ class PatientDatabase:
         primary = result.syndromes[0].name if result.syndromes else None
         payload = json.dumps(result.to_dict(), ensure_ascii=False, sort_keys=True)
         result_key = hashlib.sha256(payload.encode()).hexdigest()
-        with self._connect() as connection:
+        with closing(self._connect()) as connection, connection:
             if parent_record_id is not None and not connection.execute(
                 "SELECT 1 FROM patient_records WHERE id=? AND owner=?", (parent_record_id, owner)
             ).fetchone():
@@ -105,7 +107,7 @@ class PatientDatabase:
         if syndrome:
             clauses.append("primary_syndrome=?"); args.append(syndrome)
         where = " WHERE " + " AND ".join(clauses) if clauses else ""
-        with self._connect() as connection:
+        with closing(self._connect()) as connection, connection:
             rows = connection.execute(
                 "SELECT id, patient_name, created_at, complaint, primary_syndrome, parent_record_id "
                 "FROM patient_records" + where + " ORDER BY id DESC LIMIT ?",
@@ -114,11 +116,11 @@ class PatientDatabase:
         return [dict(row) for row in rows]
 
     def count(self, owner: str) -> int:
-        with self._connect() as connection:
+        with closing(self._connect()) as connection, connection:
             return int(connection.execute("SELECT COUNT(*) FROM patient_records WHERE owner=?", (owner,)).fetchone()[0])
 
     def get(self, record_id: int, *, owner: str | None = None) -> dict[str, Any] | None:
-        with self._connect() as connection:
+        with closing(self._connect()) as connection, connection:
             row = connection.execute(
                 "SELECT payload_json FROM patient_records WHERE id = ?" + (" AND owner=?" if owner is not None else ""),
                 (record_id, owner) if owner is not None else (record_id,),
@@ -126,7 +128,7 @@ class PatientDatabase:
         return json.loads(row["payload_json"]) if row else None
 
     def delete(self, record_id: int, *, owner: str | None = None) -> bool:
-        with self._connect() as connection:
+        with closing(self._connect()) as connection, connection:
             cursor = connection.execute("DELETE FROM patient_records WHERE id = ?" +
                                         (" AND owner=?" if owner is not None else ""),
                                         (record_id, owner) if owner is not None else (record_id,))

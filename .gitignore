@@ -22,6 +22,7 @@ checkpoints/
 *.ckpt
 *.pt
 !models/nonclinical_kan_ppo.pt
+!models/public_evidence_kan_ppo.pt
 
 logs/
 wandb/

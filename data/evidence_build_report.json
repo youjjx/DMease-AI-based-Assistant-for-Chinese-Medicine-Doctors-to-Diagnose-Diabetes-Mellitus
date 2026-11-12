@@ -1,0 +1,1030 @@
+{
+  "fingerprint": "f9d7cca2be94fa8a5f52036de8b0ff8fe74031ce0d9b6f0ab469a9372d272af7",
+  "data_scope": "public-database-associations",
+  "counts": {
+    "symptoms": 24,
+    "herbs": 19,
+    "syndromes": 111,
+    "targets": 5151,
+    "symptom_herb": 48,
+    "symptom_syndrome": 203,
+    "symptom_target": 889,
+    "herb_target": 11441,
+    "ppi": 46109
+  },
+  "unmatched": {
+    "symptoms": [],
+    "herbs": [
+      "生地黄"
+    ]
+  },
+  "files": [
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00577",
+        "table_name": "Herb",
+        "filter": "0"
+      },
+      "sha256": "3cf9a205c2648b0a0ac319d57b9ebd441201cc93727a1238dc79d7ea0364370a",
+      "retrieved_at": "2026-11-12T01:28:32.182431+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00577_Herb.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00577",
+        "table_name": "Syndrome",
+        "filter": "0"
+      },
+      "sha256": "1cb88e1b5f50923e9e46664591a8b09515c4a3e701b7eef56f897dbafe48e30a",
+      "retrieved_at": "2026-11-12T01:28:33.133576+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00577_Syndrome.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00577",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "1c4f1967749627b8635c5e6c025c77a32a4cbada4c0747838002d939dd9c19cd",
+      "retrieved_at": "2026-11-12T01:28:34.605881+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00577_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00213",
+        "table_name": "Herb",
+        "filter": "0"
+      },
+      "sha256": "aed5a4b45eb1f5d9e7562a9621087b22317c7da366d0458f7f61a9a4d63c201a",
+      "retrieved_at": "2026-11-12T01:28:37.428913+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00213_Herb.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00213",
+        "table_name": "Syndrome",
+        "filter": "0"
+      },
+      "sha256": "50f12c2ca78a7f963298f4ddb7b22d52eb19681b9732205581abf96e4378b017",
+      "retrieved_at": "2026-11-12T01:28:38.360266+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00213_Syndrome.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00213",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "c7bf4843a0cc54cedee89114e7ebe4ca3bbf01f4ab1167c9affb8f9976e4487a",
+      "retrieved_at": "2026-11-12T01:28:39.474408+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00213_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00732",
+        "table_name": "Herb",
+        "filter": "0"
+      },
+      "sha256": "099b3f402be2c7bb8d2c8587a963235a3fb005a33df32c8e39176561966b6997",
+      "retrieved_at": "2026-11-12T01:28:40.482884+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00732_Herb.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00732",
+        "table_name": "Syndrome",
+        "filter": "0"
+      },
+      "sha256": "cb05e756f2170ab98d5be454f7a5695aa19e0d6f906969e139ecf19c4b227965",
+      "retrieved_at": "2026-11-12T01:28:41.429092+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00732_Syndrome.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00732",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "19feef7800d5ac9e2edffec53436274b7b794ebc1f619c4f025ef6f1ddbd005c",
+      "retrieved_at": "2026-11-12T01:28:42.452605+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00732_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01354",
+        "table_name": "Herb",
+        "filter": "0"
+      },
+      "sha256": "782af85a791af3321503100c0fd7e82fc5d7a9ec588302823478a262bece7944",
+      "retrieved_at": "2026-11-12T01:28:43.493122+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01354_Herb.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01354",
+        "table_name": "Syndrome",
+        "filter": "0"
+      },
+      "sha256": "89ecccce195ec5ea54a77b57e52d793254b8653e10e12aac9e3f2ff833101419",
+      "retrieved_at": "2026-11-12T01:28:44.602169+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01354_Syndrome.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01354",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "5e090db52e818574da6fbbd4278d160d5d0878ce5c355bf6608cb4603949b592",
+      "retrieved_at": "2026-11-12T01:28:45.645994+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01354_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01235",
+        "table_name": "Herb",
+        "filter": "0"
+      },
+      "sha256": "d63ac422e520da1c67d895a79573fadd621fef880f2e852ba4a21b7d07a92476",
+      "retrieved_at": "2026-11-12T01:28:46.567630+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01235_Herb.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01235",
+        "table_name": "Syndrome",
+        "filter": "0"
+      },
+      "sha256": "0830ed1d039f4f1b831ebd15c4564500b54fbccdb85de87da765d35a023e0210",
+      "retrieved_at": "2026-11-12T01:28:47.601988+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01235_Syndrome.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01235",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "46a172dfca15fa36d29f797ed118e14d58b74527fe273f014571ab8cb721711d",
+      "retrieved_at": "2026-11-12T01:28:48.571343+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01235_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00183",
+        "table_name": "Herb",
+        "filter": "0"
+      },
+      "sha256": "1fa794f77f0d0823b0bba067068532657620b7f4fd0119e0b6cca19a73828d88",
+      "retrieved_at": "2026-11-12T01:28:49.608756+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00183_Herb.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00183",
+        "table_name": "Syndrome",
+        "filter": "0"
+      },
+      "sha256": "fe1ed2bf4bdf0fa8b4e18fa671edcdc3658e4196bf86f84b9f525b527e1110a8",
+      "retrieved_at": "2026-11-12T01:28:50.542273+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00183_Syndrome.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00183",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "17dd03703b8a23d29d66d05733311419f69c5d9502324cebd9876f4dc7f8933e",
+      "retrieved_at": "2026-11-12T01:28:51.521473+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00183_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00240",
+        "table_name": "Herb",
+        "filter": "0"
+      },
+      "sha256": "72a2914ca22cd5912fe48f89024b27aa5a7275fc2c6819452c845cb99e0f6bdb",
+      "retrieved_at": "2026-11-12T01:28:52.462271+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00240_Herb.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00240",
+        "table_name": "Syndrome",
+        "filter": "0"
+      },
+      "sha256": "3c0d8c914771bb3e68d054f01a4777e1601a992b567f3d4e1a563391825546e7",
+      "retrieved_at": "2026-11-12T01:28:53.746432+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00240_Syndrome.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00240",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "432dd7ea8f1d866745a791d47108bdd5e79c3dcd533d63254a54dd652d9fb765",
+      "retrieved_at": "2026-11-12T01:28:54.688741+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00240_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00808",
+        "table_name": "Herb",
+        "filter": "0"
+      },
+      "sha256": "845fa71da2e42c4cb5ba4c286fbca83991ace427cea829438cb097dcd43a7b64",
+      "retrieved_at": "2026-11-12T01:28:55.617805+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00808_Herb.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00808",
+        "table_name": "Syndrome",
+        "filter": "0"
+      },
+      "sha256": "15f6bc326926de0b86a9e15397868b9c8428a02e00d5833a728286963676ccf4",
+      "retrieved_at": "2026-11-12T01:28:56.570031+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00808_Syndrome.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00808",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "1c4f1967749627b8635c5e6c025c77a32a4cbada4c0747838002d939dd9c19cd",
+      "retrieved_at": "2026-11-12T01:28:57.583271+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00808_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01707",
+        "table_name": "Herb",
+        "filter": "0"
+      },
+      "sha256": "3db331dabafcd3f3d6d8f338e0e89e6016e961199856ade08eb59d374e69d729",
+      "retrieved_at": "2026-11-12T01:29:03.635848+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01707_Herb.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01707",
+        "table_name": "Syndrome",
+        "filter": "0"
+      },
+      "sha256": "01a171334f869c85dbfddee13c1e4bb1acd3cd734e048c06bb41b88dd9b0d8bb",
+      "retrieved_at": "2026-11-12T01:29:04.551981+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01707_Syndrome.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01707",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "18f30aa2338600cda95e7b7545923443b0889a57070a857a5beccc8ac9eb09a3",
+      "retrieved_at": "2026-11-12T01:29:05.509918+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01707_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00573",
+        "table_name": "Herb",
+        "filter": "0"
+      },
+      "sha256": "ce18ced0337bf24d8e91893a5b0f630557ece797ce73db2019d2bd19dba68414",
+      "retrieved_at": "2026-11-12T01:29:11.478225+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00573_Herb.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00573",
+        "table_name": "Syndrome",
+        "filter": "0"
+      },
+      "sha256": "36f7cc2adf3d9dbfee53f4bf0d543d0b619cbf3d5171d0e6304c5c3c88935012",
+      "retrieved_at": "2026-11-12T01:29:12.393128+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00573_Syndrome.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00573",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "3797d5bf5fa83e46aa7a000a775f2ef2300c088f180a02432d3646c2697bf8b3",
+      "retrieved_at": "2026-11-12T01:29:15.050521+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00573_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00046",
+        "table_name": "Herb",
+        "filter": "0"
+      },
+      "sha256": "09878de00864ac4ff4e740ca981accde3602e5571c213885d5cadd69c66ae63a",
+      "retrieved_at": "2026-11-12T01:29:15.991082+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00046_Herb.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00046",
+        "table_name": "Syndrome",
+        "filter": "0"
+      },
+      "sha256": "ed911e98f35fe96b06c161fa67aaa1c48ddfc5966a88d43b96a348d08cddbf00",
+      "retrieved_at": "2026-11-12T01:29:17.013152+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00046_Syndrome.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00046",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "1c4f1967749627b8635c5e6c025c77a32a4cbada4c0747838002d939dd9c19cd",
+      "retrieved_at": "2026-11-12T01:29:18.147956+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00046_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00292",
+        "table_name": "Herb",
+        "filter": "0"
+      },
+      "sha256": "13a0f278f29102c4e83d6a6f978c9661fef74ab792cb151ef0435d5fe211795a",
+      "retrieved_at": "2026-11-12T01:29:19.121514+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00292_Herb.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00292",
+        "table_name": "Syndrome",
+        "filter": "0"
+      },
+      "sha256": "658a85afacb12c789e50d13bb557c50ee677b6b420ca556bca6cc33215a39093",
+      "retrieved_at": "2026-11-12T01:29:25.355911+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00292_Syndrome.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00292",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "0ddba9184f8f8167a27aca6c4eab679131e63fba9bfe12f3db8d9082d3ad83a4",
+      "retrieved_at": "2026-11-12T01:29:26.332424+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00292_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01667",
+        "table_name": "Herb",
+        "filter": "0"
+      },
+      "sha256": "a54405dbc1a62b3dff601070501c2b77f3043f8d865a69d62a1d8f4874631ebf",
+      "retrieved_at": "2026-11-12T01:29:27.273678+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01667_Herb.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01667",
+        "table_name": "Syndrome",
+        "filter": "0"
+      },
+      "sha256": "e4fc825be6cdd09147663d0deddab09aa30fd361ad4c6901bbc329db1bfaefed",
+      "retrieved_at": "2026-11-12T01:29:28.244966+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01667_Syndrome.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01667",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "1c4f1967749627b8635c5e6c025c77a32a4cbada4c0747838002d939dd9c19cd",
+      "retrieved_at": "2026-11-12T01:29:29.230571+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01667_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01408",
+        "table_name": "Herb",
+        "filter": "0"
+      },
+      "sha256": "cc07a393e76e042de1b372a423cbaa6127c91434ef8fcb815cca960339c4d20e",
+      "retrieved_at": "2026-11-12T01:29:30.166169+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01408_Herb.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01408",
+        "table_name": "Syndrome",
+        "filter": "0"
+      },
+      "sha256": "29b5510230815c0dc238ca796c610898ece6c530a5cd6cea11aa8f4837c92bc0",
+      "retrieved_at": "2026-11-12T01:29:31.086537+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01408_Syndrome.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01408",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "3331a61962e57a68a4a33e9078c5e7cd01d70f60d048c0ec7c98db1fb9aa3f6c",
+      "retrieved_at": "2026-11-12T01:29:32.077611+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01408_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00826",
+        "table_name": "Herb",
+        "filter": "0"
+      },
+      "sha256": "baf72ecf74c9f9710bdff4ae6e1ff191afe8ae1d23ecd2860b67ffe086ce33ea",
+      "retrieved_at": "2026-11-12T01:29:33.008869+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00826_Herb.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00826",
+        "table_name": "Syndrome",
+        "filter": "0"
+      },
+      "sha256": "bcd043d5df71ccea07ac214ac94e242ee3a103e9ef113cc449429bdab8f94f5b",
+      "retrieved_at": "2026-11-12T01:29:33.960720+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00826_Syndrome.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00826",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "a0ef9cc9af709bf7ce4b5e6e9fefd094026fe4a207428894d5e0603c24f73e38",
+      "retrieved_at": "2026-11-12T01:29:34.946806+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00826_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01542",
+        "table_name": "Herb",
+        "filter": "0"
+      },
+      "sha256": "0b39a4352864a31f83d2962694ead833a5f5a489d81cca04155f7d5f7226a9e2",
+      "retrieved_at": "2026-11-12T01:29:35.895980+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01542_Herb.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01542",
+        "table_name": "Syndrome",
+        "filter": "0"
+      },
+      "sha256": "e681fa8aba25f1d5b00df5e5b40075676776f1acadbd2f97d5e24c82421acfb8",
+      "retrieved_at": "2026-11-12T01:29:36.831328+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01542_Syndrome.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01542",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "24f72c6c36195acdf5792ba56b9070230cc5574b7955363e412b16aabe4ba3bf",
+      "retrieved_at": "2026-11-12T01:29:37.794102+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01542_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01655",
+        "table_name": "Herb",
+        "filter": "0"
+      },
+      "sha256": "dc2b054b930dd107e0c8117246a3e1a30846223d542b26c3201e1f0859c3b98b",
+      "retrieved_at": "2026-11-12T01:29:38.750563+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01655_Herb.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01655",
+        "table_name": "Syndrome",
+        "filter": "0"
+      },
+      "sha256": "59c7f834ffb41a3c802f67c66efb0893fbf7abfaa879d67814d5b80af60ada09",
+      "retrieved_at": "2026-11-12T01:29:41.145387+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01655_Syndrome.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01655",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "1c4f1967749627b8635c5e6c025c77a32a4cbada4c0747838002d939dd9c19cd",
+      "retrieved_at": "2026-11-12T01:29:42.099189+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01655_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01556",
+        "table_name": "Herb",
+        "filter": "0"
+      },
+      "sha256": "6e08de3f8ec7fc54a8a999b3eb12fe00c8ed299514604d0c5683a0ec6916ba83",
+      "retrieved_at": "2026-11-12T01:29:43.050748+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01556_Herb.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01556",
+        "table_name": "Syndrome",
+        "filter": "0"
+      },
+      "sha256": "01c734182085b8bb1cd76751fb4b1e89b862ecbf1762dde4e3ed9629ccdd1136",
+      "retrieved_at": "2026-11-12T01:29:44.070785+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01556_Syndrome.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01556",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "1c4f1967749627b8635c5e6c025c77a32a4cbada4c0747838002d939dd9c19cd",
+      "retrieved_at": "2026-11-12T01:29:45.059835+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01556_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01669",
+        "table_name": "Herb",
+        "filter": "0"
+      },
+      "sha256": "8ceeb89c80b2acdbeedb840b42761bd20373aee1863d900395056927dde691b0",
+      "retrieved_at": "2026-11-12T01:29:46.020702+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01669_Herb.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01669",
+        "table_name": "Syndrome",
+        "filter": "0"
+      },
+      "sha256": "e38e8a76abec4a5f4ece4c92eff18a880422490fbe284958ca045b09f19e3aa2",
+      "retrieved_at": "2026-11-12T01:29:46.961422+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01669_Syndrome.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01669",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "1c4f1967749627b8635c5e6c025c77a32a4cbada4c0747838002d939dd9c19cd",
+      "retrieved_at": "2026-11-12T01:29:47.914985+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01669_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00139",
+        "table_name": "Herb",
+        "filter": "0"
+      },
+      "sha256": "6dc58bc740764284212760646e381d1e20b5ab61a224137fb11ca7f1e5269f6f",
+      "retrieved_at": "2026-11-12T01:29:48.863731+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00139_Herb.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00139",
+        "table_name": "Syndrome",
+        "filter": "0"
+      },
+      "sha256": "53a108fb066ef33a93830046874d3d4b0ac93bde294f1a74a166e337e4ab9a44",
+      "retrieved_at": "2026-11-12T01:29:49.787543+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00139_Syndrome.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00139",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "1c4f1967749627b8635c5e6c025c77a32a4cbada4c0747838002d939dd9c19cd",
+      "retrieved_at": "2026-11-12T01:29:50.754260+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00139_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01007",
+        "table_name": "Herb",
+        "filter": "0"
+      },
+      "sha256": "72f12f44ddb8966cc867fa517b983c88518a3b29c3fdb7287628ce273e71b45a",
+      "retrieved_at": "2026-11-12T01:29:51.692048+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01007_Herb.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01007",
+        "table_name": "Syndrome",
+        "filter": "0"
+      },
+      "sha256": "c5695710d1a10ca00796dd311b5f77a1ad3a8780278f5d460aab4cb266f7fb15",
+      "retrieved_at": "2026-11-12T01:29:52.607877+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01007_Syndrome.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01007",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "322bfeeb89329b9e7346f64a5fab40c8ce4edf22f6720e2afe13cbf9ed53dc2a",
+      "retrieved_at": "2026-11-12T01:29:53.594928+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01007_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00970",
+        "table_name": "Herb",
+        "filter": "0"
+      },
+      "sha256": "4c5080cbf80f3c2925b94fe4d8d36abdfa163baff9212639a13ea4abecad6db4",
+      "retrieved_at": "2026-11-12T01:29:54.555611+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00970_Herb.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00970",
+        "table_name": "Syndrome",
+        "filter": "0"
+      },
+      "sha256": "1653d025c07d0e9134093b8d1ab7489ccf6b13174560a49bfeb2e35100a5d223",
+      "retrieved_at": "2026-11-12T01:29:55.475375+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00970_Syndrome.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS00970",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "9ebe1b0df04ad0d5a24d4c2b4ae129ca0104b3efbc442a2b684d105acce07937",
+      "retrieved_at": "2026-11-12T01:29:56.432419+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS00970_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01333",
+        "table_name": "Herb",
+        "filter": "0"
+      },
+      "sha256": "6a4587ef25592901c6551878221f0953322d0bbf7649ea58403257c50b445919",
+      "retrieved_at": "2026-11-12T01:29:57.349595+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01333_Herb.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01333",
+        "table_name": "Syndrome",
+        "filter": "0"
+      },
+      "sha256": "5a9ad4cdac951dd2e276439d47e430992361ec6ef37bcb844f1da25247fcaf30",
+      "retrieved_at": "2026-11-12T01:29:58.273889+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01333_Syndrome.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01333",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "fdbaeb043ee3e3efaea5b6d9d91f7002ed8a77bffdd4cb029d0c3871b30e7474",
+      "retrieved_at": "2026-11-12T01:29:59.351104+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01333_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01027",
+        "table_name": "Herb",
+        "filter": "0"
+      },
+      "sha256": "b18d4f101e32cc9f5e7903da0e4d016d021975ec0027b00786b7df4afb62f009",
+      "retrieved_at": "2026-11-12T01:30:00.288257+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01027_Herb.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01027",
+        "table_name": "Syndrome",
+        "filter": "0"
+      },
+      "sha256": "6da9fec5f0ba38d70d2099a2a75cf8c0da8b76d6f185cdb3bbe9f925ecde102d",
+      "retrieved_at": "2026-11-12T01:30:01.220234+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01027_Syndrome.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMTS01027",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "6b3546a427dfc2c4187559f3fdf1d4429da7586fb19770a60f4801cddccf0ed2",
+      "retrieved_at": "2026-11-12T01:30:02.197674+00:00",
+      "file": "data/raw/public/symmap/relations/SMTS01027_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMHB00187",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "bb536ba35ed128416738725f37d829d5916bfdda691e9a459de7fd30b96f340b",
+      "retrieved_at": "2026-11-12T01:30:04.873223+00:00",
+      "file": "data/raw/public/symmap/relations/SMHB00187_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMHB00580",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "5bb5e6a5b217384cad28947bf86436ba4f0515c6ef9bc91be86e354fd177e5e4",
+      "retrieved_at": "2026-11-12T01:30:05.965230+00:00",
+      "file": "data/raw/public/symmap/relations/SMHB00580_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMHB00392",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "0867734560d7c8adc6b4c08eeb8881f25938eeab1f1b1d960e74ea5b80027378",
+      "retrieved_at": "2026-11-12T01:30:07.249288+00:00",
+      "file": "data/raw/public/symmap/relations/SMHB00392_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMHB00482",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "2919eac5e96c98e5979f1e4f91f12469ebebe5ad1f66f8a0f7cca60e866e8347",
+      "retrieved_at": "2026-11-12T01:30:08.377086+00:00",
+      "file": "data/raw/public/symmap/relations/SMHB00482_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMHB00359",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "e9c4b0174434398a2cfbebd79f0f2e2f97963f8a01062fba7215f3f387218c33",
+      "retrieved_at": "2026-11-12T01:30:10.239313+00:00",
+      "file": "data/raw/public/symmap/relations/SMHB00359_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMHB00388",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "ac7e221d4f382584267182b63b5998c1cb4fe9fdb3cf62bafef944c08378b58d",
+      "retrieved_at": "2026-11-12T01:30:11.700597+00:00",
+      "file": "data/raw/public/symmap/relations/SMHB00388_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMHB00022",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "cec31df34e81612ec92f606f231bedfe4c3931993164c12c536f2684f4187855",
+      "retrieved_at": "2026-11-12T01:30:12.935278+00:00",
+      "file": "data/raw/public/symmap/relations/SMHB00022_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMHB00129",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "0fdf09b6c735496c85cb1a12ba9ca019c74bdcf88ac08a0b4f0b690b1f97cefe",
+      "retrieved_at": "2026-11-12T01:30:14.252577+00:00",
+      "file": "data/raw/public/symmap/relations/SMHB00129_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMHB00458",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "25d9b4489ee5be87b01fba97d155e29b3677273f1134f446c48a4e7220444c48",
+      "retrieved_at": "2026-11-12T01:30:15.450687+00:00",
+      "file": "data/raw/public/symmap/relations/SMHB00458_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMHB00058",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "03d5104660e14d147f94f7968b01870ac9f7e8389296008d4a41e5ef4aa6a8de",
+      "retrieved_at": "2026-11-12T01:30:16.997020+00:00",
+      "file": "data/raw/public/symmap/relations/SMHB00058_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMHB00432",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "7e133e028705d0c05a10a956c649a904a3ada94efab412e6fd2f6d959bfe586f",
+      "retrieved_at": "2026-11-12T01:30:18.250682+00:00",
+      "file": "data/raw/public/symmap/relations/SMHB00432_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMHB00021",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "e32988c3a50dea9894e4f49f94f58db79fae1ff81ecf67b9983c56a6a0cb0aa6",
+      "retrieved_at": "2026-11-12T01:30:19.475720+00:00",
+      "file": "data/raw/public/symmap/relations/SMHB00021_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMHB00377",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "ff7b46668e5a59a9e8678e441f7bfd022f645722dcd0b8e35db8a466a2098806",
+      "retrieved_at": "2026-11-12T01:30:20.519231+00:00",
+      "file": "data/raw/public/symmap/relations/SMHB00377_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMHB00361",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "0f585ed8a1ea2db9a9f780d9f1771bfea3f6e6bff9453c171ce0822a5790057a",
+      "retrieved_at": "2026-11-12T01:30:22.768063+00:00",
+      "file": "data/raw/public/symmap/relations/SMHB00361_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMHB00462",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "25d36b89b157695c6d1d56ae112c29097093f5a1b1384abda9297912228c2973",
+      "retrieved_at": "2026-11-12T01:30:23.985852+00:00",
+      "file": "data/raw/public/symmap/relations/SMHB00462_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMHB00093",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "8fc2e87ed91704f61469fa1eadbf8b56e7b99552a26722ec13070c8ac1d4231a",
+      "retrieved_at": "2026-11-12T01:30:25.248980+00:00",
+      "file": "data/raw/public/symmap/relations/SMHB00093_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMHB00077",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "f1fb3a87ce81d4a50f2dba5de09d2a544acc8ec852c0adda2090e7940765ac51",
+      "retrieved_at": "2026-11-12T01:30:27.711577+00:00",
+      "file": "data/raw/public/symmap/relations/SMHB00077_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMHB00194",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "faf6a73d8533e8dd858f32bf909a7e82e4c815f26a7be3701451f14cd63a49a5",
+      "retrieved_at": "2026-11-12T01:30:33.967955+00:00",
+      "file": "data/raw/public/symmap/relations/SMHB00194_Gene.json"
+    },
+    {
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMHB00499",
+        "table_name": "Gene",
+        "filter": "0"
+      },
+      "sha256": "dd4bfc5ee6b64e2810114b338cc8d73b828fa2ff40d6dadacacd664227c44458",
+      "retrieved_at": "2026-11-12T01:30:35.298567+00:00",
+      "file": "data/raw/public/symmap/relations/SMHB00499_Gene.json"
+    }
+  ],
+  "limitations": [
+    "Database associations include inferred evidence, not therapeutic efficacy or measured affinity",
+    "No clinical records or expert prescription labels",
+    "Exact/declared lexical mapping; incomplete scope",
+    "Targets require recorded FDR(BH)<0.05; empty target evidence is retained as a gap"
+  ]
+}

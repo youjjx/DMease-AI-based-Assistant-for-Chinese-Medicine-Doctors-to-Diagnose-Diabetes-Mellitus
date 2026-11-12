@@ -16,4 +16,6 @@ dependencies:
       - streamlit>=1.53,<2
       - pytest
       - ruff
+      - requests>=2.31,<3
+      - openpyxl>=3.1,<4
 
