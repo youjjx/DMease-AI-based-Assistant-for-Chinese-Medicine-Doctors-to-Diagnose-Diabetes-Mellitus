@@ -673,7 +673,11 @@ def research_v3_evaluation(service):
 def research(service):
     st.subheader("研究复现")
     st.caption("选择公开症状检索组合，使用与辅助分析相同的证据、约束和序贯策略；这里不是临床病例评价。")
-    workspace = st.radio("研究工作区", ["序贯推理", "实验评估", "改进与外部评价", "亲和度与模型抽取"], horizontal=True)
+    workspace = st.radio("研究工作区", ["序贯推理", "实验评估", "改进与外部评价", "亲和度与模型抽取", "结构化抽取与约束规划"], horizontal=True)
+    if workspace == "结构化抽取与约束规划":
+        from dmease.research_v4_ui import show
+        show(service, ROOT)
+        return
     if workspace == "亲和度与模型抽取":
         research_v3_evaluation(service)
         return

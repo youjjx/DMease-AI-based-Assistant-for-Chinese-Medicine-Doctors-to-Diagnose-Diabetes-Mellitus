@@ -1,0 +1,3221 @@
+{
+  "provenance": {
+    "protocol": "12a95c14a5fba0101d11299cd2c77ee2dc49ff88c45055a132a5689b88a6cba6",
+    "evidence": "f9d7cca2be94fa8a5f52036de8b0ff8fe74031ce0d9b6f0ab469a9372d272af7",
+    "torch": "2.7.1+cu118",
+    "numpy": "2.4.1",
+    "device": "cpu",
+    "threads": 1,
+    "source_lf_sha256": {
+      "scripts/planning_v4.py": "15bb7dbb7addbc306d14832914ff9945fb4f774eabcc4417f734517e707de2aa",
+      "src/dmease/planning_v4.py": "c4a4b47ae141687e6364a46f55661df693ee31276ae341a7b0392c0c5d863d28",
+      "src/dmease/evidence_policy.py": "98243dcad03b858ff6c2107323f722d7721b56c7ec0af7507870eb0b5ad09dee",
+      "src/dmease/research_policy.py": "32398cebeb67bfac5388840a9f92660b3de91e36f026cf8ebb303918165103da",
+      "src/dmease/experiment_metrics.py": "b9d67ae30df5f0403fdc3e8d0f462d42467138bd17c7b9d129a4dbdc9b7160d4"
+    }
+  },
+  "rows": [
+    {
+      "query_id": "3d931b619c918debeae75a7e521cf3dffd8380fec6c9f92b06bf610ca24435a0",
+      "feasible_subsets": 106762,
+      "states": 13
+    },
+    {
+      "query_id": "0923f7c03c2cba0772f88df1e73d9afb92c8b40a353f4953eea7f7885682db77",
+      "feasible_subsets": 2306,
+      "states": 9
+    },
+    {
+      "query_id": "572dc4d3f3cab308145e6febca65f310ae2e8b481f4a8a0a3993e7cc93abc5ba",
+      "feasible_subsets": 1013,
+      "states": 8
+    },
+    {
+      "query_id": "392ae0502686076b80972d4344956edfb6ffe10cf307a2f88e6e55df646aca63",
+      "feasible_subsets": 163,
+      "states": 6
+    },
+    {
+      "query_id": "81c815a07e2957b047525e343803d14404e4b8fb9adb8a9a3144eb126bd55a99",
+      "feasible_subsets": 169766,
+      "states": 9
+    },
+    {
+      "query_id": "8650a6aa68f043d46bf35f9536d72ef3ed5835a8f0ae6ba4dc4e15f77fd4488a",
+      "feasible_subsets": 2973,
+      "states": 6
+    },
+    {
+      "query_id": "dd1ef73a49c33f76841438a63ab4f004a5745506f54628dfc7f69f35b99f338f",
+      "feasible_subsets": 22819,
+      "states": 10
+    },
+    {
+      "query_id": "c3a3cb66b2736e19363189763b44ee521d600b281b829d473c8f98c6f75a4a96",
+      "feasible_subsets": 1026,
+      "states": 6
+    },
+    {
+      "query_id": "ed48030c73a249b869ab32c28943d4ab9effab661d2c8c0d885c47a58587238d",
+      "feasible_subsets": 39203,
+      "states": 10
+    },
+    {
+      "query_id": "b2b1e37e1f847e276c0b9ce4cfe8e4327543f904dd894e14cc93c4a28b03e137",
+      "feasible_subsets": 1392,
+      "states": 6
+    },
+    {
+      "query_id": "ad81b77dd3e56c3976d70add4b45671ba266b5513060a4f29d368b73222bf386",
+      "feasible_subsets": 65536,
+      "states": 15
+    },
+    {
+      "query_id": "f568c6a55f0c778683596b0fd886a04aa14af3b9a98f0c30e0f3aebcebd76c07",
+      "feasible_subsets": 1758,
+      "states": 9
+    },
+    {
+      "query_id": "61113ad8c73360cf616192044263a9384acc07833ad5cd28bab20322272dc896",
+      "feasible_subsets": 1981,
+      "states": 7
+    },
+    {
+      "query_id": "58685626220c9e182e294503e23779da3eeadc79d2ca5144170f388c7a092fa2",
+      "feasible_subsets": 313,
+      "states": 6
+    },
+    {
+      "query_id": "1cae0b42f088126db4e68c6ed7c124c91c71bd3bcc4afb55e75e49735920f761",
+      "feasible_subsets": 65536,
+      "states": 9
+    },
+    {
+      "query_id": "cd7bc9287a9c6d1896346a59103580ad8dfac6d1a252eaa1e7db2d642a9c6a7e",
+      "feasible_subsets": 1758,
+      "states": 6
+    },
+    {
+      "query_id": "dec4ada4b38f6fe8ef55937afc887cbe44bccc93e3dbbfac33a4b56f41d5b2f3",
+      "feasible_subsets": 3797,
+      "states": 9
+    },
+    {
+      "query_id": "1bf12102c7ee50fd1fc503677f06397d829da6436ac1ed7c8318d36792e1cbfd",
+      "feasible_subsets": 349,
+      "states": 6
+    },
+    {
+      "query_id": "134ece20aca5d29215d48c1fc1dbaa7be18a503f2db328ae6665c0c207496b74",
+      "feasible_subsets": 7099,
+      "states": 7
+    },
+    {
+      "query_id": "162c60a9cff63413559278d7d0d74d6f6d11b9d152858e4a48fcc2d93b6df001",
+      "feasible_subsets": 1026,
+      "states": 6
+    },
+    {
+      "query_id": "bd52f5da3bbe9365fc619b8bbf17fa0950a41ff6eba0d624c7b660ab2ebbdcbd",
+      "feasible_subsets": 65536,
+      "states": 9
+    },
+    {
+      "query_id": "0a9ca9d2e833717a6499d58bbf510615e3946c57400f7acb36f4781d09ca4fc3",
+      "feasible_subsets": 1849,
+      "states": 6
+    },
+    {
+      "query_id": "6d62f15181a1bed30ffc471abc3a822da2dab716564ef146c10b2156e573d59d",
+      "feasible_subsets": 169766,
+      "states": 9
+    },
+    {
+      "query_id": "4690b9eebf491e5ca9d7de40e28af986c633de945c0769d176c2812ee51ec3fe",
+      "feasible_subsets": 2973,
+      "states": 6
+    },
+    {
+      "query_id": "215a346dc438683163aa691f030f5356e80cc1026cfeb99d71bc7d5b9c7f9123",
+      "feasible_subsets": 65536,
+      "states": 16
+    },
+    {
+      "query_id": "f5f264b00b645009abf077da6e4fbe70af336c6dbecc232c1e7aa2a4c33eca3c",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "03848795b28a0260be76040c2899bdf415375f70bf4ebd946fe0488b0c1ce8c4",
+      "feasible_subsets": 106762,
+      "states": 7
+    },
+    {
+      "query_id": "1ab58b0cdfbd38b2124110a07c68648df8193ee6b4591683ee88f11a35b50f15",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "345b40b1271f9bf3519dd18c223c3707d65d3e6bca7f99bd8fb5fab626d78b1f",
+      "feasible_subsets": 22819,
+      "states": 10
+    },
+    {
+      "query_id": "019c173f4b9933aef21a3da9046cea5398080854856ef85461aada1cc29d98dd",
+      "feasible_subsets": 1026,
+      "states": 6
+    },
+    {
+      "query_id": "96346583c7b0f015deb680573dbe01a4667b6d2c7d8d1f7459e26b89d1e22510",
+      "feasible_subsets": 22819,
+      "states": 10
+    },
+    {
+      "query_id": "4e2314de854cfcce3f41faab0d274396859fb057626385c98a6284a693bd259a",
+      "feasible_subsets": 1392,
+      "states": 6
+    },
+    {
+      "query_id": "b41699f771dcae978ec9b672c64acda43ad50ca2207b9a332e79b57ba9435dba",
+      "feasible_subsets": 1013,
+      "states": 12
+    },
+    {
+      "query_id": "e8168beeaadc2d0e1c6d66a8faeae3169e4ef8c63f729ce34fbde02c4bf78976",
+      "feasible_subsets": 256,
+      "states": 6
+    },
+    {
+      "query_id": "d08b70f307e2b0e981aba98d5bb522a449218c5f3cd5c043504454e79f195985",
+      "feasible_subsets": 39203,
+      "states": 10
+    },
+    {
+      "query_id": "bc6c13afd15d8880a9e705d00057b06c8481b64dc3fb303355b98f9591fc40df",
+      "feasible_subsets": 1758,
+      "states": 6
+    },
+    {
+      "query_id": "21774a7c7854632e6337f7e04d749636766cfda12ffa0d593e84acdf975ad590",
+      "feasible_subsets": 511,
+      "states": 13
+    },
+    {
+      "query_id": "fa13609f6ab7d82500d4b8973a905371b1f085c743b6759e05aa62aa29028d65",
+      "feasible_subsets": 163,
+      "states": 6
+    },
+    {
+      "query_id": "9e502afe1b390e44db27cd3b57dcfa66164b908b824e198f7051d70cb9c9951c",
+      "feasible_subsets": 256,
+      "states": 7
+    },
+    {
+      "query_id": "2ce1c496c5f7c64e2decaf655616e4ee034325525ff6f7eff0e5213ba818fcf0",
+      "feasible_subsets": 163,
+      "states": 6
+    },
+    {
+      "query_id": "418d402923544411afd7110d9b5d0419ad18b05bca11e1981b63da343c0076f6",
+      "feasible_subsets": 106762,
+      "states": 9
+    },
+    {
+      "query_id": "c065eaa4b5d10ab76957c0d4d0a0e0845a20cd7f0c43cd2f2a0c69861499517c",
+      "feasible_subsets": 2306,
+      "states": 9
+    },
+    {
+      "query_id": "d9d1473da6d3e30caf455d9d897278cc52977476f99d3da297f18d7b01f84fd2",
+      "feasible_subsets": 106762,
+      "states": 10
+    },
+    {
+      "query_id": "bd6becccbebe76353e4f7e4723411a16f05d8fa0b679076c721316534bf1e62f",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "56f3c2349593a056b53760b186661c87b644a27978c9ab909e69bf6297cc1027",
+      "feasible_subsets": 169766,
+      "states": 15
+    },
+    {
+      "query_id": "d030f2423609fa184821a28b8c57664baacd26aac24d765f0e7721e24d1ae1a4",
+      "feasible_subsets": 2973,
+      "states": 9
+    },
+    {
+      "query_id": "4778d9601ff25387fdafa2c0061b374a1cdfb75cbd0489e1ccff8b03b7f851fe",
+      "feasible_subsets": 7099,
+      "states": 9
+    },
+    {
+      "query_id": "fb4f7345d7c79b85ce2e15f9dcee8d9f8f77b8f82c746349d2db79592b208374",
+      "feasible_subsets": 738,
+      "states": 8
+    },
+    {
+      "query_id": "abb9a769ac8c19ae9535857cc0c4858fb4c5015a12d0d0eef4157daa7396d8ea",
+      "feasible_subsets": 7099,
+      "states": 6
+    },
+    {
+      "query_id": "3aff2a5ad8fcf4d19ed0f4edc34d98417d4b133c94f6f425b49a324e6b06a702",
+      "feasible_subsets": 516,
+      "states": 6
+    },
+    {
+      "query_id": "9decd82f77c7e02fb2732229c0e1cf4a48c07db0683f68bb7903a8291ade21b1",
+      "feasible_subsets": 1981,
+      "states": 8
+    },
+    {
+      "query_id": "7a5173f10b4ff2c1f90e60c6eeff90db6a3f331ca065609f5f3966a666fd8870",
+      "feasible_subsets": 516,
+      "states": 6
+    },
+    {
+      "query_id": "45ac6dc7942e73527e057bbe280e4433b370a55fce70643555e542615f446228",
+      "feasible_subsets": 7099,
+      "states": 10
+    },
+    {
+      "query_id": "14218fb5a299a5cc016f52bacb7086c6bbc8d42494221977ccc92793b7866b61",
+      "feasible_subsets": 794,
+      "states": 6
+    },
+    {
+      "query_id": "388037f5aec98d7ed577f12199f940d11bd4f915ebc860baef4928058c3fb4f8",
+      "feasible_subsets": 39203,
+      "states": 9
+    },
+    {
+      "query_id": "62d5539bf1e2bbfcffe27ce638b26f9ee1d7b3de8237ceea6ca1c03cf9252947",
+      "feasible_subsets": 1758,
+      "states": 6
+    },
+    {
+      "query_id": "abe111cd10dc3a71d82091df8cde4add004d4332fdd236d3a7d4b63212631997",
+      "feasible_subsets": 39203,
+      "states": 9
+    },
+    {
+      "query_id": "d83d6522adec5a95be3953bf2710e7c84e61b1743feaab892e9cb7128ef5810e",
+      "feasible_subsets": 1314,
+      "states": 6
+    },
+    {
+      "query_id": "b810f5d9ea5f0252121d42081ade92f28def8ce05aea0e43632ab4cf141f3a9c",
+      "feasible_subsets": 12911,
+      "states": 7
+    },
+    {
+      "query_id": "7590fc867c72cdce8ab328337f9eaad02130620ea91f02682956a1a637fdb17c",
+      "feasible_subsets": 738,
+      "states": 6
+    },
+    {
+      "query_id": "2c9b9468076fb6b834d07f3094d026cc774d3c0cf31a7c8cb566b57beddeb4ff",
+      "feasible_subsets": 1981,
+      "states": 7
+    },
+    {
+      "query_id": "b2b31df1ed526516fe149c3e3a53246498e65aa4318b77389371b40cc1f6f2ce",
+      "feasible_subsets": 349,
+      "states": 6
+    },
+    {
+      "query_id": "322f33b3e4dac5eebfabc8d4a1d65a067eeb37784c7d60e981d0fe912c449659",
+      "feasible_subsets": 256,
+      "states": 7
+    },
+    {
+      "query_id": "898a2f44f71bacb67176456a0a5fecb344c2f289924f4bc660a365debd9a6baa",
+      "feasible_subsets": 163,
+      "states": 7
+    },
+    {
+      "query_id": "6f394e7ef50545eada798f399823a8394b31325d7bf3be48918a4b0acadbacad",
+      "feasible_subsets": 22819,
+      "states": 9
+    },
+    {
+      "query_id": "18dddfeb96d0b53c6e0da506d3525e2b5624bd41b6a47aff701aa073dd8f7043",
+      "feasible_subsets": 1026,
+      "states": 6
+    },
+    {
+      "query_id": "be94505c8d6ba82824396fb6ed07d45459a316629df8158ebb09996c771184ed",
+      "feasible_subsets": 256,
+      "states": 6
+    },
+    {
+      "query_id": "b46e3548cc76c082f31b980d74ab2a7083651eb5ee6fb8df31fc03c975fccaad",
+      "feasible_subsets": 99,
+      "states": 6
+    },
+    {
+      "query_id": "b15deed7909648c5717943e3ff1a92e34b1b01afedffb09d6a316c228057f979",
+      "feasible_subsets": 169766,
+      "states": 7
+    },
+    {
+      "query_id": "9df999f16995800073653cc8c843553560cb438d06c5e4ce2f85c7a93cddfcb3",
+      "feasible_subsets": 2973,
+      "states": 6
+    },
+    {
+      "query_id": "7cef217ddd64f3d589ec87dc719f14b1b2766f00319adb4ad73026d1dd226b23",
+      "feasible_subsets": 12911,
+      "states": 7
+    },
+    {
+      "query_id": "d5cda9d44c6143d9cbc02f4d7f970b2b4f473926a81384b3b6207c4d1b4621f9",
+      "feasible_subsets": 794,
+      "states": 6
+    },
+    {
+      "query_id": "406cdfc5ce2e759d1f43880397b64699899f0027c860e1c777a1ace99b81aa1c",
+      "feasible_subsets": 3797,
+      "states": 14
+    },
+    {
+      "query_id": "4431b4580102d2ad0b3650f160de7fca2d506c5265534d21f2bb7e0b3c6e7095",
+      "feasible_subsets": 349,
+      "states": 5
+    },
+    {
+      "query_id": "a55a5dfe82598a053dd502c5fe9991f2e44ce45bbb0dfc398fdfad61d8df2c9c",
+      "feasible_subsets": 511,
+      "states": 6
+    },
+    {
+      "query_id": "dd3b08684924b0b6ac534a7bd632b3c16865f74d15b233333d8e3301faa81ae7",
+      "feasible_subsets": 163,
+      "states": 6
+    },
+    {
+      "query_id": "c1f972d9dbdca38128264268bc6126eb6e63e3cb069e46d02cb19661a47c35ce",
+      "feasible_subsets": 3797,
+      "states": 17
+    },
+    {
+      "query_id": "090148b43226e5ebd0e8a03d979f56c82222fafb9c45536708b4b5dd873801c5",
+      "feasible_subsets": 516,
+      "states": 9
+    },
+    {
+      "query_id": "b3dd608341bef2a3a5455010c2510757ec58c015fd6e2a586613e6180e7ed664",
+      "feasible_subsets": 1013,
+      "states": 8
+    },
+    {
+      "query_id": "9e2888f36ea7386dd4e3977597797ec451fa4bd0640824ea246097ed80ef43ef",
+      "feasible_subsets": 256,
+      "states": 6
+    },
+    {
+      "query_id": "293e81790a482f4c9dc066f5f71b462e4f3f857a3af0f7c7d91a642a20ff3e73",
+      "feasible_subsets": 106762,
+      "states": 9
+    },
+    {
+      "query_id": "afdef457d4130a704a951a008a24000cac38c839f8bea92c633719f707673371",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "e9b0190d64a5771ae51d94b478748d6e41530e703eb24edc95f17e691232af84",
+      "feasible_subsets": 106762,
+      "states": 9
+    },
+    {
+      "query_id": "467e424b5be5ee63844ccdadc235fa3274083db0d822736c1ad271e2dd633c59",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "46aaad8431ee335ea2928001f61ac2cb8ab9d7d3ffc0f05050fa7894cd86c430",
+      "feasible_subsets": 39203,
+      "states": 14
+    },
+    {
+      "query_id": "484b878a08752905a31e86cb441f6d3c238770f9e218048ac8ab30a4635a72c3",
+      "feasible_subsets": 1392,
+      "states": 6
+    },
+    {
+      "query_id": "b71467640b24e13b2a6bfac5512d3f47f24281a65809b6713cb1fa10af10b65e",
+      "feasible_subsets": 1981,
+      "states": 6
+    },
+    {
+      "query_id": "ba440b80508aae22af70d26a176a72ff5fc6951c4b5bf196115a696a2d3047af",
+      "feasible_subsets": 227,
+      "states": 6
+    },
+    {
+      "query_id": "9516211fd554ee6d690dc03f1104751e06f3e99c7fc6cff3c4d75ea867827c69",
+      "feasible_subsets": 22819,
+      "states": 10
+    },
+    {
+      "query_id": "d59a752a613d6d4fa11cb5ad4f36c028d298a803c3fe842a120ce559a30908fd",
+      "feasible_subsets": 960,
+      "states": 6
+    },
+    {
+      "query_id": "5747376444ba70fbe4011b4a330b88edb117f5eb9c224f738af7424c9a30ddce",
+      "feasible_subsets": 39203,
+      "states": 9
+    },
+    {
+      "query_id": "688a1c6bd9dd47c93656c1e52964877be64fb2bf0a0dcca23c98566554e85454",
+      "feasible_subsets": 1314,
+      "states": 6
+    },
+    {
+      "query_id": "7411cb89797f04e2d10760eeb5e066263d288f13db8597fb3854f51b175e3b93",
+      "feasible_subsets": 65536,
+      "states": 8
+    },
+    {
+      "query_id": "0cd39f1fe0a5d1a6a849da389cb8f9b7df1060095c6923c75aa5ea6166494b9a",
+      "feasible_subsets": 1758,
+      "states": 6
+    },
+    {
+      "query_id": "9e85cf2545146d3ee2f309a9d89116d77eba769dee90fd8b2128a536d2101c7b",
+      "feasible_subsets": 3797,
+      "states": 9
+    },
+    {
+      "query_id": "3876873896eea5a87a4bf476533499d766036a4f6212cd645e8038d8fa319123",
+      "feasible_subsets": 386,
+      "states": 6
+    },
+    {
+      "query_id": "c44f0db776cf88c349ab4f6408b3bafc727c8b8849ce853c1b933518082d7f68",
+      "feasible_subsets": 39203,
+      "states": 10
+    },
+    {
+      "query_id": "0d87883e32b50991befe260ac9da4c752ec8d3c9fcf8b677a5feb02a99976ccf",
+      "feasible_subsets": 1392,
+      "states": 6
+    },
+    {
+      "query_id": "ce31bccdf07440e2463223e8846940402a59a7153fbaaefe7413280a3740081f",
+      "feasible_subsets": 511,
+      "states": 8
+    },
+    {
+      "query_id": "07337800e2ac45d5c7eae8bcd41a57f22262d63664994ea0fc50fe2fd5102a17",
+      "feasible_subsets": 163,
+      "states": 6
+    },
+    {
+      "query_id": "8c9a0d792b78b1d955ab946da38b759bb534ed0214b35848e579301651c6504d",
+      "feasible_subsets": 106762,
+      "states": 10
+    },
+    {
+      "query_id": "8ab24ef555e97f54bdcd1bbe25e90e08623343b87f1f3c1a629262178b53af5e",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "bd842e4d75c49ec3a2d80c08039d441257dcb21872d835b00fc643b6a3b04dfc",
+      "feasible_subsets": 3797,
+      "states": 11
+    },
+    {
+      "query_id": "2caf7c06216490d2071e76a62033d4ea68d284aa11cd7458e354200f8daee0c5",
+      "feasible_subsets": 516,
+      "states": 9
+    },
+    {
+      "query_id": "93402a8fd86f5a392f7e96cb5db006a7f2c0336b9acb17b6042a8987673ee896",
+      "feasible_subsets": 3797,
+      "states": 9
+    },
+    {
+      "query_id": "ea352eb05f7ae31a57b7d492750ad0d8d8723b2bd6d25e61d9acf84120024aaf",
+      "feasible_subsets": 386,
+      "states": 6
+    },
+    {
+      "query_id": "e01b7050a6a3e46a9af04280f322caba4b43380965121d215c7df9f3f1bf4522",
+      "feasible_subsets": 65536,
+      "states": 10
+    },
+    {
+      "query_id": "43f1e52b52917ec3cd13db51ac90de66514d855ffdd2f0ff53c4709da0555577",
+      "feasible_subsets": 1849,
+      "states": 6
+    },
+    {
+      "query_id": "e55232187e2cc36ad277fb9b4e9ddc64f875f9dcbd0ecafc72857aa3da7e4d69",
+      "feasible_subsets": 7099,
+      "states": 10
+    },
+    {
+      "query_id": "91f1fc099047b73d98a94bca6a0544df2334e36d751dc99697459667914bd1de",
+      "feasible_subsets": 1026,
+      "states": 7
+    },
+    {
+      "query_id": "780b4ac6f54d8a7c63f1f48838144456acc99f9a380a5e01c667209dbfd78b43",
+      "feasible_subsets": 65536,
+      "states": 10
+    },
+    {
+      "query_id": "8681df4b77edf4822c22887af4d140d54c31af57f3e78b38b601f113897d649e",
+      "feasible_subsets": 2411,
+      "states": 6
+    },
+    {
+      "query_id": "da0b04476ec96d35468f3f97753b484ef3f6d99a82d4ed09f4852103bd86938b",
+      "feasible_subsets": 65536,
+      "states": 10
+    },
+    {
+      "query_id": "964491b222b064fba248223f68c817a3279dbdb14fa862b6b97cba43aa223780",
+      "feasible_subsets": 1758,
+      "states": 6
+    },
+    {
+      "query_id": "f9dce7ff10fc6325495df60b66052bc9dfb0c6e263b00746d7d792c9c09b7757",
+      "feasible_subsets": 65536,
+      "states": 9
+    },
+    {
+      "query_id": "ffeda35ffd3f68509ca3fc200130d83caa31f62acab1f1b4a1ce3fdadb88c7dc",
+      "feasible_subsets": 1758,
+      "states": 9
+    },
+    {
+      "query_id": "68a90e901ffb0dd9b39b2ebc64234a76a27e1e4932e96fdc00fd2c0cc82a86b8",
+      "feasible_subsets": 106762,
+      "states": 14
+    },
+    {
+      "query_id": "55727dd946a4245ba4bb12139e53430faf54e057bd99bf36431c064a82ae340c",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "df3bba720600173fbfe4ef87a6bed2ebde5bc25d34df43bfcfa9aa9e8f1c0400",
+      "feasible_subsets": 39203,
+      "states": 9
+    },
+    {
+      "query_id": "a0dfe6eae95f0f6b4c81cd5ae23bb5ed3c7ca17d457069f0c13afcf3b68cfe8b",
+      "feasible_subsets": 1849,
+      "states": 6
+    },
+    {
+      "query_id": "a0a21f8fb847c32d445481f7043c579143e7240bdc4531c4f0749c2f02a9c47b",
+      "feasible_subsets": 39203,
+      "states": 9
+    },
+    {
+      "query_id": "e7c5e3f6c9e877b2b8c8c2be1ef558c43debd152464c57f3a3f3fbd3a6fe9c36",
+      "feasible_subsets": 1392,
+      "states": 5
+    },
+    {
+      "query_id": "c46bb7f257c82d6a6af891f041569481379811d546135d74eb4195fc65cf4f90",
+      "feasible_subsets": 39203,
+      "states": 6
+    },
+    {
+      "query_id": "eb5a0e5ccff0787743f3899cf6abfb15901b2c08002e4594f29c06f2e8945662",
+      "feasible_subsets": 1392,
+      "states": 5
+    },
+    {
+      "query_id": "b2a14dfd0eba86e77b353ca11a53ec318d5e7434de7ed22ae487e96c89aa1c12",
+      "feasible_subsets": 106762,
+      "states": 10
+    },
+    {
+      "query_id": "8bef20969f49af3ff2c56ab7b1570b8086d85b9cf497388a3958ed8d08994d38",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "ee3512f0231437b9dd6f82b8bc434fc43a86424b634a57ce0a01a16c4c33eba7",
+      "feasible_subsets": 39203,
+      "states": 8
+    },
+    {
+      "query_id": "5b3d057159f7fadcaf178ee1773b9f12db6b779fb305587e53ce616f2f9a2c54",
+      "feasible_subsets": 1314,
+      "states": 6
+    },
+    {
+      "query_id": "fbe2d9a2ad3f1d789c51be7be438d2d823f0d17dbf36ac4dd1648c60591adddd",
+      "feasible_subsets": 169766,
+      "states": 9
+    },
+    {
+      "query_id": "618c68c4fc5b5d70994e382790fea8b28ce9db1feb70ccb915b4c4788172eddd",
+      "feasible_subsets": 2973,
+      "states": 8
+    },
+    {
+      "query_id": "a2415498beb65befa86753031d1b9cd30ca4e3f3fa01a615c151d04fd5ce97ae",
+      "feasible_subsets": 65536,
+      "states": 16
+    },
+    {
+      "query_id": "bc7aeefa695abb75fd91e25ed5604a5860538d9c5c9661d7859a891e2d972175",
+      "feasible_subsets": 1849,
+      "states": 6
+    },
+    {
+      "query_id": "bb11b882431d8373a814228c05f0262dcd449acccbb1f59e7d3078d148bea6fe",
+      "feasible_subsets": 39203,
+      "states": 10
+    },
+    {
+      "query_id": "f084791c721db634f1c52928c6d9c6b5b9e69907856464594508464478385298",
+      "feasible_subsets": 1392,
+      "states": 6
+    },
+    {
+      "query_id": "f0f6381f21fac92d20d98a132d3b060f23cefd8a15beb246cfa47450034502cc",
+      "feasible_subsets": 511,
+      "states": 13
+    },
+    {
+      "query_id": "a951e919e47f48e1c0194efc25dfc77e6551aa91a84415518ffb9fc253aa8110",
+      "feasible_subsets": 163,
+      "states": 6
+    },
+    {
+      "query_id": "7ceab576175b4b47861032575df4df0abd44a101fae212469b064be73c1cafed",
+      "feasible_subsets": 22819,
+      "states": 10
+    },
+    {
+      "query_id": "09f2a8cc352680f606e72016294d33324f93f71e7ae09a4ef6c4c511efde7a63",
+      "feasible_subsets": 1314,
+      "states": 8
+    },
+    {
+      "query_id": "2972d3451b90e9c1b0625a3d7aa2b792e5d1cd7b26df17c7a90088bacd00e09a",
+      "feasible_subsets": 65536,
+      "states": 10
+    },
+    {
+      "query_id": "5cc111299bf5826ab88d2e7944aa89384f8bc1013ba14ec500c93d4c4c395968",
+      "feasible_subsets": 1758,
+      "states": 6
+    },
+    {
+      "query_id": "d6fc30c406601aed578bbe1d0af324dadb64c7351d0d8628ca12b2bd1e8b216d",
+      "feasible_subsets": 22819,
+      "states": 10
+    },
+    {
+      "query_id": "ddaecf7a8bb07935e9c8d1e3f290d57a262308194cd6a4c1e8b833d6f57c7234",
+      "feasible_subsets": 1314,
+      "states": 6
+    },
+    {
+      "query_id": "43db84228aefacb0416bfa5e46dcc1b307e0674d61a0a47b81b65b5a1102f2c0",
+      "feasible_subsets": 106762,
+      "states": 9
+    },
+    {
+      "query_id": "5f4a74990e292c9ef5e10240d7bf5273cbec21405b3ba4e6fb1771fcdce14076",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "fa46f3c3967d8d9e3572e97fe0a048df218ff5125ff7a4c025991bb512cb1c1d",
+      "feasible_subsets": 39203,
+      "states": 8
+    },
+    {
+      "query_id": "5ac833fd7d4ceeac46bd6cf1dc64643eebd6e512e31eb45bf16acfdd6e7c6efc",
+      "feasible_subsets": 1471,
+      "states": 6
+    },
+    {
+      "query_id": "21cfc7e4febc08a3b41c75681c502c866a427224d4afdd964ef64002f5442fec",
+      "feasible_subsets": 1013,
+      "states": 10
+    },
+    {
+      "query_id": "0cc9f0613eb63f0f1b8b35dbd16bff8cd3e6e42af28111663db2dac45cf79759",
+      "feasible_subsets": 256,
+      "states": 6
+    },
+    {
+      "query_id": "2e17d88751975ceb8571b0c4dde0399d7199e0a47d3ad586d0191f4451cf1682",
+      "feasible_subsets": 169766,
+      "states": 13
+    },
+    {
+      "query_id": "ae040431b32acda77eff58d12ea5759566579d0463f61408f0d3bad6b406b3ee",
+      "feasible_subsets": 2973,
+      "states": 6
+    },
+    {
+      "query_id": "2919081bd1e4fdc2031485e66c68e75fcea1f687176163b0b73be4582acda9df",
+      "feasible_subsets": 511,
+      "states": 7
+    },
+    {
+      "query_id": "1b617c0eb7a930df56bcedea253d4c27f48e3f4f61dc2a32cc7c2c0133a2fa59",
+      "feasible_subsets": 256,
+      "states": 6
+    },
+    {
+      "query_id": "04529ec663da494398b3b5ac31f3af38c0f373e14ed97377424f31587ab90388",
+      "feasible_subsets": 128,
+      "states": 7
+    },
+    {
+      "query_id": "13bdd5e4bbcaade428e06b03e684d3aecb5335601d18a1dfcd5b2fae71469784",
+      "feasible_subsets": 57,
+      "states": 6
+    },
+    {
+      "query_id": "0b7b5ca09bcd01ff86ff6f9dd249ebb132fe44707ac6657c726aabef7487f2ff",
+      "feasible_subsets": 169766,
+      "states": 8
+    },
+    {
+      "query_id": "a1b3987a74fc5a0b7284be3cb8c987afeb36c16afb4b48167e205c305ff65bf5",
+      "feasible_subsets": 2973,
+      "states": 6
+    },
+    {
+      "query_id": "74905ed63a637c9ad90bf8edaa0d416a39b2bcb4b578c1dca40f6b3799b98bb0",
+      "feasible_subsets": 65536,
+      "states": 9
+    },
+    {
+      "query_id": "e40dc9743763ad62a936a1666337fc459c0fd836fd999101d954b801165713da",
+      "feasible_subsets": 1849,
+      "states": 6
+    },
+    {
+      "query_id": "f607695e476f55ad3b55cdfb7529ed2a535e6ca3cb83775aef4f5986f522496d",
+      "feasible_subsets": 39203,
+      "states": 7
+    },
+    {
+      "query_id": "cf30a8e7737763f8f69ec174f8eb4ebc0548a72e007fc8c7c1b20e20b0f413fd",
+      "feasible_subsets": 1849,
+      "states": 6
+    },
+    {
+      "query_id": "cb50ba45cab03ac13cd80255729221d3610d6e7fd790e593c0d1c0b6e7128468",
+      "feasible_subsets": 39203,
+      "states": 10
+    },
+    {
+      "query_id": "a6dbde19e9a7c31edc5819310c10d47a4ae60fc2c9a0ea339e5bda02fc03fc47",
+      "feasible_subsets": 1392,
+      "states": 6
+    },
+    {
+      "query_id": "441656ac605f3151a84e923b6ae4548e895823a19ca7be5e506b638cd23e7101",
+      "feasible_subsets": 169766,
+      "states": 10
+    },
+    {
+      "query_id": "271fa3c46ffa20fba82d24294b66f2d8cfa25e0c22338b1a621676a53f3f4a3e",
+      "feasible_subsets": 2973,
+      "states": 6
+    },
+    {
+      "query_id": "965ae467cbf00e739669ee4f5dc5be55aab5e83e8d550945aaba2ae3ca49f1f3",
+      "feasible_subsets": 16,
+      "states": 6
+    },
+    {
+      "query_id": "99e7478f2945baeaad50b53be9d42e6311fe8f8a089602a277c8ec1b41ae56d9",
+      "feasible_subsets": 16,
+      "states": 5
+    },
+    {
+      "query_id": "5273386682ebaf18bf3f4cdb2dbfc0a22a3fe3b2e35840b8c0b413997659d728",
+      "feasible_subsets": 7099,
+      "states": 10
+    },
+    {
+      "query_id": "7704b01eca3784815929abfbab35aa9b1cf03127bd0517232581dd91462c6d1a",
+      "feasible_subsets": 516,
+      "states": 8
+    },
+    {
+      "query_id": "4ce79fb1346ebeb8c18a78fd803f5b02d9425b88439ca7f0b36b603f892c8dc2",
+      "feasible_subsets": 65536,
+      "states": 6
+    },
+    {
+      "query_id": "23cb7ef6810046605146f172f7afb9a045e9d70561ca2505790ccb9b99b9d786",
+      "feasible_subsets": 1758,
+      "states": 6
+    },
+    {
+      "query_id": "9e89e5f605bde3a20b8d530e4d6396d132d050dbdc1a9632b3b6b8edb05e466c",
+      "feasible_subsets": 106762,
+      "states": 10
+    },
+    {
+      "query_id": "c627b0ecb3d435d900f238a008c907c635c8f2e3a23f5c4b76d8bc48bc725656",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "870cabed905ce8ae385d9bcadaeeec626cffc1fa9849960c1a2fcf72f744c8b3",
+      "feasible_subsets": 65536,
+      "states": 10
+    },
+    {
+      "query_id": "9891abb68450bce71edb7af081a86a1076756e062f208bfdb9b874238d997f0a",
+      "feasible_subsets": 1849,
+      "states": 6
+    },
+    {
+      "query_id": "3517bc43c96b1b53645ea33dad0a095d8a3bef7c60e60c7ebfc87e994e8f15c2",
+      "feasible_subsets": 169766,
+      "states": 9
+    },
+    {
+      "query_id": "7ee60b6c57a82db2774f110cc4f01aecef46f5f0798f999573e8c71a5d40c244",
+      "feasible_subsets": 2973,
+      "states": 8
+    },
+    {
+      "query_id": "6dd770bbcecb88c5c91cd46c3518803576e2c71cfa2a8f80ceae42ee0ec16ad5",
+      "feasible_subsets": 106762,
+      "states": 16
+    },
+    {
+      "query_id": "4499dab4cb1451603cafa50dbf3b540c48c272fe227275e66960a24b631c7019",
+      "feasible_subsets": 2306,
+      "states": 9
+    },
+    {
+      "query_id": "1bdfb69dfbccfdc15a77859d18675379ae04380aa9f4a9f5bedddade531d2f0c",
+      "feasible_subsets": 106762,
+      "states": 10
+    },
+    {
+      "query_id": "bb9efb4432bb247c96de893cce5a96f0a3785fc685f9553d9dc309cd9ffca69c",
+      "feasible_subsets": 2973,
+      "states": 6
+    },
+    {
+      "query_id": "69a48ede242eb8385f11ac79a33fa9a41af9078f3a9af49c5b717310777161be",
+      "feasible_subsets": 106762,
+      "states": 10
+    },
+    {
+      "query_id": "698da4931d759fc1bbb68869e50ed4af1a55041910e25a08b810796d7d06426a",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "9218da50655290403ed02dd3795f72ebf54edcde96195557a2b1c3dabf388483",
+      "feasible_subsets": 169766,
+      "states": 9
+    },
+    {
+      "query_id": "de23d552a6969f552b9649a9f092ab8286f470351b54ad8061b805cd9c9892f2",
+      "feasible_subsets": 2973,
+      "states": 6
+    },
+    {
+      "query_id": "212873a5e2cb577ce6079af4ce6bf9a6cab2318c83c4de11d392a1cd16104336",
+      "feasible_subsets": 65536,
+      "states": 10
+    },
+    {
+      "query_id": "fe5c7c1679d2fbf8b8ec17cf84b2ed0c0efa1e57bf371bff7c06ccd209e3f2f8",
+      "feasible_subsets": 1849,
+      "states": 6
+    },
+    {
+      "query_id": "5a58ab8d945b74633d090160f0be244ae0f2a6e270e5debc736fbf500077987c",
+      "feasible_subsets": 65536,
+      "states": 9
+    },
+    {
+      "query_id": "424038c20024f7cfb096135e41185c98de1ee4131bcee5132d7b3c05daddfa01",
+      "feasible_subsets": 1758,
+      "states": 6
+    },
+    {
+      "query_id": "ce6d11f7752e9819981927ac26cb6d1ed62269f57d8f4a29bfdef6680b4c681e",
+      "feasible_subsets": 65536,
+      "states": 8
+    },
+    {
+      "query_id": "2624221c69d35e2e6e9a46fd7469b6916abdecf26ae6324e5542881ab30b537c",
+      "feasible_subsets": 1849,
+      "states": 6
+    },
+    {
+      "query_id": "d88e6691bed64909e89390f1da4ee6fd91db2013d8efd93a667ee7ef8eb07a83",
+      "feasible_subsets": 169766,
+      "states": 8
+    },
+    {
+      "query_id": "7567214155e5642a80080f4c59192eb3169baf5b2650f3f5a13bc78109a20a83",
+      "feasible_subsets": 2973,
+      "states": 6
+    },
+    {
+      "query_id": "583b97b802ffc5b92cd3d7c6e5695caed6a5c5b13c6e4913447d5be02ed87cfe",
+      "feasible_subsets": 65536,
+      "states": 9
+    },
+    {
+      "query_id": "ca0b818730318de1205392bd870b4b87b35310d921ce2f6668649747d2700fc0",
+      "feasible_subsets": 1758,
+      "states": 6
+    },
+    {
+      "query_id": "c6ebf4a5acb44edec081f16ee5f4dbd81ec7c52626bc0d9757bb89506d397320",
+      "feasible_subsets": 65536,
+      "states": 10
+    },
+    {
+      "query_id": "e9b4e55fc8d8972349073fa91d72f7037d2c3103d3da64d894b1d563235493f3",
+      "feasible_subsets": 1758,
+      "states": 6
+    },
+    {
+      "query_id": "25735954a750e1f3e4af1798b06365995892b137ff154a87cc7aef8cec4536f0",
+      "feasible_subsets": 106762,
+      "states": 10
+    },
+    {
+      "query_id": "c245eeb93ba4c98975d4617070f5b103a230c89ce5c8fd8e6b983e9958105b53",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "2fe204831f4c7476eb48cb3873f95914eb211c7bfce69d1069a59316cd6f0c75",
+      "feasible_subsets": 106762,
+      "states": 9
+    },
+    {
+      "query_id": "de3f860840fb785b69b39464949b7637ab4e90c718bf13314372c164e1acfc6a",
+      "feasible_subsets": 2411,
+      "states": 9
+    },
+    {
+      "query_id": "7d575147a12da2e30bcfb92a7fe56b98e742eeb47a145f9dd721a4390663a25b",
+      "feasible_subsets": 106762,
+      "states": 8
+    },
+    {
+      "query_id": "fc0eaaaa19ca3001a0a50b7bee8768daed5e7987fb438cbb8a39bda0878477cf",
+      "feasible_subsets": 2411,
+      "states": 6
+    },
+    {
+      "query_id": "9e31b73186280058bf04e45057dd89846ec5a39c5bb2e75f97d2bf264ee80967",
+      "feasible_subsets": 7099,
+      "states": 17
+    },
+    {
+      "query_id": "d753e7ebeea135d85fd67fb2015a1f008700569e11d1533df548268b2432a9eb",
+      "feasible_subsets": 471,
+      "states": 6
+    },
+    {
+      "query_id": "6b45ff1098a59353a4cd456c9ed32688da9dc3acfa9f0b9e8dcff8acefe8f90e",
+      "feasible_subsets": 106762,
+      "states": 6
+    },
+    {
+      "query_id": "b5db36ac7ac9d45b3b2f0b366289f35f3d2e3b88ff98f7cda1a3df0c5e6ba316",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "911525ddb9df809912f71b91ed0d23f38c7fe832180f263dc399aba9c8255a32",
+      "feasible_subsets": 169766,
+      "states": 9
+    },
+    {
+      "query_id": "cf49d59ac25d4f1cc08862ee0e9960e8093f84fbc5987d96e74f04f074b0e9ee",
+      "feasible_subsets": 2973,
+      "states": 8
+    },
+    {
+      "query_id": "f8eb20634ee5aea34fded8c7c3b245c9e4c7dbcf512a67bb248145623e5103e4",
+      "feasible_subsets": 1981,
+      "states": 14
+    },
+    {
+      "query_id": "25e30446b10927ff9ebcea1ae2219ac184c9eb10853bd16ead41356d94210455",
+      "feasible_subsets": 386,
+      "states": 9
+    },
+    {
+      "query_id": "b2627308b7e9e38cdadb2df88005b89b16c5b8ff0c783ca7ea9083279ab46e81",
+      "feasible_subsets": 1981,
+      "states": 8
+    },
+    {
+      "query_id": "52358a6df381d8812aa2e55ad82b5ae45fd4dc8f42787d1d4bd64e0a91e327a9",
+      "feasible_subsets": 562,
+      "states": 6
+    },
+    {
+      "query_id": "574d2c7b4ea183d03a77f828500d17c8fc07a79ac494b174ef6c580a99d92dc6",
+      "feasible_subsets": 64,
+      "states": 6
+    },
+    {
+      "query_id": "5e75559eb83d0445d0b350b28a8f93af8b5e600f1a01be13252a4f505e82b3ab",
+      "feasible_subsets": 57,
+      "states": 6
+    },
+    {
+      "query_id": "dab96d099d613e965ebaec889126525666fb4b821a25268a17033e9414dd58e9",
+      "feasible_subsets": 511,
+      "states": 7
+    },
+    {
+      "query_id": "5c122b1eb1ea7d86b2d125d08b63695dc625acb2bfba11ddb0654a6d301deedd",
+      "feasible_subsets": 163,
+      "states": 6
+    },
+    {
+      "query_id": "7295de4146984353f331757a717b40569107ba309321ef0c1ef88617e1b7c6b7",
+      "feasible_subsets": 169766,
+      "states": 17
+    },
+    {
+      "query_id": "b2995b73cea803f895b94b7664e71417ac086bc1e3423b9bd83a6365aabaeba0",
+      "feasible_subsets": 2973,
+      "states": 9
+    },
+    {
+      "query_id": "d3c636fae16b5ed6447da42d1b3c6f463badf6213d6b17d6040fe5b8ec7cb67b",
+      "feasible_subsets": 106762,
+      "states": 7
+    },
+    {
+      "query_id": "8b02de1a77b08ac0dc5b0d5468861c5990f6efec6f1012eb5167e15aeed3a208",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "4cbc8569a8a9c7ff6bced5ac4f853b04bf1d3b0a84803e46664322593d00cf1b",
+      "feasible_subsets": 12911,
+      "states": 10
+    },
+    {
+      "query_id": "879dab527ef0f4496edd381b948663f858074bb66fa440caa309dcbfbe77e286",
+      "feasible_subsets": 1026,
+      "states": 8
+    },
+    {
+      "query_id": "2b12d789c91a71c488e900dceef00c576499d9eebdc1dc76be378c876d99d025",
+      "feasible_subsets": 65536,
+      "states": 8
+    },
+    {
+      "query_id": "5897430702c1c7b8a9a3ca707af7aedc880fae1c990f875efe0e568ccc5ef1a7",
+      "feasible_subsets": 1849,
+      "states": 6
+    },
+    {
+      "query_id": "371a85086a0f151188c8c0fe29b9bb07e8644f332164d98f45d09a5cc8cfd1c1",
+      "feasible_subsets": 22819,
+      "states": 10
+    },
+    {
+      "query_id": "d120568017c1858f0d800dda17ae2189d7d3a7f961f677f43a6a9b33089717e6",
+      "feasible_subsets": 1093,
+      "states": 6
+    },
+    {
+      "query_id": "241034dd08690c3d08c112d82e60f0862a464731ae7b7e1f705dfab81dc76afb",
+      "feasible_subsets": 169766,
+      "states": 10
+    },
+    {
+      "query_id": "bbdbbe9c3c62f27a044ae877642e9ed755c4f1de73fd98e9ca4d74822c7e3f9d",
+      "feasible_subsets": 2973,
+      "states": 9
+    },
+    {
+      "query_id": "ba674ce5d9ebd75d1dab6e13fdf5183baeb3b0fc5024a56ab2afb4b82a4a072b",
+      "feasible_subsets": 128,
+      "states": 7
+    },
+    {
+      "query_id": "6407d724510ffd86c14f5973ae4178bfc29aab863a74460aa4543ebd9fed45b6",
+      "feasible_subsets": 31,
+      "states": 6
+    },
+    {
+      "query_id": "ab08744c254982902eb721b0ee0b514c674188b5e03f908df448d8b4a364a031",
+      "feasible_subsets": 22819,
+      "states": 10
+    },
+    {
+      "query_id": "8c27c3ebf3e8f1e19c810ff6d9009e486f728d59c3f19e1f088a84d09214269c",
+      "feasible_subsets": 1026,
+      "states": 6
+    },
+    {
+      "query_id": "f7f4502d42dd84879a02551ebbafdb01c48299a7a06db8432f6271769f39d98c",
+      "feasible_subsets": 65536,
+      "states": 12
+    },
+    {
+      "query_id": "bd585f2ccecad7f5092b87c8d8b7c3037068a1e994c549d214f1c8a4313d89c3",
+      "feasible_subsets": 1849,
+      "states": 8
+    },
+    {
+      "query_id": "5b7ed84fb618cd58e5d25bb294c8beab43fd647894e54e448af4e09488b40d89",
+      "feasible_subsets": 39203,
+      "states": 15
+    },
+    {
+      "query_id": "dc41f50ef8b235b63e9bdb97a488f577f2ff7d9dc296571063081bc747a5fca7",
+      "feasible_subsets": 1392,
+      "states": 6
+    },
+    {
+      "query_id": "62dcbdc6256acf6a75f43903d98a6ae1ad38b2e32c28ab3d74247d82674d8236",
+      "feasible_subsets": 169766,
+      "states": 13
+    },
+    {
+      "query_id": "2dd4337c950a92f64d0b13401ef5fb66e170705910682b372810cf9b94d9f043",
+      "feasible_subsets": 2973,
+      "states": 7
+    },
+    {
+      "query_id": "f0c58dfe13420a8a214760fc4059e7f39df222ee8fc7c0539645d6e2b257b58d",
+      "feasible_subsets": 39203,
+      "states": 10
+    },
+    {
+      "query_id": "f4e96df5c38ae24486e94e078c30d9a5bb1aa31568495b9dca308ccdbfe8e208",
+      "feasible_subsets": 1392,
+      "states": 6
+    },
+    {
+      "query_id": "a6d67e69cc69d116771deee245d993b5c34910f2d23b78ace47a1ff7502ff800",
+      "feasible_subsets": 22819,
+      "states": 10
+    },
+    {
+      "query_id": "48b6ebf9a0a6cd2b588887ecb7320da95a681b8facf103aa8dde52ff52cc6d38",
+      "feasible_subsets": 960,
+      "states": 7
+    },
+    {
+      "query_id": "8b2bdd7b7643b42d9678e25353d406e71a10abb66c9c14f046bd3d08181a3005",
+      "feasible_subsets": 22819,
+      "states": 10
+    },
+    {
+      "query_id": "7416ebec68e63bbecff93bfeceda0f47b742d61318fdf253db09f7ae0a296aa0",
+      "feasible_subsets": 1093,
+      "states": 6
+    },
+    {
+      "query_id": "52580ea3154809d1f1d295771361dfe480c89dfe39e1588d94955f6326b9e495",
+      "feasible_subsets": 106762,
+      "states": 10
+    },
+    {
+      "query_id": "7f40f8ee9c8653d6911b581d94cd817ed51a16d5d64596fb8043ebf74b07ee53",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "77acc4725be8cf1bb763ab731e2af04061ad28b4a0c86bc1bd7f42cb9c89a0a9",
+      "feasible_subsets": 1013,
+      "states": 13
+    },
+    {
+      "query_id": "0f30a3c114d17371fc378af19dbff517e948db2e7e78427f96ce393ad47907c0",
+      "feasible_subsets": 256,
+      "states": 6
+    },
+    {
+      "query_id": "e9fdfe9da0cd348e9d5c24092cb7e41e46401c8ef46dcb80e03d0f53b7af51c4",
+      "feasible_subsets": 169766,
+      "states": 9
+    },
+    {
+      "query_id": "a7a32a13182466b5f41083654c187afe470fddaad12928b29f524c0cab38b93b",
+      "feasible_subsets": 2973,
+      "states": 7
+    },
+    {
+      "query_id": "1b71940ea1afe3817b8c6f8079a1513117bd7f64171a4d004818b29108325128",
+      "feasible_subsets": 106762,
+      "states": 6
+    },
+    {
+      "query_id": "4c1803d908727d983637fd6b445f1fe904dc3a01ececdbcf2acc35ba56c356f6",
+      "feasible_subsets": 2306,
+      "states": 7
+    },
+    {
+      "query_id": "c267712d64d3d8f07ea842ae74f99810b7c530ffc3ed1cf1cb75fe4669cda9eb",
+      "feasible_subsets": 106762,
+      "states": 9
+    },
+    {
+      "query_id": "eed3963805ed19c5826490b6d8a237359d8819967972f877c0cbccd1ee8eac37",
+      "feasible_subsets": 2973,
+      "states": 9
+    },
+    {
+      "query_id": "c00446a67fa22ec2eb7359998860cfaacc20f824bfe9fa5a4fdd371651ed52ed",
+      "feasible_subsets": 106762,
+      "states": 10
+    },
+    {
+      "query_id": "b390f60d95197edcec25fa8ce45ac89528a74355c35077487024a0f60c00faf5",
+      "feasible_subsets": 2973,
+      "states": 6
+    },
+    {
+      "query_id": "cd4b8f9558a825ebbfb7ef55de664c3f9ba7fd2d51419ff9a8a6a253682b5fa0",
+      "feasible_subsets": 1013,
+      "states": 8
+    },
+    {
+      "query_id": "e27ff7304a0a1f572f63c1a0ff854a6143a39be499eb922fc8f84a03fef6c32b",
+      "feasible_subsets": 163,
+      "states": 6
+    },
+    {
+      "query_id": "4c103ab02bdb1c6be3544bc51f2c6bfd6b3e14758159f1c8598317c3170b2100",
+      "feasible_subsets": 65536,
+      "states": 7
+    },
+    {
+      "query_id": "03ec43fac85d663defc87cd9e5b07a6b927ea8c314d24d54a15e6625d6eabc51",
+      "feasible_subsets": 1758,
+      "states": 6
+    },
+    {
+      "query_id": "8af9039288cf1b4a5165a047d87ca33e50fc198373cf28ad9101015f71e6aa78",
+      "feasible_subsets": 22819,
+      "states": 10
+    },
+    {
+      "query_id": "8cfb49b9cea1990c680e9115211014d26dd2d6a3b14ee45393dd1e8956d57f15",
+      "feasible_subsets": 1093,
+      "states": 6
+    },
+    {
+      "query_id": "49d90cccf1918d6bc6d26ae77da2cb2e205c99f67235e89c6fb328caa8788b76",
+      "feasible_subsets": 65536,
+      "states": 10
+    },
+    {
+      "query_id": "54b70375b11e29b2aef5886040a8a72ff61410052bf68c45e185f9342b80e641",
+      "feasible_subsets": 1849,
+      "states": 6
+    },
+    {
+      "query_id": "2ba913e692e064eca373d79d4f95a4f7e1e6f48725aedc481ec1b27a32b65da1",
+      "feasible_subsets": 1013,
+      "states": 8
+    },
+    {
+      "query_id": "06630f038ccb65fc497e84f7fa4ab6aaa167d8c1d3846049f8236fd7ed68af65",
+      "feasible_subsets": 386,
+      "states": 6
+    },
+    {
+      "query_id": "6c21d5f4d3ed328a8e7ce14cd282fc1f9418135be6eaa8dff90504302454924f",
+      "feasible_subsets": 22819,
+      "states": 8
+    },
+    {
+      "query_id": "ef9ce62177a0911caf806fe95ae7a36f5051bf5b8f1aa18f5385096fbea201d0",
+      "feasible_subsets": 1026,
+      "states": 6
+    },
+    {
+      "query_id": "ffc3d21582162b4d82fa46e4fd8cffcc4e0dc47fcf8a4021cc55de8e44f02100",
+      "feasible_subsets": 65536,
+      "states": 9
+    },
+    {
+      "query_id": "3b475b739b2fa7c0e69b1f6fb823201cac4235b30acaafdf7911345ea36749f1",
+      "feasible_subsets": 1758,
+      "states": 6
+    },
+    {
+      "query_id": "39d9fbecd67958cc3454bf2600654710b0a38dcf9c6df1b294f52364e098b794",
+      "feasible_subsets": 12911,
+      "states": 15
+    },
+    {
+      "query_id": "7ea06c52f4d61606a1e0cbc643321bbd7718588e4bd1445d8a9d67e8495001a0",
+      "feasible_subsets": 738,
+      "states": 9
+    },
+    {
+      "query_id": "b7498cd3f5c444ec156faaad490a3f4ff6b7fe8ed400862329dfb5f40271f1c5",
+      "feasible_subsets": 22819,
+      "states": 10
+    },
+    {
+      "query_id": "19292ed2f88c45d6f27f8f51d0776daf179b0b469f471daee3499b5a8dd7a52e",
+      "feasible_subsets": 1026,
+      "states": 9
+    },
+    {
+      "query_id": "4fcac1d9918909a986d62db6d20feb9bc0aba84bb17ae269059497998cb7effa",
+      "feasible_subsets": 65536,
+      "states": 12
+    },
+    {
+      "query_id": "0b783a07be4b892e91f230b79d74b80ab590f89ace78e0cd6bde805e16818ff5",
+      "feasible_subsets": 2306,
+      "states": 8
+    },
+    {
+      "query_id": "c6177423e9d02c89b42de0611b54483f2c410c47344d3a34d7b27f99e6de4efa",
+      "feasible_subsets": 65536,
+      "states": 13
+    },
+    {
+      "query_id": "a9985dfdd6137aa2784ab4081cd26a148ffc7abf38426d92989b75d72d8599db",
+      "feasible_subsets": 1758,
+      "states": 6
+    },
+    {
+      "query_id": "14786f9a8d5c4909a53cad3eff26c5e7ada3d1d32f8f6df636550f035be6cd3a",
+      "feasible_subsets": 106762,
+      "states": 10
+    },
+    {
+      "query_id": "ef2bf7dc559d8ba64d7ab8f623e4836f61cd9896393993f74e8032761ef28965",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "deb24f417cb78030ae2851a29b8c5d027af658680a39a5021d761b5ac59f572f",
+      "feasible_subsets": 65536,
+      "states": 6
+    },
+    {
+      "query_id": "0616c29cc7ea0169381dd64ec39291323e782f7acd7245a3bbf1869f45337d40",
+      "feasible_subsets": 1849,
+      "states": 6
+    },
+    {
+      "query_id": "dbaa9f9f8bf24cc0ca4abf68c7bc5223f0cbf8fa8e61a39845078196d00ea9af",
+      "feasible_subsets": 39203,
+      "states": 5
+    },
+    {
+      "query_id": "e3ac1172aa9a8f94fab0ce60fc9e2abf46f22db8dcda8ca46dcd487ab5b81641",
+      "feasible_subsets": 1314,
+      "states": 5
+    },
+    {
+      "query_id": "ef194faeeddf65f822951e664c1690bf1e7aa73318242530fafb2f26e24a3255",
+      "feasible_subsets": 169766,
+      "states": 9
+    },
+    {
+      "query_id": "870d76b4d1bf312533aecb849dd7ed981c2683adfeec3bf1ffc0d73c4f30defa",
+      "feasible_subsets": 2973,
+      "states": 6
+    },
+    {
+      "query_id": "b213000a6e69b14fec7b2092928ad6851d9e53c9498f877a17e3d020d8915ab0",
+      "feasible_subsets": 3797,
+      "states": 10
+    },
+    {
+      "query_id": "8cb6cc9b9915e2797def92853a295b69d6fe62d8a91f7096993198452e110af1",
+      "feasible_subsets": 386,
+      "states": 6
+    },
+    {
+      "query_id": "b5909272445256a84a3f0811d97b141da55dfdfa8ee4369ad3774dc987b0f306",
+      "feasible_subsets": 106762,
+      "states": 8
+    },
+    {
+      "query_id": "cfe3a60980a2f5350c6e889d80c593380e6ce0f1fe6fdbd05132fba90bba7e5e",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "209c04ef5e36b89477c8d5673dc27d9859164d3a41e0e7aac3a959960c18ae02",
+      "feasible_subsets": 65536,
+      "states": 6
+    },
+    {
+      "query_id": "0d9583068aa34d24fd6e70e9f66d725820dfac4338d0a64cc68dcc9fd4a7b051",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "a36b52d130c9dfd71311ab92d383aa63730d5620a46f549005c7dcce4289197c",
+      "feasible_subsets": 65536,
+      "states": 10
+    },
+    {
+      "query_id": "b0fa510a08413bf5ce6f6848b9cf063260fb9c151b54a74003ce123deb40f228",
+      "feasible_subsets": 1849,
+      "states": 9
+    },
+    {
+      "query_id": "c7b60bd7bf91afb39960466bfb7894980e51c2551162e67a2d00dc730f8d8d32",
+      "feasible_subsets": 169766,
+      "states": 9
+    },
+    {
+      "query_id": "50b0532338ae93dd29118af6acb5ed7a11ee2fac29cd5071b93ddb7cae423974",
+      "feasible_subsets": 2973,
+      "states": 6
+    },
+    {
+      "query_id": "779c07a076eee472f3d80439058f6c8c2750ff7c65ff3608cbf024462759827e",
+      "feasible_subsets": 65536,
+      "states": 7
+    },
+    {
+      "query_id": "a9f4d04c466dfe39899d84740dc8c1138ea1f23a65295d0fd6f0e9741bd4acbc",
+      "feasible_subsets": 1758,
+      "states": 6
+    },
+    {
+      "query_id": "6848f4fe3967ea648ff5b214ee570b53e5f508ea55c7534e93248c3d22f6b11e",
+      "feasible_subsets": 169766,
+      "states": 13
+    },
+    {
+      "query_id": "27745263b0aee87f4e138087c1e5978228b2fa37480ba45e61bfaebe5146e99b",
+      "feasible_subsets": 2973,
+      "states": 9
+    },
+    {
+      "query_id": "680645fadecb3596df66f71a52a6cdf110c18dcb710eee1d45ab09b69dcd4403",
+      "feasible_subsets": 1981,
+      "states": 13
+    },
+    {
+      "query_id": "f82723aa319a0dc1710c02a6bbb1c55b0cdd4362034b055a9a963bcf336a5339",
+      "feasible_subsets": 349,
+      "states": 9
+    },
+    {
+      "query_id": "dc2155e5feaf7070fe4b75dc93215a0c0249952d203a51001618438d171e8f7f",
+      "feasible_subsets": 22819,
+      "states": 10
+    },
+    {
+      "query_id": "1b226be26f176236857d3ff8837c856f8e1a46d78f88affeead6eb406645d060",
+      "feasible_subsets": 1026,
+      "states": 6
+    },
+    {
+      "query_id": "45ac25f08b2b1c0762a60fc049987f7bd2782a2b2f86cff2704595d3062a70d6",
+      "feasible_subsets": 39203,
+      "states": 9
+    },
+    {
+      "query_id": "03e7835b06db895c8834c09ab4c829c138bdce20f20ee33fcaef641ac5d72386",
+      "feasible_subsets": 1471,
+      "states": 6
+    },
+    {
+      "query_id": "3dc5de42fe29f2b6985d1060805e1083c179b6629943497d66578854b7eeab6c",
+      "feasible_subsets": 65536,
+      "states": 13
+    },
+    {
+      "query_id": "90d673b6ecf915260194f010c0d5d22d9b9be9b08e3b2d98f01478f96201c789",
+      "feasible_subsets": 1758,
+      "states": 6
+    },
+    {
+      "query_id": "03cfb2a80a7835d2cd157f2bdc400f50b57b75808f065a46fcf8c1e2b365a535",
+      "feasible_subsets": 7099,
+      "states": 15
+    },
+    {
+      "query_id": "d35168de325a43014570a641468ad060857520c1cd7da9c4b96aa4bfa3e90d19",
+      "feasible_subsets": 1093,
+      "states": 9
+    },
+    {
+      "query_id": "2061e298187a18b63d6a7ad62811e605347c742846fa227947d1ca7c8e7dc64b",
+      "feasible_subsets": 3797,
+      "states": 8
+    },
+    {
+      "query_id": "b89e09dc7887bb5713afcd70ce664338217af704c85ba031cea65cece8a71fa7",
+      "feasible_subsets": 349,
+      "states": 6
+    },
+    {
+      "query_id": "eaa98bbcef19486af55169e3fa193712d8dad5a6d873d84a5ca93292da0fc47c",
+      "feasible_subsets": 169766,
+      "states": 10
+    },
+    {
+      "query_id": "9fba4f017b0501e3924a3116dac6bee6551558112ad5a519ed0148d6ac0e6046",
+      "feasible_subsets": 2973,
+      "states": 6
+    },
+    {
+      "query_id": "003c4a4859b2fe5847d0d67b6d78ad49dffc75fe4d0d1bd86b927fd690c246c5",
+      "feasible_subsets": 65536,
+      "states": 12
+    },
+    {
+      "query_id": "53580d1fc3cd124b3418b55ec3a78f62a6cc1b7a80be7bf56ce9b2affb01976e",
+      "feasible_subsets": 1758,
+      "states": 9
+    },
+    {
+      "query_id": "42b04b556e1f0456b2b905eb17d674fb826f4b88686e2f4f33ed6549608d1eae",
+      "feasible_subsets": 39203,
+      "states": 7
+    },
+    {
+      "query_id": "09dbe4341d93b1402e37b478a6b24fdf640c8036849572762cc7c888d1038e03",
+      "feasible_subsets": 1392,
+      "states": 6
+    },
+    {
+      "query_id": "ce4a5d41b6a2d4a04e45f807c5cd5c7beab4f2613978ad6ec8a33e9353e30426",
+      "feasible_subsets": 106762,
+      "states": 10
+    },
+    {
+      "query_id": "8a2cddd32d70304cc04c2188945329d801fbfe4dd6637ea1163a244a0bade731",
+      "feasible_subsets": 2973,
+      "states": 6
+    },
+    {
+      "query_id": "5c9e948924de2508cf232954e48345dd9e1edeebe3dc97cac55266d34d83fbe2",
+      "feasible_subsets": 65536,
+      "states": 14
+    },
+    {
+      "query_id": "85d6a99a02b5c96dae108efc7d537830162a4b339bfe545ee573174a2cdbd83b",
+      "feasible_subsets": 1849,
+      "states": 9
+    },
+    {
+      "query_id": "46ce6a53cd3aa9b25fb536c9e7e0ff4b5a23f62838710cca3257aa550850e2a1",
+      "feasible_subsets": 39203,
+      "states": 10
+    },
+    {
+      "query_id": "e24efec034b0ed64f4d11c89bc9751665d6902e7f59d163d8e1b9828861484ed",
+      "feasible_subsets": 1758,
+      "states": 6
+    },
+    {
+      "query_id": "77c8573a6379de75fcf9adb6362651ea88c87421c8434b41f3d2547028a6bc2e",
+      "feasible_subsets": 12911,
+      "states": 10
+    },
+    {
+      "query_id": "fd5b522c0203250c5f777adc3b0d982f39ef637ec4c0683ca60f157c772e7ce4",
+      "feasible_subsets": 683,
+      "states": 6
+    },
+    {
+      "query_id": "9f12d6a6b7db36be5cd11c100f85f77d77903388dac3fc33da13ed2ecd0fd57e",
+      "feasible_subsets": 12911,
+      "states": 10
+    },
+    {
+      "query_id": "7c101c43aaa898580cf6002b3324793e4c439a690b6fd79af77c1111baf2065f",
+      "feasible_subsets": 738,
+      "states": 9
+    },
+    {
+      "query_id": "b0665bde7871d7400eb19dcfa09c65ba2a653823f35753b86fe3532ec9b3b199",
+      "feasible_subsets": 106762,
+      "states": 8
+    },
+    {
+      "query_id": "9a1fac07e983961d683bedbe706d73e3d9dc09ce88eff596094ec4f922d32c6e",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "b86ad94eaa8fcd11dec5980ae53444eb564c7e03d0e01e9c1b9f77f85a1fa349",
+      "feasible_subsets": 39203,
+      "states": 12
+    },
+    {
+      "query_id": "16015769720e94d63f0032043ebe9cbe80c01ea4fe006a06ed2d813548bf6334",
+      "feasible_subsets": 1314,
+      "states": 6
+    },
+    {
+      "query_id": "f6b4b272f9df2400e7bba2677044d44dd0dcd86f42f41fe3a52dceeed1995c5b",
+      "feasible_subsets": 169766,
+      "states": 9
+    },
+    {
+      "query_id": "dd409987da90b183256facffd8714cd683681f1e6574b6f0108e854e2f86549d",
+      "feasible_subsets": 2973,
+      "states": 6
+    },
+    {
+      "query_id": "634f22430a7ee171131886f3f803ce0886cd06e2aa5f28c9b595361eed51cef0",
+      "feasible_subsets": 39203,
+      "states": 10
+    },
+    {
+      "query_id": "f44475a558fd29c3ef9fdcc0d600db2f04b9076679c1de322963c66b6c1b9766",
+      "feasible_subsets": 1392,
+      "states": 6
+    },
+    {
+      "query_id": "1e5cae52af5bfc79d78f55d03a8b9968be06c6f3e7a6b89edb80674b191bc31b",
+      "feasible_subsets": 106762,
+      "states": 8
+    },
+    {
+      "query_id": "cebc841b78dba2e3b14617e962c149b45cd7713a59caaa9f7405afc365fd628a",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "b126ecf9e98f6add3b470bffdb30cb217b8b3591b087bf29e4722fab40317527",
+      "feasible_subsets": 65536,
+      "states": 7
+    },
+    {
+      "query_id": "f9feafbbf4d5148768c4759fbb145c9fe4f1622fb6f2edf9048035ddefc829d9",
+      "feasible_subsets": 1758,
+      "states": 6
+    },
+    {
+      "query_id": "91f51886de0ae9af4dc17b9055b0f1e71505f232d81cf09b33618f775d8fd0a4",
+      "feasible_subsets": 22819,
+      "states": 10
+    },
+    {
+      "query_id": "a55e3f30c4067ebb3ff782ae2a0bc56cd135bcd288913ef9f228a4c5776e863a",
+      "feasible_subsets": 1026,
+      "states": 6
+    },
+    {
+      "query_id": "fcb2e082edc3618bb69517d0e1b786593b86a16c37d60973ad5c3831ad8d24dd",
+      "feasible_subsets": 7099,
+      "states": 9
+    },
+    {
+      "query_id": "3d45f654f32695dd6e062c075313a2036dd466938abd24bc8a7a75d1a2c903c2",
+      "feasible_subsets": 738,
+      "states": 6
+    },
+    {
+      "query_id": "4b596deed646f33989111f02f9de20fd61ff4cdf5a3d585f396ffa236a712eab",
+      "feasible_subsets": 106762,
+      "states": 8
+    },
+    {
+      "query_id": "58ab78415e8523bc5e68e8895e09ef2be0bcd706cb126a23a6c26090216186f6",
+      "feasible_subsets": 2411,
+      "states": 6
+    },
+    {
+      "query_id": "b2769c61310082aa56ff12cbcd672c72ae28d57c35405a8e32722d4377b4af9e",
+      "feasible_subsets": 106762,
+      "states": 16
+    },
+    {
+      "query_id": "5c57cf23827f432277f098aa6c73b8ed5af1e1eebdf8fe51117244810b454203",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "e60006142e5bc5beb2394c9530533531934c8d1286f936aef0b413fc1c67ff80",
+      "feasible_subsets": 65536,
+      "states": 8
+    },
+    {
+      "query_id": "4ace0d698f17ecff69b4cf5d075113e776737c83a57e4825745d272ae391f9dc",
+      "feasible_subsets": 2973,
+      "states": 6
+    },
+    {
+      "query_id": "89af3b3982b6dfbd18df4b338f10437b26dc37f29f1ac51f91de4106122bf947",
+      "feasible_subsets": 3797,
+      "states": 9
+    },
+    {
+      "query_id": "698cd2426d199870cd951ef8387f670aef73e7425c8f03abc7e2fd1a7286a616",
+      "feasible_subsets": 738,
+      "states": 6
+    },
+    {
+      "query_id": "cbd2403e322216fc7a54b4aa091f8576e0d09ac50c85b38547aad980f76a5c5d",
+      "feasible_subsets": 169766,
+      "states": 15
+    },
+    {
+      "query_id": "bf0c9d9aa277ba9cc2dc5ff7443c4acc9aa65c3def0272a82bf68bdc438c9ec4",
+      "feasible_subsets": 2973,
+      "states": 9
+    },
+    {
+      "query_id": "e5aa0b90124f1dc64eaef5acbb00b7243e1833e53bcb5f8a9a7bea18bdc3098c",
+      "feasible_subsets": 65536,
+      "states": 6
+    },
+    {
+      "query_id": "10e4cdb65b05d1c2a90cf225332f1a0afae17fdd2f6dcc36d6b37eb8d30f5471",
+      "feasible_subsets": 1758,
+      "states": 6
+    },
+    {
+      "query_id": "d6a46cdfa3c0bd759dde93c1bf873299bb870613931dc712d9f3af9fcfec308c",
+      "feasible_subsets": 511,
+      "states": 8
+    },
+    {
+      "query_id": "922cec25a529fb95fbfece04532b81d6c0dd161441b3675bde35db7d65733c48",
+      "feasible_subsets": 256,
+      "states": 6
+    },
+    {
+      "query_id": "c7587c3eb5f3e75248a3a3a1c07e4a766e307a967a08cd87f384989e054ca5d0",
+      "feasible_subsets": 12911,
+      "states": 10
+    },
+    {
+      "query_id": "8590da8b25f17dc46a8cd2ce62e1279ae36564ded2926b5ce56a36e9ba08d09c",
+      "feasible_subsets": 1026,
+      "states": 6
+    },
+    {
+      "query_id": "5faedf6a9b83f39423cd31afaf44299bd82c60701376e83f7728e981f8a80792",
+      "feasible_subsets": 169766,
+      "states": 8
+    },
+    {
+      "query_id": "4c8cb01653cd6e449e5db2c273ba01388cd595bb7599006731da9c015a3e5027",
+      "feasible_subsets": 2973,
+      "states": 6
+    },
+    {
+      "query_id": "47409fc8ecfd7244a679150a0a271d98de896fd4b479a6f82ca508aba1521b4e",
+      "feasible_subsets": 169766,
+      "states": 10
+    },
+    {
+      "query_id": "0d7f56591cd5e6f8cdfd1ba1d85fd0dcb1a2a8c8be8a777999685238eedb6421",
+      "feasible_subsets": 2973,
+      "states": 6
+    },
+    {
+      "query_id": "d67f6d320cf24cc4ea7cb53697084d615ae05bbeeaf6daf4673fbf4a838f76c4",
+      "feasible_subsets": 106762,
+      "states": 10
+    },
+    {
+      "query_id": "d46e84ffdcc49666d9e28731cd43b3fdbe60862e1fba430d7b419b3f52c9055e",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "216e2a590cd1c8addeb11412ce434ed2780cd481dd1ba8e248ef39d6c620e5cf",
+      "feasible_subsets": 106762,
+      "states": 10
+    },
+    {
+      "query_id": "6bd3559885be6a964b79a520d926ef1af41dd413d8fb79dfaa6dd03447b9b0c2",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "c772d315cf07b8b9ac83ca9bdbcc109a639405c35e31a55a8ed571a71f0c7e49",
+      "feasible_subsets": 3797,
+      "states": 10
+    },
+    {
+      "query_id": "d2e0c0e994b276b27ae24719e80ece9da5918e6bfe3e04da3391cc457b7b24c2",
+      "feasible_subsets": 349,
+      "states": 6
+    },
+    {
+      "query_id": "f9d4cd42705f96b785cd4eae012a886d6163c287e1ee65c2fad4abb093a01758",
+      "feasible_subsets": 511,
+      "states": 13
+    },
+    {
+      "query_id": "cd9c3421cbf2f920cb173ac40b4e0870775b6da12efea28b3cb3dc6c2a420284",
+      "feasible_subsets": 256,
+      "states": 9
+    },
+    {
+      "query_id": "3b9e3bf56341f015aa018a1891e9b4688e7d3b230fdc208bbf023d25478989d4",
+      "feasible_subsets": 39203,
+      "states": 7
+    },
+    {
+      "query_id": "5f4424a9ebee45784a7745f55aa4e07a8f8d9cb4313659eec3c16fffd5e9357e",
+      "feasible_subsets": 1758,
+      "states": 6
+    },
+    {
+      "query_id": "66eabb78d5932092ae9bf2a836a658c320615e40f32b40dac4683335c1b8dea6",
+      "feasible_subsets": 39203,
+      "states": 7
+    },
+    {
+      "query_id": "3d4f0ae943c00d583e173071b7a865834c765c962e54cd90fceb2600f128429d",
+      "feasible_subsets": 1849,
+      "states": 6
+    },
+    {
+      "query_id": "52f051b36cc4948207fd2f39525a9b14e48e48a8df879b82b6834a49b5894c33",
+      "feasible_subsets": 7099,
+      "states": 10
+    },
+    {
+      "query_id": "41d76c960e1612c5a925a1c99132b341e2d136f9ed166e480bfeaebdc41a2f95",
+      "feasible_subsets": 516,
+      "states": 6
+    },
+    {
+      "query_id": "af6cd544ec8bd20c65d076153b2ffa7a3b85c3888e64634f1360d28b5d6e37fa",
+      "feasible_subsets": 256,
+      "states": 7
+    },
+    {
+      "query_id": "eaec4c734a4956e03b67ca03fb49f3dfe0adb442bcb42d4086218fd0e6df7054",
+      "feasible_subsets": 99,
+      "states": 6
+    },
+    {
+      "query_id": "8318ae09784b28ebafe9a1022e95146b7363a726327a3b552cbe1ec81c3bfe8b",
+      "feasible_subsets": 22819,
+      "states": 10
+    },
+    {
+      "query_id": "2407ffe131156ecb37f1a2dd1262373805e9dfd2dd8029fd9c9568ffa1dace4d",
+      "feasible_subsets": 960,
+      "states": 6
+    },
+    {
+      "query_id": "a876f9ccad63449f34859d42f5df1cd93010362e335ec9fe3b7469d913e39cde",
+      "feasible_subsets": 65536,
+      "states": 13
+    },
+    {
+      "query_id": "cec91c169b9cf4aeca7eb23ddaebe61f1685bcace0d8b6bba76ee2bf69b0d169",
+      "feasible_subsets": 1758,
+      "states": 9
+    },
+    {
+      "query_id": "b7a74f4d5f66a84a503ca6326de911fc162ea0f2a1fdbdbc23b0906716187eb1",
+      "feasible_subsets": 7099,
+      "states": 17
+    },
+    {
+      "query_id": "3841d0410ca599b1a502413268cdef7af3abaa3004d8d657f6751e82600b3e5e",
+      "feasible_subsets": 738,
+      "states": 5
+    },
+    {
+      "query_id": "52b10fa4d905c882f214af10c6d01b83962e5bd65c6ad8c35c20deef7caa5860",
+      "feasible_subsets": 22819,
+      "states": 14
+    },
+    {
+      "query_id": "1e06d8775c1caa48ef5ca60a064dadd8366c481a8fd9211b1af76424659ded9b",
+      "feasible_subsets": 1093,
+      "states": 6
+    },
+    {
+      "query_id": "c4fd2a50308f1b905776947b78ca58f0890a33c40079a631171e06c15596ba96",
+      "feasible_subsets": 65536,
+      "states": 12
+    },
+    {
+      "query_id": "40fd34d3bcfc0c00b15044b00bdbdfb5a0820c15951fa0afb76484cd347989b9",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "a294a9ff4c8ea7a383f43d70765f04fc3c5dcaa31f14d865f8b7df7d9fbff66b",
+      "feasible_subsets": 3797,
+      "states": 8
+    },
+    {
+      "query_id": "80c2a00aef58d3196feb94ecf122ac9ad2dc7b85395d852080b7dc6ff8e22bfe",
+      "feasible_subsets": 516,
+      "states": 6
+    },
+    {
+      "query_id": "f47bb40990be346eb7ea68974186021cae39115dffa519ac277ada86c9a6295e",
+      "feasible_subsets": 511,
+      "states": 6
+    },
+    {
+      "query_id": "a4303d378dacf7f6aa648dc9daaf1e83850b94a8ea9306145089d4f4c7ea6560",
+      "feasible_subsets": 199,
+      "states": 8
+    },
+    {
+      "query_id": "aa74b336d09dc38903dac59580045d4fee0281e34636631dd10d0464612ffcd2",
+      "feasible_subsets": 65536,
+      "states": 10
+    },
+    {
+      "query_id": "66c1451c30c578edc0d7beffeb4e974ce0760d0cde4f58a04af9e286ac1fdb83",
+      "feasible_subsets": 1758,
+      "states": 6
+    },
+    {
+      "query_id": "6003d2a2b24bc45c536b43b8f39cc9e9028cefb6d7056387783584f6889a69fb",
+      "feasible_subsets": 65536,
+      "states": 7
+    },
+    {
+      "query_id": "93a7d9d223f88d3b6c8618b0166ff8f088babc38e3b910f16c3d429d810e4333",
+      "feasible_subsets": 1758,
+      "states": 6
+    },
+    {
+      "query_id": "a048b02aca2aa7c141de9d84ebd14e13d066088ac03d2e6002590b050050d5a6",
+      "feasible_subsets": 7099,
+      "states": 9
+    },
+    {
+      "query_id": "316423865c92e7db0235f749c51d9b3b9f18cd2a84766e7dd39e587eea8a970d",
+      "feasible_subsets": 683,
+      "states": 9
+    },
+    {
+      "query_id": "7c644d2c096073f58dabb1176820cb7225e3e1d90585522f3279c5f4f7d15bef",
+      "feasible_subsets": 22819,
+      "states": 15
+    },
+    {
+      "query_id": "2b34fff575ff38d8caba996e07a1774001056e9daf7c871437d6847516aaa030",
+      "feasible_subsets": 960,
+      "states": 6
+    },
+    {
+      "query_id": "1563a4309a2c697fdb2e8851864abc838c56d789308a41d849642f7fe753c936",
+      "feasible_subsets": 65536,
+      "states": 9
+    },
+    {
+      "query_id": "72b686072fecd809d8d851f7ebd68cd323744b2d6ddbf11342976a45aea5d3a8",
+      "feasible_subsets": 1758,
+      "states": 6
+    },
+    {
+      "query_id": "7524a8ff192f5960999cd8c1d64106b6436acb032cf9258a4ab568c380420720",
+      "feasible_subsets": 65536,
+      "states": 8
+    },
+    {
+      "query_id": "39ffec270ea8b28f05f7452a84cd7e87578d0ebf055f5bcd65b39bea8c98932a",
+      "feasible_subsets": 1758,
+      "states": 7
+    },
+    {
+      "query_id": "f9c7c20aff8d816b4dba19fecf09db95499f2d9a44fb20607131b68997711338",
+      "feasible_subsets": 7099,
+      "states": 15
+    },
+    {
+      "query_id": "b7c24289ccf2523feec7cfd7bc46ab9b134a8fe6c5a836ad88f7a6cbdd2e54c3",
+      "feasible_subsets": 738,
+      "states": 6
+    },
+    {
+      "query_id": "73eb8c654545452fd428de4c5f73e040427e2f4aea33b47bf5801e15d5104634",
+      "feasible_subsets": 106762,
+      "states": 10
+    },
+    {
+      "query_id": "4f3543a25b19182659558470094de568c01d32907f064667098ab838461ff9fc",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "95f2b25963c74b451b502cba0fad3a86195036b92024f95c812a696b45bd7318",
+      "feasible_subsets": 3797,
+      "states": 13
+    },
+    {
+      "query_id": "f311e8aeac863483801851ce0556b96de94572e6104e1f6c838a39d2db12d8a4",
+      "feasible_subsets": 562,
+      "states": 9
+    },
+    {
+      "query_id": "7d63b04a080f023d7d12e194e4963f807169e2a9da71353a24b5bf401cf54399",
+      "feasible_subsets": 3797,
+      "states": 9
+    },
+    {
+      "query_id": "b9ca9ed831eb52c6f4a91f319ac06986eae4d0c630d40c397abadc59612b3648",
+      "feasible_subsets": 349,
+      "states": 6
+    },
+    {
+      "query_id": "2c8c22615955e554b3a6bb0f5c683801d9e87dbdc813ebd9885a69551be7d749",
+      "feasible_subsets": 511,
+      "states": 8
+    },
+    {
+      "query_id": "9f3edcd574971fd0ef0c74a08b6c584676816ad7ffd4542ab3ce8439762866b6",
+      "feasible_subsets": 141,
+      "states": 6
+    },
+    {
+      "query_id": "c21544238abac0b16e45f929ba2fe606927b50c891d316a7a48c89d049d8b328",
+      "feasible_subsets": 7099,
+      "states": 9
+    },
+    {
+      "query_id": "674709098bb71e2276046382dab14ad6474de81ca7a665382edb0d34426c23b9",
+      "feasible_subsets": 794,
+      "states": 6
+    },
+    {
+      "query_id": "7f8f4496afb5780b4f8c5d756b614c92d2e310e43e0f4be0aa825e26ff8d516f",
+      "feasible_subsets": 39203,
+      "states": 9
+    },
+    {
+      "query_id": "0662e8f7592472222d825bfe13b0b5db7873b2d050a74e73f75cac45e1e03540",
+      "feasible_subsets": 1392,
+      "states": 6
+    },
+    {
+      "query_id": "366d25c3647de479a26dbf641dc23498a6373a7e75d2d25057212254050afa2d",
+      "feasible_subsets": 169766,
+      "states": 9
+    },
+    {
+      "query_id": "07dde6e08b57935572622475d0143172eda8c7aa57a3e24f7ddff9fa2de493b5",
+      "feasible_subsets": 2973,
+      "states": 6
+    },
+    {
+      "query_id": "7aa017e1930f3374073afd0c9318c8a08dfc1631d3a38ccd9ba14ba700e50a44",
+      "feasible_subsets": 65536,
+      "states": 12
+    },
+    {
+      "query_id": "2f47af7eb14825ef8f89332b6f29b235d2e3722af02cf9b30c402449bbb56227",
+      "feasible_subsets": 1758,
+      "states": 6
+    },
+    {
+      "query_id": "9f3c2cf5fe0026b154a159d1e311ee69aff39fe3c28755fdc34f369d378a0857",
+      "feasible_subsets": 39203,
+      "states": 16
+    },
+    {
+      "query_id": "8f73104db11cd130a0ac7803114f453653cc206c3abbda33a50b666ab49bdf9a",
+      "feasible_subsets": 1314,
+      "states": 6
+    },
+    {
+      "query_id": "58ab58e35b5899898d0ab4fc2db7230ea3d3a37a474b10f637fdd79f3e898e94",
+      "feasible_subsets": 511,
+      "states": 7
+    },
+    {
+      "query_id": "01c5419ef3caea9e3a0ba77b3b626c8dbee54941ec7ea90b96e85638abef48e9",
+      "feasible_subsets": 163,
+      "states": 6
+    },
+    {
+      "query_id": "d7226c4dce397fb0b97099f5d95e5f551ea583a0e39a7f980f12f465fc5003d6",
+      "feasible_subsets": 39203,
+      "states": 10
+    },
+    {
+      "query_id": "ab66b8120fca5ca2126527be35cab1a12c6d2c311e4f301099a5336dc452fe98",
+      "feasible_subsets": 1392,
+      "states": 6
+    },
+    {
+      "query_id": "e6eff7caf8068bf845978199ab5731481a1bd07a8d83e98d63f5d19cbdd76946",
+      "feasible_subsets": 65536,
+      "states": 7
+    },
+    {
+      "query_id": "69e9cb8c4b841d434e95fba3f2c57208c4a1680001f7baf8322f8826fe8c7a07",
+      "feasible_subsets": 1849,
+      "states": 6
+    },
+    {
+      "query_id": "426f4b468cfcf1370493591186a284814d53a24d628bb29af6ced4c95b769d32",
+      "feasible_subsets": 65536,
+      "states": 6
+    },
+    {
+      "query_id": "9eb2405a29b9f7a629da2d78766088933d38dab9c78e63d5fa7f8c175f27d23d",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "c614bc252efd54b354c493b07f81634dddfaa34c039a69b2609ba446852763be",
+      "feasible_subsets": 65536,
+      "states": 8
+    },
+    {
+      "query_id": "f1c1b6d4b355f2246234753298c11ef4f97538f8d5e1004d7270ba4bea092a2e",
+      "feasible_subsets": 1758,
+      "states": 6
+    },
+    {
+      "query_id": "ec5c8cea20c7b0bc7f222c6d6f2c808634613ddd708297cbd86a3a005d35f514",
+      "feasible_subsets": 106762,
+      "states": 6
+    },
+    {
+      "query_id": "d6aae33fd272ad2b0c3037157fc1ce6f706e1066d91206a33a9a3908481e6706",
+      "feasible_subsets": 2973,
+      "states": 6
+    },
+    {
+      "query_id": "e19f2179a03754896ba0952452ad10f5caefb35dc99ac2148c5b2749e6887bd7",
+      "feasible_subsets": 511,
+      "states": 13
+    },
+    {
+      "query_id": "fb6f8a3f352da46a2d0250f74ad689b6dcb118f2b493988e5fbe7674cd8c0769",
+      "feasible_subsets": 163,
+      "states": 6
+    },
+    {
+      "query_id": "c5fd8b4bb07d200c0413fea0f591c448f7a24f288bbbe656dfa6dba70c4cc917",
+      "feasible_subsets": 65536,
+      "states": 14
+    },
+    {
+      "query_id": "c1e4ffb29ab0b39574cc4c93dc15c22fd516886dba187782e15c9b6a6bff719c",
+      "feasible_subsets": 1849,
+      "states": 9
+    },
+    {
+      "query_id": "07bfa64136bedc3a259017f3278946674d720bde2863ec97dcc55e87f84d7c3b",
+      "feasible_subsets": 22819,
+      "states": 10
+    },
+    {
+      "query_id": "fcb3378c43b9147a5771ab2b28f0d1e4d8f368496a33d4ce510d0cc5eebcbb91",
+      "feasible_subsets": 1026,
+      "states": 6
+    },
+    {
+      "query_id": "1d20e73cb735561cbfe50256b4d2034d7c583010461d433c1ee70aabc54eb49a",
+      "feasible_subsets": 256,
+      "states": 8
+    },
+    {
+      "query_id": "4f028253224dcbc114803e941e0003523ea445c955ee390a9e53209f7ae9245d",
+      "feasible_subsets": 57,
+      "states": 5
+    },
+    {
+      "query_id": "f505d237910f78762f079f8858dba8211d80066dccde8fedc6804af92e7a44f2",
+      "feasible_subsets": 39203,
+      "states": 10
+    },
+    {
+      "query_id": "c3513117f8ee58ce278cd2131f0fc54c2fc37ea3b7655296e8c0d0905dda064c",
+      "feasible_subsets": 1392,
+      "states": 8
+    },
+    {
+      "query_id": "d708f8142ac372bfa945419f260b40d2cf489dec9a6925901678616444a61a8d",
+      "feasible_subsets": 169766,
+      "states": 13
+    },
+    {
+      "query_id": "80fb45b86839f558d7a13951981e9f87ecec899ed0b3b3248712f9bda14a404e",
+      "feasible_subsets": 2973,
+      "states": 9
+    },
+    {
+      "query_id": "b5eda86f790494bb9720002997910d84d4b269efb3f51468c594640a21738514",
+      "feasible_subsets": 39203,
+      "states": 10
+    },
+    {
+      "query_id": "3926a00e168adfd167594394d23ab72baba68ee7f297da5d4042e7a7f655ae49",
+      "feasible_subsets": 1941,
+      "states": 6
+    },
+    {
+      "query_id": "ee44a04ac49059bc95b40ccef4320d7f84c36d37022c987a0e0f14c25abec5b7",
+      "feasible_subsets": 106762,
+      "states": 10
+    },
+    {
+      "query_id": "3a87eed294bfd35f0458f8da835ac7ecf1a3fac2cc86b318187c630ae1f7abf3",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "6a8b71a19e6076a356518c0854025afa08399fb791ffc77d235b0a1384a0bfd4",
+      "feasible_subsets": 64,
+      "states": 5
+    },
+    {
+      "query_id": "32790b96fe3024456e42bbc27066c440c36b24ab2b42151856b1a981dede83b5",
+      "feasible_subsets": 31,
+      "states": 5
+    },
+    {
+      "query_id": "4e3af535b69c0c6fc2ca82f9475ac393ae699797ea2c978105c1087c5f4469cf",
+      "feasible_subsets": 22819,
+      "states": 10
+    },
+    {
+      "query_id": "e057eef210d27166575077a795af3633d1bbaa16e486970055dd5a24fdabdbcc",
+      "feasible_subsets": 1093,
+      "states": 6
+    },
+    {
+      "query_id": "3a993b12fff1ebcf2a3a9e066b8fffb7af7a0e16858a40cb5a6696496d2cf793",
+      "feasible_subsets": 22819,
+      "states": 10
+    },
+    {
+      "query_id": "9420a02c7564dd1d5c6bfe1bd3d406a795d8e3de0ebf35019e442342e35e2ea7",
+      "feasible_subsets": 1093,
+      "states": 6
+    },
+    {
+      "query_id": "7395718ee888dbae9b4f0aae1b42d19b5745e8686c9369982e51e2fb4c6bba9f",
+      "feasible_subsets": 39203,
+      "states": 6
+    },
+    {
+      "query_id": "fe1986c49e97d99d688338609c584f27dc216d9fcc435e9e68d40cb76af78c1f",
+      "feasible_subsets": 1758,
+      "states": 6
+    },
+    {
+      "query_id": "2cc38e279ae594eedb46f5850f59105a0ca43205c4cd94adb430fc96739c8d37",
+      "feasible_subsets": 1013,
+      "states": 9
+    },
+    {
+      "query_id": "2c40fe3fcd2f36f9d6d545cb1de7b6ae4cead3400c047c706abdf9a456c945df",
+      "feasible_subsets": 349,
+      "states": 9
+    },
+    {
+      "query_id": "f8a4d13ee1f0d62203e36512da10a15c7058398b6ee84b211a6a854f39e4d65c",
+      "feasible_subsets": 256,
+      "states": 13
+    },
+    {
+      "query_id": "695ca64b06ee94e70e28fd725335d1d8389073f867c21420a9884800990652cb",
+      "feasible_subsets": 83,
+      "states": 9
+    },
+    {
+      "query_id": "f6792b23f2655431bc7bc520b97efc6bca411c2e433437ec2967950d95fc0f8a",
+      "feasible_subsets": 22819,
+      "states": 10
+    },
+    {
+      "query_id": "ab5b2d2f84c7163fe56db73f2bc10676f42af25e1076e89048757704f774a5d4",
+      "feasible_subsets": 1314,
+      "states": 6
+    },
+    {
+      "query_id": "0019ac713569888967542bdef9a6882c0c20026055de8b7cfc493a8e875bf63f",
+      "feasible_subsets": 39203,
+      "states": 14
+    },
+    {
+      "query_id": "c4166f7f3d4cf523664732a4c5b6026297225e0fe206f17b77aa0ea908d666d3",
+      "feasible_subsets": 1314,
+      "states": 8
+    },
+    {
+      "query_id": "48635cf343ec5e12d25f8e77bbffe67dad53106cc6d283c794f6986acf965fc6",
+      "feasible_subsets": 22819,
+      "states": 8
+    },
+    {
+      "query_id": "ff72abc4006bfc3178930b2825d749cb3122443fe30637610526d023c8d2f406",
+      "feasible_subsets": 1093,
+      "states": 6
+    },
+    {
+      "query_id": "f3f1c1c5491ffe5d6fd8190b10fa923b8bac86b83cc13fb7fbe479e2b70691a2",
+      "feasible_subsets": 65536,
+      "states": 10
+    },
+    {
+      "query_id": "c3020c0cace4f909665238154d0a0b599fc95271ca49c6b5eb93de2771079bf7",
+      "feasible_subsets": 2306,
+      "states": 9
+    },
+    {
+      "query_id": "d13601572e039554b3e2d82bc8b52128f954aefcb2a20b0ce21c48042b43a6e1",
+      "feasible_subsets": 106762,
+      "states": 16
+    },
+    {
+      "query_id": "322eeb9f5f6037e505f8b3cff8a95728c5572d09668f8109f4ed50dada179cb8",
+      "feasible_subsets": 2973,
+      "states": 8
+    },
+    {
+      "query_id": "63ab8547f4ab661fde18b9a0372928a2aeb194ff11ab52977c46fa1e76635106",
+      "feasible_subsets": 65536,
+      "states": 10
+    },
+    {
+      "query_id": "1f6822940ff76e1941d4a055f7bdc451c9d036d9991d2df7d9d0d0449e22376c",
+      "feasible_subsets": 1758,
+      "states": 6
+    },
+    {
+      "query_id": "2c13323a72615aade4fff572078d6225788e45e0ae704f631b18cf5f7b0e2118",
+      "feasible_subsets": 106762,
+      "states": 14
+    },
+    {
+      "query_id": "de52a4d85d96096b4c8d493ab9478582f7d03a7d8cdf4a7df4335448de176a8b",
+      "feasible_subsets": 2411,
+      "states": 9
+    },
+    {
+      "query_id": "e72521ed4f132b587be1159019d6a105e416705ce69526ca0e0235a17c06df70",
+      "feasible_subsets": 106762,
+      "states": 10
+    },
+    {
+      "query_id": "e156eb2bcdd200a00cf10c48d66178168cf4e0509d7f6a567c2377886d1fc610",
+      "feasible_subsets": 2411,
+      "states": 9
+    },
+    {
+      "query_id": "f4d8d622d46395369a0b3251efb0ea695f16cae171558f068f3a876e49cabe00",
+      "feasible_subsets": 65536,
+      "states": 9
+    },
+    {
+      "query_id": "6b7027720235dcb2be356cfda5a330b3a3997b24475e8cc9247c2a2a5f62ce7d",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "53cbff6cfd4872efb2cef7fa2e9bce03842bfb48dd5b5637e208156351f1be11",
+      "feasible_subsets": 106762,
+      "states": 6
+    },
+    {
+      "query_id": "80000d28d7058ff9b94cf1641cedf55548a8c4f176f1e479588d2cb8ec6fe5d6",
+      "feasible_subsets": 2973,
+      "states": 6
+    },
+    {
+      "query_id": "5f634f32505426a9f09a0abceb4c1d890f6c91eda0f5abef7b39cec687a15df3",
+      "feasible_subsets": 169766,
+      "states": 14
+    },
+    {
+      "query_id": "b2226dff0d81392833fdba3671ecfa3e763f1b52bf4e68024df23adca1b0d73c",
+      "feasible_subsets": 2973,
+      "states": 6
+    },
+    {
+      "query_id": "6713eb38d91abc90df0da228b229799f891e939db3b9766c7bd9dfeb2d930ffa",
+      "feasible_subsets": 106762,
+      "states": 16
+    },
+    {
+      "query_id": "2500b9bb3d06d28da381468f73e0460466b19f436efad7611559c8242249404c",
+      "feasible_subsets": 2411,
+      "states": 9
+    },
+    {
+      "query_id": "a893f12b937a6a980700f5c13d28aeebf927dcdc9fcc8aa1f919f04929e7d611",
+      "feasible_subsets": 12911,
+      "states": 10
+    },
+    {
+      "query_id": "a9ed4cf5f43a658f56cba7a0a768ef18ad2b07746ff38e5279521cad4e663466",
+      "feasible_subsets": 1026,
+      "states": 6
+    },
+    {
+      "query_id": "eb1d5ca501e917d9b2ac15417f666cbac2561192932a755596b725086a15bd02",
+      "feasible_subsets": 39203,
+      "states": 10
+    },
+    {
+      "query_id": "f9748cd3357c1041f109acece5f32ca56b52a3d76d9d53adc664b264bc888982",
+      "feasible_subsets": 1392,
+      "states": 6
+    },
+    {
+      "query_id": "15f7a9f05d4edefa83171a1a32537cc3a1c5f246e769d0dff1c08af7c693bcb2",
+      "feasible_subsets": 65536,
+      "states": 10
+    },
+    {
+      "query_id": "5ce91da79fb3f0add80f29e5af516f6c200a0e16280034eb1b210a06e76dd72b",
+      "feasible_subsets": 1941,
+      "states": 6
+    },
+    {
+      "query_id": "37899b03e577bfe088aae60268968f6e8139e9be8bd80e9bd3f3faae72ed214c",
+      "feasible_subsets": 169766,
+      "states": 10
+    },
+    {
+      "query_id": "ba5f637a0d94d84453f1a55bc1ec407638d83bb55096af6c1d43d5aa0766f0a8",
+      "feasible_subsets": 2973,
+      "states": 6
+    },
+    {
+      "query_id": "b4679d6f2d821fa1a416e760df5e497c7441c26c95f068a5a3ba08f2f3166013",
+      "feasible_subsets": 128,
+      "states": 8
+    },
+    {
+      "query_id": "dca6e5d13b6db4f1d1d3064d0c496958704c4abc6f622a4e4f006bbc59a475c3",
+      "feasible_subsets": 99,
+      "states": 5
+    },
+    {
+      "query_id": "f8138fbb01c0fd5956cc87c082da3023e984d53b0ba306f3921c8c2285c2d88e",
+      "feasible_subsets": 39203,
+      "states": 14
+    },
+    {
+      "query_id": "fa89a34ce08921fb5455216f5b71eb8e24bc8888d75baf9dfe910af6cf80e2e5",
+      "feasible_subsets": 1392,
+      "states": 9
+    },
+    {
+      "query_id": "c0dfe123c12c0d0e230243ba95840d8f6db0fe7e8800f4a5f76559d6b974c73d",
+      "feasible_subsets": 65536,
+      "states": 10
+    },
+    {
+      "query_id": "7406c804b4fcf7d022a95c33ec99364fe3b97f9bb915bfe83983601ab49968ab",
+      "feasible_subsets": 1849,
+      "states": 6
+    },
+    {
+      "query_id": "b94015257251d07e732a9805428610cf7aef4b02f0fcc884bdf28f7d2aee5f34",
+      "feasible_subsets": 12911,
+      "states": 15
+    },
+    {
+      "query_id": "1fba8d0499f04028fd26e7df0a05d0a9618b14c4e655452cca3fd41a4b5751a8",
+      "feasible_subsets": 1026,
+      "states": 9
+    },
+    {
+      "query_id": "0932f2307b662fc73d56c2c6799fe6fbd24569b7176037c5106b953c1d9b9417",
+      "feasible_subsets": 1981,
+      "states": 6
+    },
+    {
+      "query_id": "fd878fe477102b18abe90356c874ab55ab5c7f51a7299ca4c57e99900cdfec7e",
+      "feasible_subsets": 349,
+      "states": 6
+    },
+    {
+      "query_id": "fdc3d498c2f2281cfea4546241acc26f08947194adcbd9473c34cc8736bf8ccc",
+      "feasible_subsets": 169766,
+      "states": 10
+    },
+    {
+      "query_id": "717b50c9259acdd65b7b0eac4a62f50941f99cdfe4cf0803293d1f8f06d0980f",
+      "feasible_subsets": 2973,
+      "states": 6
+    },
+    {
+      "query_id": "a57444b26277cc02a74f9a67ec410120fb7c9af3f58860751bcc5e476a09f4c7",
+      "feasible_subsets": 128,
+      "states": 7
+    },
+    {
+      "query_id": "0e61d2e78570da5b7f895096274b60897d42e72eac751aa47c6ce9e2223fb527",
+      "feasible_subsets": 57,
+      "states": 4
+    },
+    {
+      "query_id": "3c49211fd6a16d2c710fcac4398b58da606c9056eaff31b9855ac50c6490989b",
+      "feasible_subsets": 3797,
+      "states": 7
+    },
+    {
+      "query_id": "cb91d86c4d6bc6074d5bad9955a08f9dc6f9f49b2f9cafdcc371ad8cc469c848",
+      "feasible_subsets": 516,
+      "states": 6
+    },
+    {
+      "query_id": "f6f9bdf6e5dc04e518ddb3941003c14d21100eb1094b326318f23a3c979ffb8a",
+      "feasible_subsets": 511,
+      "states": 8
+    },
+    {
+      "query_id": "3c46ef702c17408f9d623a7ea53ae31b4a01da52fe1fd5302e278c1b41fc1d09",
+      "feasible_subsets": 163,
+      "states": 6
+    },
+    {
+      "query_id": "18c043d2eea30e3c4b5d44ac8238299e4bf06e0bbaceaa3bf48112e10cf44e72",
+      "feasible_subsets": 3797,
+      "states": 9
+    },
+    {
+      "query_id": "c5d0eba4f9761754888b905d1ddedea251a90426098e0ab0ee534bd0264fe024",
+      "feasible_subsets": 349,
+      "states": 6
+    },
+    {
+      "query_id": "f29a110a08a36f29e26a3479fe43e3d7e9921a626fdd2a936e7c2719cd8e296c",
+      "feasible_subsets": 39203,
+      "states": 8
+    },
+    {
+      "query_id": "039eab57f399164068ed40242b13f77c9e5c9a4bbaea3f53499502b02d6072f9",
+      "feasible_subsets": 1392,
+      "states": 6
+    },
+    {
+      "query_id": "b123fb07b953a4ac342fe1244661d17517336db2ab428c277a7754daf1ec6249",
+      "feasible_subsets": 65536,
+      "states": 10
+    },
+    {
+      "query_id": "36d447b52ad39790571c2ac7bc39f3acd38061e5e327ec3c02561c06b9260fcf",
+      "feasible_subsets": 1849,
+      "states": 6
+    },
+    {
+      "query_id": "1a49acef6dbf9a095de7f7e1ae9702fbc23233afb18990af437678c8ea76ffb6",
+      "feasible_subsets": 3797,
+      "states": 10
+    },
+    {
+      "query_id": "55f89e93617d0fed286756d8b5935650eb2e00dfdfee98cea25d6cd93e2b4fb0",
+      "feasible_subsets": 562,
+      "states": 6
+    },
+    {
+      "query_id": "9acd9dd57081a8b6e21e46eb383f3964a7134060ed6ce91df472a5ed5e398ca6",
+      "feasible_subsets": 106762,
+      "states": 8
+    },
+    {
+      "query_id": "5353ed938a0e36bcf2deaf683add06ce1067f9ae3c152a3d0e12f456fa3d49bc",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "d0748828f88571dc047def4da4c52ef064e8f243e7c86588017a6e9c4d614c95",
+      "feasible_subsets": 1981,
+      "states": 14
+    },
+    {
+      "query_id": "770464cb355ed5721ff54412ca51c9822ca267f5b4aea28bb714244e49231005",
+      "feasible_subsets": 386,
+      "states": 9
+    },
+    {
+      "query_id": "1723680a0fa9e1e2db4183befa8c06f385806b5b05e325502c583815e3617764",
+      "feasible_subsets": 169766,
+      "states": 10
+    },
+    {
+      "query_id": "9de131e40aaf26d4390552c82a5f28863e0e17a0c8841c8e18700988743c8191",
+      "feasible_subsets": 2973,
+      "states": 9
+    },
+    {
+      "query_id": "ea7e88b1db94488131243b67b233513aa5fcd26082685489c8701a4adfc8a8b2",
+      "feasible_subsets": 39203,
+      "states": 14
+    },
+    {
+      "query_id": "76feeba3886e25d726d314bf1a0204d22edcb7aa757ad58901e8fe405b1746eb",
+      "feasible_subsets": 1392,
+      "states": 6
+    },
+    {
+      "query_id": "adf540978fae4d68e2e2b779d4ea36533557e3d3a09957485dd3a239822c59ae",
+      "feasible_subsets": 511,
+      "states": 8
+    },
+    {
+      "query_id": "128d33f76b0b160d4ea82d24079bdbdc648f9fd5ab09c439e829846632440e4e",
+      "feasible_subsets": 163,
+      "states": 6
+    },
+    {
+      "query_id": "18e419303fe30fa73ab0277b2f2bb4c5cb1488f6bbab6c3a2105a896c7c64a85",
+      "feasible_subsets": 65536,
+      "states": 8
+    },
+    {
+      "query_id": "702466cb2357405bf7a00ffcf13d2f4146638716636c1c3a84b2a7e61a7cb3d2",
+      "feasible_subsets": 1758,
+      "states": 6
+    },
+    {
+      "query_id": "84a57647c0317f68dd5000a0b16773fc976e4c864153b556517b2b4232dbff4d",
+      "feasible_subsets": 1981,
+      "states": 9
+    },
+    {
+      "query_id": "a83f1e5357bbecdbf0b326b09a5fd56c4227f4a7633d5ee87ff766f8ef9d1ca6",
+      "feasible_subsets": 256,
+      "states": 6
+    },
+    {
+      "query_id": "fde972a3f379a13d8268362fd514542dd9ecd8c6c8483a9ca372633b39630e5b",
+      "feasible_subsets": 65536,
+      "states": 6
+    },
+    {
+      "query_id": "899e869facd31080a0cbbcc52726e1f8dc6421bf9aca1be6710b715e339ec122",
+      "feasible_subsets": 1758,
+      "states": 6
+    },
+    {
+      "query_id": "328f93fc6cbd7ad10704647204722043e890c317235757b904cab5b576c4c576",
+      "feasible_subsets": 39203,
+      "states": 10
+    },
+    {
+      "query_id": "82999e3c3c0560b076a65ececafd10832a27773eac8c14c60bfb9fa3c71cf506",
+      "feasible_subsets": 1314,
+      "states": 6
+    },
+    {
+      "query_id": "d4d0c9c4d93fc8c38e099139b72dec19254fd7e8894c69034013a88de7f00489",
+      "feasible_subsets": 106762,
+      "states": 7
+    },
+    {
+      "query_id": "2f61305fca8ca9efa234730be5f3c37765addc1d15c8231aaf5ff3018c4acaa0",
+      "feasible_subsets": 2306,
+      "states": 9
+    },
+    {
+      "query_id": "d6a72ed6120d1164e8ba908c64390a8ede1c2d33c83364a6248ee8b9fa09bd57",
+      "feasible_subsets": 65536,
+      "states": 8
+    },
+    {
+      "query_id": "d8f22ba05245554d70635722b06ae2cde06fd0ee7087cf676f29929361015b17",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "5963a650382433d5c4e321446f826c08556d11a3831ea4995aa62d4014f27024",
+      "feasible_subsets": 65536,
+      "states": 9
+    },
+    {
+      "query_id": "d7c6e29688eece045d46c541b4289ab8e6ca3960afe2969d5f9401597b343571",
+      "feasible_subsets": 1758,
+      "states": 6
+    },
+    {
+      "query_id": "3d0f9cbb1c43dfa1a5d3a08fc8900b0ed03d8b97ee1d63c47c31ecf579cd9d7d",
+      "feasible_subsets": 106762,
+      "states": 8
+    },
+    {
+      "query_id": "a652946faab974ce2006ab608d2473048e22fdb124880b3985f7d406e2fc1e09",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "41376522eff3a5d4d5b9015fd3932ba0db90fa8bff6f12610f04cc9e64bfa93c",
+      "feasible_subsets": 7099,
+      "states": 9
+    },
+    {
+      "query_id": "9549fa7ff9bc4a31e2d93c9f9061f9888b48ae152724584241732aa99ddb3579",
+      "feasible_subsets": 960,
+      "states": 6
+    },
+    {
+      "query_id": "1f5b9820584e17b4ee08a3e13cf9e97ae765e07a7b1606ecaa5149f75ebed357",
+      "feasible_subsets": 169766,
+      "states": 10
+    },
+    {
+      "query_id": "59aba9c246e7ff8b9176e1318e0d85a6a1631fb1a290b5e5518e818ebef0673f",
+      "feasible_subsets": 2973,
+      "states": 6
+    },
+    {
+      "query_id": "a9f789c366abce93a2db16575220259fb5f797ed5d173bd0acc3849a77a828bb",
+      "feasible_subsets": 169766,
+      "states": 14
+    },
+    {
+      "query_id": "5269e3a5a5304c2b3d532aee42adf4316c47f4bce8808a2fc29b816248828aae",
+      "feasible_subsets": 2973,
+      "states": 9
+    },
+    {
+      "query_id": "a081d3f589dd1ad2ecb7a994f8a3178379ae31b681b30367aececed6f88b3374",
+      "feasible_subsets": 7099,
+      "states": 10
+    },
+    {
+      "query_id": "119ee05baa42eb8d6b5ae313154c5247bbe88843e4cab31095d712f22729159f",
+      "feasible_subsets": 738,
+      "states": 6
+    },
+    {
+      "query_id": "29c4e3336db88e4b1adb5d11e546a8407c517e63de52b110727dcd5f398d899f",
+      "feasible_subsets": 39203,
+      "states": 12
+    },
+    {
+      "query_id": "c6fffc207375aff584781a5d17f3ae2b782eef03e33d3efcfbca9b79a53e1567",
+      "feasible_subsets": 1392,
+      "states": 9
+    },
+    {
+      "query_id": "f0ecdda1ba35ab205106252dc6bd89c1e55052e187bfb85a88a3553b21e60e44",
+      "feasible_subsets": 65536,
+      "states": 8
+    },
+    {
+      "query_id": "0bfa8ade9d65b74a05498c1be68b73b4d1654b721f71df5e3af84bec62b1eae2",
+      "feasible_subsets": 1849,
+      "states": 6
+    },
+    {
+      "query_id": "b97aded64406ada8e043ff52f90b13df2300959024f31b441801e7463cca56b8",
+      "feasible_subsets": 12911,
+      "states": 10
+    },
+    {
+      "query_id": "107b4190ebfd4365ebe67704e411d7559cdbcbd084e33c89b851b4adff9b3c3e",
+      "feasible_subsets": 738,
+      "states": 5
+    },
+    {
+      "query_id": "7e62dbb4b238e2d6f4988776415dac18a543fb6f30ef58866d412fc896e5b501",
+      "feasible_subsets": 7099,
+      "states": 10
+    },
+    {
+      "query_id": "57a91943f42a2571c78d65a9513d0873a5e86f049a32fb21f459f480bb8d5912",
+      "feasible_subsets": 794,
+      "states": 6
+    },
+    {
+      "query_id": "0567687096429f2d47016e50971198ecacf498770e06f75519fd3fbd1c162ceb",
+      "feasible_subsets": 169766,
+      "states": 7
+    },
+    {
+      "query_id": "d73075c81b2a17cae03f2c827ca9c0391b7917dce93d50e7a80eb0f5032ab616",
+      "feasible_subsets": 2973,
+      "states": 7
+    },
+    {
+      "query_id": "de4e57696359d1c27d398ee0a94a992bec8bee37afdaf89f79720e24240d1863",
+      "feasible_subsets": 7099,
+      "states": 10
+    },
+    {
+      "query_id": "bf31aee2b1134bae51b80340fb5b8d7e8279b04cea68fb5364e9c0a44eaba14c",
+      "feasible_subsets": 738,
+      "states": 6
+    },
+    {
+      "query_id": "c38f682c065e03604e7c686e20922977501396578c24d9da4dc81a0f71346f62",
+      "feasible_subsets": 65536,
+      "states": 17
+    },
+    {
+      "query_id": "71208ea7661c6cdba271ac93be936e4f368b5d54b0b854984b23bfc25b17ecb2",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "73e7e3a75815229c748c8ed729c7560d112cd37e702da739a018435869d070c2",
+      "feasible_subsets": 39203,
+      "states": 10
+    },
+    {
+      "query_id": "45bcda46dd6a546e31caaf409d3fca4c04330be9aeadf8810796916b16e9bbd1",
+      "feasible_subsets": 1314,
+      "states": 6
+    },
+    {
+      "query_id": "f90c17693eccd73aef85b41b75f09423adbd5d06ee91906411f3da872a2b1e9d",
+      "feasible_subsets": 65536,
+      "states": 6
+    },
+    {
+      "query_id": "eb69da8363814c64c72320698b603c149b054402d915b08da2d6a07fa2d6947c",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "35ba3e997c8d89efa114b90ef831baa17d54b7ebd3e24c5376404fd958955763",
+      "feasible_subsets": 65536,
+      "states": 10
+    },
+    {
+      "query_id": "91cd472a61b42c8b9855386481f55eeec3251551e468a762ccb973e4258884f6",
+      "feasible_subsets": 1849,
+      "states": 6
+    },
+    {
+      "query_id": "f663b3435ff519e62124085892073cdc62ec2c70541dcac2c43c9264edd689ce",
+      "feasible_subsets": 169766,
+      "states": 13
+    },
+    {
+      "query_id": "3615d4cc93a496c0c5dfb22c6276632ac61abcbb4b16e85c906042574b3be959",
+      "feasible_subsets": 2973,
+      "states": 6
+    },
+    {
+      "query_id": "ee8420a186ee2d65644afa9f71cde17fb8b7cd58ffc313fa4aeed1e54db04b62",
+      "feasible_subsets": 106762,
+      "states": 10
+    },
+    {
+      "query_id": "a1f505e8f6f724ee86ab8878711c392370c759314a861891153bb02144af42b9",
+      "feasible_subsets": 2973,
+      "states": 6
+    },
+    {
+      "query_id": "1e55a7c25661459c846124636b45a41f499a6baddeeb870b366fc3c1572a2c2c",
+      "feasible_subsets": 106762,
+      "states": 8
+    },
+    {
+      "query_id": "c0589ac25f68f34a47c95cc1ba2fd3d56a52760c4aa93aa6815bfc3708d6fc53",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "468ca0cc5dc1b5b6e9dff9885181376cc73ca23e7be75769940d55ab28940e0b",
+      "feasible_subsets": 169766,
+      "states": 10
+    },
+    {
+      "query_id": "00dc9f121a5675ab433f61e05fb4498b09826cadf3c36234757c915d5f3022fd",
+      "feasible_subsets": 2973,
+      "states": 6
+    },
+    {
+      "query_id": "4fb30b2e3f1ad45396ef43472536fa238bf94d4dfc126842ed79108520cc82e1",
+      "feasible_subsets": 7099,
+      "states": 8
+    },
+    {
+      "query_id": "c519635ec971adcae59d5cf327700d83e319e1bbce893f06defd97abe028e2df",
+      "feasible_subsets": 794,
+      "states": 6
+    },
+    {
+      "query_id": "e1ab5925fee694f8677af667cceb7e973009e87a635409eef2528fe665cac042",
+      "feasible_subsets": 511,
+      "states": 6
+    },
+    {
+      "query_id": "aa366bfeb987ec2ac6c0c963c7e9673ac191a361f677c9cfd9e3c249937e1ad5",
+      "feasible_subsets": 199,
+      "states": 6
+    },
+    {
+      "query_id": "94e2e20f19a16f50483f0d45df96e270ace5aa2dd799a064aa674cf6ca25d1cb",
+      "feasible_subsets": 39203,
+      "states": 10
+    },
+    {
+      "query_id": "e5817d58709999b65108f069dfae5d61908ca1cfc1f87cf5438bcafaf1340ab0",
+      "feasible_subsets": 1314,
+      "states": 6
+    },
+    {
+      "query_id": "97f97667a25a834040532b206261851bcc85c498f661c4af0f90a2f32a0b23a9",
+      "feasible_subsets": 22819,
+      "states": 10
+    },
+    {
+      "query_id": "eae454f34b6e218155fcb1327f42354895fcb7d73250014ede209e31d6bc6f7e",
+      "feasible_subsets": 1093,
+      "states": 6
+    },
+    {
+      "query_id": "77b02b2500ad7639fb70df9b7be51ee6ec19072a43f909eec83869255b92fcf6",
+      "feasible_subsets": 1981,
+      "states": 8
+    },
+    {
+      "query_id": "66a66deb7f6c9a690a3a6a89b1865c9b7bad2f5a556045ed2f08a23d0c63bf12",
+      "feasible_subsets": 349,
+      "states": 6
+    },
+    {
+      "query_id": "967744f07746771420c395b90ae53c448b2c982225861f92afac01f89e8f1645",
+      "feasible_subsets": 12911,
+      "states": 10
+    },
+    {
+      "query_id": "b1eda54ae68655a12806e0ec4952ebe416228f21d3dc986420d2b0fa6122e443",
+      "feasible_subsets": 1026,
+      "states": 9
+    },
+    {
+      "query_id": "cd5910d89585b350472666befeb31e467dfae863da5ce623c8567da579df8ed7",
+      "feasible_subsets": 1013,
+      "states": 6
+    },
+    {
+      "query_id": "8bdb98b3e0321c528add299045ddddc489381e1eb80d74a131cb035764141817",
+      "feasible_subsets": 349,
+      "states": 6
+    },
+    {
+      "query_id": "ca41ca0c0ed98dd5d880efb71ec7b90526484e091eac4d11e96023f869172bdc",
+      "feasible_subsets": 1981,
+      "states": 6
+    },
+    {
+      "query_id": "729faac46913b9268001fbb08fce47d4aa424cfb5c351f9c6436aaeff5ec6230",
+      "feasible_subsets": 386,
+      "states": 6
+    },
+    {
+      "query_id": "6dc09f2edc9719cf063dc36e81ebe7b70474fc80ce643f508ed6a91c8f7069ff",
+      "feasible_subsets": 1981,
+      "states": 8
+    },
+    {
+      "query_id": "c5f9d9b0855a94dcfc024de58a335fdc126ba7cbf55eed0e38170fba47ea3166",
+      "feasible_subsets": 256,
+      "states": 6
+    },
+    {
+      "query_id": "a16228928a0a9d4fcc95183516045760dc2a47c48ea3eeaa284901738add9939",
+      "feasible_subsets": 65536,
+      "states": 8
+    },
+    {
+      "query_id": "3a45b14ae9d412c97079e0099cecd8ba4e0698f414f7e72ff3c732611913cd7e",
+      "feasible_subsets": 2306,
+      "states": 9
+    },
+    {
+      "query_id": "7c3fb0544b77c0956643e03d748fa3ebe21b1decf7a5951a765c873ca61fe8ec",
+      "feasible_subsets": 39203,
+      "states": 10
+    },
+    {
+      "query_id": "72d3c03dc47936fb275cd5436bcdf67953c0f86c2a01f3be6730b4573bcd4fdd",
+      "feasible_subsets": 1471,
+      "states": 6
+    },
+    {
+      "query_id": "ff0194df9c922ef09e21ae260f68c85693fc008575f92bb103cf29af9be30117",
+      "feasible_subsets": 7099,
+      "states": 10
+    },
+    {
+      "query_id": "7f0d1d6e22b0dbe4e5ed2583782c7efc6837e9d8b627a9709cb1813893a138a7",
+      "feasible_subsets": 516,
+      "states": 6
+    },
+    {
+      "query_id": "42a80f593d087c8fafe312d3ae8c49d45a364fc0b819d1b5f74278dc835015ac",
+      "feasible_subsets": 106762,
+      "states": 10
+    },
+    {
+      "query_id": "a35460041199848707e67c9f23d7ff1d8a5893e22836aa7fc8b74df6f2380217",
+      "feasible_subsets": 2306,
+      "states": 9
+    },
+    {
+      "query_id": "315c2796d94a6e55d965a971432c610267c9ee8b620e9898c1f0943b977cb61f",
+      "feasible_subsets": 65536,
+      "states": 13
+    },
+    {
+      "query_id": "69f28d05252dc98aed4e35862f9f9a3de990caa0acb5294b40669fbaf5a6ea9b",
+      "feasible_subsets": 1758,
+      "states": 9
+    },
+    {
+      "query_id": "c6278195a6a75b62525329c2bfef81c31270e503864b1be2e96926f18df1ba40",
+      "feasible_subsets": 3797,
+      "states": 8
+    },
+    {
+      "query_id": "06e9f1f7477b6a0f8cc3e2e15aca53080d54a8e7955f5acaea218ca615e12815",
+      "feasible_subsets": 386,
+      "states": 9
+    },
+    {
+      "query_id": "16e7eba7bcab669142407673f2e25fdfebf518f090f01bd7cdcf7057459f1465",
+      "feasible_subsets": 39203,
+      "states": 8
+    },
+    {
+      "query_id": "b73578a233bbc3e4d42b2774996251a846930ef5154c4b44436d101ae33c3aca",
+      "feasible_subsets": 1392,
+      "states": 6
+    },
+    {
+      "query_id": "c096e36d082fc20508aad00b43a8e4d9dac8fb0556807cb862d8cc204f04944d",
+      "feasible_subsets": 65536,
+      "states": 10
+    },
+    {
+      "query_id": "86e6767b609588a8d7391941fd195fe54975e0e80fa71ccbf6feaef05ec9ba9a",
+      "feasible_subsets": 1849,
+      "states": 6
+    },
+    {
+      "query_id": "0647857e2626dbe2781f1d6db1edf881ea2c5f6e36daf5e286afbb7623375b6b",
+      "feasible_subsets": 106762,
+      "states": 8
+    },
+    {
+      "query_id": "37cf9d82227976100cdd293af898bd6ca7d5fcb7093d1abacf92e157dad20dda",
+      "feasible_subsets": 2306,
+      "states": 6
+    },
+    {
+      "query_id": "6afbae0f440e2daee6d9457fd1c78abffd45eeefc9fedaadf3d3f05264d63d8f",
+      "feasible_subsets": 65536,
+      "states": 6
+    },
+    {
+      "query_id": "3384b9480d5e5d2cd3110c796762a3de388a007e00acb1e6bdebac8738d29f98",
+      "feasible_subsets": 1758,
+      "states": 6
+    },
+    {
+      "query_id": "d59637ce1959286162d46d849e4a9d39c5fe4d3769ff923c3366807475f65233",
+      "feasible_subsets": 511,
+      "states": 12
+    },
+    {
+      "query_id": "5e3116829866d9cef3f19a3f9cb20def71d71ddc52a1918fa9199e8de035c545",
+      "feasible_subsets": 256,
+      "states": 8
+    },
+    {
+      "query_id": "2ff3292a1395220f0583bb084a7682d77f2f14168fc6e13a9670dd37eda057d0",
+      "feasible_subsets": 39203,
+      "states": 8
+    },
+    {
+      "query_id": "186e3d755b702dafbcf3ee6885956fae3a003d53a4020953c3367eb72f0ba45c",
+      "feasible_subsets": 1471,
+      "states": 6
+    },
+    {
+      "query_id": "80e259a4ade7623c9a00b7d296795148dcea8ad3a4734c099b1c961e7ad3db4e",
+      "feasible_subsets": 22819,
+      "states": 10
+    },
+    {
+      "query_id": "452309efd0b220b651ee84da6f83abe8fa2db23a930361ff253c1a9134c73a3a",
+      "feasible_subsets": 1026,
+      "states": 6
+    },
+    {
+      "query_id": "cf77857be761b3a538cbaa9c7013c93af95cde37fffa1b227fa38ede1ee36f41",
+      "feasible_subsets": 39203,
+      "states": 8
+    },
+    {
+      "query_id": "81d78a5ec5e684e62b4036ced74d80e3fac76a4e0beee3d6af1dc5a57bdb3d32",
+      "feasible_subsets": 1758,
+      "states": 6
+    },
+    {
+      "query_id": "b9d8daee08e37934a405e8a91c8375c406a31abb6185610584e6bae4738d6466",
+      "feasible_subsets": 169766,
+      "states": 10
+    },
+    {
+      "query_id": "26a8e5fccce6d8ddc85c46a819a1e418068a3fa3f155340643198826b48cd44f",
+      "feasible_subsets": 2973,
+      "states": 6
+    },
+    {
+      "query_id": "6fec3d7a450ddfe5c45a22489aa049a0d1556386c7f5e211f8930384f7552ebf",
+      "feasible_subsets": 106762,
+      "states": 10
+    },
+    {
+      "query_id": "4818992cc5b91040751f8036912d2c81641fde3a49bd1af1ef87f86d1b22de24",
+      "feasible_subsets": 2411,
+      "states": 6
+    },
+    {
+      "query_id": "d841a3e4a72c2ee1a462183ee1776acb357951939968a26f9f2be50d96740614",
+      "feasible_subsets": 64,
+      "states": 7
+    },
+    {
+      "query_id": "7a9de938d8f7632b02d9e40173c16148307b6f42b4ea985128da9cad35cc1295",
+      "feasible_subsets": 16,
+      "states": 6
+    },
+    {
+      "query_id": "4b52a6b6292ec13362a0abbba44deda66b909845c19c79296365dc4efebf24f4",
+      "feasible_subsets": 106762,
+      "states": 17
+    },
+    {
+      "query_id": "64f19678e7c0e22dec6ab6096a515e3e91a648d7268897268f3dd4252f8a7cf7",
+      "feasible_subsets": 2306,
+      "states": 9
+    }
+  ],
+  "states": 5200,
+  "checkpoint_sha256": "12ddeb7d8003f639669959e7f65ebb5a3511442453475e3a6111aaa42894647f"
+}

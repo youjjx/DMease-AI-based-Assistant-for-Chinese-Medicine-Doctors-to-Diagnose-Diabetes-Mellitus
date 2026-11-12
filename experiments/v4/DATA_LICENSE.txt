@@ -1,0 +1,43 @@
+DMease fourth-round research data attribution
+
+TCMEval-SDT: Wang et al., Scientific Data 12, 437 (2025),
+https://doi.org/10.1038/s41597-025-04772-9
+Author repository: https://github.com/zhuyan166/TCMEval
+Pinned commit: 12473b50ce94ad2fd22b1e984b826b0a618c4407
+Author data license: CC BY 4.0.
+The validation and test answer files are separately published under Results.
+Only aggregate statistics, input hashes and confusion counts are redistributed
+here. Medical narratives and generated text remain in ignored local directories.
+
+TCM-SD: Ren et al., CCL 2022,
+https://aclanthology.org/2022.ccl-1.80/
+https://github.com/Borororo/ZY-BERT
+Data license: CC BY-NC-SA 4.0 (distinct from the repository's MIT code).
+The frozen text classifiers and clinical training records are not redistributed.
+
+ChEMBL 37: ChEMBL team, EMBL-EBI, https://www.ebi.ac.uk/chembl/
+ChEMBL-derived affinity data are CC BY-SA 3.0:
+https://creativecommons.org/licenses/by-sa/3.0/
+This applies to affinity_robustness.json, affinity_loco.json, their source-group
+assignments and associated measured-pK/prediction tables and report sections.
+They derive from the unchanged snapshot in ../v3/affinity_curated.json.
+Modifications: document/component grouping, deterministic partitioning,
+leave-one-component-out predictions, error summaries and plots.
+No endorsement by the source authors is implied. Reuse must retain attribution,
+identify further changes and meet the applicable share-alike terms.
+
+Qwen2.5-1.5B-Instruct: Qwen Team, Apache-2.0.
+https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct
+Fixed revision: 989aa7980e4cf806f80c7fef2b1adb7bc71aa306.
+Third-party foundation-model weights are not redistributed here.
+LM Format Enforcer: https://github.com/noamgat/lm-format-enforcer (MIT).
+
+Planning requests are engineering retrieval combinations over the project's
+public-evidence graph, not patients, clinical outcomes or pharmacological
+contraindication annotations. Graph source attribution remains in data/README.md
+and data/public_registry.json. No original SymMap/TCMSP/STRING database dump is
+redistributed in this directory. Small planning model checkpoints contain learned
+parameters and provenance, not patient text.
+
+These source-specific terms do not replace the repository's license for its own
+code and other original material.

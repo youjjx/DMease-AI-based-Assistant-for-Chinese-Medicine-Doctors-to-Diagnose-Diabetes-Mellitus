@@ -1,0 +1,13 @@
+{
+  "study": "Frozen classifiers on author TCMEval-SDT test partition",
+  "partition": "50 Test_TCM_Data_v1.json records with Results/Test_data_result.txt expert answers",
+  "models": ["frozen_unweighted_v2", "frozen_weighted_v3"],
+  "training": "None. Both checkpoints and preprocessing are fixed from previous experiments; no adaptation or model selection on this partition.",
+  "input": "Clinical Data first 4096 characters; frozen v2 vectorizer",
+  "gold": "Parse expert semicolon-separated choice letters, map exactly to the record's Options of TCM Syndrome; strip whitespace and one trailing Chinese character 证, as v3 did.",
+  "prediction": "Unrestricted ranking over the model's 148 labels, stable ties. Do not restrict to supplied multiple-choice options.",
+  "metrics": "Top1 and top3 any-gold hit, known-label coverage ceiling, conditional hit among records containing known gold, per-case correctness and paired comparison; not single-label diagnosis accuracy or paper cohort replication.",
+  "overlap": "Audit normalized exact input text against TCM-SD train/dev; report all and previously unseen subsets. This does not rule out paraphrase overlap or foundation-model pretraining contamination.",
+  "prior_access": "Dataset answer formatting was inspected before protocol; no classifier predictions on this partition were inspected. Original 200 TCMEval training cases are reused development, not this test partition.",
+  "seed": 42
+}

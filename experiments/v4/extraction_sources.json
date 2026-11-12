@@ -1,0 +1,38 @@
+{
+  "repository": "https://github.com/zhuyan166/TCMEval",
+  "commit": "12473b50ce94ad2fd22b1e984b826b0a618c4407",
+  "files": {
+    "evaluation/TCMEval-SDT/data/Validation_TCM_Data_v1.json": {
+      "git_blob": "0e69c0a99a528e7244a4fae3791dac628477776c",
+      "sha256": "80b5b836349da9c0c3f9be31255c8baad5669a4b33270778ce67f71187fe1e6c",
+      "bytes": 56324
+    },
+    "evaluation/TCMEval-SDT/data/Test_TCM_Data_v1.json": {
+      "git_blob": "d1539e3dddeebcc6a1b6770df4e09d1a512915fe",
+      "sha256": "4b9f69308b46125ea6d979613d4b2717b1d930d7acefd2e3c58d274975420bff",
+      "bytes": 56432
+    },
+    "evaluation/TCMEval-SDT/Results/Validation_data_result.txt": {
+      "git_blob": "22f812f5822ca39753f6aa4b2e40e74a3e36813b",
+      "sha256": "427de6e639addde75a05be08e99063df2bdfd8fbac9cb53b0d3bc339e642113a",
+      "bytes": 20691
+    },
+    "evaluation/TCMEval-SDT/Results/Test_data_result.txt": {
+      "git_blob": "db57733882765ac854627665900a4c4fe8382535",
+      "sha256": "68b521be0650796af8fcc96672b680368278b561c07203b03d10d1ef78530ee5",
+      "bytes": 23113
+    }
+  },
+  "normalized_text_overlap": {
+    "train_validation": 0,
+    "train_test": 0,
+    "validation_test": 0
+  },
+  "counts": {
+    "train": 200,
+    "validation": 50,
+    "test": 50
+  },
+  "correction": "Earlier reports incorrectly said official validation/test answers were unavailable. They are separately published in Results, and the author's evaluate.py treats them as standard answers. Earlier numerical results remain unchanged; their data-availability interpretation is superseded.",
+  "license": "TCMEval-SDT author README: CC BY 4.0"
+}

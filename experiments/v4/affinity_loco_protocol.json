@@ -1,0 +1,13 @@
+{
+  "study": "Exploratory leave-one-source-component-out sensitivity after fixed document splits proved underpowered",
+  "reason": "The preregistered fixed split had insufficient validation/test counts in all strata. Those results remain unchanged. This separate audit uses no validation set or hyperparameter selection.",
+  "dataset": "Same previously explored 468-row ChEMBL snapshot, no new independent cohort",
+  "groupings": ["document", "document_and_scaffold"],
+  "grouping_code": "scripts/affinity_v4.py:grouping; global union of shared documents/compounds and optionally scaffolds",
+  "models": ["training_mean", "ridge_alpha10"],
+  "hyperparameter": "Ridge alpha10 is frozen from the previously published v3 validation choice on overlapping data. This dependence makes this analysis exploratory; it is not nested model selection or independent confirmation.",
+  "folds": "Within each target/endpoint, hold out every component once; all other components train. Require >=40 training rows per fold. Report every skipped fold, its test size, overall coverage and component count. No changing threshold or holding out selected publications only.",
+  "features": "Morgan radius2,2048 bits,chirality true; Ridge solver lsqr,tol1e-6",
+  "metrics": "Per stratum: pooled out-of-component MAE/RMSE/R2/Spearman, equal-component mean MAE, selected-minus-training-mean component bootstrap 95% interval (2000 repeats seed42). Formal aggregate metrics require >=2 evaluated components and >=15 evaluated rows; otherwise descriptive fold results only.",
+  "limits": ["Fold training sets overlap", "Training minimum can exclude large-component test cases; coverage must be disclosed", "Few components yield unstable intervals", "No whole-herb binding or clinical efficacy interpretation"]
+}

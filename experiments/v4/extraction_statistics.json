@@ -1,0 +1,49 @@
+{
+  "selected_on_validation": "schema",
+  "selection_frozen_at": "2026-11-12T07:43:47.458722+00:00",
+  "scope": "Post-evaluation descriptive paired case bootstrap and prediction-swap randomization; fixed three comparisons, Holm correction. No new model selection.",
+  "source_lf_sha256": {
+    "scripts/extraction_statistics_v4.py": "8e97ae488def6b2407448c76a71745841fdbbc59ee73312491528ab6daae79a8"
+  },
+  "comparisons": {
+    "symmap_literal": {
+      "cases": 50,
+      "micro_f1_difference": 0.2175,
+      "case_bootstrap_95ci": [
+        0.1303449618247219,
+        0.2966085703540412
+      ],
+      "paired_randomization_p": 9.99950002499875e-05,
+      "seed": 20261112,
+      "bootstrap_repeats": 10000,
+      "permutation_repeats": 20000,
+      "holm_p": 0.000199990000499975
+    },
+    "copy_clauses": {
+      "cases": 50,
+      "micro_f1_difference": 0.0973360655737705,
+      "case_bootstrap_95ci": [
+        0.01806223187220738,
+        0.1671985972504465
+      ],
+      "paired_randomization_p": 0.002449877506124694,
+      "seed": 20261112,
+      "bootstrap_repeats": 10000,
+      "permutation_repeats": 20000,
+      "holm_p": 0.002449877506124694
+    },
+    "v3_strict": {
+      "cases": 50,
+      "micro_f1_difference": 0.427269820971867,
+      "case_bootstrap_95ci": [
+        0.3506031445846695,
+        0.49705654822080736
+      ],
+      "paired_randomization_p": 4.999750012499375e-05,
+      "seed": 20261112,
+      "bootstrap_repeats": 10000,
+      "permutation_repeats": 20000,
+      "holm_p": 0.00014999250037498125
+    }
+  }
+}

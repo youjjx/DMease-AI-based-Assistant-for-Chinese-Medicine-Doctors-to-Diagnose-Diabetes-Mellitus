@@ -1,0 +1,11 @@
+{
+  "evidence_fingerprint": "f9d7cca2be94fa8a5f52036de8b0ff8fe74031ce0d9b6f0ab469a9372d272af7",
+  "recomputed_policy_rows": 14848,
+  "maximum_coverage_or_objective_error": 0.0,
+  "exact_reference_crosschecks": 256,
+  "maximum_exact_reference_error": 0.0,
+  "source_lf_sha256": {
+    "scripts/verify_v4_local.py": "ed6a6080e9add12f24ac57afb333c536c7b73454310229e4fc4c5fa02adceca5"
+  },
+  "scope": "All candidate sets rescored with the unchanged reference coverage implementation; all256 exact results crosschecked with the separate v2 enumeration implementation. Requires local evidence bundle."
+}

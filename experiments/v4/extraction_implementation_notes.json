@@ -1,0 +1,7 @@
+{
+  "scope": "Clarification of the frozen implementation, not a change to protocol, prompts, outputs or selection",
+  "schema_alphabet": "Both constrained variants configure the parser alphabet as its default ASCII alphabet plus characters present in the input chunk. This enables Chinese generation but also introduces an input-derived character inventory. Therefore schema is a field/type plus source-character-inventory intervention, not a perfectly pure format-only ablation. Source_schema further requires a contiguous source substring from the enumerated candidate space.",
+  "grounding": "All methods still undergo the same post-generation quote validation where applicable. An allowed character inventory does not guarantee a quoted phrase is present, clinically relevant, complete or correctly polarized.",
+  "old_configuration_comparison": "The old four-field prompt also differs in chunking and output-token budget. Only the new variants share those settings. Do not attribute old-to-new gains exclusively to JSON constraints.",
+  "runtime": "Interactive quote review deliberately uses source_schema for auditable quotation, independently of which variant wins validation exact-surface F1. This is not a test-set reselection. Repeated occurrences and polarity disagreement are shown for manual review."
+}

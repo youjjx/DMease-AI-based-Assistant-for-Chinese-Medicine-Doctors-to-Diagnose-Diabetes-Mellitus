@@ -1,0 +1,11 @@
+{
+  "study": "Validation-selected conservative residual overrides after action-regret diagnosis",
+  "motivation": "Training-only action audit of seed42: greedy already has optimal first actions in 5086/5200 states. Warm KAN repairs103/114 but damages178 formerly optimal choices. This extension was designed after that diagnosis, before any v4 planning test evaluation.",
+  "partitions": "Unchanged v4 planning train/validation/test groups; no new fitting and no test-based choice",
+  "variants": ["residual_kan", "residual_mlp", "kan_without_prior"],
+  "seeds": [42,43,44],
+  "candidates": "Always-greedy reference first; then warm and validation-selected checkpoints, each with fixed override margins [0,0.002,0.005,0.01,0.02,0.04,0.08]. Choose first maximum validation mean final utility, tolerance1e-8. All nine choices frozen before any planning test results are computed.",
+  "rule": "Compute network scores and current marginal-gain greedy action. Override greedy only if a different network argmax exceeds the network score of the greedy action by more than the selected margin. This score difference is not a calibrated probability. No extra lookahead or test labels.",
+  "evaluation": "Report selected-policy test utility and paired difference against original same-test greedy, averaged across seeds/profiles and clustered by128 symptom groups. Report Holm adjustment over original3 plus gated3 comparisons as an additional6-comparison family. Also report guarded max(gated rollout,greedy rollout), disclosed as extra candidate verification.",
+  "limits": ["This is a learned policy combined with a greedy prior, not pure KAN or proof of PPO superiority", "Selecting among multiple thresholds on128 validation requests can overfit", "Margin selection does not guarantee per-query improvement; only the explicitly guarded version does", "Retain all failed original training and ungated results"]
+}

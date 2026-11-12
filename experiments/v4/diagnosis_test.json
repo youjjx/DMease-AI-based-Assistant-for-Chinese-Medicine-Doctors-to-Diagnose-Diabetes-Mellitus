@@ -1,0 +1,984 @@
+{
+  "protocol": {
+    "study": "Frozen classifiers on author TCMEval-SDT test partition",
+    "partition": "50 Test_TCM_Data_v1.json records with Results/Test_data_result.txt expert answers",
+    "models": [
+      "frozen_unweighted_v2",
+      "frozen_weighted_v3"
+    ],
+    "training": "None. Both checkpoints and preprocessing are fixed from previous experiments; no adaptation or model selection on this partition.",
+    "input": "Clinical Data first 4096 characters; frozen v2 vectorizer",
+    "gold": "Parse expert semicolon-separated choice letters, map exactly to the record's Options of TCM Syndrome; strip whitespace and one trailing Chinese character 证, as v3 did.",
+    "prediction": "Unrestricted ranking over the model's 148 labels, stable ties. Do not restrict to supplied multiple-choice options.",
+    "metrics": "Top1 and top3 any-gold hit, known-label coverage ceiling, conditional hit among records containing known gold, per-case correctness and paired comparison; not single-label diagnosis accuracy or paper cohort replication.",
+    "overlap": "Audit normalized exact input text against TCM-SD train/dev; report all and previously unseen subsets. This does not rule out paraphrase overlap or foundation-model pretraining contamination.",
+    "prior_access": "Dataset answer formatting was inspected before protocol; no classifier predictions on this partition were inspected. Original 200 TCMEval training cases are reused development, not this test partition.",
+    "seed": 42
+  },
+  "source_lf_sha256": {
+    "scripts/diagnosis_v4.py": "61f551ed12ff936bc83c1fcc286ac67fe3ff060ba74331538b6240db74f69725"
+  },
+  "checkpoint_sha256": {
+    "baseline": "8533155914c914c3d9d5e2004da2d86481cae7ecf3d23b2ac71ee6fae1536c8f",
+    "weighted": "3b0f271b990d82e9d2e09ab31dbe42ade5d5b343e5e115e9ffa2df23dcb7ac4b"
+  },
+  "sources_sha256": "2c511148b3a31f28bc6bf9a20e4292d9b6c70e34b0c61cb3b7b1ed3a69ea24c8",
+  "results": {
+    "frozen_unweighted_v2": {
+      "groups": {
+        "all": {
+          "records": 50,
+          "top1": 0.02,
+          "top3": 0.16,
+          "known_label_ceiling": 0.3,
+          "conditional_top1": 0.06666666666666667
+        },
+        "unseen_text": {
+          "records": 50,
+          "top1": 0.02,
+          "top3": 0.16,
+          "known_label_ceiling": 0.3,
+          "conditional_top1": 0.06666666666666667
+        }
+      },
+      "rows": [
+        {
+          "row_hash": "0b47a23ecc382200a8fd0d51857f04bada2b8ab94f6fae662e9dcd49594bc7d7",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "b4ac6baaa0d2e12f899f172975bb58f81f9cc5aaa3651fb449cdbb172bf8cca3",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 2,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "0d0405041389576d325b2bec5b7259bb3c4a1ca39c0bb14bafbdd99998157711",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": true,
+          "gold_labels": 3,
+          "known_gold_labels": 1,
+          "top1": 0,
+          "top3": 1
+        },
+        {
+          "row_hash": "f94deefc8e4d822f764182dd663bb7da35f06c72bc7a555df0d21fdfe80aadb4",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 2,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "a357c279671ca2fa6a0082a935a53875741cf780a98a421403ddc42eb42287e9",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 3,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "bc0646a9fe0e77ad6e7f88bbfa78b07afe9a2bf3e01906ccf7d789bcaab71282",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": true,
+          "gold_labels": 1,
+          "known_gold_labels": 1,
+          "top1": 0,
+          "top3": 1
+        },
+        {
+          "row_hash": "03c0793841eefba18341eb044b9ef08a7c80e1b1b1920060bdec8e88627581c8",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": true,
+          "gold_labels": 2,
+          "known_gold_labels": 1,
+          "top1": 0,
+          "top3": 1
+        },
+        {
+          "row_hash": "6ae9906bab3472562dee454ba72285f20e283ae83df6954b23dde2055d83a5d1",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 2,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "2501e5e43a6fb076400032cad6e9b2057ec05629a1de02dbbdcac10318b78eea",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "b72c43ebcc7a0fc098b7d019957b8446b28a0cb68ed16aaa4e4c894c0924d1a9",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": true,
+          "gold_labels": 2,
+          "known_gold_labels": 1,
+          "top1": 0,
+          "top3": 1
+        },
+        {
+          "row_hash": "15fcf321d9b1d814a43fa5cad7fbe7cabf0c16bbcffe05b273cdd314b61d1de9",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 2,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "8be036907e9f82361394e55a376dd7858908068dc07f18cbaf7a6f0959537272",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 2,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "e3df7e5b05750bc09d3572e94d7ae8a99478f8825506c599cb9c82ad7cd695f2",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 2,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "850c1f49a4c50fda08187b7ffe7acbbf0c5007693f2baa8634b8aea8b53d2e09",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "2dd50c4c4284a895101cd35d50a2b4405853c34089398f9a9c16c169149e7f77",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "33746083b8fa292affe5a68d48eb3bbcbe99168a64895633754d822dc0cc6b9a",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 2,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "e1207ef9a99ba197f90be9dccaa61ac1f952aaa269c9f9d5c9bba2f3d655fb56",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "86b082ee1644b9d1a91ac5bc205c35f5a6b745a7ce134ece9783613c5fc451c7",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "c4db7f64c391c01d84f1a8f86723713684fbd16ab1dbace2c4325031a897d42a",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 3,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "d60700b18ff0ac3304d0c25e8544daaa970ae31d718c5f15693551e139f0d98c",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "f1d9a28bcbb18079fe755f4ebf97b1ee290005dd4a14a56876cb81456a81d3c4",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 2,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "6df14fd380276279effe47e3b20ca55b707309a5ec397e1e8bd2acdc4d70b0ce",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": true,
+          "gold_labels": 2,
+          "known_gold_labels": 1,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "a1e1a2b0fad6eb794fe232dc042a11b46eadd1246e34020dec63df601ef01322",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": true,
+          "gold_labels": 2,
+          "known_gold_labels": 1,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "4ceceb059193c065d6ecf5c617efe7126d02119ae8f1009e8955e2eabe342167",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "33e2aa22e047bbe8dfa400479768d559feda9ecadf1807b3b9a6082f061959e9",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "84a599453255ff74d38142d720cc1691fbe278a29e8a927c66c90a448ebc75c8",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 2,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "09cb1805af23f6ed48096c287d698418bf44094eb782430522cda01af4e59d51",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": true,
+          "gold_labels": 2,
+          "known_gold_labels": 1,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "fc5686392d59f5fb5a4db87051b991bce6c2b45f29343abc31e0e3eb60c06466",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "91e6988d990b6df60a33e3163a5fd057b75f5f0ae7e51715347e2407cac23580",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": true,
+          "gold_labels": 1,
+          "known_gold_labels": 1,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "5ce1b39f4470db81905ff8956f564dbf9b30c3ad89d5a0251b5b8fa327879cbc",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 3,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "1c058005b164491198c13610b37b145e4326d671ca50c725bc67240c98baa904",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 2,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "70752a924b5ff0ab40776557e09849b186857192c0de656e8d07e75395b345c3",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": true,
+          "gold_labels": 1,
+          "known_gold_labels": 1,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "d66b622c8c645dc7abcd42473b1459a97f5651a061a074ecf1b267fb930c4aca",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": true,
+          "gold_labels": 2,
+          "known_gold_labels": 1,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "dd30c8ade3d9319019e098f137a106211959a5478387a61bec84ac5e6bf4e907",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "87c8dd415cfc7d21dee6da16549289c4c927f619cb813690531013939a2a2ce1",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "8daa6550dcbe77c248afd3ea344e563fbc610d9572d02eea8f5f2090558186b7",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": true,
+          "gold_labels": 2,
+          "known_gold_labels": 1,
+          "top1": 0,
+          "top3": 1
+        },
+        {
+          "row_hash": "96ad88a73c10bd3ba87f4e80c7107caf5588448a5c8a8f431cee6cd4a67e7f1e",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "c99006172d52d62f07f7f363764b0f81c140d6172151a48b1390b3767e709135",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "06c5b1f3b5a97d03530ddedba08b38049fd6cc84b23f283c604d65a0ba8b4fd6",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "e1ba9c1c7dadb55b0f0f4995b5652a072544afeb2afef8b03480d9284657a852",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 2,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "aa6cd36ceba0ed1fbcd5bc4b6cbc0b92d18ce21f22976963232f7d8a27675a35",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "70041de672fdc68d486f6d1b484c1e26ec09621d1f601fd758151a69d859bbfa",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": true,
+          "gold_labels": 2,
+          "known_gold_labels": 1,
+          "top1": 0,
+          "top3": 1
+        },
+        {
+          "row_hash": "2945be7f5e786223ef1ebea697725be567aa4579f36d9cf6e0b10351385c2284",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 2,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "c1e6af6ae30ff538c68ed5a9e091a8aa7565bb037ae12dd686fe29ccd8e6e1f7",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 2,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "47cb18d50e8e41e8fca8d425a53b6efc36ceee506f6a5974786af36e2938976b",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": true,
+          "gold_labels": 2,
+          "known_gold_labels": 1,
+          "top1": 1,
+          "top3": 1
+        },
+        {
+          "row_hash": "896feb3aea49164b1310dd3bb090eb265de76b550613985c273d4d6c9ddc4cff",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": true,
+          "gold_labels": 1,
+          "known_gold_labels": 1,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "0c56c70fd04f21695b8390abd78d252201539f969fc16c40ddd6a96bcc5d0e96",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": true,
+          "gold_labels": 2,
+          "known_gold_labels": 1,
+          "top1": 0,
+          "top3": 1
+        },
+        {
+          "row_hash": "c78f0c0958651016f842be73cd99e1ff202de9a01e0af08384d74418cc15f6d1",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "9047cd7fb7ddd1e77d030a100bb631559df9753122c326b960fc875ed358c0c5",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "1b57e37ce9eeddb2f5029467bc57ec1d1d173c6a4931dd6a591767d4df9df811",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        }
+      ]
+    },
+    "frozen_weighted_v3": {
+      "groups": {
+        "all": {
+          "records": 50,
+          "top1": 0.06,
+          "top3": 0.16,
+          "known_label_ceiling": 0.3,
+          "conditional_top1": 0.2
+        },
+        "unseen_text": {
+          "records": 50,
+          "top1": 0.06,
+          "top3": 0.16,
+          "known_label_ceiling": 0.3,
+          "conditional_top1": 0.2
+        }
+      },
+      "rows": [
+        {
+          "row_hash": "0b47a23ecc382200a8fd0d51857f04bada2b8ab94f6fae662e9dcd49594bc7d7",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "b4ac6baaa0d2e12f899f172975bb58f81f9cc5aaa3651fb449cdbb172bf8cca3",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 2,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "0d0405041389576d325b2bec5b7259bb3c4a1ca39c0bb14bafbdd99998157711",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": true,
+          "gold_labels": 3,
+          "known_gold_labels": 1,
+          "top1": 0,
+          "top3": 1
+        },
+        {
+          "row_hash": "f94deefc8e4d822f764182dd663bb7da35f06c72bc7a555df0d21fdfe80aadb4",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 2,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "a357c279671ca2fa6a0082a935a53875741cf780a98a421403ddc42eb42287e9",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 3,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "bc0646a9fe0e77ad6e7f88bbfa78b07afe9a2bf3e01906ccf7d789bcaab71282",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": true,
+          "gold_labels": 1,
+          "known_gold_labels": 1,
+          "top1": 1,
+          "top3": 1
+        },
+        {
+          "row_hash": "03c0793841eefba18341eb044b9ef08a7c80e1b1b1920060bdec8e88627581c8",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": true,
+          "gold_labels": 2,
+          "known_gold_labels": 1,
+          "top1": 0,
+          "top3": 1
+        },
+        {
+          "row_hash": "6ae9906bab3472562dee454ba72285f20e283ae83df6954b23dde2055d83a5d1",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 2,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "2501e5e43a6fb076400032cad6e9b2057ec05629a1de02dbbdcac10318b78eea",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "b72c43ebcc7a0fc098b7d019957b8446b28a0cb68ed16aaa4e4c894c0924d1a9",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": true,
+          "gold_labels": 2,
+          "known_gold_labels": 1,
+          "top1": 1,
+          "top3": 1
+        },
+        {
+          "row_hash": "15fcf321d9b1d814a43fa5cad7fbe7cabf0c16bbcffe05b273cdd314b61d1de9",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 2,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "8be036907e9f82361394e55a376dd7858908068dc07f18cbaf7a6f0959537272",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 2,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "e3df7e5b05750bc09d3572e94d7ae8a99478f8825506c599cb9c82ad7cd695f2",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 2,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "850c1f49a4c50fda08187b7ffe7acbbf0c5007693f2baa8634b8aea8b53d2e09",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "2dd50c4c4284a895101cd35d50a2b4405853c34089398f9a9c16c169149e7f77",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "33746083b8fa292affe5a68d48eb3bbcbe99168a64895633754d822dc0cc6b9a",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 2,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "e1207ef9a99ba197f90be9dccaa61ac1f952aaa269c9f9d5c9bba2f3d655fb56",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "86b082ee1644b9d1a91ac5bc205c35f5a6b745a7ce134ece9783613c5fc451c7",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "c4db7f64c391c01d84f1a8f86723713684fbd16ab1dbace2c4325031a897d42a",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 3,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "d60700b18ff0ac3304d0c25e8544daaa970ae31d718c5f15693551e139f0d98c",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "f1d9a28bcbb18079fe755f4ebf97b1ee290005dd4a14a56876cb81456a81d3c4",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 2,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "6df14fd380276279effe47e3b20ca55b707309a5ec397e1e8bd2acdc4d70b0ce",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": true,
+          "gold_labels": 2,
+          "known_gold_labels": 1,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "a1e1a2b0fad6eb794fe232dc042a11b46eadd1246e34020dec63df601ef01322",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": true,
+          "gold_labels": 2,
+          "known_gold_labels": 1,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "4ceceb059193c065d6ecf5c617efe7126d02119ae8f1009e8955e2eabe342167",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "33e2aa22e047bbe8dfa400479768d559feda9ecadf1807b3b9a6082f061959e9",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "84a599453255ff74d38142d720cc1691fbe278a29e8a927c66c90a448ebc75c8",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 2,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "09cb1805af23f6ed48096c287d698418bf44094eb782430522cda01af4e59d51",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": true,
+          "gold_labels": 2,
+          "known_gold_labels": 1,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "fc5686392d59f5fb5a4db87051b991bce6c2b45f29343abc31e0e3eb60c06466",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "91e6988d990b6df60a33e3163a5fd057b75f5f0ae7e51715347e2407cac23580",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": true,
+          "gold_labels": 1,
+          "known_gold_labels": 1,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "5ce1b39f4470db81905ff8956f564dbf9b30c3ad89d5a0251b5b8fa327879cbc",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 3,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "1c058005b164491198c13610b37b145e4326d671ca50c725bc67240c98baa904",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 2,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "70752a924b5ff0ab40776557e09849b186857192c0de656e8d07e75395b345c3",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": true,
+          "gold_labels": 1,
+          "known_gold_labels": 1,
+          "top1": 0,
+          "top3": 1
+        },
+        {
+          "row_hash": "d66b622c8c645dc7abcd42473b1459a97f5651a061a074ecf1b267fb930c4aca",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": true,
+          "gold_labels": 2,
+          "known_gold_labels": 1,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "dd30c8ade3d9319019e098f137a106211959a5478387a61bec84ac5e6bf4e907",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "87c8dd415cfc7d21dee6da16549289c4c927f619cb813690531013939a2a2ce1",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "8daa6550dcbe77c248afd3ea344e563fbc610d9572d02eea8f5f2090558186b7",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": true,
+          "gold_labels": 2,
+          "known_gold_labels": 1,
+          "top1": 0,
+          "top3": 1
+        },
+        {
+          "row_hash": "96ad88a73c10bd3ba87f4e80c7107caf5588448a5c8a8f431cee6cd4a67e7f1e",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "c99006172d52d62f07f7f363764b0f81c140d6172151a48b1390b3767e709135",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "06c5b1f3b5a97d03530ddedba08b38049fd6cc84b23f283c604d65a0ba8b4fd6",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "e1ba9c1c7dadb55b0f0f4995b5652a072544afeb2afef8b03480d9284657a852",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 2,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "aa6cd36ceba0ed1fbcd5bc4b6cbc0b92d18ce21f22976963232f7d8a27675a35",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "70041de672fdc68d486f6d1b484c1e26ec09621d1f601fd758151a69d859bbfa",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": true,
+          "gold_labels": 2,
+          "known_gold_labels": 1,
+          "top1": 0,
+          "top3": 1
+        },
+        {
+          "row_hash": "2945be7f5e786223ef1ebea697725be567aa4579f36d9cf6e0b10351385c2284",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 2,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "c1e6af6ae30ff538c68ed5a9e091a8aa7565bb037ae12dd686fe29ccd8e6e1f7",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 2,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "47cb18d50e8e41e8fca8d425a53b6efc36ceee506f6a5974786af36e2938976b",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": true,
+          "gold_labels": 2,
+          "known_gold_labels": 1,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "896feb3aea49164b1310dd3bb090eb265de76b550613985c273d4d6c9ddc4cff",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": true,
+          "gold_labels": 1,
+          "known_gold_labels": 1,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "0c56c70fd04f21695b8390abd78d252201539f969fc16c40ddd6a96bcc5d0e96",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": true,
+          "gold_labels": 2,
+          "known_gold_labels": 1,
+          "top1": 1,
+          "top3": 1
+        },
+        {
+          "row_hash": "c78f0c0958651016f842be73cd99e1ff202de9a01e0af08384d74418cc15f6d1",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "9047cd7fb7ddd1e77d030a100bb631559df9753122c326b960fc875ed358c0c5",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        },
+        {
+          "row_hash": "1b57e37ce9eeddb2f5029467bc57ec1d1d173c6a4931dd6a591767d4df9df811",
+          "seen_in_tcm_sd_training_or_dev": false,
+          "known_gold": false,
+          "gold_labels": 1,
+          "known_gold_labels": 0,
+          "top1": 0,
+          "top3": 0
+        }
+      ]
+    }
+  },
+  "paired_top1": {
+    "queries": 50,
+    "mean_difference": 0.04,
+    "query_bootstrap_95ci": [
+      -0.04,
+      0.12
+    ],
+    "sign_flip_p": 0.6203689815509225,
+    "paired_dz": 0.1414213562373095,
+    "wins_ties_losses": [
+      3,
+      46,
+      1
+    ]
+  },
+  "completed_at": "2026-11-12T07:32:05.669670+00:00"
+}

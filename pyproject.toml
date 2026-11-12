@@ -27,7 +27,7 @@ dependencies = [
 dev = ["pytest>=8.0", "ruff>=0.5"]
 research = ["matplotlib>=3.8,<4"]
 affinity = ["rdkit>=2024.9", "scipy>=1.12"]
-local-llm = ["transformers>=4.57,<5", "huggingface-hub>=0.34,<1", "safetensors>=0.5"]
+local-llm = ["transformers>=4.57,<5", "huggingface-hub>=0.34,<1", "safetensors>=0.5", "lm-format-enforcer==0.11.3"]
 
 [project.scripts]
 dmease = "dmease.cli:main"

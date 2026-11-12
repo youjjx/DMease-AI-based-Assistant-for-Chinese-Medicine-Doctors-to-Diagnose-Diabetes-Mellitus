@@ -111,6 +111,15 @@ def test_research_and_knowledge_pages(tmp_path, monkeypatch, evidence_path):
         for section in ("实测亲和度", "本地模型抽取", "跨数据集诊断", "少样本改进"):
             widget(app.selectbox, "第三轮研究项目").set_value(section).run()
             assert not app.exception and app.dataframe
+    widget(app.radio, "研究工作区").set_value("结构化抽取与约束规划").run()
+    assert not app.exception
+    for section in ("抽取验证", "规划对照", "外部辨证与亲和度", "原文抽取核对", "约束规划试算"):
+        widget(app.selectbox, "第四轮研究项目").set_value(section).run()
+        assert not app.exception
+    if (APP.parent / "experiments/v4/planning_training/residual_kan_42.json").exists():
+        widget(app.button, "比较规划结果").click().run()
+        assert not app.exception
+        assert any("证据图与模型训练版本不一致" in message.value for message in app.error)
     app.session_state["last_activity"] = 0
     app.run()
     assert not app.sidebar.radio and "account" not in app.session_state

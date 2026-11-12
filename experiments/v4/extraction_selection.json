@@ -1,0 +1,227 @@
+{
+  "provenance": {
+    "protocol": {
+      "id": "grounded-structured-extraction-v4",
+      "source_commit": "12473b50ce94ad2fd22b1e984b826b0a618c4407",
+      "source_repository": "https://github.com/zhuyan166/TCMEval",
+      "split": "Author validation 50 and test 50, aligned by stripped Medical Record ID to Results/*_data_result.txt. Validation BOM is stripped. Train 200 retained only for overlap audit. Source schemas and part of test answer file were inspected to establish format; no test model scores used for design or selection.",
+      "correction": "Earlier reports incorrectly said official validation/test answers were unavailable. They are separately published in Results, and the author's evaluate.py treats them as standard answers. Earlier numerical results remain unchanged; their data-availability interpretation is superseded.",
+      "model": "Qwen/Qwen2.5-1.5B-Instruct",
+      "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+      "variants": [
+        "simple_free",
+        "schema",
+        "source_schema"
+      ],
+      "decoding": {
+        "seed": 42,
+        "dtype": "float16",
+        "max_new_tokens": 768,
+        "chunk_chars": 240,
+        "max_items": 16,
+        "max_term_chars": 32,
+        "do_sample": false
+      },
+      "design": "Same simplified prompt and chunk boundaries for all three variants. Extract text and present only; canonical mapping is deterministic and separate. schema constrains required JSON fields/types; source_schema additionally limits text to contiguous source substrings up to 32 chars, without dictionary or gold. No retries, no bracket completion. Reject malformed, ungrounded and out-of-schema items; keep all 50 cases in denominators.",
+      "selection": "Maximum validation exact-surface micro-F1 against expert Clinical Information, including both asserted and negated extracted findings because the reference contains clinically relevant negative findings. Stable variant order for ties. Save validation metrics and selected variant before running test. Publish all three test variants; do not reselect from test.",
+      "baselines": [
+        "existing 24-symptom rules",
+        "active SymMap symptom names, literal matching",
+        "copy all punctuation-delimited clauses",
+        "v3 strict original prompt on official test only"
+      ],
+      "metrics": [
+        "Strict expert surface-term micro precision/recall/F1 and exact-set rate",
+        "Author Task1 exact-term recall averaged by case",
+        "Character-position overlap F1 on only verbatim-locatable expert terms, with reference coverage and copy-all baseline",
+        "JSON and schema validity, grounded quote rate, truncations, latency",
+        "24-concept dictionary-projected interface agreement as secondary biased metric only"
+      ],
+      "limits": [
+        "General TCM, not the original diabetes cohort",
+        "Expert terms can paraphrase the source; grounded strict-term recall has a measurable ceiling",
+        "Substring constraints guarantee quoting, not medical correctness",
+        "The 24-concept reference projection favors the rule system and is not the primary score",
+        "Unknown model pretraining overlap",
+        "No automatic promotion to clinical workflow"
+      ]
+    },
+    "source_lf_sha256": {
+      "scripts/extraction_v4.py": "5cb2b1571ea27cf3a341517d4b3c3c849f1b72646ae5bfbaa074a0c0d151b194",
+      "src/dmease/structured_extraction.py": "f2b5fb85edd34f4e3f40a9e2e6e5a508128249135e5c8d046f06df4fd8ea53d8",
+      "src/dmease/local_extraction.py": "40a86ed6897dfbcf551ada166820edc8bc7849517a02112913358b464e443d5a",
+      "src/dmease/symptom_parser.py": "3e252f471d162ce25f958cd1341888860e3617382f90505dc36b4f41b1ddb860"
+    },
+    "sources_sha256": "2c511148b3a31f28bc6bf9a20e4292d9b6c70e34b0c61cb3b7b1ed3a69ea24c8"
+  },
+  "selected": "schema",
+  "validation": {
+    "simple_free": {
+      "records": 50,
+      "surface": {
+        "records": 50,
+        "tp": 2,
+        "fp": 0,
+        "fn": 348,
+        "exact": 0,
+        "gold": 350,
+        "predicted": 2,
+        "precision": 1.0,
+        "recall": 0.005714285714285714,
+        "f1": 0.011363636363636364,
+        "exact_set": 0.0
+      },
+      "characters": {
+        "records": 50,
+        "tp": 10,
+        "fp": 0,
+        "fn": 1404,
+        "exact": 0,
+        "gold": 1414,
+        "predicted": 10,
+        "precision": 1.0,
+        "recall": 0.007072135785007072,
+        "f1": 0.014044943820224719,
+        "exact_set": 0.0
+      },
+      "projected_secondary": {
+        "records": 50,
+        "tp": 0,
+        "fp": 0,
+        "fn": 49,
+        "exact": 23,
+        "gold": 49,
+        "predicted": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "exact_set": 0.46
+      },
+      "author_task1_recall": 0.006666666666666666,
+      "gold_verbatim_fraction": 0.9857142857142858,
+      "invalid_json_chunks": 51,
+      "invalid_schema_chunks": 3,
+      "cases_with_invalid_chunks": 50,
+      "chunks": 55,
+      "output_limits": 0,
+      "rejected_items": {
+        "item_schema": 3
+      },
+      "proposed_items": 5,
+      "median_seconds": 4.552849550000246,
+      "total_seconds": 258.3730465999688
+    },
+    "schema": {
+      "records": 50,
+      "surface": {
+        "records": 50,
+        "tp": 161,
+        "fp": 159,
+        "fn": 189,
+        "exact": 0,
+        "gold": 350,
+        "predicted": 320,
+        "precision": 0.503125,
+        "recall": 0.46,
+        "f1": 0.48059701492537316,
+        "exact_set": 0.0
+      },
+      "characters": {
+        "records": 50,
+        "tp": 796,
+        "fp": 755,
+        "fn": 618,
+        "exact": 0,
+        "gold": 1414,
+        "predicted": 1551,
+        "precision": 0.513217279174726,
+        "recall": 0.562942008486563,
+        "f1": 0.5369308600337268,
+        "exact_set": 0.0
+      },
+      "projected_secondary": {
+        "records": 50,
+        "tp": 34,
+        "fp": 7,
+        "fn": 15,
+        "exact": 34,
+        "gold": 49,
+        "predicted": 41,
+        "precision": 0.8292682926829268,
+        "recall": 0.6938775510204082,
+        "f1": 0.7555555555555555,
+        "exact_set": 0.68
+      },
+      "author_task1_recall": 0.4147057942057942,
+      "gold_verbatim_fraction": 0.9857142857142858,
+      "invalid_json_chunks": 4,
+      "invalid_schema_chunks": 0,
+      "cases_with_invalid_chunks": 4,
+      "chunks": 55,
+      "output_limits": 0,
+      "rejected_items": {
+        "ungrounded": 68,
+        "duplicate": 13
+      },
+      "proposed_items": 401,
+      "median_seconds": 7.747592350002378,
+      "total_seconds": 470.5466594000027
+    },
+    "source_schema": {
+      "records": 50,
+      "surface": {
+        "records": 50,
+        "tp": 181,
+        "fp": 234,
+        "fn": 169,
+        "exact": 0,
+        "gold": 350,
+        "predicted": 415,
+        "precision": 0.43614457831325304,
+        "recall": 0.5171428571428571,
+        "f1": 0.47320261437908495,
+        "exact_set": 0.0
+      },
+      "characters": {
+        "records": 50,
+        "tp": 879,
+        "fp": 1057,
+        "fn": 535,
+        "exact": 1,
+        "gold": 1414,
+        "predicted": 1936,
+        "precision": 0.4540289256198347,
+        "recall": 0.6216407355021216,
+        "f1": 0.5247761194029851,
+        "exact_set": 0.02
+      },
+      "projected_secondary": {
+        "records": 50,
+        "tp": 37,
+        "fp": 13,
+        "fn": 12,
+        "exact": 34,
+        "gold": 49,
+        "predicted": 50,
+        "precision": 0.74,
+        "recall": 0.7551020408163265,
+        "f1": 0.7474747474747475,
+        "exact_set": 0.68
+      },
+      "author_task1_recall": 0.5027296037296037,
+      "gold_verbatim_fraction": 0.9857142857142858,
+      "invalid_json_chunks": 0,
+      "invalid_schema_chunks": 0,
+      "cases_with_invalid_chunks": 0,
+      "chunks": 55,
+      "output_limits": 0,
+      "rejected_items": {
+        "duplicate": 88
+      },
+      "proposed_items": 503,
+      "median_seconds": 8.365023700003803,
+      "total_seconds": 431.3527863999916
+    }
+  },
+  "frozen_before_test_at": "2026-11-12T07:43:47.458722+00:00"
+}

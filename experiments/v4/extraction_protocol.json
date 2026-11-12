@@ -1,0 +1,16 @@
+{
+  "id": "grounded-structured-extraction-v4",
+  "source_commit": "12473b50ce94ad2fd22b1e984b826b0a618c4407",
+  "source_repository": "https://github.com/zhuyan166/TCMEval",
+  "split": "Author validation 50 and test 50, aligned by stripped Medical Record ID to Results/*_data_result.txt. Validation BOM is stripped. Train 200 retained only for overlap audit. Source schemas and part of test answer file were inspected to establish format; no test model scores used for design or selection.",
+  "correction": "Earlier reports incorrectly said official validation/test answers were unavailable. They are separately published in Results, and the author's evaluate.py treats them as standard answers. Earlier numerical results remain unchanged; their data-availability interpretation is superseded.",
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "variants": ["simple_free", "schema", "source_schema"],
+  "decoding": {"seed": 42, "dtype": "float16", "max_new_tokens": 768, "chunk_chars": 240, "max_items": 16, "max_term_chars": 32, "do_sample": false},
+  "design": "Same simplified prompt and chunk boundaries for all three variants. Extract text and present only; canonical mapping is deterministic and separate. schema constrains required JSON fields/types; source_schema additionally limits text to contiguous source substrings up to 32 chars, without dictionary or gold. No retries, no bracket completion. Reject malformed, ungrounded and out-of-schema items; keep all 50 cases in denominators.",
+  "selection": "Maximum validation exact-surface micro-F1 against expert Clinical Information, including both asserted and negated extracted findings because the reference contains clinically relevant negative findings. Stable variant order for ties. Save validation metrics and selected variant before running test. Publish all three test variants; do not reselect from test.",
+  "baselines": ["existing 24-symptom rules", "active SymMap symptom names, literal matching", "copy all punctuation-delimited clauses", "v3 strict original prompt on official test only"],
+  "metrics": ["Strict expert surface-term micro precision/recall/F1 and exact-set rate", "Author Task1 exact-term recall averaged by case", "Character-position overlap F1 on only verbatim-locatable expert terms, with reference coverage and copy-all baseline", "JSON and schema validity, grounded quote rate, truncations, latency", "24-concept dictionary-projected interface agreement as secondary biased metric only"],
+  "limits": ["General TCM, not the original diabetes cohort", "Expert terms can paraphrase the source; grounded strict-term recall has a measurable ceiling", "Substring constraints guarantee quoting, not medical correctness", "The 24-concept reference projection favors the rule system and is not the primary score", "Unknown model pretraining overlap", "No automatic promotion to clinical workflow"]
+}

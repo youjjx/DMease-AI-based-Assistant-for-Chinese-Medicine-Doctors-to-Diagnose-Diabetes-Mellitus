@@ -1,0 +1,13 @@
+{
+  "study": "Publication-disjoint sensitivity analysis of the previously published ChEMBL 37 measured-affinity snapshot",
+  "data": "experiments/v3/affinity_curated.json, unchanged 468 rows; CC BY-SA 3.0; results already explored under v3 scaffold split, so this is robustness analysis rather than new external confirmation",
+  "groupings": ["document", "document_and_scaffold"],
+  "components": "Globally union rows sharing any nonempty document_id; for document_and_scaffold also union shared non-isomeric scaffold (including ACYCLIC). Rows lacking document IDs excluded with count. Shared molecules across targets are unioned in both schemes.",
+  "split": "Component key = SHA256 of newline-joined sorted unique standardized SMILES. SHA256('dmease-affinity-v4|'+component_key), first eight hexadecimal digits modulo 100: <70 train, <85 validation, else test. No rebalancing or seed search.",
+  "minimum_counts": {"train": 40, "validation": 15, "test": 15},
+  "features": {"radius": 2, "bits": 2048, "chirality": true},
+  "candidates": [{"method": "mean"}, {"method": "ridge", "alpha": 1}, {"method": "ridge", "alpha": 10}, {"method": "ridge", "alpha": 100}],
+  "selection": "Minimum validation MAE; stable ties. Save all validation scores and selected checkpoint hash before test predictions. Report all candidates, never select on test.",
+  "metrics": "Per target and Ki/Kd separately: MAE, RMSE, R2, Spearman; train-test document, compound, scaffold overlap. Insufficient strata remain unevaluated. Bootstrap selected-minus-mean MAE by connected components (2000 repeats seed42).",
+  "limits": ["Small number of publications may make all fixed splits insufficient", "Document isolation does not remove assay heterogeneity", "Document-only splitting can share scaffolds and must report this", "No whole-herb affinity or clinical efficacy interpretation"]
+}

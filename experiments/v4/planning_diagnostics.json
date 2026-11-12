@@ -1,0 +1,407 @@
+{
+  "scope": "Post-training diagnostic, train and validation states only. No new fitting or checkpoint selection. Action regret assumes optimal continuation, not actual full-policy rollout regret.",
+  "source_lf_sha256": {
+    "scripts/planning_diagnostics_v4.py": "31bccbcc36ef98236b884284ef971b6b246e98aa8c125561f393a579c729c37c"
+  },
+  "planning_provenance": {
+    "protocol": "12a95c14a5fba0101d11299cd2c77ee2dc49ff88c45055a132a5689b88a6cba6",
+    "evidence": "f9d7cca2be94fa8a5f52036de8b0ff8fe74031ce0d9b6f0ab469a9372d272af7",
+    "torch": "2.7.1+cu118",
+    "numpy": "2.4.1",
+    "device": "cpu",
+    "threads": 1,
+    "source_lf_sha256": {
+      "scripts/planning_v4.py": "15bb7dbb7addbc306d14832914ff9945fb4f774eabcc4417f734517e707de2aa",
+      "src/dmease/planning_v4.py": "c4a4b47ae141687e6364a46f55661df693ee31276ae341a7b0392c0c5d863d28",
+      "src/dmease/evidence_policy.py": "98243dcad03b858ff6c2107323f722d7721b56c7ec0af7507870eb0b5ad09dee",
+      "src/dmease/research_policy.py": "32398cebeb67bfac5388840a9f92660b3de91e36f026cf8ebb303918165103da",
+      "src/dmease/experiment_metrics.py": "b9d67ae30df5f0403fdc3e8d0f462d42467138bd17c7b9d129a4dbdc9b7160d4"
+    }
+  },
+  "results": {
+    "train": {
+      "greedy": {
+        "states": 5200,
+        "mean_best_continuation_regret": 0.0004942480591125786,
+        "optimal_first_action_rate": 0.9780769348144531,
+        "greedy_optimal_first_actions": 5086,
+        "damaged_greedy_optimal_actions": 0,
+        "greedy_suboptimal_first_actions": 114,
+        "rescued_greedy_suboptimal_actions": 0,
+        "mean_q_change_vs_greedy": 0.0
+      },
+      "residual_kan_42_warm": {
+        "states": 5200,
+        "mean_best_continuation_regret": 0.0003113325801678002,
+        "optimal_first_action_rate": 0.9636538624763489,
+        "greedy_optimal_first_actions": 5086,
+        "damaged_greedy_optimal_actions": 178,
+        "greedy_suboptimal_first_actions": 114,
+        "rescued_greedy_suboptimal_actions": 103,
+        "mean_q_change_vs_greedy": 0.00018291552260052413
+      },
+      "residual_kan_42_selected": {
+        "states": 5200,
+        "mean_best_continuation_regret": 0.0004942480591125786,
+        "optimal_first_action_rate": 0.9780769348144531,
+        "greedy_optimal_first_actions": 5086,
+        "damaged_greedy_optimal_actions": 0,
+        "greedy_suboptimal_first_actions": 114,
+        "rescued_greedy_suboptimal_actions": 0,
+        "mean_q_change_vs_greedy": 0.0
+      },
+      "residual_kan_43_warm": {
+        "states": 5200,
+        "mean_best_continuation_regret": 0.0003683771356008947,
+        "optimal_first_action_rate": 0.9640384912490845,
+        "greedy_optimal_first_actions": 5086,
+        "damaged_greedy_optimal_actions": 172,
+        "greedy_suboptimal_first_actions": 114,
+        "rescued_greedy_suboptimal_actions": 99,
+        "mean_q_change_vs_greedy": 0.00012587096716742963
+      },
+      "residual_kan_43_selected": {
+        "states": 5200,
+        "mean_best_continuation_regret": 0.0004942480591125786,
+        "optimal_first_action_rate": 0.9780769348144531,
+        "greedy_optimal_first_actions": 5086,
+        "damaged_greedy_optimal_actions": 0,
+        "greedy_suboptimal_first_actions": 114,
+        "rescued_greedy_suboptimal_actions": 0,
+        "mean_q_change_vs_greedy": 0.0
+      },
+      "residual_kan_44_warm": {
+        "states": 5200,
+        "mean_best_continuation_regret": 0.00024342733377125114,
+        "optimal_first_action_rate": 0.9713461399078369,
+        "greedy_optimal_first_actions": 5086,
+        "damaged_greedy_optimal_actions": 130,
+        "greedy_suboptimal_first_actions": 114,
+        "rescued_greedy_suboptimal_actions": 95,
+        "mean_q_change_vs_greedy": 0.0002508207689970732
+      },
+      "residual_kan_44_selected": {
+        "states": 5200,
+        "mean_best_continuation_regret": 0.0004942480591125786,
+        "optimal_first_action_rate": 0.9780769348144531,
+        "greedy_optimal_first_actions": 5086,
+        "damaged_greedy_optimal_actions": 0,
+        "greedy_suboptimal_first_actions": 114,
+        "rescued_greedy_suboptimal_actions": 0,
+        "mean_q_change_vs_greedy": 0.0
+      },
+      "residual_mlp_42_warm": {
+        "states": 5200,
+        "mean_best_continuation_regret": 0.0007589991437271237,
+        "optimal_first_action_rate": 0.9421153664588928,
+        "greedy_optimal_first_actions": 5086,
+        "damaged_greedy_optimal_actions": 261,
+        "greedy_suboptimal_first_actions": 114,
+        "rescued_greedy_suboptimal_actions": 74,
+        "mean_q_change_vs_greedy": -0.0002647510264068842
+      },
+      "residual_mlp_42_selected": {
+        "states": 5200,
+        "mean_best_continuation_regret": 0.0004942480591125786,
+        "optimal_first_action_rate": 0.9780769348144531,
+        "greedy_optimal_first_actions": 5086,
+        "damaged_greedy_optimal_actions": 0,
+        "greedy_suboptimal_first_actions": 114,
+        "rescued_greedy_suboptimal_actions": 0,
+        "mean_q_change_vs_greedy": 0.0
+      },
+      "residual_mlp_43_warm": {
+        "states": 5200,
+        "mean_best_continuation_regret": 0.0008326686220243573,
+        "optimal_first_action_rate": 0.9350000023841858,
+        "greedy_optimal_first_actions": 5086,
+        "damaged_greedy_optimal_actions": 286,
+        "greedy_suboptimal_first_actions": 114,
+        "rescued_greedy_suboptimal_actions": 62,
+        "mean_q_change_vs_greedy": -0.00033842053380794823
+      },
+      "residual_mlp_43_selected": {
+        "states": 5200,
+        "mean_best_continuation_regret": 0.0004942480591125786,
+        "optimal_first_action_rate": 0.9780769348144531,
+        "greedy_optimal_first_actions": 5086,
+        "damaged_greedy_optimal_actions": 0,
+        "greedy_suboptimal_first_actions": 114,
+        "rescued_greedy_suboptimal_actions": 0,
+        "mean_q_change_vs_greedy": 0.0
+      },
+      "residual_mlp_44_warm": {
+        "states": 5200,
+        "mean_best_continuation_regret": 0.000753148109652102,
+        "optimal_first_action_rate": 0.9401922821998596,
+        "greedy_optimal_first_actions": 5086,
+        "damaged_greedy_optimal_actions": 266,
+        "greedy_suboptimal_first_actions": 114,
+        "rescued_greedy_suboptimal_actions": 69,
+        "mean_q_change_vs_greedy": -0.0002589000214356929
+      },
+      "residual_mlp_44_selected": {
+        "states": 5200,
+        "mean_best_continuation_regret": 0.0004942480591125786,
+        "optimal_first_action_rate": 0.9780769348144531,
+        "greedy_optimal_first_actions": 5086,
+        "damaged_greedy_optimal_actions": 0,
+        "greedy_suboptimal_first_actions": 114,
+        "rescued_greedy_suboptimal_actions": 0,
+        "mean_q_change_vs_greedy": 0.0
+      },
+      "kan_without_prior_42_warm": {
+        "states": 5200,
+        "mean_best_continuation_regret": 0.0003194155578967184,
+        "optimal_first_action_rate": 0.9642307758331299,
+        "greedy_optimal_first_actions": 5086,
+        "damaged_greedy_optimal_actions": 172,
+        "greedy_suboptimal_first_actions": 114,
+        "rescued_greedy_suboptimal_actions": 100,
+        "mean_q_change_vs_greedy": 0.0001748325303196907
+      },
+      "kan_without_prior_42_selected": {
+        "states": 5200,
+        "mean_best_continuation_regret": 0.0011414369801059365,
+        "optimal_first_action_rate": 0.9298076629638672,
+        "greedy_optimal_first_actions": 5086,
+        "damaged_greedy_optimal_actions": 323,
+        "greedy_suboptimal_first_actions": 114,
+        "rescued_greedy_suboptimal_actions": 72,
+        "mean_q_change_vs_greedy": -0.000647188862785697
+      },
+      "kan_without_prior_43_warm": {
+        "states": 5200,
+        "mean_best_continuation_regret": 0.0002934602089226246,
+        "optimal_first_action_rate": 0.9696153998374939,
+        "greedy_optimal_first_actions": 5086,
+        "damaged_greedy_optimal_actions": 130,
+        "greedy_suboptimal_first_actions": 114,
+        "rescued_greedy_suboptimal_actions": 86,
+        "mean_q_change_vs_greedy": 0.00020078789384569973
+      },
+      "kan_without_prior_43_selected": {
+        "states": 5200,
+        "mean_best_continuation_regret": 0.0016637486405670643,
+        "optimal_first_action_rate": 0.9115384817123413,
+        "greedy_optimal_first_actions": 5086,
+        "damaged_greedy_optimal_actions": 409,
+        "greedy_suboptimal_first_actions": 114,
+        "rescued_greedy_suboptimal_actions": 63,
+        "mean_q_change_vs_greedy": -0.0011695005232468247
+      },
+      "kan_without_prior_44_warm": {
+        "states": 5200,
+        "mean_best_continuation_regret": 0.0002927688474301249,
+        "optimal_first_action_rate": 0.9694230556488037,
+        "greedy_optimal_first_actions": 5086,
+        "damaged_greedy_optimal_actions": 141,
+        "greedy_suboptimal_first_actions": 114,
+        "rescued_greedy_suboptimal_actions": 96,
+        "mean_q_change_vs_greedy": 0.00020147926989011467
+      },
+      "kan_without_prior_44_selected": {
+        "states": 5200,
+        "mean_best_continuation_regret": 0.0002927688474301249,
+        "optimal_first_action_rate": 0.9694230556488037,
+        "greedy_optimal_first_actions": 5086,
+        "damaged_greedy_optimal_actions": 141,
+        "greedy_suboptimal_first_actions": 114,
+        "rescued_greedy_suboptimal_actions": 96,
+        "mean_q_change_vs_greedy": 0.00020147926989011467
+      }
+    },
+    "validation": {
+      "greedy": {
+        "states": 1027,
+        "mean_best_continuation_regret": 0.0003828676708508283,
+        "optimal_first_action_rate": 0.9785783886909485,
+        "greedy_optimal_first_actions": 1005,
+        "damaged_greedy_optimal_actions": 0,
+        "greedy_suboptimal_first_actions": 22,
+        "rescued_greedy_suboptimal_actions": 0,
+        "mean_q_change_vs_greedy": 0.0
+      },
+      "residual_kan_42_warm": {
+        "states": 1027,
+        "mean_best_continuation_regret": 0.0016738458070904016,
+        "optimal_first_action_rate": 0.9230769276618958,
+        "greedy_optimal_first_actions": 1005,
+        "damaged_greedy_optimal_actions": 70,
+        "greedy_suboptimal_first_actions": 22,
+        "rescued_greedy_suboptimal_actions": 13,
+        "mean_q_change_vs_greedy": -0.0012909778160974383
+      },
+      "residual_kan_42_selected": {
+        "states": 1027,
+        "mean_best_continuation_regret": 0.0003828676708508283,
+        "optimal_first_action_rate": 0.9785783886909485,
+        "greedy_optimal_first_actions": 1005,
+        "damaged_greedy_optimal_actions": 0,
+        "greedy_suboptimal_first_actions": 22,
+        "rescued_greedy_suboptimal_actions": 0,
+        "mean_q_change_vs_greedy": 0.0
+      },
+      "residual_kan_43_warm": {
+        "states": 1027,
+        "mean_best_continuation_regret": 0.0021143206395208836,
+        "optimal_first_action_rate": 0.9113923907279968,
+        "greedy_optimal_first_actions": 1005,
+        "damaged_greedy_optimal_actions": 83,
+        "greedy_suboptimal_first_actions": 22,
+        "rescued_greedy_suboptimal_actions": 14,
+        "mean_q_change_vs_greedy": -0.001731452881358564
+      },
+      "residual_kan_43_selected": {
+        "states": 1027,
+        "mean_best_continuation_regret": 0.0003828676708508283,
+        "optimal_first_action_rate": 0.9785783886909485,
+        "greedy_optimal_first_actions": 1005,
+        "damaged_greedy_optimal_actions": 0,
+        "greedy_suboptimal_first_actions": 22,
+        "rescued_greedy_suboptimal_actions": 0,
+        "mean_q_change_vs_greedy": 0.0
+      },
+      "residual_kan_44_warm": {
+        "states": 1027,
+        "mean_best_continuation_regret": 0.0016911326674744487,
+        "optimal_first_action_rate": 0.9279454946517944,
+        "greedy_optimal_first_actions": 1005,
+        "damaged_greedy_optimal_actions": 65,
+        "greedy_suboptimal_first_actions": 22,
+        "rescued_greedy_suboptimal_actions": 13,
+        "mean_q_change_vs_greedy": -0.0013082651421427727
+      },
+      "residual_kan_44_selected": {
+        "states": 1027,
+        "mean_best_continuation_regret": 0.0003828676708508283,
+        "optimal_first_action_rate": 0.9785783886909485,
+        "greedy_optimal_first_actions": 1005,
+        "damaged_greedy_optimal_actions": 0,
+        "greedy_suboptimal_first_actions": 22,
+        "rescued_greedy_suboptimal_actions": 0,
+        "mean_q_change_vs_greedy": 0.0
+      },
+      "residual_mlp_42_warm": {
+        "states": 1027,
+        "mean_best_continuation_regret": 0.0009281091624870896,
+        "optimal_first_action_rate": 0.9347614645957947,
+        "greedy_optimal_first_actions": 1005,
+        "damaged_greedy_optimal_actions": 58,
+        "greedy_suboptimal_first_actions": 22,
+        "rescued_greedy_suboptimal_actions": 13,
+        "mean_q_change_vs_greedy": -0.0005452414625324309
+      },
+      "residual_mlp_42_selected": {
+        "states": 1027,
+        "mean_best_continuation_regret": 0.0003828676708508283,
+        "optimal_first_action_rate": 0.9785783886909485,
+        "greedy_optimal_first_actions": 1005,
+        "damaged_greedy_optimal_actions": 0,
+        "greedy_suboptimal_first_actions": 22,
+        "rescued_greedy_suboptimal_actions": 0,
+        "mean_q_change_vs_greedy": 0.0
+      },
+      "residual_mlp_43_warm": {
+        "states": 1027,
+        "mean_best_continuation_regret": 0.0009725073468871415,
+        "optimal_first_action_rate": 0.929892897605896,
+        "greedy_optimal_first_actions": 1005,
+        "damaged_greedy_optimal_actions": 59,
+        "greedy_suboptimal_first_actions": 22,
+        "rescued_greedy_suboptimal_actions": 9,
+        "mean_q_change_vs_greedy": -0.0005896396469324827
+      },
+      "residual_mlp_43_selected": {
+        "states": 1027,
+        "mean_best_continuation_regret": 0.0003828676708508283,
+        "optimal_first_action_rate": 0.9785783886909485,
+        "greedy_optimal_first_actions": 1005,
+        "damaged_greedy_optimal_actions": 0,
+        "greedy_suboptimal_first_actions": 22,
+        "rescued_greedy_suboptimal_actions": 0,
+        "mean_q_change_vs_greedy": 0.0
+      },
+      "residual_mlp_44_warm": {
+        "states": 1027,
+        "mean_best_continuation_regret": 0.0007429325487464666,
+        "optimal_first_action_rate": 0.9318403005599976,
+        "greedy_optimal_first_actions": 1005,
+        "damaged_greedy_optimal_actions": 61,
+        "greedy_suboptimal_first_actions": 22,
+        "rescued_greedy_suboptimal_actions": 13,
+        "mean_q_change_vs_greedy": -0.00036006487789563835
+      },
+      "residual_mlp_44_selected": {
+        "states": 1027,
+        "mean_best_continuation_regret": 0.0003828676708508283,
+        "optimal_first_action_rate": 0.9785783886909485,
+        "greedy_optimal_first_actions": 1005,
+        "damaged_greedy_optimal_actions": 0,
+        "greedy_suboptimal_first_actions": 22,
+        "rescued_greedy_suboptimal_actions": 0,
+        "mean_q_change_vs_greedy": 0.0
+      },
+      "kan_without_prior_42_warm": {
+        "states": 1027,
+        "mean_best_continuation_regret": 0.001419156789779663,
+        "optimal_first_action_rate": 0.9172346591949463,
+        "greedy_optimal_first_actions": 1005,
+        "damaged_greedy_optimal_actions": 78,
+        "greedy_suboptimal_first_actions": 22,
+        "rescued_greedy_suboptimal_actions": 15,
+        "mean_q_change_vs_greedy": -0.0010362890316173434
+      },
+      "kan_without_prior_42_selected": {
+        "states": 1027,
+        "mean_best_continuation_regret": 0.0013441013870760798,
+        "optimal_first_action_rate": 0.9123660922050476,
+        "greedy_optimal_first_actions": 1005,
+        "damaged_greedy_optimal_actions": 79,
+        "greedy_suboptimal_first_actions": 22,
+        "rescued_greedy_suboptimal_actions": 11,
+        "mean_q_change_vs_greedy": -0.0009612338035367429
+      },
+      "kan_without_prior_43_warm": {
+        "states": 1027,
+        "mean_best_continuation_regret": 0.0012925467453897,
+        "optimal_first_action_rate": 0.9347614645957947,
+        "greedy_optimal_first_actions": 1005,
+        "damaged_greedy_optimal_actions": 59,
+        "greedy_suboptimal_first_actions": 22,
+        "rescued_greedy_suboptimal_actions": 14,
+        "mean_q_change_vs_greedy": -0.0009096791036427021
+      },
+      "kan_without_prior_43_selected": {
+        "states": 1027,
+        "mean_best_continuation_regret": 0.002131122164428234,
+        "optimal_first_action_rate": 0.8880233764648438,
+        "greedy_optimal_first_actions": 1005,
+        "damaged_greedy_optimal_actions": 101,
+        "greedy_suboptimal_first_actions": 22,
+        "rescued_greedy_suboptimal_actions": 8,
+        "mean_q_change_vs_greedy": -0.0017482545226812363
+      },
+      "kan_without_prior_44_warm": {
+        "states": 1027,
+        "mean_best_continuation_regret": 0.0007647285819984972,
+        "optimal_first_action_rate": 0.9522882103919983,
+        "greedy_optimal_first_actions": 1005,
+        "damaged_greedy_optimal_actions": 43,
+        "greedy_suboptimal_first_actions": 22,
+        "rescued_greedy_suboptimal_actions": 16,
+        "mean_q_change_vs_greedy": -0.00038186091114766896
+      },
+      "kan_without_prior_44_selected": {
+        "states": 1027,
+        "mean_best_continuation_regret": 0.0007647285819984972,
+        "optimal_first_action_rate": 0.9522882103919983,
+        "greedy_optimal_first_actions": 1005,
+        "damaged_greedy_optimal_actions": 43,
+        "greedy_suboptimal_first_actions": 22,
+        "rescued_greedy_suboptimal_actions": 16,
+        "mean_q_change_vs_greedy": -0.00038186091114766896
+      }
+    }
+  }
+}

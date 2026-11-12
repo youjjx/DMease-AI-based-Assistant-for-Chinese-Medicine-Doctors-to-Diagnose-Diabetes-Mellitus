@@ -1,0 +1,1139 @@
+{
+  "provenance": {
+    "protocol": {
+      "study": "Validation-selected conservative residual overrides after action-regret diagnosis",
+      "motivation": "Training-only action audit of seed42: greedy already has optimal first actions in 5086/5200 states. Warm KAN repairs103/114 but damages178 formerly optimal choices. This extension was designed after that diagnosis, before any v4 planning test evaluation.",
+      "partitions": "Unchanged v4 planning train/validation/test groups; no new fitting and no test-based choice",
+      "variants": [
+        "residual_kan",
+        "residual_mlp",
+        "kan_without_prior"
+      ],
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "candidates": "Always-greedy reference first; then warm and validation-selected checkpoints, each with fixed override margins [0,0.002,0.005,0.01,0.02,0.04,0.08]. Choose first maximum validation mean final utility, tolerance1e-8. All nine choices frozen before any planning test results are computed.",
+      "rule": "Compute network scores and current marginal-gain greedy action. Override greedy only if a different network argmax exceeds the network score of the greedy action by more than the selected margin. This score difference is not a calibrated probability. No extra lookahead or test labels.",
+      "evaluation": "Report selected-policy test utility and paired difference against original same-test greedy, averaged across seeds/profiles and clustered by128 symptom groups. Report Holm adjustment over original3 plus gated3 comparisons as an additional6-comparison family. Also report guarded max(gated rollout,greedy rollout), disclosed as extra candidate verification.",
+      "limits": [
+        "This is a learned policy combined with a greedy prior, not pure KAN or proof of PPO superiority",
+        "Selecting among multiple thresholds on128 validation requests can overfit",
+        "Margin selection does not guarantee per-query improvement; only the explicitly guarded version does",
+        "Retain all failed original training and ungated results"
+      ]
+    },
+    "planning_provenance": {
+      "protocol": "12a95c14a5fba0101d11299cd2c77ee2dc49ff88c45055a132a5689b88a6cba6",
+      "evidence": "f9d7cca2be94fa8a5f52036de8b0ff8fe74031ce0d9b6f0ab469a9372d272af7",
+      "torch": "2.7.1+cu118",
+      "numpy": "2.4.1",
+      "device": "cpu",
+      "threads": 1,
+      "source_lf_sha256": {
+        "scripts/planning_v4.py": "15bb7dbb7addbc306d14832914ff9945fb4f774eabcc4417f734517e707de2aa",
+        "src/dmease/planning_v4.py": "c4a4b47ae141687e6364a46f55661df693ee31276ae341a7b0392c0c5d863d28",
+        "src/dmease/evidence_policy.py": "98243dcad03b858ff6c2107323f722d7721b56c7ec0af7507870eb0b5ad09dee",
+        "src/dmease/research_policy.py": "32398cebeb67bfac5388840a9f92660b3de91e36f026cf8ebb303918165103da",
+        "src/dmease/experiment_metrics.py": "b9d67ae30df5f0403fdc3e8d0f462d42467138bd17c7b9d129a4dbdc9b7160d4"
+      }
+    },
+    "source_lf_sha256": {
+      "scripts/gating_v4.py": "ccf096f669f77fc22395115e7289b8572317091225fbb925cabed26379cbc304",
+      "src/dmease/conservative_planner.py": "021d174a57e2f248cfc626c928d3ea535c205d4b730e44b1f1e83d10a670e09e"
+    }
+  },
+  "selection": {
+    "provenance": {
+      "protocol": {
+        "study": "Validation-selected conservative residual overrides after action-regret diagnosis",
+        "motivation": "Training-only action audit of seed42: greedy already has optimal first actions in 5086/5200 states. Warm KAN repairs103/114 but damages178 formerly optimal choices. This extension was designed after that diagnosis, before any v4 planning test evaluation.",
+        "partitions": "Unchanged v4 planning train/validation/test groups; no new fitting and no test-based choice",
+        "variants": [
+          "residual_kan",
+          "residual_mlp",
+          "kan_without_prior"
+        ],
+        "seeds": [
+          42,
+          43,
+          44
+        ],
+        "candidates": "Always-greedy reference first; then warm and validation-selected checkpoints, each with fixed override margins [0,0.002,0.005,0.01,0.02,0.04,0.08]. Choose first maximum validation mean final utility, tolerance1e-8. All nine choices frozen before any planning test results are computed.",
+        "rule": "Compute network scores and current marginal-gain greedy action. Override greedy only if a different network argmax exceeds the network score of the greedy action by more than the selected margin. This score difference is not a calibrated probability. No extra lookahead or test labels.",
+        "evaluation": "Report selected-policy test utility and paired difference against original same-test greedy, averaged across seeds/profiles and clustered by128 symptom groups. Report Holm adjustment over original3 plus gated3 comparisons as an additional6-comparison family. Also report guarded max(gated rollout,greedy rollout), disclosed as extra candidate verification.",
+        "limits": [
+          "This is a learned policy combined with a greedy prior, not pure KAN or proof of PPO superiority",
+          "Selecting among multiple thresholds on128 validation requests can overfit",
+          "Margin selection does not guarantee per-query improvement; only the explicitly guarded version does",
+          "Retain all failed original training and ungated results"
+        ]
+      },
+      "planning_provenance": {
+        "protocol": "12a95c14a5fba0101d11299cd2c77ee2dc49ff88c45055a132a5689b88a6cba6",
+        "evidence": "f9d7cca2be94fa8a5f52036de8b0ff8fe74031ce0d9b6f0ab469a9372d272af7",
+        "torch": "2.7.1+cu118",
+        "numpy": "2.4.1",
+        "device": "cpu",
+        "threads": 1,
+        "source_lf_sha256": {
+          "scripts/planning_v4.py": "15bb7dbb7addbc306d14832914ff9945fb4f774eabcc4417f734517e707de2aa",
+          "src/dmease/planning_v4.py": "c4a4b47ae141687e6364a46f55661df693ee31276ae341a7b0392c0c5d863d28",
+          "src/dmease/evidence_policy.py": "98243dcad03b858ff6c2107323f722d7721b56c7ec0af7507870eb0b5ad09dee",
+          "src/dmease/research_policy.py": "32398cebeb67bfac5388840a9f92660b3de91e36f026cf8ebb303918165103da",
+          "src/dmease/experiment_metrics.py": "b9d67ae30df5f0403fdc3e8d0f462d42467138bd17c7b9d129a4dbdc9b7160d4"
+        }
+      },
+      "source_lf_sha256": {
+        "scripts/gating_v4.py": "ccf096f669f77fc22395115e7289b8572317091225fbb925cabed26379cbc304",
+        "src/dmease/conservative_planner.py": "021d174a57e2f248cfc626c928d3ea535c205d4b730e44b1f1e83d10a670e09e"
+      }
+    },
+    "selections": {
+      "residual_kan_42": {
+        "selected_index": 0,
+        "candidates": [
+          {
+            "mode": "greedy",
+            "margin": null,
+            "validation_objective": 0.7636226355098188
+          },
+          {
+            "mode": "warm",
+            "margin": 0.0,
+            "validation_objective": 0.7516102958470583,
+            "checkpoint_sha256": "67ec55313ed7d8b328ec7242fdf72db70a8a3cac46d697f3a9ef4d7e00c98624"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.002,
+            "validation_objective": 0.754156949929893,
+            "checkpoint_sha256": "67ec55313ed7d8b328ec7242fdf72db70a8a3cac46d697f3a9ef4d7e00c98624"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.005,
+            "validation_objective": 0.756908334325999,
+            "checkpoint_sha256": "67ec55313ed7d8b328ec7242fdf72db70a8a3cac46d697f3a9ef4d7e00c98624"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.01,
+            "validation_objective": 0.7591537381522357,
+            "checkpoint_sha256": "67ec55313ed7d8b328ec7242fdf72db70a8a3cac46d697f3a9ef4d7e00c98624"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.02,
+            "validation_objective": 0.7610123348422348,
+            "checkpoint_sha256": "67ec55313ed7d8b328ec7242fdf72db70a8a3cac46d697f3a9ef4d7e00c98624"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.04,
+            "validation_objective": 0.7627893025055528,
+            "checkpoint_sha256": "67ec55313ed7d8b328ec7242fdf72db70a8a3cac46d697f3a9ef4d7e00c98624"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.08,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "67ec55313ed7d8b328ec7242fdf72db70a8a3cac46d697f3a9ef4d7e00c98624"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.0,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "a607b2ef96a9fbfaabbf311ed9ebb1c35fba98fda976a55f9e1681c0af55d79d"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.002,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "a607b2ef96a9fbfaabbf311ed9ebb1c35fba98fda976a55f9e1681c0af55d79d"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.005,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "a607b2ef96a9fbfaabbf311ed9ebb1c35fba98fda976a55f9e1681c0af55d79d"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.01,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "a607b2ef96a9fbfaabbf311ed9ebb1c35fba98fda976a55f9e1681c0af55d79d"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.02,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "a607b2ef96a9fbfaabbf311ed9ebb1c35fba98fda976a55f9e1681c0af55d79d"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.04,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "a607b2ef96a9fbfaabbf311ed9ebb1c35fba98fda976a55f9e1681c0af55d79d"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.08,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "a607b2ef96a9fbfaabbf311ed9ebb1c35fba98fda976a55f9e1681c0af55d79d"
+          }
+        ]
+      },
+      "residual_kan_43": {
+        "selected_index": 0,
+        "candidates": [
+          {
+            "mode": "greedy",
+            "margin": null,
+            "validation_objective": 0.7636226355098188
+          },
+          {
+            "mode": "warm",
+            "margin": 0.0,
+            "validation_objective": 0.751282294280827,
+            "checkpoint_sha256": "727bf419d0bb35d9e2cca7e19a3e1ecfa8252cae1a36dc22af971935226f4057"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.002,
+            "validation_objective": 0.7526767384260893,
+            "checkpoint_sha256": "727bf419d0bb35d9e2cca7e19a3e1ecfa8252cae1a36dc22af971935226f4057"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.005,
+            "validation_objective": 0.7544508324936032,
+            "checkpoint_sha256": "727bf419d0bb35d9e2cca7e19a3e1ecfa8252cae1a36dc22af971935226f4057"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.01,
+            "validation_objective": 0.7577564832754433,
+            "checkpoint_sha256": "727bf419d0bb35d9e2cca7e19a3e1ecfa8252cae1a36dc22af971935226f4057"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.02,
+            "validation_objective": 0.7628244026564062,
+            "checkpoint_sha256": "727bf419d0bb35d9e2cca7e19a3e1ecfa8252cae1a36dc22af971935226f4057"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.04,
+            "validation_objective": 0.7633101353421807,
+            "checkpoint_sha256": "727bf419d0bb35d9e2cca7e19a3e1ecfa8252cae1a36dc22af971935226f4057"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.08,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "727bf419d0bb35d9e2cca7e19a3e1ecfa8252cae1a36dc22af971935226f4057"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.0,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "71d4d2b22d5983226233085b6ab7578843f69bbf78861c4ea294f3debb2163ed"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.002,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "71d4d2b22d5983226233085b6ab7578843f69bbf78861c4ea294f3debb2163ed"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.005,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "71d4d2b22d5983226233085b6ab7578843f69bbf78861c4ea294f3debb2163ed"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.01,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "71d4d2b22d5983226233085b6ab7578843f69bbf78861c4ea294f3debb2163ed"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.02,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "71d4d2b22d5983226233085b6ab7578843f69bbf78861c4ea294f3debb2163ed"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.04,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "71d4d2b22d5983226233085b6ab7578843f69bbf78861c4ea294f3debb2163ed"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.08,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "71d4d2b22d5983226233085b6ab7578843f69bbf78861c4ea294f3debb2163ed"
+          }
+        ]
+      },
+      "residual_kan_44": {
+        "selected_index": 0,
+        "candidates": [
+          {
+            "mode": "greedy",
+            "margin": null,
+            "validation_objective": 0.7636226355098188
+          },
+          {
+            "mode": "warm",
+            "margin": 0.0,
+            "validation_objective": 0.7522778753191233,
+            "checkpoint_sha256": "6ab61160e55671726020daa5fec4f99f64d325952bdc65147b69d62db52fe8cf"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.002,
+            "validation_objective": 0.7535030101425946,
+            "checkpoint_sha256": "6ab61160e55671726020daa5fec4f99f64d325952bdc65147b69d62db52fe8cf"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.005,
+            "validation_objective": 0.753700562287122,
+            "checkpoint_sha256": "6ab61160e55671726020daa5fec4f99f64d325952bdc65147b69d62db52fe8cf"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.01,
+            "validation_objective": 0.7578252423554659,
+            "checkpoint_sha256": "6ab61160e55671726020daa5fec4f99f64d325952bdc65147b69d62db52fe8cf"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.02,
+            "validation_objective": 0.7605941207148135,
+            "checkpoint_sha256": "6ab61160e55671726020daa5fec4f99f64d325952bdc65147b69d62db52fe8cf"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.04,
+            "validation_objective": 0.7625701753422618,
+            "checkpoint_sha256": "6ab61160e55671726020daa5fec4f99f64d325952bdc65147b69d62db52fe8cf"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.08,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "6ab61160e55671726020daa5fec4f99f64d325952bdc65147b69d62db52fe8cf"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.0,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "71ab4fa2ec716851941323b1a47b87c987da29b1870f64a4f7c7c68a3cfbb0d4"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.002,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "71ab4fa2ec716851941323b1a47b87c987da29b1870f64a4f7c7c68a3cfbb0d4"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.005,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "71ab4fa2ec716851941323b1a47b87c987da29b1870f64a4f7c7c68a3cfbb0d4"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.01,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "71ab4fa2ec716851941323b1a47b87c987da29b1870f64a4f7c7c68a3cfbb0d4"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.02,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "71ab4fa2ec716851941323b1a47b87c987da29b1870f64a4f7c7c68a3cfbb0d4"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.04,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "71ab4fa2ec716851941323b1a47b87c987da29b1870f64a4f7c7c68a3cfbb0d4"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.08,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "71ab4fa2ec716851941323b1a47b87c987da29b1870f64a4f7c7c68a3cfbb0d4"
+          }
+        ]
+      },
+      "residual_mlp_42": {
+        "selected_index": 0,
+        "candidates": [
+          {
+            "mode": "greedy",
+            "margin": null,
+            "validation_objective": 0.7636226355098188
+          },
+          {
+            "mode": "warm",
+            "margin": 0.0,
+            "validation_objective": 0.7571403160691261,
+            "checkpoint_sha256": "837a5c20a65c8c31f2e21276674769afc3eb26a4dc70446f17a125db4f302256"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.002,
+            "validation_objective": 0.7588336425833404,
+            "checkpoint_sha256": "837a5c20a65c8c31f2e21276674769afc3eb26a4dc70446f17a125db4f302256"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.005,
+            "validation_objective": 0.7604391863569617,
+            "checkpoint_sha256": "837a5c20a65c8c31f2e21276674769afc3eb26a4dc70446f17a125db4f302256"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.01,
+            "validation_objective": 0.7616319935768843,
+            "checkpoint_sha256": "837a5c20a65c8c31f2e21276674769afc3eb26a4dc70446f17a125db4f302256"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.02,
+            "validation_objective": 0.7624660786241293,
+            "checkpoint_sha256": "837a5c20a65c8c31f2e21276674769afc3eb26a4dc70446f17a125db4f302256"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.04,
+            "validation_objective": 0.7633101353421807,
+            "checkpoint_sha256": "837a5c20a65c8c31f2e21276674769afc3eb26a4dc70446f17a125db4f302256"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.08,
+            "validation_objective": 0.7634663856588304,
+            "checkpoint_sha256": "837a5c20a65c8c31f2e21276674769afc3eb26a4dc70446f17a125db4f302256"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.0,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "db37737371da7eceb8536e41e073804629140ebc4b487482e03e6ba24585e931"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.002,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "db37737371da7eceb8536e41e073804629140ebc4b487482e03e6ba24585e931"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.005,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "db37737371da7eceb8536e41e073804629140ebc4b487482e03e6ba24585e931"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.01,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "db37737371da7eceb8536e41e073804629140ebc4b487482e03e6ba24585e931"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.02,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "db37737371da7eceb8536e41e073804629140ebc4b487482e03e6ba24585e931"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.04,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "db37737371da7eceb8536e41e073804629140ebc4b487482e03e6ba24585e931"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.08,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "db37737371da7eceb8536e41e073804629140ebc4b487482e03e6ba24585e931"
+          }
+        ]
+      },
+      "residual_mlp_43": {
+        "selected_index": 0,
+        "candidates": [
+          {
+            "mode": "greedy",
+            "margin": null,
+            "validation_objective": 0.7636226355098188
+          },
+          {
+            "mode": "warm",
+            "margin": 0.0,
+            "validation_objective": 0.757558926474303,
+            "checkpoint_sha256": "1f4e4bec871df844c249cc289f064228a80cc1400211b06803fce5eff9b41151"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.002,
+            "validation_objective": 0.7594450479373336,
+            "checkpoint_sha256": "1f4e4bec871df844c249cc289f064228a80cc1400211b06803fce5eff9b41151"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.005,
+            "validation_objective": 0.760982955340296,
+            "checkpoint_sha256": "1f4e4bec871df844c249cc289f064228a80cc1400211b06803fce5eff9b41151"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.01,
+            "validation_objective": 0.7619184521026909,
+            "checkpoint_sha256": "1f4e4bec871df844c249cc289f064228a80cc1400211b06803fce5eff9b41151"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.02,
+            "validation_objective": 0.7621082123368979,
+            "checkpoint_sha256": "1f4e4bec871df844c249cc289f064228a80cc1400211b06803fce5eff9b41151"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.04,
+            "validation_objective": 0.7633101353421807,
+            "checkpoint_sha256": "1f4e4bec871df844c249cc289f064228a80cc1400211b06803fce5eff9b41151"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.08,
+            "validation_objective": 0.7634663856588304,
+            "checkpoint_sha256": "1f4e4bec871df844c249cc289f064228a80cc1400211b06803fce5eff9b41151"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.0,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "e9ad7aa47c6fd2c5e9fa18072723e6018515ff50b1db7d640d04471dcec1b65b"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.002,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "e9ad7aa47c6fd2c5e9fa18072723e6018515ff50b1db7d640d04471dcec1b65b"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.005,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "e9ad7aa47c6fd2c5e9fa18072723e6018515ff50b1db7d640d04471dcec1b65b"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.01,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "e9ad7aa47c6fd2c5e9fa18072723e6018515ff50b1db7d640d04471dcec1b65b"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.02,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "e9ad7aa47c6fd2c5e9fa18072723e6018515ff50b1db7d640d04471dcec1b65b"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.04,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "e9ad7aa47c6fd2c5e9fa18072723e6018515ff50b1db7d640d04471dcec1b65b"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.08,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "e9ad7aa47c6fd2c5e9fa18072723e6018515ff50b1db7d640d04471dcec1b65b"
+          }
+        ]
+      },
+      "residual_mlp_44": {
+        "selected_index": 0,
+        "candidates": [
+          {
+            "mode": "greedy",
+            "margin": null,
+            "validation_objective": 0.7636226355098188
+          },
+          {
+            "mode": "warm",
+            "margin": 0.0,
+            "validation_objective": 0.7596528041176498,
+            "checkpoint_sha256": "12d35564773fc3d2889ec1ab63b61ef8a12b9f4f5e43df5f7c09a30ef03b2078"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.002,
+            "validation_objective": 0.761319293640554,
+            "checkpoint_sha256": "12d35564773fc3d2889ec1ab63b61ef8a12b9f4f5e43df5f7c09a30ef03b2078"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.005,
+            "validation_objective": 0.7617558469064534,
+            "checkpoint_sha256": "12d35564773fc3d2889ec1ab63b61ef8a12b9f4f5e43df5f7c09a30ef03b2078"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.01,
+            "validation_objective": 0.7627292452380061,
+            "checkpoint_sha256": "12d35564773fc3d2889ec1ab63b61ef8a12b9f4f5e43df5f7c09a30ef03b2078"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.02,
+            "validation_objective": 0.7624207125045359,
+            "checkpoint_sha256": "12d35564773fc3d2889ec1ab63b61ef8a12b9f4f5e43df5f7c09a30ef03b2078"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.04,
+            "validation_objective": 0.7633101353421807,
+            "checkpoint_sha256": "12d35564773fc3d2889ec1ab63b61ef8a12b9f4f5e43df5f7c09a30ef03b2078"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.08,
+            "validation_objective": 0.7634663856588304,
+            "checkpoint_sha256": "12d35564773fc3d2889ec1ab63b61ef8a12b9f4f5e43df5f7c09a30ef03b2078"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.0,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "48ed092274dbf611f278112c1f09b5a71f04e590c5e75396eff930093f38e5fb"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.002,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "48ed092274dbf611f278112c1f09b5a71f04e590c5e75396eff930093f38e5fb"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.005,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "48ed092274dbf611f278112c1f09b5a71f04e590c5e75396eff930093f38e5fb"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.01,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "48ed092274dbf611f278112c1f09b5a71f04e590c5e75396eff930093f38e5fb"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.02,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "48ed092274dbf611f278112c1f09b5a71f04e590c5e75396eff930093f38e5fb"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.04,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "48ed092274dbf611f278112c1f09b5a71f04e590c5e75396eff930093f38e5fb"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.08,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "48ed092274dbf611f278112c1f09b5a71f04e590c5e75396eff930093f38e5fb"
+          }
+        ]
+      },
+      "kan_without_prior_42": {
+        "selected_index": 13,
+        "candidates": [
+          {
+            "mode": "greedy",
+            "margin": null,
+            "validation_objective": 0.7636226355098188
+          },
+          {
+            "mode": "warm",
+            "margin": 0.0,
+            "validation_objective": 0.7565831881947815,
+            "checkpoint_sha256": "b85965fa981f5d244bb6679ca29ff72ee5ea35edabe20753387d77c88a35fffb"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.002,
+            "validation_objective": 0.7587219467386603,
+            "checkpoint_sha256": "b85965fa981f5d244bb6679ca29ff72ee5ea35edabe20753387d77c88a35fffb"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.005,
+            "validation_objective": 0.7596927462145686,
+            "checkpoint_sha256": "b85965fa981f5d244bb6679ca29ff72ee5ea35edabe20753387d77c88a35fffb"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.01,
+            "validation_objective": 0.761590903159231,
+            "checkpoint_sha256": "b85965fa981f5d244bb6679ca29ff72ee5ea35edabe20753387d77c88a35fffb"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.02,
+            "validation_objective": 0.7636579773388803,
+            "checkpoint_sha256": "b85965fa981f5d244bb6679ca29ff72ee5ea35edabe20753387d77c88a35fffb"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.04,
+            "validation_objective": 0.7639574566856027,
+            "checkpoint_sha256": "b85965fa981f5d244bb6679ca29ff72ee5ea35edabe20753387d77c88a35fffb"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.08,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "b85965fa981f5d244bb6679ca29ff72ee5ea35edabe20753387d77c88a35fffb"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.0,
+            "validation_objective": 0.7583661540411413,
+            "checkpoint_sha256": "e52c4a4f6ae85cacd689299b6a7528a0d3d3a70b535ce626fde2f64bdfa6e2d7"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.002,
+            "validation_objective": 0.7595076467841864,
+            "checkpoint_sha256": "e52c4a4f6ae85cacd689299b6a7528a0d3d3a70b535ce626fde2f64bdfa6e2d7"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.005,
+            "validation_objective": 0.7597796893678606,
+            "checkpoint_sha256": "e52c4a4f6ae85cacd689299b6a7528a0d3d3a70b535ce626fde2f64bdfa6e2d7"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.01,
+            "validation_objective": 0.7604242204688489,
+            "checkpoint_sha256": "e52c4a4f6ae85cacd689299b6a7528a0d3d3a70b535ce626fde2f64bdfa6e2d7"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.02,
+            "validation_objective": 0.7614960861392319,
+            "checkpoint_sha256": "e52c4a4f6ae85cacd689299b6a7528a0d3d3a70b535ce626fde2f64bdfa6e2d7"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.04,
+            "validation_objective": 0.7640118496492505,
+            "checkpoint_sha256": "e52c4a4f6ae85cacd689299b6a7528a0d3d3a70b535ce626fde2f64bdfa6e2d7"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.08,
+            "validation_objective": 0.7635184694081545,
+            "checkpoint_sha256": "e52c4a4f6ae85cacd689299b6a7528a0d3d3a70b535ce626fde2f64bdfa6e2d7"
+          }
+        ]
+      },
+      "kan_without_prior_43": {
+        "selected_index": 5,
+        "candidates": [
+          {
+            "mode": "greedy",
+            "margin": null,
+            "validation_objective": 0.7636226355098188
+          },
+          {
+            "mode": "warm",
+            "margin": 0.0,
+            "validation_objective": 0.7561103664338589,
+            "checkpoint_sha256": "52ff712027bbc3167e8cf85bdd655ca92c433121b76b98a8d91d148cc073fc5f"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.002,
+            "validation_objective": 0.7596730785444379,
+            "checkpoint_sha256": "52ff712027bbc3167e8cf85bdd655ca92c433121b76b98a8d91d148cc073fc5f"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.005,
+            "validation_objective": 0.7611550283618271,
+            "checkpoint_sha256": "52ff712027bbc3167e8cf85bdd655ca92c433121b76b98a8d91d148cc073fc5f"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.01,
+            "validation_objective": 0.7631978690624237,
+            "checkpoint_sha256": "52ff712027bbc3167e8cf85bdd655ca92c433121b76b98a8d91d148cc073fc5f"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.02,
+            "validation_objective": 0.7638475657440722,
+            "checkpoint_sha256": "52ff712027bbc3167e8cf85bdd655ca92c433121b76b98a8d91d148cc073fc5f"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.04,
+            "validation_objective": 0.7634663856588304,
+            "checkpoint_sha256": "52ff712027bbc3167e8cf85bdd655ca92c433121b76b98a8d91d148cc073fc5f"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.08,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "52ff712027bbc3167e8cf85bdd655ca92c433121b76b98a8d91d148cc073fc5f"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.0,
+            "validation_objective": 0.757756473030895,
+            "checkpoint_sha256": "d4995602e7d053dcd6ce26a68bb8749936b56d459e9aeeb588adf1f992e30dec"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.002,
+            "validation_objective": 0.7578811012208462,
+            "checkpoint_sha256": "d4995602e7d053dcd6ce26a68bb8749936b56d459e9aeeb588adf1f992e30dec"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.005,
+            "validation_objective": 0.7587301167659461,
+            "checkpoint_sha256": "d4995602e7d053dcd6ce26a68bb8749936b56d459e9aeeb588adf1f992e30dec"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.01,
+            "validation_objective": 0.7590502989478409,
+            "checkpoint_sha256": "d4995602e7d053dcd6ce26a68bb8749936b56d459e9aeeb588adf1f992e30dec"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.02,
+            "validation_objective": 0.7621043082326651,
+            "checkpoint_sha256": "d4995602e7d053dcd6ce26a68bb8749936b56d459e9aeeb588adf1f992e30dec"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.04,
+            "validation_objective": 0.761870929505676,
+            "checkpoint_sha256": "d4995602e7d053dcd6ce26a68bb8749936b56d459e9aeeb588adf1f992e30dec"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.08,
+            "validation_objective": 0.7633376331068575,
+            "checkpoint_sha256": "d4995602e7d053dcd6ce26a68bb8749936b56d459e9aeeb588adf1f992e30dec"
+          }
+        ]
+      },
+      "kan_without_prior_44": {
+        "selected_index": 0,
+        "candidates": [
+          {
+            "mode": "greedy",
+            "margin": null,
+            "validation_objective": 0.7636226355098188
+          },
+          {
+            "mode": "warm",
+            "margin": 0.0,
+            "validation_objective": 0.7603512005880475,
+            "checkpoint_sha256": "8f40fc228dddc99e95562dc52962e38e1962a282e26f347c139557564071a18e"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.002,
+            "validation_objective": 0.7609427715651691,
+            "checkpoint_sha256": "8f40fc228dddc99e95562dc52962e38e1962a282e26f347c139557564071a18e"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.005,
+            "validation_objective": 0.7618759949691594,
+            "checkpoint_sha256": "8f40fc228dddc99e95562dc52962e38e1962a282e26f347c139557564071a18e"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.01,
+            "validation_objective": 0.7624318734742701,
+            "checkpoint_sha256": "8f40fc228dddc99e95562dc52962e38e1962a282e26f347c139557564071a18e"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.02,
+            "validation_objective": 0.7634794060140848,
+            "checkpoint_sha256": "8f40fc228dddc99e95562dc52962e38e1962a282e26f347c139557564071a18e"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.04,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "8f40fc228dddc99e95562dc52962e38e1962a282e26f347c139557564071a18e"
+          },
+          {
+            "mode": "warm",
+            "margin": 0.08,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "8f40fc228dddc99e95562dc52962e38e1962a282e26f347c139557564071a18e"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.0,
+            "validation_objective": 0.7603512005880475,
+            "checkpoint_sha256": "8da66e91aea56d45f6d8c82ed7920b991081647a9e4a77df962432d0b7b71713"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.002,
+            "validation_objective": 0.7609427715651691,
+            "checkpoint_sha256": "8da66e91aea56d45f6d8c82ed7920b991081647a9e4a77df962432d0b7b71713"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.005,
+            "validation_objective": 0.7618759949691594,
+            "checkpoint_sha256": "8da66e91aea56d45f6d8c82ed7920b991081647a9e4a77df962432d0b7b71713"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.01,
+            "validation_objective": 0.7624318734742701,
+            "checkpoint_sha256": "8da66e91aea56d45f6d8c82ed7920b991081647a9e4a77df962432d0b7b71713"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.02,
+            "validation_objective": 0.7634794060140848,
+            "checkpoint_sha256": "8da66e91aea56d45f6d8c82ed7920b991081647a9e4a77df962432d0b7b71713"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.04,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "8da66e91aea56d45f6d8c82ed7920b991081647a9e4a77df962432d0b7b71713"
+          },
+          {
+            "mode": "selected",
+            "margin": 0.08,
+            "validation_objective": 0.7636226355098188,
+            "checkpoint_sha256": "8da66e91aea56d45f6d8c82ed7920b991081647a9e4a77df962432d0b7b71713"
+          }
+        ]
+      }
+    },
+    "frozen_before_test_at": "2026-11-12T08:33:42.149277+00:00"
+  },
+  "summary": {
+    "residual_kan": {
+      "all": {
+        "rows_with_seeds": 768,
+        "objective": 0.7591317603364587,
+        "hard_violations": 0,
+        "overrides": 0,
+        "median_ms": 11.780099997849902
+      },
+      "standard": {
+        "rows_with_seeds": 384,
+        "objective": 0.7926662613172084,
+        "hard_violations": 0,
+        "overrides": 0,
+        "median_ms": 15.128699997148942
+      },
+      "requested_constraints": {
+        "rows_with_seeds": 384,
+        "objective": 0.725597259355709,
+        "hard_violations": 0,
+        "overrides": 0,
+        "median_ms": 9.838549998676172
+      }
+    },
+    "residual_kan_guarded": {
+      "all": {
+        "rows_with_seeds": 768,
+        "objective": 0.7591317603364587,
+        "hard_violations": 0,
+        "overrides": null,
+        "median_ms": 23.341250001976732
+      },
+      "standard": {
+        "rows_with_seeds": 384,
+        "objective": 0.7926662613172084,
+        "hard_violations": 0,
+        "overrides": null,
+        "median_ms": 30.88114999991376
+      },
+      "requested_constraints": {
+        "rows_with_seeds": 384,
+        "objective": 0.725597259355709,
+        "hard_violations": 0,
+        "overrides": null,
+        "median_ms": 19.399149998207577
+      }
+    },
+    "residual_mlp": {
+      "all": {
+        "rows_with_seeds": 768,
+        "objective": 0.7591317603364587,
+        "hard_violations": 0,
+        "overrides": 0,
+        "median_ms": 12.24095000361558
+      },
+      "standard": {
+        "rows_with_seeds": 384,
+        "objective": 0.7926662613172084,
+        "hard_violations": 0,
+        "overrides": 0,
+        "median_ms": 16.400199998315657
+      },
+      "requested_constraints": {
+        "rows_with_seeds": 384,
+        "objective": 0.725597259355709,
+        "hard_violations": 0,
+        "overrides": 0,
+        "median_ms": 10.54199999634875
+      }
+    },
+    "residual_mlp_guarded": {
+      "all": {
+        "rows_with_seeds": 768,
+        "objective": 0.7591317603364587,
+        "hard_violations": 0,
+        "overrides": null,
+        "median_ms": 24.111200007610023
+      },
+      "standard": {
+        "rows_with_seeds": 384,
+        "objective": 0.7926662613172084,
+        "hard_violations": 0,
+        "overrides": null,
+        "median_ms": 31.428749996848637
+      },
+      "requested_constraints": {
+        "rows_with_seeds": 384,
+        "objective": 0.725597259355709,
+        "hard_violations": 0,
+        "overrides": null,
+        "median_ms": 20.014599998830818
+      }
+    },
+    "kan_without_prior": {
+      "all": {
+        "rows_with_seeds": 768,
+        "objective": 0.758961831840376,
+        "hard_violations": 0,
+        "overrides": 224,
+        "median_ms": 23.658400001295377
+      },
+      "standard": {
+        "rows_with_seeds": 384,
+        "objective": 0.7922411412000656,
+        "hard_violations": 0,
+        "overrides": 142,
+        "median_ms": 31.75964999900316
+      },
+      "requested_constraints": {
+        "rows_with_seeds": 384,
+        "objective": 0.7256825224806865,
+        "hard_violations": 0,
+        "overrides": 82,
+        "median_ms": 20.574599995597964
+      }
+    },
+    "kan_without_prior_guarded": {
+      "all": {
+        "rows_with_seeds": 768,
+        "objective": 0.7596557832633456,
+        "hard_violations": 0,
+        "overrides": null,
+        "median_ms": 35.621550006908365
+      },
+      "standard": {
+        "rows_with_seeds": 384,
+        "objective": 0.7928744960421076,
+        "hard_violations": 0,
+        "overrides": null,
+        "median_ms": 45.442949998687254
+      },
+      "requested_constraints": {
+        "rows_with_seeds": 384,
+        "objective": 0.7264370704845836,
+        "hard_violations": 0,
+        "overrides": null,
+        "median_ms": 30.497350002406165
+      }
+    }
+  },
+  "comparisons": {
+    "residual_kan": {
+      "queries": 128,
+      "mean_difference": 0.0,
+      "query_bootstrap_95ci": [
+        0.0,
+        0.0
+      ],
+      "sign_flip_p": 1.0,
+      "paired_dz": 0,
+      "wins_ties_losses": [
+        0,
+        128,
+        0
+      ],
+      "holm_p_six_comparisons": 1.0
+    },
+    "residual_mlp": {
+      "queries": 128,
+      "mean_difference": 0.0,
+      "query_bootstrap_95ci": [
+        0.0,
+        0.0
+      ],
+      "sign_flip_p": 1.0,
+      "paired_dz": 0,
+      "wins_ties_losses": [
+        0,
+        128,
+        0
+      ],
+      "holm_p_six_comparisons": 1.0
+    },
+    "kan_without_prior": {
+      "queries": 128,
+      "mean_difference": -0.00016992849608262394,
+      "query_bootstrap_95ci": [
+        -0.000756760426641751,
+        0.0005057669050681067
+      ],
+      "sign_flip_p": 0.6419679016049198,
+      "paired_dz": -0.046501285749031195,
+      "wins_ties_losses": [
+        8,
+        93,
+        27
+      ],
+      "holm_p_six_comparisons": 1.0
+    }
+  },
+  "raw_holm_p_six_comparisons": {
+    "residual_kan": 1.0,
+    "residual_mlp": 1.0,
+    "kan_without_prior": 0.0002999850007499625
+  },
+  "completed_at": "2026-11-12T08:37:19.016265+00:00"
+}
