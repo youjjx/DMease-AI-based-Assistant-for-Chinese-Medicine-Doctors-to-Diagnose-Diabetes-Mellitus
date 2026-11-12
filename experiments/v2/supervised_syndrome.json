@@ -1,0 +1,211 @@
+{
+  "selection": {
+    "protocol": {
+      "id": "tcm-sd-supervised-baselines-v1",
+      "repository": "https://github.com/Borororo/ZY-BERT",
+      "commit": "72a89518392ec28f5dc1c8ed252a6c127ca2145b",
+      "reference": "https://aclanthology.org/2022.ccl-1.80/",
+      "license": "Dataset CC BY-NC-SA 4.0 per author's README; raw data and trained text models kept outside Git",
+      "input_fields": [
+        "chief_complaint",
+        "description",
+        "detection"
+      ],
+      "label_field": "norm_syndrome",
+      "forbidden_input_fields": [
+        "user_id",
+        "lcd_id",
+        "lcd_name",
+        "syndrome",
+        "norm_syndrome"
+      ],
+      "feature": {
+        "analyzer": "char",
+        "ngram_range": [
+          2,
+          3
+        ],
+        "max_features": 40000,
+        "min_df": 3,
+        "sublinear_tf": true,
+        "max_text_chars": 4096
+      },
+      "candidates": [
+        {
+          "method": "complement_nb",
+          "alpha": 1.0
+        },
+        {
+          "method": "sgd_logloss",
+          "alpha": 0.0001
+        },
+        {
+          "method": "sgd_logloss",
+          "alpha": 1e-05
+        }
+      ],
+      "training": {
+        "seed": 42,
+        "max_iter": 30,
+        "tol": 0.001,
+        "n_jobs": 1
+      },
+      "selection": "Fit text features on official train only. Select candidate by macro-F1 on official dev records whose normalized input text is absent from train. Freeze classifier before fetching test gold. Publish all candidate validation scores; no post-test tuning.",
+      "evaluation": "Official test accuracy, macro-F1 on fixed 148 train labels, kappa, top3; also exact-text-unseen stratum and source user_id overlap counts without assuming this ID denotes a patient. Evaluate frozen existing graph on same texts. Supplementary TCMEval-SDT transfer is exploratory because its baseline scores were already observed, and label ontology mismatch remains.",
+      "limits": [
+        "General TCM, not diabetes-specific",
+        "Computational retrospective benchmark, not clinical deployment validation",
+        "TF-IDF classifiers are supervised baselines, not LLMs or KAN/PPO",
+        "Unknown overlap of source literature",
+        "Source user_id semantics need verification",
+        "No claim that this reproduces DMease's original 50-patient study"
+      ]
+    },
+    "candidates": [
+      {
+        "configuration": {
+          "method": "complement_nb",
+          "alpha": 1.0
+        },
+        "unseen_text_validation": {
+          "records": 4957,
+          "accuracy": 0.6388944926366754,
+          "macro_f1_148_train_labels": 0.11742769653816648,
+          "kappa": 0.6026023657104642,
+          "top3_hit": 0.8523300383296348,
+          "abstentions": 0
+        }
+      },
+      {
+        "configuration": {
+          "method": "sgd_logloss",
+          "alpha": 0.0001
+        },
+        "unseen_text_validation": {
+          "records": 4957,
+          "accuracy": 0.7171676417187816,
+          "macro_f1_148_train_labels": 0.16255521798891173,
+          "kappa": 0.6891808572252771,
+          "top3_hit": 0.8543473875327819,
+          "abstentions": 0
+        }
+      },
+      {
+        "configuration": {
+          "method": "sgd_logloss",
+          "alpha": 1e-05
+        },
+        "unseen_text_validation": {
+          "records": 4957,
+          "accuracy": 0.7950373209602583,
+          "macro_f1_148_train_labels": 0.3769245887318871,
+          "kappa": 0.7772631718050335,
+          "top3_hit": 0.9209199112366351,
+          "abstentions": 0
+        }
+      }
+    ],
+    "selected": {
+      "method": "sgd_logloss",
+      "alpha": 1e-05
+    },
+    "checkpoint_sha256": "8533155914c914c3d9d5e2004da2d86481cae7ecf3d23b2ac71ee6fae1536c8f",
+    "frozen_before_test_gold_download": true
+  },
+  "source_manifest": {
+    "repository": "https://github.com/Borororo/ZY-BERT",
+    "commit": "72a89518392ec28f5dc1c8ed252a6c127ca2145b",
+    "files": {
+      "README.md": {
+        "sha256": "49c973ab01cceaa38cbb5f65ad3ec65e910b0ad60df4847b70afbb3febcfb3d8",
+        "bytes": 3497
+      },
+      "TCM_SD_train_dev.zip": {
+        "sha256": "154967d4f44852ae3acc48dfc556da8ce7215aa17d1a6821764f0db61bc4c81a",
+        "bytes": 10053537
+      },
+      "test.json": {
+        "sha256": "cfcd6f20e74c6658e4677cbaed93622a90eceb35a62bad792ba443549af31ea9",
+        "bytes": 7398155
+      }
+    }
+  },
+  "evidence_fingerprint": "f9d7cca2be94fa8a5f52036de8b0ff8fe74031ce0d9b6f0ab469a9372d272af7",
+  "source_lf_sha256": {
+    "scripts/tcm_sd_benchmark.py": "e3b6e42b97ca90766aa44fb3909c6ce5fc95608e2bbc131f97a4800246e20f27",
+    "src/dmease/evidence_service.py": "4895156125c608eef937254fc9b6cf255c2e64320d05307b89333488b9c48b96",
+    "src/dmease/symptom_parser.py": "3e252f471d162ce25f958cd1341888860e3617382f90505dc36b4f41b1ddb860"
+  },
+  "train": 43180,
+  "dev": 5486,
+  "test": 5486,
+  "vocabulary_size": 40000,
+  "validation_excluded_seen_texts": 529,
+  "test_seen_texts_train_or_dev": 598,
+  "test_literal_gold_mentions": 0,
+  "test_rows_with_user_id_in_train": 20,
+  "duplicate_test_text_excess": 328,
+  "elapsed_seconds": 5.458958600000187,
+  "runtime_scope": "current invocation, excluding resumed training",
+  "evaluation": {
+    "supervised_text_baseline": {
+      "official_test": {
+        "records": 5486,
+        "accuracy": 0.8246445497630331,
+        "macro_f1_148_train_labels": 0.4246721430326302,
+        "kappa": 0.8084836979699359,
+        "top3_hit": 0.9389354721108275,
+        "abstentions": 0
+      },
+      "unseen_text_test": {
+        "records": 4888,
+        "accuracy": 0.8091243862520459,
+        "macro_f1_148_train_labels": 0.4112772920665781,
+        "kappa": 0.792732844027841,
+        "top3_hit": 0.9333060556464812,
+        "abstentions": 0
+      },
+      "without_literal_gold_mention": {
+        "records": 5486,
+        "accuracy": 0.8246445497630331,
+        "macro_f1_148_train_labels": 0.4246721430326302,
+        "kappa": 0.8084836979699359,
+        "top3_hit": 0.9389354721108275,
+        "abstentions": 0
+      }
+    },
+    "frozen_public_graph": {
+      "official_test": {
+        "records": 5486,
+        "accuracy": 0.0,
+        "macro_f1_148_train_labels": 0.0,
+        "kappa": -0.0008192791068797334,
+        "top3_hit": 0.002369668246445498,
+        "abstentions": 2820
+      },
+      "unseen_text_test": {
+        "records": 4888,
+        "accuracy": 0.0,
+        "macro_f1_148_train_labels": 0.0,
+        "kappa": -0.000977451581667177,
+        "top3_hit": 0.0026595744680851063,
+        "abstentions": 2337
+      },
+      "without_literal_gold_mention": {
+        "records": 5486,
+        "accuracy": 0.0,
+        "macro_f1_148_train_labels": 0.0,
+        "kappa": -0.0008192791068797334,
+        "top3_hit": 0.002369668246445498,
+        "abstentions": 2820
+      }
+    }
+  },
+  "tcmeval_transfer": {
+    "records": 200,
+    "top1_any_gold_hit": 0.04,
+    "top3_any_gold_hit": 0.075,
+    "source_sha256": "cddcf9c7187d43462b8c80b1756527e506b2e8d9d0329171d50477f49bd679cd",
+    "interpretation": "Exploratory transfer; label ontology differs and baseline already inspected"
+  }
+}

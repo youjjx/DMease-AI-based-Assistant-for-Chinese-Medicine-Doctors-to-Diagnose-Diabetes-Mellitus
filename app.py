@@ -529,10 +529,78 @@ def experimental_evaluation(service):
         st.download_button("下载完整实验报告", html.read_bytes(), "DMease_实验报告.html", "text/html")
 
 
+def research_v2_evaluation(service):
+    folder = ROOT / "experiments/v2"
+    if not (folder / "summary.json").exists():
+        st.info("此版本未附带第二轮实验报告。")
+        return
+    summary = json.loads((folder / "summary.json").read_text(encoding="utf8"))
+    if summary["provenance"]["evidence"] != service.evidence.fingerprint:
+        st.warning("第二轮报告与本机证据版本不同，指标只描述报告中的固定版本。")
+    section = st.selectbox("改进研究项目", ["策略改进", "真实病例辨证", "通路与靶点一致性", "单次集合优化"])
+    names = {"greedy": "证据增益", "legacy": "旧版KAN/PPO", "stable_rbf": "稳定RBF方案", "stable_spline": "三次样条KAN",
+             "oracle_spline": "最优集合示范与样条", "oracle_mlp": "最优集合示范与MLP"}
+    if section == "策略改进":
+        st.caption("464个训练查询；与第一轮不重叠的96个验证和192个测试查询。全部检查点在新测试评价前冻结。")
+        st.dataframe([{"方案": names[k], "原始目标": v["raw"]["objective"], "种子标准差": v["raw"]["objective_seed_std"],
+                       "相同集合优化后": v["shared_local_search"]["objective"], "原始候选数": v["raw"]["herb_count"]}
+                      for k,v in summary["results"].items()], hide_index=True, width="stretch")
+        st.info("稳定方案缩小了与贪心的差距，但未超过贪心；稳定RBF三个种子均选择PPO前检查点，收益不能归因于PPO。统一集合优化后，贪心在190/192个查询达到给定目标最优。")
+        st.caption("集合搜索使用相同图谱和成本，分别提供给各方法；其收益不算作KAN独有优势。证据目标不表示疗效。")
+    elif section == "真实病例辨证":
+        path = folder / "supervised_syndrome.json"
+        if not path.exists():
+            st.info("监督辨证报告尚未生成。")
+            return
+        data = json.loads(path.read_text(encoding="utf8"))
+        st.write(f"TCM-SD：训练{data['train']:,}条、验证{data['dev']:,}条、测试{data['test']:,}条，148类证候。")
+        st.dataframe([{"方法": method, "评价范围": group, "记录数": v["records"], "准确率": v["accuracy"],
+                       "宏平均F1": v["macro_f1_148_train_labels"], "Kappa": v["kappa"], "前三命中率": v["top3_hit"]}
+                      for method, groups in data["evaluation"].items() for group,v in groups.items()], hide_index=True, width="stretch")
+        st.caption(f"测试中{data['test_seen_texts_train_or_dev']}条文本与训练或验证重复，已另外报告去重后的结果。源user_id有跨分区重复，其语义未核实，不能宣称患者级独立测试。")
+        st.warning("监督文本分类器是独立研究对照，并非KAN/PPO或论文的LLM；数据覆盖一般中医疾病，不能作为原论文50例糖尿病研究的复现。当前临床工作流未自动替换模型。")
+        external = json.loads((folder / "external_syndrome.json").read_text(encoding="utf8"))
+        st.write("TCMEval-SDT外部审计：200条记录，原图谱前三候选命中2条；335个金标准证候标签中仅28个能按固定文字规则映射。")
+        if data["tcmeval_transfer"]:
+            transfer = data["tcmeval_transfer"]
+            st.write(f"冻结文本分类器跨数据集迁移：首候选命中{transfer['top1_any_gold_hit']:.1%}，前三命中{transfer['top3_any_gold_hit']:.1%}。")
+        st.caption("外部集的低表现揭示标签体系和适用范围缺口；本页不展示任何病例原文。")
+    elif section == "通路与靶点一致性":
+        st.dataframe([{"方案": names[k], "共享49靶点Jaccard": v["raw"]["target_jaccard_shared49"],
+                       "全部显著关联靶点Jaccard": v["raw"]["target_jaccard_all_eligible"]} for k,v in summary["results"].items()], hide_index=True, width="stretch")
+        st.caption("Jaccard按交集/并集计算。当前使用关联靶点，不是经验证的亲和度预测；覆盖率高不等于靶点选择性高。")
+        path = json.loads((folder / "pathways.json").read_text(encoding="utf8"))
+        st.dataframe([{"查询": "、".join(r["query"]), "策略": r["method"], "背景": r["background"],
+                       "映射蛋白数": r["protein_count"], "显著通路数": r.get("significant_pathways_fdr005",0)} for r in path["results"]], hide_index=True, width="stretch")
+        st.caption("STRING 12.0官方接口；主分析采用当前49靶点背景。全人类背景为探索性对照。同一查询的三种方法得到相同靶点，当前结果不能支持PPI消融的独立富集优势。")
+    else:
+        st.caption("研究用途：对公开证据候选执行删除、增补、交换，检查相同目标是否改善。结果不作为处方。")
+        selected = st.multiselect("集合优化症状", service.graph.symptom_names,
+                                  default=[s for s in ["口渴", "乏力", "尿频"] if s in service.graph.symptom_names])
+        excluded = st.multiselect("集合优化排除中药", service.graph.herb_names)
+        if st.button("计算集合优化对照", type="primary"):
+            from dmease.experiment_metrics import rollout, reference_score
+            from dmease.research_policy import refine_selection
+            task = {"symptoms": dict.fromkeys(selected, 1.), "forbidden": excluded}
+            actions,_ = rollout(service.evidence, task)
+            improved,diagnostic = refine_selection(service.evidence, task, actions)
+            st.dataframe([{"阶段": label, "候选集合": "、".join(service.evidence.herbs[i]["name"] for i in indices),
+                           "参考目标": reference_score(service.evidence, task, indices)["objective"], "数量": len(indices)}
+                          for label,indices in [("证据增益",actions),("集合优化后",improved)]], hide_index=True, width="stretch")
+            st.write(f"已比较{diagnostic['evaluated_subsets']}个集合，完成{diagnostic['rounds']}轮改进。")
+    report = folder / "report.html"
+    if report.exists():
+        st.download_button("下载第二轮完整研究报告", report.read_bytes(), "DMease_第二轮研究报告.html", "text/html")
+    st.download_button("下载第二轮策略结果", json_export(summary), "dmease_research_v2.json", "application/json")
+
+
 def research(service):
     st.subheader("研究复现")
     st.caption("选择公开症状检索组合，使用与辅助分析相同的证据、约束和序贯策略；这里不是临床病例评价。")
-    workspace = st.radio("研究工作区", ["序贯推理", "实验评估"], horizontal=True)
+    workspace = st.radio("研究工作区", ["序贯推理", "实验评估", "改进与外部评价"], horizontal=True)
+    if workspace == "改进与外部评价":
+        research_v2_evaluation(service)
+        return
     if workspace == "实验评估":
         experimental_evaluation(service)
         return

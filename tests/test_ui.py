@@ -94,6 +94,17 @@ def test_research_and_knowledge_pages(tmp_path, monkeypatch, evidence_path):
         assert not app.exception
     widget(app.radio, "研究工作区").set_value("序贯推理").run()
     assert not app.exception
+    widget(app.radio, "研究工作区").set_value("改进与外部评价").run()
+    assert not app.exception
+    for section in ("真实病例辨证", "通路与靶点一致性", "单次集合优化"):
+        widget(app.selectbox, "改进研究项目").set_value(section).run()
+        assert not app.exception
+    widget(app.multiselect, "集合优化排除中药").set_value(["黄芪"]).run()
+    widget(app.button, "计算集合优化对照").click().run()
+    assert not app.exception
+    comparison = app.dataframe[-1].value
+    assert all("黄芪" not in value for value in comparison["候选集合"])
+    assert comparison.iloc[1]["参考目标"] >= comparison.iloc[0]["参考目标"] - 1e-7
     app.session_state["last_activity"] = 0
     app.run()
     assert not app.sidebar.radio and "account" not in app.session_state

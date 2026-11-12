@@ -1,0 +1,14 @@
+{
+  "id": "public-pathway-audit-v1",
+  "source": "https://version-12-0.string-db.org/api/json/enrichment",
+  "documentation": "https://string-db.org/help/api/",
+  "queries": [["口渴", "乏力", "尿频"], ["口渴", "乏力"], ["尿频", "肢体麻木"]],
+  "methods": ["greedy", "v1_full_kan_seed42", "v1_without_ppi_seed42"],
+  "selection": "Cases fixed by names before any enrichment request; seed42 fixed, no result-based selection. All cases are public entity queries, not records from the paper.",
+  "foreground": "All selected herbs' observed eligible targets within the 49 shared-target computation universe, mapped using the existing exact STRING mapping",
+  "primary_background": "All 49 shared-target candidates, not the human proteome",
+  "secondary_background": "STRING default human background; explicitly exploratory sensitivity to background choice",
+  "categories": ["KEGG", "Reactome"],
+  "significance": "Report all returned pathway terms including nonsignificant; STRING within-list/category FDR as returned, no claim of correction across query-method-background combinations",
+  "limits": ["Shared sources and diabetes-focused source selection create ascertainment bias", "Enrichment is not therapeutic efficacy", "Missing mappings and fewer than 2 targets recorded explicitly", "PPI omission may leave the same selected targets and thus identical enrichment", "No substitution of coverage ratios for pathway p-values"]
+}

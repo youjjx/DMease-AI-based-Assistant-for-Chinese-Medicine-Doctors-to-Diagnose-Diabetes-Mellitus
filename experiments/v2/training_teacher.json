@@ -1,0 +1,4978 @@
+{
+  "evidence": "f9d7cca2be94fa8a5f52036de8b0ff8fe74031ce0d9b6f0ab469a9372d272af7",
+  "rows": [
+    {
+      "query_id": "1c265349834cb4f5f6f21069297226572407bfdb4a92e8cfb24068512f2bd40d",
+      "objective": 0.9800000190734863,
+      "selected_herbs": [
+        "白术"
+      ],
+      "enumerated_feasible_subsets": 8
+    },
+    {
+      "query_id": "7ed99430d161ce85590dda406ad25c5cd0fd0103d51451b7680298b8047a25da",
+      "objective": 0.9800000190734863,
+      "selected_herbs": [
+        "白芍"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "72d2d00ea62af4fbd7dd57e1f0e8677f446c4ece492ca45569275d887e890c0d",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 12911
+    },
+    {
+      "query_id": "bf04016387dc1b0ce1649bc1f0d6c9ea6fef554bf47eea342415d82cfa6594bd",
+      "objective": 0.9800000190734863,
+      "selected_herbs": [
+        "白术"
+      ],
+      "enumerated_feasible_subsets": 4
+    },
+    {
+      "query_id": "b88bc5ac3c2012006d35c48093822acbd4aa72d543347d9d6864e0f1d035412d",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "f0a2d10cdf75c400e319f43d23c7e847b9608c2f30fef83b86b911390bf0afc0",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "白术",
+        "黄芪",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "0b87e2de3f6a5f94369b8ecbb1d777cc7a68d7c4a6f2d89a06b21f7f76e5fa44",
+      "objective": 0.9800000190734863,
+      "selected_herbs": [
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 8
+    },
+    {
+      "query_id": "51f377b3e60613c3b165d0947d95350137d635a0a869bef5a70c4cd6f26f6f8f",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 8
+    },
+    {
+      "query_id": "34b640794a8b847b28f8aac0fadeb4a90dd08f8ab71bceca81eefe7d519709f3",
+      "objective": 0.9800000190734863,
+      "selected_herbs": [
+        "白术"
+      ],
+      "enumerated_feasible_subsets": 8
+    },
+    {
+      "query_id": "54dcbc373259c57971d56708c9567680c15780174c11b328d8f398e2e9680d9e",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "茯苓",
+        "山茱萸",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 32
+    },
+    {
+      "query_id": "e60218be460183e82792fbbe5d2942713ffd02924f336da45bf9e5e2d826259a",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "茯苓",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 16
+    },
+    {
+      "query_id": "d1430dff0b431b6db03ab7079a28e029510bf2b89a9dcf6ab212fb5892c5d501",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "茯苓",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 256
+    },
+    {
+      "query_id": "207f10928a10548876040a9075d6725883cc9138893e52f9ae2ce0ee93554384",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "川芎",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 3797
+    },
+    {
+      "query_id": "c6196fc9e43aef949b584640715d24bcaf47909fb5ef994863206c33f01dd8a9",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "白芍",
+        "黄芪",
+        "山茱萸"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "9319a62543acf273f15c5f805a68e31d3448a1ec18117711f7e059554207be11",
+      "objective": 0.9800000190734863,
+      "selected_herbs": [
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 64
+    },
+    {
+      "query_id": "fabafa56baaa81c922db749ce605997ff1f7c3ffd9a60283d3db561ca0d2a444",
+      "objective": 0.0,
+      "selected_herbs": [],
+      "enumerated_feasible_subsets": 1
+    },
+    {
+      "query_id": "386dad4fe5d01fea3e359d508799c6caf5faadc681c71bff41f687e03cd435c1",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 256
+    },
+    {
+      "query_id": "932e1dae3e6a01efb1a5d244cd3fcc041991c5784190148a7d636e21c0bedefb",
+      "objective": 0.9800000190734863,
+      "selected_herbs": [
+        "山药"
+      ],
+      "enumerated_feasible_subsets": 4
+    },
+    {
+      "query_id": "08d5ec6fdf78f3a3c3d1ec2dd8717ce23ca92bb93f17c221bae803c47c003ec9",
+      "objective": 0.9800000190734863,
+      "selected_herbs": [
+        "黄芪"
+      ],
+      "enumerated_feasible_subsets": 2
+    },
+    {
+      "query_id": "959f0edc8b63635cdc5f21aae68b280ebec0eb0bca053c8ee4300ff45f2ecab3",
+      "objective": 0.0,
+      "selected_herbs": [],
+      "enumerated_feasible_subsets": 1
+    },
+    {
+      "query_id": "7cfe6a1f1413f8782539a2fcdd36bc99213ef9c7894e4d4ef0fc199db5e4cf25",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "黄芪",
+        "鸡血藤",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 128
+    },
+    {
+      "query_id": "08963a819f981e0ce1fa3cb447a0a9c759ed12f622c30e316d4e4dbcc86ec207",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "白术",
+        "川芎"
+      ],
+      "enumerated_feasible_subsets": 32
+    },
+    {
+      "query_id": "a3e8a56c1f276728929e991702cc2f7fb9e2589d9ee7abb15197afe6aedf1b4b",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "ca0c4d93d7e438be1b38872a56c223f4262177d8bb932bab41d1fee94e038f8c",
+      "objective": 0.9800000190734863,
+      "selected_herbs": [
+        "白术"
+      ],
+      "enumerated_feasible_subsets": 8
+    },
+    {
+      "query_id": "1c989483b2d3479796c63f951c7d06b284d12edc25c2984a721d1048a28f6efe",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "05cb5d1dfd2f38f3cd0d57dae76761239f43d2850c205d0fb10de9dfc040e77b",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "白术",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 64
+    },
+    {
+      "query_id": "17b3802a71a72d1ddff93903c213d75c88b29a2c9bf901555a34bf0421ee6f28",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "白术",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 64
+    },
+    {
+      "query_id": "a1c027edf75463a6144208da9df8270fcfec2ab68afb449ec0d4915a852a4400",
+      "objective": 0.9800000190734863,
+      "selected_herbs": [
+        "白术"
+      ],
+      "enumerated_feasible_subsets": 16
+    },
+    {
+      "query_id": "266348df1140db49f4bc417103aabd8319a05007b7514907e57b9c4c01f69160",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "茯苓",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 64
+    },
+    {
+      "query_id": "e6f3e5f03e2f93e745d828e45d0495569ae7af405c8a943d0877afafe42c6426",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白术",
+        "川芎",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 3797
+    },
+    {
+      "query_id": "ea1586cba3c54628825ec19a10ac82b27860df50f72c117ada8f5348357c049a",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "白术",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 256
+    },
+    {
+      "query_id": "a285ce1e415de9c04a5072cf024759633f70eace31cbd12e720ac145ab671797",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 256
+    },
+    {
+      "query_id": "bff7bc963a21d0ed4b5a6712790b07f05826261241394e5b089c0c9f08f5ee99",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "白术",
+        "熟地黄"
+      ],
+      "enumerated_feasible_subsets": 16
+    },
+    {
+      "query_id": "2fa90af0ff7e1b16b970d9654b620fc91b8fa35159611d5fae8ed462995bf7cf",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "白术",
+        "山药"
+      ],
+      "enumerated_feasible_subsets": 32
+    },
+    {
+      "query_id": "1a4764edf0c1c2a1ba4a427502316d43b3f2a345201e0c411ec16dfa46596dae",
+      "objective": 0.9800000190734863,
+      "selected_herbs": [
+        "黄芪"
+      ],
+      "enumerated_feasible_subsets": 8
+    },
+    {
+      "query_id": "f252bacc738b68f9bbd74248630babf96cbd7a7b1a324cb800b87873e444fe30",
+      "objective": 0.47999998927116394,
+      "selected_herbs": [
+        "白术"
+      ],
+      "enumerated_feasible_subsets": 8
+    },
+    {
+      "query_id": "6c38dcd2b595624a09ec511793567330cfc742f1528f15bf92fec4f90990a37a",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "黄芪",
+        "鸡血藤",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 256
+    },
+    {
+      "query_id": "d8a6fbefeb3a29deed98e6e97226ac7ddbc60518c1f415d9cee2c840bb29a3ee",
+      "objective": 0.9800000190734863,
+      "selected_herbs": [
+        "川芎"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "82033418819bedf05df13cd810fd3debd7e92b465969ddb37da0c8dbc6794572",
+      "objective": 0.8600000143051147,
+      "selected_herbs": [
+        "柴胡",
+        "川芎",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 12911
+    },
+    {
+      "query_id": "edcbab109bb6ecf5af304a7c11b74d593308e496b5cb0c44a5326ead793edbab",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "白术",
+        "川芎"
+      ],
+      "enumerated_feasible_subsets": 16
+    },
+    {
+      "query_id": "b3f9e04d194934a2e773eaa63696d99dd36ba6617e43c36a7b0dd015a4f712d9",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "川芎",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 32
+    },
+    {
+      "query_id": "e1cc5fa060ab6a77df054c00ccb9ca1ba8b6f3711800ef29297f043a8f14532f",
+      "objective": 0.9800000190734863,
+      "selected_herbs": [
+        "丹参"
+      ],
+      "enumerated_feasible_subsets": 16
+    },
+    {
+      "query_id": "a98dbbf510bbc33caa9f88ee8ff72984360f8b9715209052ddcc7099f6d85e4c",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "川芎",
+        "茯苓",
+        "山茱萸",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 128
+    },
+    {
+      "query_id": "899762d9f3d02389f4e205385e895ea932681a8b2b88944c3b627475e02f3542",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "川芎",
+        "茯苓",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 64
+    },
+    {
+      "query_id": "83f8d3cd0f232ce53fb09b5b0884605443a8c1350b6d54dad4ec53a5170345ef",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "川芎",
+        "茯苓",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 1013
+    },
+    {
+      "query_id": "ffb812e67b60b84198e73ab620ed29f70b3211fe4561c72e2cbedc030d47de58",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白芍",
+        "川芎",
+        "黄芪",
+        "山茱萸"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "6a7d7985551c97f6f7c817d9955eb2bb9766b2da91a146867902d8039f7509df",
+      "objective": 0.47999998927116394,
+      "selected_herbs": [
+        "川芎"
+      ],
+      "enumerated_feasible_subsets": 4
+    },
+    {
+      "query_id": "a05597bfad23eefc11ba3f69383d1d118ad34ebae41c51e6b6441a6079320c87",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "川芎",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 256
+    },
+    {
+      "query_id": "feb7c502c0a6ce73acdbbc1298b384185e4dd75ec81330281c270ba0826d4b49",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "川芎",
+        "熟地黄"
+      ],
+      "enumerated_feasible_subsets": 8
+    },
+    {
+      "query_id": "644eeea84e0f29586ba9131953446d7074aa9c7140ffd7b953cbe2b8da8f22ab",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "川芎",
+        "山药"
+      ],
+      "enumerated_feasible_subsets": 16
+    },
+    {
+      "query_id": "34fed82c46f010c011fa55623a492071f3e5de87d4304d93a787bc1896119041",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "川芎",
+        "黄芪"
+      ],
+      "enumerated_feasible_subsets": 8
+    },
+    {
+      "query_id": "37b05df3c023d26c5e3894a6866e1b53178ad4870bd28ed0e05586eb407e7a1b",
+      "objective": 0.47999998927116394,
+      "selected_herbs": [
+        "川芎"
+      ],
+      "enumerated_feasible_subsets": 4
+    },
+    {
+      "query_id": "9046fc9203579b9a85b99ef233a2440bc8421293ab46453f80f25e7c7f01a0e8",
+      "objective": 0.47999998927116394,
+      "selected_herbs": [
+        "川芎"
+      ],
+      "enumerated_feasible_subsets": 4
+    },
+    {
+      "query_id": "f3cfab1d8e8338a5b154599cc0164a503215e8bb6ba8eadfe12b4ff10127eba9",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 106762
+    },
+    {
+      "query_id": "2181f2f8f2aecc8a90f1235300864535ab4ed5d9f32ac7d91ca89840f3f84c1d",
+      "objective": 0.9800000190734863,
+      "selected_herbs": [
+        "黄芪"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "77f43df513762734cafd7ec03a8314050d7b65065a9de8d5542dd7adca1dfda1",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "de36ceab4ac1a691007eee67cdd4ab561ccd7045c010b7f5bf126fdcaeaf505f",
+      "objective": 0.9800000190734863,
+      "selected_herbs": [
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "bd971949c68993c9c5cb6c007ec049068ea534c0518a47991be14e3055494e16",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "77a07bfda8ef2bcfd89b6380bfd0a44ec3afb5419f032ccf83ec9cb04da39caf",
+      "objective": 0.9800000190734863,
+      "selected_herbs": [
+        "丹参"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "e71fae659d90ebc7ea5a7c3c91630240e271a77a395fa7c076c019a7c81cd273",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "茯苓",
+        "山茱萸",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "d4126079a5dfe192bb85d81ea296ad3f4cd50105dc057caf28c6d399aaa3bd07",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "茯苓",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "fecdc3b29cc4e60de1f39cd1ca77183836d732e4701747463f0735e3df2e4be9",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "茯苓",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "133a6b81476ee2ab8a20437230541248c091a0b8f3986cb39869d036e7c4a3d7",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "白芍",
+        "黄芪",
+        "山茱萸"
+      ],
+      "enumerated_feasible_subsets": 65536
+    },
+    {
+      "query_id": "9f3c9a5f46e5c239a1ac8dfc2ddbc9a1ae40392ba7914aa6a592e4fb37d2e4a5",
+      "objective": 0.9800000190734863,
+      "selected_herbs": [
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "992fe884fb6d315449850c95bf2aadfc14f2335c3830d9fefe63b96d19cd0895",
+      "objective": 0.6378947496414185,
+      "selected_herbs": [
+        "白芍"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "bcd574ae00b376bba55d5fb73d72c7cb72b870619d1df4fa76c12031ba486d1e",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "694facdc342479bf82369a5c408ce04b0a5f35bb5bd24ca6c081d074ba613a51",
+      "objective": 0.9800000190734863,
+      "selected_herbs": [
+        "山茱萸"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "4a36392c98a8ecf87a9fa0e7d70fdfea0149bcfd285f58f3d1d982f8a7f39171",
+      "objective": 0.9800000190734863,
+      "selected_herbs": [
+        "黄芪"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "89d286a7f08ba86656fa3506415a282230bd804044e34acb92fc8005a5622dad",
+      "objective": 0.6378947496414185,
+      "selected_herbs": [
+        "白芍"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "d57a5a5d70c7b0dd203058e3e9c93d649f803b535972812b251b20fee9a34cee",
+      "objective": 0.6378947496414185,
+      "selected_herbs": [
+        "白芍"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "adfcf1f054376f7545d72c71b23bee2ef46caaca920004cf1d50a8142606687e",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "黄芪",
+        "鸡血藤",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "b879671eec5025473852cd3a5049b8869c157ba2483bbf6e359959d511683ea5",
+      "objective": 0.8600000143051147,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "b3e5e35fbb3c8144e777880bf4ad37ab57ed4cb61b44172f87acc2a193471ea6",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "香附",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 169766
+    },
+    {
+      "query_id": "0747f5d12f96e25ac9b84c2417e7f2aa959c30e383b69175d6c9fc33bad6b58b",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 12911
+    },
+    {
+      "query_id": "8f4552c624af616ab105ff8743533007d4fb933b33814dd65bf1624b24b6bb7c",
+      "objective": 0.8600000143051147,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 12911
+    },
+    {
+      "query_id": "2d41f83d6f6ec3bbab366e60d449cbaea42e761feb207704b82d9ee9f0546747",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "d7bf7ec2c955eb332169507dd840e0e393c1a0c5c078785bd89f9f773768717a",
+      "objective": 0.8600000143051147,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 12911
+    },
+    {
+      "query_id": "ea169cfa958720b426b10f02f32cd236c4f0e233254e2ba60a0df374eb553629",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 12911
+    },
+    {
+      "query_id": "17632c9cda9c90736881e58dc5cbeb00349fb288490d9403a19082ccdba1e3e9",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "2a81cbf958c2d4580ca0551007aac02478d4e25b638efe796140539a9007915f",
+      "objective": 0.84375,
+      "selected_herbs": [
+        "柴胡",
+        "川芎",
+        "黄芪",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "d6839a531de618aa31e0a8a306bc8069e15ff0b59f8e0d056c4e517aea8c669c",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "291c212a6266d5905543b276583ffdae632829f1959082ff6d49c9a4173bb3fc",
+      "objective": 0.5550000071525574,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 12911
+    },
+    {
+      "query_id": "b8a8370ce386c27643977fa4e6dcb6c3195f8f11c872bcec31c20f10d140bab2",
+      "objective": 0.8600000143051147,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "香附",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "c3bf2d8bc3ce86dbffc77619af5c6fecf71d467d50d69aa0b47a1668059182aa",
+      "objective": 0.8600000143051147,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "山药",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 12911
+    },
+    {
+      "query_id": "f0b933fb75b7dcf24d3c63b3d8f4e4e102bcb5ac034f5190e47284ce419d459a",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 12911
+    },
+    {
+      "query_id": "8e8da5ec73a2e749ffa738a230a0eac21f35008238b6249269e58fffda995ade",
+      "objective": 0.5550000071525574,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 12911
+    },
+    {
+      "query_id": "e9b2d0c36177fa6d8ac69f386e8c03cfa296cd0883124f798d93cf90b7cbf7e1",
+      "objective": 0.5550000071525574,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 12911
+    },
+    {
+      "query_id": "bb28d584f620fe7f19dce14e1f4f07a2dbbf14011144a237255d6cd9262fb640",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "香附",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 65536
+    },
+    {
+      "query_id": "74c97969a27c8a6c94509739affc21440d65614abcd0c480f525289accb98492",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "4ad8616b1fd4dac40e5e038c67039aca8afa0776237f356b2bf6f80e631fa78b",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "白术",
+        "黄芪",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "7404b4c7f0f64d6dbf4912e4dbe2668ba463237b54584a974fa90cb3240e4ec5",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "白术",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 32
+    },
+    {
+      "query_id": "3ebda57e12bada2fd6ef4b6372a68084c7304b638f795c830f535f3810e67cd5",
+      "objective": 0.9800000190734863,
+      "selected_herbs": [
+        "白术"
+      ],
+      "enumerated_feasible_subsets": 8
+    },
+    {
+      "query_id": "aa198586794c2def8449766986cfcce384fffc5ce81537d15c1fdf6da6ebf9bf",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白术",
+        "茯苓",
+        "山茱萸",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 64
+    },
+    {
+      "query_id": "00cac653935539a51802ec5caef4d4950e450ffc6b11af190f539ccb7e6bea95",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白术",
+        "茯苓",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 64
+    },
+    {
+      "query_id": "91069f6a5c6f301da2371d550e48e77cd93f213c5de790d56d733b7b03652327",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白术",
+        "川芎",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 3797
+    },
+    {
+      "query_id": "cdf5fc9ac8f9dfc294265d51e190e5be1d323f8c41182e137fce7c765bc7fbc2",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "白芍",
+        "黄芪",
+        "山茱萸"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "3ade0f81534fe8bb93630ab010b179c3b7b9d017c7576988bf96e973d73ba009",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "白术",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 128
+    },
+    {
+      "query_id": "374b0fd66a896ce8a6d103bcdc987b3037cafabbf7191e9a5e7c11745bce93bc",
+      "objective": 0.47999998927116394,
+      "selected_herbs": [
+        "白术"
+      ],
+      "enumerated_feasible_subsets": 4
+    },
+    {
+      "query_id": "353c1c4cecb11bc130221c581ef23fdc03b570007141ac338b2c6d631737fa7f",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "白术",
+        "熟地黄"
+      ],
+      "enumerated_feasible_subsets": 8
+    },
+    {
+      "query_id": "4f3ba7603857dd026ec799ad6ff535e81095d651e766cc5e8ad674aee7de768e",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "白术",
+        "山药"
+      ],
+      "enumerated_feasible_subsets": 16
+    },
+    {
+      "query_id": "e352cb82aae3c8ce13568e2c858168f37e61d3a6715ec14f240d4dc41915e18e",
+      "objective": 0.9800000190734863,
+      "selected_herbs": [
+        "黄芪"
+      ],
+      "enumerated_feasible_subsets": 4
+    },
+    {
+      "query_id": "02c714143fe636743bf7923e14a1e9ae4b2b500b5e5f83b2de62939cf40b4261",
+      "objective": 0.47999998927116394,
+      "selected_herbs": [
+        "白术"
+      ],
+      "enumerated_feasible_subsets": 4
+    },
+    {
+      "query_id": "c6f5326d43a19e0668e127d03ee22ecaa95daeb94bb42dd63bbae894fc5fcaae",
+      "objective": 0.47999998927116394,
+      "selected_herbs": [
+        "白术"
+      ],
+      "enumerated_feasible_subsets": 4
+    },
+    {
+      "query_id": "347d6c8021abf8962443ceb51e398fff607b1cab17cafcb3858bfec829ec4313",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "太子参",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 3797
+    },
+    {
+      "query_id": "0da00440b94feb055642fe80441c51f755c8c0e84e4d84fd6b3544b2e631bdf2",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 3797
+    },
+    {
+      "query_id": "fe164b17b8c9cc560b962b56e8930205ea3f6205be4315b6b43a3ce60de33e9a",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "0dddbfe35f4b4bfed41a8396fd76e28732db3905bcbfacc85ff959d56d6d3c78",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "天花粉",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 1981
+    },
+    {
+      "query_id": "72f0ddb73cbeee8f54e1ac66b063b2a56f712f33b33d0c0425ad4f591ef77347",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 1981
+    },
+    {
+      "query_id": "d7d33090f11933d2f03c7a2f9a8dab0a915b50e2a13b5158dabd1aecf14026c3",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 7099
+    },
+    {
+      "query_id": "996c5b7de6bc6455b118f0b0af9628f1ee8c7a38d5920fbeab4bdc7673830d11",
+      "objective": 0.8600000143051147,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "川芎",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 7099
+    },
+    {
+      "query_id": "143e0290d4109356738d68df8da1657aa4d180fd383c6d1a4731178d3cb3e444",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "白芍",
+        "白术",
+        "柴胡",
+        "黄芪",
+        "山茱萸",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "fe1b2045f17a8d3796ff297f265fafafeb71eb8b487fda41216f3ff39c6a8260",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 1981
+    },
+    {
+      "query_id": "9e19903e6dd811b19d5165f16f6f7ce6d1a5765132af634cef9b51d6ae19bbe6",
+      "objective": 0.5950000286102295,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "ccf4cd386e04389fe1298b84576767a7ff633ea696cc9cdcdc48cc88ab556cf5",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "8d6b86f2f7b4155e88032dd8ab2ed9c8969db0ebdf64922a54ab736e6b691c6b",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "熟地黄",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 1013
+    },
+    {
+      "query_id": "e0a16099068ed1e78370422f70604a341ae0e2e37b30dac776b13c40954b5d30",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "山药",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 1981
+    },
+    {
+      "query_id": "7d96c1dbf94dba3c53b65032959206eebdbd8b146f4ccef936b7a17e8e03fd29",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "605dae080c4e76fd0c01e2580498a75bc696658a6f86cbff39d10d9751d35d8f",
+      "objective": 0.5950000286102295,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "c28ac84c1b57eb3a1b6391b320c5ee7a0be51c039db00f453fd8b911eab76516",
+      "objective": 0.5950000286102295,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "c9ba88b29e0c502179f27babd19c95c34015271c09c5fed74219f755d8d3cbfd",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "鸡血藤",
+        "香附",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 7099
+    },
+    {
+      "query_id": "a2f9f5fa81d5ff5976eb175ef6c0532fa833ab47dd48a1e340b533bed3743913",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "383d912adc77dc535971ffb1c96fb1164025fe5f43193fdbe77db7f690ef3835",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "白术",
+        "黄芪",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "5cf0354e1d555ed8673024face5b37df08c3515cea694ef6332647161474cc0e",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "天花粉",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 106762
+    },
+    {
+      "query_id": "56b08b245c8efd731f2923268297aa7b5cdbd8926f0757e7f995358a08eeb808",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "白术",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 169766
+    },
+    {
+      "query_id": "eb53d4ad6e0c30d8c921cb69b27b754b0d73ca6b14d78f1c21343468a540bfb5",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "山药",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 65536
+    },
+    {
+      "query_id": "4462001d6c2eef588bb8203e37ff228395738dca3fae5e802af90ffce64c4846",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "川芎",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 65536
+    },
+    {
+      "query_id": "855fc83be618b18254883b4fc805573cd1558dbe26ec9313a96a85ec2e0d2483",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白芍",
+        "黄芪",
+        "山茱萸",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 169766
+    },
+    {
+      "query_id": "a6da42cfc1bb65460bb00791109bd70556c11748eb18e4d18b95244366c32cf8",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "黄芪",
+        "香附",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "f1dd9fe78761273686abe5b614f2a8a6a61709bcd6a3d708505ab9a8f43418a6",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 106762
+    },
+    {
+      "query_id": "0d39007ac13cf5037ddd0854b43b0d006a5eab8ba9ba63b3071b611a89df1880",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白术",
+        "黄芪",
+        "熟地黄",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "3b93fa67db7fbb1cccefad11dd51732b52a949b7ca0de695bf13becfc90110ba",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "柴胡",
+        "山药",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "c0b405f49bff4810335abe69b5d85b14b7f5636adc28c788dde384995333dc70",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "白术",
+        "黄芪",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "9059b54a33ea7581fca3fce4b85a00e7e5cefc63438663b89ff9e4c2559fda03",
+      "objective": 0.6150000095367432,
+      "selected_herbs": [
+        "白术",
+        "黄芪",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "5db22a0faadd30157377e6ad2c7cdbf95470c86956ebabfba97a8bf8faa150dc",
+      "objective": 0.6150000095367432,
+      "selected_herbs": [
+        "白术",
+        "黄芪",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "752f89f253271eacf66154db9138566ae919242e6c2d0c16f3746dcbe5845368",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "黄芪",
+        "香附",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "c02bb75a860f623abc22d135ab9e3c28f47abda02124facd1aed42785709e455",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 32
+    },
+    {
+      "query_id": "c8619d50cb3187119b42c218ec9dedf34eff2ac2408efa421057e42f7caed8cd",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "白术",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 64
+    },
+    {
+      "query_id": "af8bd9e66e385872d33b515101933388b2c5b32e364efa1f0d9f9a64603d57f0",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "茯苓",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "daa9caefa0bdf7b1f882e7c426cae93895eb5874b4a590aa05bc4520f93b6c4f",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "川芎",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 12911
+    },
+    {
+      "query_id": "42a420c9aa8bd64f456082ae234cd7f4ac57b7e149c963fa88c2ee559db24f22",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "白芍",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "98ada6e900236b0cabb8d293d68ba7f0d113d7524c2a85b931acc27aaaeb52cc",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "太子参",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "3d66c36a5868a0f909514aa5ba51216638a9cfb02054aa67ab55ce958f410d22",
+      "objective": 0.47999998927116394,
+      "selected_herbs": [
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 8
+    },
+    {
+      "query_id": "d786672deb1506ce567e563697f0e20a202137ee394548fc4fbf823d2d67da6f",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "太子参",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 1981
+    },
+    {
+      "query_id": "0ae00c987744c059cc7cd2c2fe327a7840db8fff0e1699161233c258296e93ec",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "熟地黄",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 16
+    },
+    {
+      "query_id": "aa3150d19d7acd0e3ce0bdde9de3c7281465ffab988ba1b760e874f2f779e019",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "山药",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 32
+    },
+    {
+      "query_id": "e28cfc7f6cbec86e64ae32618793ea58c07ec3c78fdaed3c1fc0a90db8853c89",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "黄芪",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 16
+    },
+    {
+      "query_id": "0cc82a76eae542dfffd8310a54bcebfde9a5bc9203dad7de09623d8df53f143d",
+      "objective": 0.47999998927116394,
+      "selected_herbs": [
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 8
+    },
+    {
+      "query_id": "05111644ec3c73374306732c52d83fb4839b7e230ebbd4fb6fa731827ea346fd",
+      "objective": 0.47999998927116394,
+      "selected_herbs": [
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 8
+    },
+    {
+      "query_id": "6df1c13cd0cf61063790ec0456815950203c20888ba4257f3bea9a7f191dc553",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "黄芪",
+        "香附",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 256
+    },
+    {
+      "query_id": "c99c78425b8e62d76e32c4298eb4740cb7478c55bc86c4d0346e55d09b004f67",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "茯苓",
+        "山茱萸",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 64
+    },
+    {
+      "query_id": "5e57aa09cd0da2a31229d34c8cfd706a250612f67a6c6dcf8d790a8291812547",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "茯苓",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "8e95cc2a56c63c9a174f30b478eff3b1cfde84afdab85bda705beb0e17bb74c6",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "川芎",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 3797
+    },
+    {
+      "query_id": "3004a8672250aa1751b3624afcc5ffe27e7c8b6659b46d8efd65f5b6d21fc088",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "白芍",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "5267f68cc4c994a887ce39529d756e57da195b7b9b4c1a9946b5ea0f88f522e7",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "山茱萸",
+        "太子参",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "317046fc7f431a96b936155af89af3014b5e108ddb950756ebe133c49299550e",
+      "objective": 0.61789470911026,
+      "selected_herbs": [
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 8
+    },
+    {
+      "query_id": "540aef5068cdd2fc57bb371bbca0ab39d7d3efd97a352c1a38cac676f8072fa5",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 1981
+    },
+    {
+      "query_id": "620910400327ff0dfce27e0987ffe617e8c59aafba857a3804b7dcd1404f3585",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "山茱萸",
+        "熟地黄",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 16
+    },
+    {
+      "query_id": "dd9d0648a534b9b132f455fd46b44ce0704002bb845fbd9bd98e8d3c31b3b145",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 8
+    },
+    {
+      "query_id": "a7b33ffb6291f25ae3b72aa0a576260eae4f634f7251e1fb45165e51e2dca652",
+      "objective": 0.61789470911026,
+      "selected_herbs": [
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 8
+    },
+    {
+      "query_id": "3ab41f05ec968ba8edd0450fb343d5dffc9368277ad4a2e88953f04b566809d7",
+      "objective": 0.61789470911026,
+      "selected_herbs": [
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 8
+    },
+    {
+      "query_id": "8af0a8e597ca4b3000abaaed60efbaf48e6c6d6b5609cf822e9e27dfbdbf618d",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "黄芪",
+        "鸡血藤",
+        "山茱萸",
+        "太子参",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "185a293f1003ba2e9e99bbccca9979c2fd8e847fc65502b11b73c4911f7f6aff",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白术",
+        "茯苓",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 128
+    },
+    {
+      "query_id": "4374d11f07da469acd29284a84ce66dc35ca394c44c12ae68b5a35fc72f50f1c",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白术",
+        "川芎",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 3797
+    },
+    {
+      "query_id": "50c723bd1bfc6f1321bf5f0b758e04bc2606d29054b1a3b7eb6596a93efdbd3a",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "白芍",
+        "黄芪",
+        "山茱萸"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "8724b6431d2f05351e0c2ba1670204c2e47dd77fd425d945dc40b44e79a57215",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "白术",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 128
+    },
+    {
+      "query_id": "3705bdb7fac81e16aec7daf391843d3e359eb694744969f89b2e660c55bb7ad2",
+      "objective": 0.47999998927116394,
+      "selected_herbs": [
+        "白术"
+      ],
+      "enumerated_feasible_subsets": 8
+    },
+    {
+      "query_id": "70377dcb97c5239ca7b153a0c79684479fe965ef3ac3762fb320438bd266dfa9",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 256
+    },
+    {
+      "query_id": "19c74a0f4c1f66488b8e77c327d5121d313c041698675001a1650e445a0a59bb",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "白术",
+        "熟地黄"
+      ],
+      "enumerated_feasible_subsets": 16
+    },
+    {
+      "query_id": "cc8abe986b28fff9d89c7bda9ad34773a08b75f404e687952b6ded0942a27bb0",
+      "objective": 0.9800000190734863,
+      "selected_herbs": [
+        "黄芪"
+      ],
+      "enumerated_feasible_subsets": 8
+    },
+    {
+      "query_id": "3816fd5348e63d22bee412c495f97d5fe8a21c10f113e7f5dda6177d96bef408",
+      "objective": 0.47999998927116394,
+      "selected_herbs": [
+        "白术"
+      ],
+      "enumerated_feasible_subsets": 8
+    },
+    {
+      "query_id": "ce472751750845a1e80ee6cfc00dcbdfcc944d3edfea03b0eceed0a543187e32",
+      "objective": 0.47999998927116394,
+      "selected_herbs": [
+        "白术"
+      ],
+      "enumerated_feasible_subsets": 8
+    },
+    {
+      "query_id": "5000960f3e993b945829897c03c68c05bdfdd1bc9960ce399144f032fc970bcc",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "黄芪",
+        "鸡血藤",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 256
+    },
+    {
+      "query_id": "5bb8fa6ce179e5eb696a304b2e0e61b704a251b4142e041addf8442786de1e13",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "茯苓",
+        "山茱萸",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 128
+    },
+    {
+      "query_id": "974568ac487ab47d23b42cb1cd7dd88d1c427a1e79c24fde98e9213931a1821f",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "白芍",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "fd5359257769e8ef1f26da7da02a2b54f172c0fed5a092f5bf682d8766700460",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "茯苓",
+        "山茱萸",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 1013
+    },
+    {
+      "query_id": "6366ab2fe7780c63d6db5bcab1d766664895314045f53aaedaf8fffdd4570335",
+      "objective": 0.6150000095367432,
+      "selected_herbs": [
+        "茯苓",
+        "山茱萸",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 32
+    },
+    {
+      "query_id": "46d46ca7e144b735c54d3db51890d77f79d4890e42dd960807dd49a56ef83039",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "天花粉",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 1013
+    },
+    {
+      "query_id": "e050fe572c3a6a0db12574d0b0bfb1bb2a678b47743ef5a8ec0cfa4bd8c8e12c",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "茯苓",
+        "山茱萸",
+        "熟地黄",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 64
+    },
+    {
+      "query_id": "cd0b1ed11aceb3664c4a2c6bece3f46d44f4e224cb072524a2d4e0a51a4a6d72",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "茯苓",
+        "山茱萸",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 32
+    },
+    {
+      "query_id": "9735ca0ae015ac3b0551565dd9753208f7e94888d6df85a1df0eabebcc65ba3f",
+      "objective": 0.6150000095367432,
+      "selected_herbs": [
+        "茯苓",
+        "山茱萸",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 32
+    },
+    {
+      "query_id": "b16eceb941eb9c8f911be98aefe2e5c62655c99a122127117a61906d845400a9",
+      "objective": 0.6150000095367432,
+      "selected_herbs": [
+        "茯苓",
+        "山茱萸",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 32
+    },
+    {
+      "query_id": "78147f716928eee20bbbe8ed3c418b976d547f1b73ca55127bcc94911b9a3281",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "鸡血藤",
+        "山茱萸",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 1981
+    },
+    {
+      "query_id": "ab39692711049c364c32de5a13e13fb292ea82b3009d2f7e36e5e49d28befe8a",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "茯苓",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 1013
+    },
+    {
+      "query_id": "1d43585ae67eeb7e508d821cc4844afd1a4df53ff1a6338d350c10e1379a2cab",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "川芎",
+        "茯苓",
+        "山茱萸",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 12911
+    },
+    {
+      "query_id": "bae04e63cdb295981b8672a0d84dd07acaa9e43ad779e8e9dd0650c734498531",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "白芍",
+        "茯苓",
+        "山茱萸",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "b6f71df48fe8ec5eef40b54e19b0a2f49c7bf0208536847d001b0d99c255c8f6",
+      "objective": 0.6150000095367432,
+      "selected_herbs": [
+        "茯苓",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 16
+    },
+    {
+      "query_id": "c7fbbb14728e61c938beed149d7f77369781cb7ab36990aa2949253bc3102977",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 1013
+    },
+    {
+      "query_id": "4cdd408993dfc5f8ae57e6b5c8018113c89e65cf12d17a24f2278cfc76142cd7",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "茯苓",
+        "熟地黄",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 32
+    },
+    {
+      "query_id": "91a3ad0cd8e5083e9e544a58852d18b1fa12132f4db16bc2c3c2e354c559119f",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "茯苓",
+        "山药",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 64
+    },
+    {
+      "query_id": "e40b6b30a769c8bf8a10af12595ba5e527815d7b45952c35226f93a6769051f3",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 32
+    },
+    {
+      "query_id": "1b60086dded17cb6a2618915916af872e1902719b342928c3a13842dd2a5447d",
+      "objective": 0.6150000095367432,
+      "selected_herbs": [
+        "茯苓",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 16
+    },
+    {
+      "query_id": "7e3a1857573e5eda40c34388a7da4d9aeb959b5290f31ddd446dff80f7f9bcef",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "川芎",
+        "茯苓",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 12911
+    },
+    {
+      "query_id": "74d58aec7b4a819aa66ac3298c41dface41d90bbb21bb75472c203c9b05de5ae",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白芍",
+        "茯苓",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "9a269cee63102806c6c77b8682170e22b0513941b3cd9134c815e2b7f00e747e",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "茯苓",
+        "太子参",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 1981
+    },
+    {
+      "query_id": "0fd504677193c92d15c745774abb629b03768a0d3e5732c1c7686d324a9f0f3b",
+      "objective": 0.6349999904632568,
+      "selected_herbs": [
+        "茯苓",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 256
+    },
+    {
+      "query_id": "e4a48757743ea8cc376960ffbf6b5a41d1df6f69c6cd180b80e7d24fa62780a2",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 7099
+    },
+    {
+      "query_id": "a201074e72ef4cdafd66f17bec8599ea3ba755cb9a3ec2e49d8fa95ac3482c59",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "茯苓",
+        "熟地黄",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "cdc49241cfff0a8d72baa92630dfa021e066065c885048e00a84541a12c8d157",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "茯苓",
+        "山药",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "838701d438dffbb2b56212ee4fcfb5c08fe2690568e7278a4107f4968972fce8",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 256
+    },
+    {
+      "query_id": "8f4747dfe6160a0af1f6fec5f4b7fbaef23d8a2441165b31a15fce95b7d9c4df",
+      "objective": 0.6349999904632568,
+      "selected_herbs": [
+        "茯苓",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 256
+    },
+    {
+      "query_id": "64f84227e1c2b35db2901d654be29a00cadc532914c3cc9fb073c1f4997dbfa9",
+      "objective": 0.6349999904632568,
+      "selected_herbs": [
+        "茯苓",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 256
+    },
+    {
+      "query_id": "daf2a146e7847aacacb712b183a306796c86aa3c994352973848e314cb94c695",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "鸡血藤",
+        "山药",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 1013
+    },
+    {
+      "query_id": "5e2025069c55a050cac31fae01dae176e25b0b836f4de028ecf18d6a76b55e77",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "川芎",
+        "山茱萸",
+        "太子参",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 7099
+    },
+    {
+      "query_id": "c7bf2fab13dfc11dd74c3c0dc0d4ee1fb6ad385d336072a890b561f685ca347f",
+      "objective": 0.6150000095367432,
+      "selected_herbs": [
+        "川芎",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 3797
+    },
+    {
+      "query_id": "9cd7a759d05940158fa8022f6ecb9caec004b07879059e03597b1aaf522c21d3",
+      "objective": 0.8600000143051147,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "川芎",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 7099
+    },
+    {
+      "query_id": "acbeabfbd17bea0d1288074826a1ed3fe38cab762c810f7abff89ed1bb2b9c42",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "川芎",
+        "山茱萸",
+        "熟地黄",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 7099
+    },
+    {
+      "query_id": "22c9473a6d23bb1225af7d83c2726b9ee1f9db92513894889b150e70bf4538d6",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "川芎",
+        "黄芪",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 3797
+    },
+    {
+      "query_id": "df0f42f54f5563e0c5fae13a9ac0cbefc65b840801b0f1e818ee865dc42627a0",
+      "objective": 0.6150000095367432,
+      "selected_herbs": [
+        "川芎",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 3797
+    },
+    {
+      "query_id": "f1011d62a76b63b9410eba04576e28e62d285c985d8636bcd74399c8b59abc9a",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "川芎",
+        "黄芪",
+        "鸡血藤",
+        "山茱萸",
+        "太子参",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "d14be9cc46b343182e99de13f6ee84006d145f46050fb2a555de4dfb1fef123b",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "白芍",
+        "山茱萸",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "a6e05a868eb721abe90c875114f3aa6b24ed941dad311c41623e1f03d820eb11",
+      "objective": 0.6150000095367432,
+      "selected_herbs": [
+        "白芍",
+        "黄芪",
+        "山茱萸"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "cd305a083bac9099fe988690eeb19c6cd907a35e6dbd33393de50c80616267d6",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "白芍",
+        "白术",
+        "柴胡",
+        "黄芪",
+        "山茱萸",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "a7168a03d541ab3f83443316387b22785ae4cf72a62b819c02f1871e783f82f2",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "白芍",
+        "黄芪",
+        "山茱萸"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "368812e29be7375f4941f66e1321d81a26edd0d70307a70c7b5c7e9fe812139d",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "白芍",
+        "黄芪",
+        "山茱萸"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "f44961c80760106dd0d7896eb8b16ef4718553669508a597a72cc5f8842b49fc",
+      "objective": 0.6150000095367432,
+      "selected_herbs": [
+        "白芍",
+        "黄芪",
+        "山茱萸"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "d669afd1a6141d8e38ea8c0a9a855dd4855d49cb421ac9522424e4f45527d3f2",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "白芍",
+        "黄芪",
+        "鸡血藤",
+        "山茱萸",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 65536
+    },
+    {
+      "query_id": "40e0248d797f4426f168499a4ec081594812056e35415bc1831414c7b2ecccfe",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 1981
+    },
+    {
+      "query_id": "c9204c96f1498dfcad7a2bcada6400df0368e57182610124b431c41414c69ce2",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "熟地黄",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 64
+    },
+    {
+      "query_id": "ecaf10d83f522850f427fbebb292521b84053dab22f8b903d0850974ad7b9019",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "山药",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 256
+    },
+    {
+      "query_id": "9c6571da65aad283854372ebd8fa29e46bd49469eb830e19ecd5fd5465ec74ce",
+      "objective": 0.6378947496414185,
+      "selected_herbs": [
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 64
+    },
+    {
+      "query_id": "c7f8198d7c16aed4213da0e99cdc27d4b955b73ea70984a3985f7adfc4d7a9a1",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "黄芪",
+        "鸡血藤",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 1981
+    },
+    {
+      "query_id": "7b6a21cdc2e541b6d3a08cd5a5d7912dd30d89dd5b7d4cc6c756aa662979a2f5",
+      "objective": 0.47999998927116394,
+      "selected_herbs": [
+        "熟地黄"
+      ],
+      "enumerated_feasible_subsets": 2
+    },
+    {
+      "query_id": "b7bcd912a39424b2039e0a7dc183407f330b8470a13c7a871b4fcf919978b406",
+      "objective": 0.47999998927116394,
+      "selected_herbs": [
+        "黄芪"
+      ],
+      "enumerated_feasible_subsets": 2
+    },
+    {
+      "query_id": "7b00a5f5129bd296279300a53ff3b7aa9874c4342977351f68b81df849aa613b",
+      "objective": 0.0,
+      "selected_herbs": [],
+      "enumerated_feasible_subsets": 1
+    },
+    {
+      "query_id": "97e01face8459481f03452e250d68a485e5e38a4da1f2ebb979b2524d3c04c6c",
+      "objective": 0.0,
+      "selected_herbs": [],
+      "enumerated_feasible_subsets": 1
+    },
+    {
+      "query_id": "7cee912cfda44969d1955ea00af59e8c6655696b08078146ad5b6120b4c6587e",
+      "objective": 0.5978947281837463,
+      "selected_herbs": [
+        "黄芪",
+        "鸡血藤",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 128
+    },
+    {
+      "query_id": "5680852d876b635ae71df335702a40377c1d640d3f7e0915e368665623d5c2e3",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "熟地黄",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "0119055c937e59c6a8267cc696c8759d2372abe7f34b5dc15b82b5c545aa245a",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 256
+    },
+    {
+      "query_id": "e666a42bec42f39e102ecc7a2338f14055aaf30e847f7ab1b0d256be8123c104",
+      "objective": 0.5950000286102295,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 256
+    },
+    {
+      "query_id": "69baae4bdc0745484379e0c59e0475d4be2cfd3a0c450ca7933670435b5f4a2c",
+      "objective": 0.5950000286102295,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 256
+    },
+    {
+      "query_id": "ab0bfbb8f000f8ba9b1ee7a3f880dd9e4b070402839e722de625c2ca662bfe5d",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "鸡血藤",
+        "香附",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 7099
+    },
+    {
+      "query_id": "6e46852d6b66102c2fb38c799260cee15a234aab66143a078aa8ab3e933aa787",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "山药",
+        "熟地黄"
+      ],
+      "enumerated_feasible_subsets": 8
+    },
+    {
+      "query_id": "46f7ed78ed94ac90b731ac3b32dec98a18061554d5eb73e7d91cc895faf8a457",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "黄芪",
+        "熟地黄"
+      ],
+      "enumerated_feasible_subsets": 4
+    },
+    {
+      "query_id": "60f2c17fc3eccf1d36ac4b94c673a70978fcffdbaa7aacfa8e3876b88d99147c",
+      "objective": 0.47999998927116394,
+      "selected_herbs": [
+        "熟地黄"
+      ],
+      "enumerated_feasible_subsets": 2
+    },
+    {
+      "query_id": "db46cd3cca5dd814da652c91a3e581b1454966936b3050a0ca2ef0d45c586f54",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "黄芪",
+        "鸡血藤",
+        "熟地黄",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 256
+    },
+    {
+      "query_id": "c3f5caab6aa247c603dab17b28fdacbc3a1b41596fced2172724e8965bc77b01",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "黄芪",
+        "山药"
+      ],
+      "enumerated_feasible_subsets": 8
+    },
+    {
+      "query_id": "7fbc377e6d10db981968ede5f7c546598a7117ed79d6441a1ef0900c477c012a",
+      "objective": 0.47999998927116394,
+      "selected_herbs": [
+        "山药"
+      ],
+      "enumerated_feasible_subsets": 4
+    },
+    {
+      "query_id": "267f9ad397cc368c373bf632e900b1332e6e438a7dfe80fe9773428c87645d9a",
+      "objective": 0.47999998927116394,
+      "selected_herbs": [
+        "山药"
+      ],
+      "enumerated_feasible_subsets": 4
+    },
+    {
+      "query_id": "c1d60b0bce4dcccbd785b5fe27a35ab20d2f6c1645c64c272ab98941d64bc5e9",
+      "objective": 0.47999998927116394,
+      "selected_herbs": [
+        "黄芪"
+      ],
+      "enumerated_feasible_subsets": 2
+    },
+    {
+      "query_id": "394d179d434e2b32dd3b58f426a970f0f4e3920ff06221be72286e6e02d94e94",
+      "objective": 0.47999998927116394,
+      "selected_herbs": [
+        "黄芪"
+      ],
+      "enumerated_feasible_subsets": 2
+    },
+    {
+      "query_id": "f2074915714c902068df481034a64fd3ca26381db446bb5528ebec28ae722f66",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "黄芪",
+        "鸡血藤",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 128
+    },
+    {
+      "query_id": "9d06fd1742daacf5e12793acc07e7cfb6f72ba0ac256e77434e606a668243e46",
+      "objective": 0.0,
+      "selected_herbs": [],
+      "enumerated_feasible_subsets": 1
+    },
+    {
+      "query_id": "ad212ef50e663abb835f2e4503a3acda705c0353ffeb0f87acfdda2a31a88492",
+      "objective": 0.5978947281837463,
+      "selected_herbs": [
+        "黄芪",
+        "鸡血藤",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 128
+    },
+    {
+      "query_id": "f473b50733e02a05002a7b48e241f2f9f05b36b813c366a5bd452053a52be792",
+      "objective": 0.5978947281837463,
+      "selected_herbs": [
+        "黄芪",
+        "鸡血藤",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 128
+    },
+    {
+      "query_id": "d7fa77e7db9c1030ddb154ba7114afac519c2af57a03ce57e91fc84a035aab0f",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "川芎",
+        "黄芪",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 65536
+    },
+    {
+      "query_id": "cba7a06a75a3ed60a84d2252731d57f494516f2d180475197cef65232c6ada1e",
+      "objective": 0.6266666650772095,
+      "selected_herbs": [
+        "白术",
+        "川芎"
+      ],
+      "enumerated_feasible_subsets": 32
+    },
+    {
+      "query_id": "2b4aae8bc7b488788c5036f335123059aa735c5dc87fa81a41ec2d5b1bc17ec6",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "21ab5c1bdca77cd05ec0bd39ee3e9de3de275c1a5ef831551635b6736bc6efe6",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "白术",
+        "熟地黄"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "5786a5b37497814059a8f02731f5a2db479acc074ba776418ea9933515e1000b",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "茯苓",
+        "山药"
+      ],
+      "enumerated_feasible_subsets": 65536
+    },
+    {
+      "query_id": "590d2883bd160ba0b632f5b4ae05ead2e5d78d1bd55c66c0c7822de54876c212",
+      "objective": 0.8600000143051147,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "a318eec7cf4d93e834f173812bb6f784ebf0100659e1a91df34f40944fccc666",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "白术",
+        "茯苓",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "dc8568296763cdd0cc49d4c4cb20effcd1222c83b3a466e7ad1aa24e8e33caa8",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "1e6bbae450301f386c0913862d7c0d17ce0593999e81ddedb79900f822a8d678",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 1981
+    },
+    {
+      "query_id": "5b3cf38b87515670b33de50fad500863cf728930d955949ae4322d8b23a3ea94",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "e7aaa5df566424c8b62f670b4f501ec4989c65b35f9791099b682992d093c651",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "山药",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 65536
+    },
+    {
+      "query_id": "9bf95e56c51da84031bbc938113031f91bc993d59bc11895f7718e555f45e2fd",
+      "objective": 0.6266666650772095,
+      "selected_herbs": [
+        "白术",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 64
+    },
+    {
+      "query_id": "1139d45cf73571b8d1ed0e395b500e0bfdb064f738857fd2629732e785f57094",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "茯苓",
+        "山茱萸",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 256
+    },
+    {
+      "query_id": "459ed9e448827a10a762dfb87624607809025feb745d42e520dafef4adafe75b",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白芍",
+        "白术",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "b18e3ad7831243b07335cad64236867299ca2eb635ad1eb153faea319881ef38",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "白术",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 64
+    },
+    {
+      "query_id": "336bf7b9ea980600a4c85454178b707bddee11f495969c8b64959b28d8bcd2e9",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白术",
+        "茯苓",
+        "山茱萸",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 128
+    },
+    {
+      "query_id": "34e309ced6b734a012a2035a1297ab816bd1dc30b39ef073ef62afa5c1797216",
+      "objective": 0.6466667056083679,
+      "selected_herbs": [
+        "白术"
+      ],
+      "enumerated_feasible_subsets": 16
+    },
+    {
+      "query_id": "f3a1db6b89303f982645db732eba22df1d468a0e38aefa42539861e8bf5c6b12",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 256
+    },
+    {
+      "query_id": "4419b3f7e74ec470dd8e1ce31ac9958b351639b2ac201e4f9cd58aa6be7fdbbd",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "鸡血藤",
+        "山茱萸",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 1981
+    },
+    {
+      "query_id": "99c4fb7cc9a24620dccd3e6ff933909467dec846052d20195db6a9c09df50c83",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "茯苓",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 1981
+    },
+    {
+      "query_id": "0419f17404af12381f3a5c0ed06a880b31c7afdc422925bd0447c242b3eedd2f",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 1013
+    },
+    {
+      "query_id": "6407113ab6b2fa08a9e7f7fa5af0cacf633a3b3fbe395bbf02374112c7823daf",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "茯苓",
+        "熟地黄",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 128
+    },
+    {
+      "query_id": "a75f0f049399b6b005bd0ed10223aa40b1b6cede3900b0bcea9916f387fce665",
+      "objective": 0.7233333587646484,
+      "selected_herbs": [
+        "茯苓",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 64
+    },
+    {
+      "query_id": "3db8a5eac4137560ace8ebc14e7aa94e54bb989cc25dfef5d164c3324ad04f69",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "白术",
+        "川芎",
+        "山茱萸",
+        "太子参",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 7099
+    },
+    {
+      "query_id": "e0a7e0565c452f78ccc97f7104a86d25906b95ba9f93db157d46c97e6d5060fe",
+      "objective": 0.7033333778381348,
+      "selected_herbs": [
+        "白术",
+        "川芎",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 3797
+    },
+    {
+      "query_id": "38988323458c8ff89e0e52931372724d952ea5c10869aac00e9c1acc6e5328ca",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "白芍",
+        "黄芪",
+        "鸡血藤",
+        "山茱萸",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 65536
+    },
+    {
+      "query_id": "875aa7eaac59cb80170d24c3136cb08159dbe1ed1c91e897058c8b091ef73590",
+      "objective": 0.7033333778381348,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 256
+    },
+    {
+      "query_id": "3de2c51daceab868ac3ec5de81c67ec9bfeb30d6c50551548acbc9187585091b",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "熟地黄",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "e0e55dd5e56a24884a5f85126ecfc6e4e1ba923dd1dbc92bb51f2fbe1d4304ef",
+      "objective": 0.6266666650772095,
+      "selected_herbs": [
+        "白术",
+        "山药"
+      ],
+      "enumerated_feasible_subsets": 32
+    },
+    {
+      "query_id": "7bb8b06ee59e1e987fdd03384ede96a61a86dacbe62acbdd73c99310c2ce7705",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "川芎",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "29dba38d083a22f82dc513869a68b257ef72ff2edd771cbc7af5de98e0acdefc",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "川芎",
+        "黄芪",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 106762
+    },
+    {
+      "query_id": "a91ee3451c873678f2fcb1e8f575a2f10d4c273d3b5e338c9167a783c7943973",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "川芎",
+        "茯苓",
+        "山茱萸",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "a6783d1e438e03f87b54c01a879c4bc62d3c195f93d7660191606571522e6f11",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "川芎",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "b3353d0f1b2213906d1f9884fa655c5d9fff6396c6915c50598dff1c186e577d",
+      "objective": 0.8400000333786011,
+      "selected_herbs": [
+        "柴胡",
+        "川芎",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 12911
+    },
+    {
+      "query_id": "37ae9af518d4f688634fc74e9c6351f0a6a57f3d78966b87ecda21223bb7c787",
+      "objective": 0.6833333969116211,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "川芎",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "e927c9dcbd5a51b0c73f67b5bdbb8b13bab542e6a4e23217202533de8ba1fc1e",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "川芎",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "天花粉",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 106762
+    },
+    {
+      "query_id": "06870683470ea0c096411beee396f67de998aaa645b89de328bd857343c4c512",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "川芎",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 169766
+    },
+    {
+      "query_id": "65ebfa74fc3d4c38d7766a2cd42d14743b8e427fc88f65759adcadc73acd2d39",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "川芎",
+        "黄芪",
+        "香附",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "b86698a044cfbf789bfea8f4600cff86c84f9cf46b9823e2ef1ba1dd31b6db90",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "川芎",
+        "太子参",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 1013
+    },
+    {
+      "query_id": "e8f52569851be2e84c1332e8cd30b416f3d98c607700d8031c3d96aecbdb0181",
+      "objective": 0.6266666650772095,
+      "selected_herbs": [
+        "川芎",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 32
+    },
+    {
+      "query_id": "197d293b5ad39e98ef5d9d631867a1b14f4b7789bece75712460be8bca27e3fb",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "川芎",
+        "黄芪",
+        "香附",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 1013
+    },
+    {
+      "query_id": "e099ee10d27f49e00c50cdbdc58e2af1ec7b6443ee51cfae39a04525abaa1dc1",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 256
+    },
+    {
+      "query_id": "22ebca6496cc9290d42af29fa52b1614d24d881bf254acb097d78990e4521719",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 1981
+    },
+    {
+      "query_id": "a97aeeef681e6a48d3f7902df4a5646bacf7eede280fcee80854043d4c1dccdc",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "白芍",
+        "川芎",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "6f339761874452789600f9ffbc6ba196f114d3096596576cecf666391560d552",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "川芎",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 128
+    },
+    {
+      "query_id": "fe6ecb543c7377483b638108a4abb39d79d1aa5f172c99b8b0ffb42780d03c35",
+      "objective": 0.7033333778381348,
+      "selected_herbs": [
+        "川芎",
+        "茯苓",
+        "山茱萸",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 128
+    },
+    {
+      "query_id": "096dcf26df4f30b80a9b15b5e87c59776841bb045d9d4d639edbeaf6d5cb62fa",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "白芍",
+        "川芎",
+        "茯苓",
+        "山茱萸",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "5a1d8b2d256307a8ec7024e60a25af8329d623bed2a08a991ffbd91b2481984f",
+      "objective": 0.7233333587646484,
+      "selected_herbs": [
+        "川芎",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 3797
+    },
+    {
+      "query_id": "f69b59ade570de88a8296cd4ae61d8305c2daff7a77a9a8fb39eb2c0aa6c1d66",
+      "objective": 0.6833333969116211,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "川芎",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 256
+    },
+    {
+      "query_id": "0e1413a999e89a7065756bb070b3fb17a71f6dc8b27e80821035179f2da638be",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 169766
+    },
+    {
+      "query_id": "a607c38a9f17b7c88a336c3d07eaca094e21754c95315aa1edfe61867a09608c",
+      "objective": 0.8600000143051147,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "山药",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 106762
+    },
+    {
+      "query_id": "d3f20731cf39f3184373ffcee4d1b46bbef27a226563c6bc982e1659f8b660b3",
+      "objective": 0.7519298791885376,
+      "selected_herbs": [
+        "黄芪"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "6cce495161c9b1e857b24ecc6e29768311fb68e232ba9743914bed3c2e68b77e",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "白术",
+        "熟地黄"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "98e8f77af57ce8b0f4ae0b4d44fc1d1cc6ef90bce4a5d816db47f8a2e9335451",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "黄芪",
+        "山药"
+      ],
+      "enumerated_feasible_subsets": 65536
+    },
+    {
+      "query_id": "b74201458aa31ed04b89418f99b6bf34a45b78435b20db21aaac932aca438190",
+      "objective": 0.9800000190734863,
+      "selected_herbs": [
+        "黄芪"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "e695891712eaf0309f0b06a54efcda7cd2fef6bb2323b5483a565cff8d713f6f",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 65536
+    },
+    {
+      "query_id": "780d8f4653c4d1105b0c9c5d3d3069eec286e9ec27f0f759ab551728c5660668",
+      "objective": 0.7033333778381348,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "d70f3883c59f94e0c59393a1763744bdbe5bd4de3b73b6ff6b30c5fd155f7249",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "黄芪",
+        "香附",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 106762
+    },
+    {
+      "query_id": "338c2a26358497b8759c627822aaadf08d21ff30ded3da89523ba5c985ed5b21",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "白术",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 65536
+    },
+    {
+      "query_id": "ba5aca26019f3e90ae41cb012ac2c63d190a1f4192cdd63be6627bd8db909c1c",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "茯苓",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "940f69d8e03bc83833d9d615deac5c9481e7fb82f21c38245e450e5e1a181482",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "太子参",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 65536
+    },
+    {
+      "query_id": "7634a4d52285db28af81d16e5d03767a8759c4e37252e6be60f84d470013b109",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "白芍",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 65536
+    },
+    {
+      "query_id": "e6f3432fad7e673059507ad616dd210fe83f3445ef6fd20737298e5134fed5f3",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 65536
+    },
+    {
+      "query_id": "bae87518da80f3a89d3111463a88e8f3547bca633775fa7df341a626932b50e3",
+      "objective": 0.7233333587646484,
+      "selected_herbs": [
+        "茯苓",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "872a14a614f6e2b00c38aaa39a01fc5515fbc5a2cd9560ca74160c20db3523e9",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "白芍",
+        "白术",
+        "柴胡",
+        "黄芪",
+        "山茱萸",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 106762
+    },
+    {
+      "query_id": "5119f788942e7c6812b4674ceb74be1450ab7c407f51998d84c0ac03a8257d04",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "白芍",
+        "黄芪",
+        "山茱萸"
+      ],
+      "enumerated_feasible_subsets": 65536
+    },
+    {
+      "query_id": "1ed21e408fa66450a79499d7ae8c8ccddf515be599fa54181136521c799d0a76",
+      "objective": 0.7519298791885376,
+      "selected_herbs": [
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "a33f4312c01aa88007816035fa9434ed5cec1d3170fcb78e457a9c52ec2185cc",
+      "objective": 0.7519298791885376,
+      "selected_herbs": [
+        "黄芪"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "a274c12bf73378f0a60c4b871db88c37f0503368d7fcd0e9e788169086c2e43c",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "黄芪",
+        "山药"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "4bb804fbadde0d3873307d3f7047c172b2a1ce8089cac1c63cb1ef0bfee73633",
+      "objective": 0.7519298791885376,
+      "selected_herbs": [
+        "山茱萸"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "7b71e8f1497b8d30b9507475b0cc51f9711ed172be7d1cfc0abc59128d738ad4",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "黄芪",
+        "鸡血藤",
+        "山药",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 65536
+    },
+    {
+      "query_id": "16000048e8daeba8d0bc4754d1564ff256775e51bc864c444ab264ef388e4fb8",
+      "objective": 0.7519298791885376,
+      "selected_herbs": [
+        "黄芪"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "a98158d3183cf9700897403858f194d760447d079fd32389b965d261e3c55ceb",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "abaf272781d4d8e05f96dcdcb0f8d7aa8174f7f4183536ec0aecbcc2a1f1b6a4",
+      "objective": 0.8600000143051147,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "963bd28fe65d4a60429ada57761674006eb9391fda464f2ba77e4ef9dedb1dbd",
+      "objective": 0.84375,
+      "selected_herbs": [
+        "柴胡",
+        "川芎",
+        "黄芪",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "902c17218bcf3af8621cec19bf3f0e87cfeb0d7b6da40317225ece05dcb5a9af",
+      "objective": 0.8666666746139526,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "55228dcbd562ff283687fe32f24f432334de0d8453cd6dce6e47f817f178aad2",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "香附",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 169766
+    },
+    {
+      "query_id": "14c116fd0358ce28b13ce7952c0a178feef6b9504643753687b70c914f0dbe97",
+      "objective": 0.8642105460166931,
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "天花粉",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 169766
+    },
+    {
+      "query_id": "dfce6a3552d0f650b507db384d94cb8f3670b5819e066297f6a03a65ed7ae2b9",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "0020fc02b5fbe5e80920b7f9fa2e032222010126203126489ae635f3f3f0a237",
+      "objective": 0.8600000143051147,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "acf513ac0ec952a0404172ac8b20002f70167a835909004d001afa4d7c97d6c9",
+      "objective": 0.8600000143051147,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "e5148edd0af3e400f066b7dfeae1e66efe21eb9adbae6caaa5a7aea1dcd33e3b",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "fb5451eec7b828582ec76d44c5b27e43ab8c1ae8202a2c20fadb61c266575056",
+      "objective": 0.8600000143051147,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "香附",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "5d1c84db3f3d771099401294b1b94f5293f049347f2bad079d0de6841278c246",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "香附",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 65536
+    },
+    {
+      "query_id": "bc1592c49ea941e8608a0e643bf06157b347bad334d8351d0357245cfcaf94a5",
+      "objective": 0.6270833015441895,
+      "selected_herbs": [
+        "柴胡",
+        "川芎",
+        "黄芪",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "890cf3366ec05e082e7ac612ea56d131a31d5129936280f6c60b6c2f9aae71b6",
+      "objective": 0.8600000143051147,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "熟地黄",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "ab4d89a8ec6d841092d9a1f816e5e81c5dab09e590b3007e3381f74da06a10b2",
+      "objective": 0.643333375453949,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "熟地黄",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "79dc28bd49a1b6a0a3531cc2b44531195479f51e47e15fc0689819f9c4b7ed06",
+      "objective": 0.6633333563804626,
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "香附",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 65536
+    },
+    {
+      "query_id": "5a6bafeb9643a568dd2dbf3900297df89a8ea852452c8a903dba3f55c632b749",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "b4a9d226380b47e806dedf8e3442ea701953889e96fda56ef313e374e1031e57",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "熟地黄",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 1013
+    },
+    {
+      "query_id": "916ec8a7e218cce08b069eaedabe21067af53333d6d7e4430ec10e46df1e4323",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "川芎",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 65536
+    },
+    {
+      "query_id": "e281bd326c0dbc4013ac5422fe385e0028bb5fa1750ed5119070c191b7711095",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "白术",
+        "茯苓",
+        "山茱萸",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 128
+    },
+    {
+      "query_id": "a8eda4a351713c8099fbe59a3db236db5215e11e421ab0405ad801b4ae0e8774",
+      "objective": 0.7119298577308655,
+      "selected_herbs": [
+        "白术",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 32
+    },
+    {
+      "query_id": "a13c4da13eeb18207dccbd501080c1d551a45ed0883b0f2efadcf02e72fda707",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 1981
+    },
+    {
+      "query_id": "72f129f34ea69e08766045a738008d75c369e75eedeb2ba1aff12033925ce68f",
+      "objective": 0.7119298577308655,
+      "selected_herbs": [
+        "白术",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 32
+    },
+    {
+      "query_id": "d14e4565b86ac1286031fa37ac9153b2b8978b2b170085d219e85778ced038e9",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白术",
+        "茯苓",
+        "山茱萸",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 128
+    },
+    {
+      "query_id": "cc2993b8c43d2be0ad4bfd956613e5621bdcbb298cd7583baec0006645450dd5",
+      "objective": 0.6466667056083679,
+      "selected_herbs": [
+        "白术"
+      ],
+      "enumerated_feasible_subsets": 8
+    },
+    {
+      "query_id": "0af1499127c4c2107b27e9b1c220e562719e1932bde4c5f68ff7fde403ac5a3b",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 64
+    },
+    {
+      "query_id": "766581a608365ad0e79f1cc9baadfb952652724cfa40a545287e08402dc14ac1",
+      "objective": 0.7033333778381348,
+      "selected_herbs": [
+        "白术",
+        "茯苓",
+        "山茱萸",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 64
+    },
+    {
+      "query_id": "12822ba6b4291650bea4fc2074235a38e9fb7044fa8a0d96ad2c4a9709060495",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "白术",
+        "茯苓",
+        "熟地黄",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 128
+    },
+    {
+      "query_id": "bc43c95aadedcd80307fb0ea218670951048287ef0bb83a55218c3d13484bed4",
+      "objective": 0.7033333778381348,
+      "selected_herbs": [
+        "白术",
+        "茯苓",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 64
+    },
+    {
+      "query_id": "c1011f066497498016155c60c510462e61d69e2377666453633225314bebb09c",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "鸡血藤",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 1013
+    },
+    {
+      "query_id": "cdc768e6c7de01909da76bfc1d5cc706ccd0bd3e800c12c6cbf6f5e2d87c9c7f",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "白术",
+        "川芎",
+        "茯苓",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 12911
+    },
+    {
+      "query_id": "f84b5abec26f7a005cf1a6ae170f22ea531391d95d17de4b77705102fc79e04c",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白芍",
+        "黄芪",
+        "山茱萸",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 65536
+    },
+    {
+      "query_id": "071e3d7736227d907eabdf09c75d2cfd3bfbabd12b74a510a9b3add0502202a1",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "白术",
+        "山药",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "2040d60e9e8e6a98f7f890091f5517d5fa1973124d6cd8efae2dafb979af8619",
+      "objective": 0.6266666650772095,
+      "selected_herbs": [
+        "白术",
+        "熟地黄"
+      ],
+      "enumerated_feasible_subsets": 8
+    },
+    {
+      "query_id": "41c8b10aabde48883da8ce7aeab026865fc3a89269b61b80d7ba63ddda54d80c",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "熟地黄",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "8d1c896edd8badd0fdcc10e58aae696606fbff581df5b13183159c957c822b92",
+      "objective": 0.9599999785423279,
+      "selected_herbs": [
+        "黄芪",
+        "山药"
+      ],
+      "enumerated_feasible_subsets": 16
+    },
+    {
+      "query_id": "6657ec40ee0289b021e7978062c84e99d1e955a43414922330cdb25f5efd137e",
+      "objective": 0.6466667056083679,
+      "selected_herbs": [
+        "黄芪"
+      ],
+      "enumerated_feasible_subsets": 4
+    },
+    {
+      "query_id": "bdc430502b1d3f7020ec31757956e2011972f71a0961861e7c1683d1c939f080",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 3797
+    },
+    {
+      "query_id": "95f888729c2916e07a9dbe053b91c570ad0418466ba6bb3c03d2b63abf51765b",
+      "objective": 0.7033333778381348,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "8ea142dd2b4a7e38680280385fdcdca154b32d5a11210690dc5b47c77e4c0f07",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "e0ba7ad9083a6c50b1ce3675cf8b4f83d295e9179573f3179aa1cf63e093519e",
+      "objective": 0.8600000143051147,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "天花粉",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 12911
+    },
+    {
+      "query_id": "f4cdfb20941a3750d66ac938650f96bd14d689a102508d7678b8f7f60c055ca3",
+      "objective": 0.8600000143051147,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "熟地黄",
+        "天花粉",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 3797
+    },
+    {
+      "query_id": "42b44c07dd29da105a46b92b509f78ed6fb78067e3fb3905843ee1d97f71d0be",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 12911
+    },
+    {
+      "query_id": "f26dc531638da1500f0fb6d7eed2214ec6722ad9200ccb23431e5297d922625f",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 1981
+    },
+    {
+      "query_id": "b7ea3341b90c03982037bb9fb478c306091a443dade5c179c0e2b417cf1e9228",
+      "objective": 0.6633333563804626,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 1981
+    },
+    {
+      "query_id": "78c3822abeaec3e0c146b1e0f435038a75e10b9226597781d7e291a3f330fe39",
+      "objective": 0.8670588135719299,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "34b67b480981e2209915a63afc81d7c30b1e18de27fa181b7a59c376538cae50",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 7099
+    },
+    {
+      "query_id": "c02ff875b3109c705ff447c9cc5acdc8b93a947390e09984e26d905a30fbd8ec",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "白芍",
+        "白术",
+        "柴胡",
+        "黄芪",
+        "山茱萸",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 65536
+    },
+    {
+      "query_id": "d3f489f4bc6db8e0add11642d527bfd5e2453a184ad85839193f015d24e310a4",
+      "objective": 0.6633333563804626,
+      "selected_herbs": [
+        "白芍",
+        "白术",
+        "柴胡",
+        "黄芪",
+        "山茱萸",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "ebe501f789738958e4a40e758e397b7afaedfd57a5fb2c45651c920616a7d814",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "白芍",
+        "白术",
+        "柴胡",
+        "黄芪",
+        "山茱萸",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "d75b4288afad47409add49c55d3566aa2028c82a600747ed72b7ad080f9b200a",
+      "objective": 0.7033333778381348,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 1981
+    },
+    {
+      "query_id": "24b1d648be63191028aba377fb00e26d884e0ea7268b91d522d9885bee861b8d",
+      "objective": 0.7033333778381348,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "728e5f96f9df2a68b49f1866be297f4da010430186fb3d9baafbaac8308abd3f",
+      "objective": 0.4866666793823242,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "f466964fcb9ef030f227d3a54bd7137d9619482ae29cfb06eb1d41b79ee1a9ce",
+      "objective": 0.6833333969116211,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "熟地黄",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 1013
+    },
+    {
+      "query_id": "440d6ed0c24c5400928a8ac08a748fe74243fad83032e601ed53d3c010c9c36e",
+      "objective": 0.8600000143051147,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "鸡血藤",
+        "山药",
+        "香附",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "477daf7bd27a4e004f79a140160c179b8df2d25a78e9ea62cb629f55531e77d3",
+      "objective": 0.7033333778381348,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "e38ddab76e5b27a009b19a43a3f6bbb7e67f01b338bcdae7b90914101d38daba",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "山药",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 106762
+    },
+    {
+      "query_id": "57f4760a15b50b200b141a50c3fc6e884adbd9f31a648e363dc7db8a34a39453",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白术",
+        "黄芪",
+        "熟地黄",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 65536
+    },
+    {
+      "query_id": "5a687666cf8916f88d07916433b040d76f31419db08d13b6e3e4b753b2c6d780",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "fb51bdc518aea628175ce0bc8df149d66d4278ec5ea8b1e6545196b736c64397",
+      "objective": 0.7033333778381348,
+      "selected_herbs": [
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "f18d46373be14330a11ca275fab02575d5359592d6017ccadfa0c97adb699bba",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 106762
+    },
+    {
+      "query_id": "cebf8bc90a88bcb008e2709ade546ab08182d8d35e1fd0567559cc1ae4bba0c5",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白术",
+        "黄芪",
+        "熟地黄",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "26214095177355082cbe6d0b06c7c391e9c7e9e2d317e9a7a2e5ed5ec856b11f",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "天花粉",
+        "香附",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 106762
+    },
+    {
+      "query_id": "b90fd25ffc295a503ca668f1748ddb07817b8e8f35830d4864ad0e6f013b1f44",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "天花粉",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 106762
+    },
+    {
+      "query_id": "57655f3b8d5ed8f8e6c947a6ff97bf30d914da858d6a2a50d54fb801985b03dc",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "山药",
+        "太子参",
+        "天花粉",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 169766
+    },
+    {
+      "query_id": "60936ee763f08278b134051ee313c2247cd20bb3857af263c54ec9df6e5c5c85",
+      "objective": 0.7033333778381348,
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "山药",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 65536
+    },
+    {
+      "query_id": "26d0bba86b6efae82f7f1c0c3ee3b9684b6fc2199d440fe3082fa6b1883b19b4",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "川芎",
+        "黄芪",
+        "山茱萸",
+        "熟地黄",
+        "太子参",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 65536
+    },
+    {
+      "query_id": "64c7ebc2cbd263788159b5f7a334be6ec81937ae76c881e05d29782171b5fbcd",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白芍",
+        "黄芪",
+        "山茱萸",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 169766
+    },
+    {
+      "query_id": "2e37e5c7bd3446e003767f12847b46b65e4595389625e21ba3ddd31bd9803bc6",
+      "objective": 0.5066666603088379,
+      "selected_herbs": [
+        "白术",
+        "黄芪",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "05f9d826beb28fb0edaf615555b5e7faefd2bdaf21075ca6152ced8ff47b6e98",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "山药",
+        "薏苡仁",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 106762
+    },
+    {
+      "query_id": "544e64c139dad788d76c1b15b18cb79623b5222f7c596d1c0a2052eca838e111",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "黄芪",
+        "山药",
+        "香附",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "0dfc54a2c6b52a00e4d9c82096c19a71d88f4c600f2dc2ac58adc8e48cf3bb82",
+      "objective": 0.7233333587646484,
+      "selected_herbs": [
+        "白术",
+        "黄芪",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "245c4cfa1f1408f828431236de54cd528fdf6081bfe7935ce0c7f073f6f32b40",
+      "objective": 0.5066666603088379,
+      "selected_herbs": [
+        "白术",
+        "黄芪",
+        "葛根"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "0d7975fac2ed1490fa1decccef84d05e7b18ba8619056c141d00d95bd200b41a",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "白术",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 256
+    },
+    {
+      "query_id": "a26c084dca93e0981ec8f1cf8785cc2809c391b55969fb9e9a9a23b62561e244",
+      "objective": 0.7033333778381348,
+      "selected_herbs": [
+        "茯苓",
+        "山茱萸",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 256
+    },
+    {
+      "query_id": "58bdbdbb9bd58288c9e54a3877f4c3f30d391d965bd72f17c930a1745fb518a0",
+      "objective": 0.8600000143051147,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "天花粉",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 7099
+    },
+    {
+      "query_id": "0c76f2909fa3ca0096e85e6c9940882ba3799ed4c57cf81306f9a59631870e0b",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "茯苓",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 1013
+    },
+    {
+      "query_id": "51b3cfa4983c4fc06ece3ad1f655313589818ebedbfed1166abe8dcaabc44ddb",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "茯苓",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 1981
+    },
+    {
+      "query_id": "8dd3faa65fa33510e17e3006db00d32cddfb7b25db3ac384ee44e988ca1f8f41",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "川芎",
+        "山茱萸",
+        "熟地黄",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "6998a1f08a739770f5c3dc949d7a207ab5d661d490fece95203056af9fde31c5",
+      "objective": 0.7233333587646484,
+      "selected_herbs": [
+        "川芎",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 12911
+    },
+    {
+      "query_id": "69aaf1da6ca621b03343e3249bc56845f6f59804f76d4661daffae4423299feb",
+      "objective": 0.8600000143051147,
+      "selected_herbs": [
+        "白芍",
+        "白术",
+        "柴胡",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 65536
+    },
+    {
+      "query_id": "06ca38dc1c5280b81225ef49b09a33648fd3e7e834f8cbc2643b099ccf748228",
+      "objective": 0.6833333969116211,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "太子参",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 1981
+    },
+    {
+      "query_id": "62e8d51b65927fe0dc42e5e00a4403bf79c80402a6de36fcbc862924377fa9fb",
+      "objective": 0.31333333253860474,
+      "selected_herbs": [
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 8
+    },
+    {
+      "query_id": "62dce57c85292cb02edf02ae8e702929ae5b688fd466632f85a98ed51eeecf24",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "黄芪",
+        "鸡血藤",
+        "山茱萸",
+        "太子参",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 1013
+    },
+    {
+      "query_id": "088c610362e2c3a8d74998c2b50516ae8cdda8b2646fb145688bcc279c848ee7",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 64
+    },
+    {
+      "query_id": "4401f8bb8b255710c18ee7d00edf3480d3e117aea43379ba6cf01ed3cab9c65d",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "茯苓",
+        "山茱萸",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 1981
+    },
+    {
+      "query_id": "7a1be662fb66e4e05e13aab1b95b33c5aa29f7b19dc8c3d54055c7856587bd9f",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 12911
+    },
+    {
+      "query_id": "773321bf37f7027891d210ebeba19a40b1cc65f47d1d0b6c334ffc0f90a436f2",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "茯苓",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "523377b7d8359a70f21e4da5c7df2d18a376ccf9223440733c413d9457a09410",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白芍",
+        "山茱萸",
+        "熟地黄",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "e33eefd154b52d68ff780dcfa3ad9b32b9c5347e88cef0a87d4078f0ec375021",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "白芍",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "ef2dd4a3cd75dc085a925126c13daf3e1e68b2fc7c59dd57c8ae5b4c42fc2abc",
+      "objective": 0.7233333587646484,
+      "selected_herbs": [
+        "白芍",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "44065ada1b8c5b785e29cf82fd9a1a86883f953084b31d8352a2252eafb67a58",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "246e625ec370e32882a8f1bbe8733a8b1729473547a3a639c1644d2840723985",
+      "objective": 0.8600000143051147,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "山茱萸",
+        "熟地黄",
+        "太子参",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 3797
+    },
+    {
+      "query_id": "b6aa2c7a66c81648e92a71e596aaa8df6c75779afa1836137664db04787605e5",
+      "objective": 0.6633333563804626,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 1981
+    },
+    {
+      "query_id": "56ee89f7a33ba7c054b92e55442be39bdaca932a9832665287347478d4ecff74",
+      "objective": 0.7119298577308655,
+      "selected_herbs": [
+        "山茱萸",
+        "熟地黄",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 16
+    },
+    {
+      "query_id": "5d93be3e237aad688552265b9b9474fac2d249bb0caabdcc8b8e2437c769ea3d",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "白术",
+        "茯苓",
+        "山茱萸",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "84f0f8385a45e488b1ffb71ceeb772e7cc0280b990c78c38a277970c07e400f0",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "白术",
+        "川芎",
+        "茯苓",
+        "山茱萸",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 7099
+    },
+    {
+      "query_id": "2dc0ea1ecb1eab582ce9054f992afc4e0a4ad98204a0c10e34f0102c9eb569e5",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "鸡血藤",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 1981
+    },
+    {
+      "query_id": "68180a69920d55e0a50a63966671088ab99b0844a1920ec34dcf250356015a00",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "白术",
+        "川芎",
+        "茯苓",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 12911
+    },
+    {
+      "query_id": "7b6acc326af93c58c627df405a9db5424431754578b279541cd164cb3ecc46ce",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "山药",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 3797
+    },
+    {
+      "query_id": "2c584b9610add3b06f91955c97e55df91f4e0aff94e743d12e3f848f94e3d42a",
+      "objective": 0.9399999976158142,
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 1013
+    },
+    {
+      "query_id": "069f27871440a3509a1a88b9a846749d2c38658678956c61b162474bed512453",
+      "objective": 0.7233333587646484,
+      "selected_herbs": [
+        "白术",
+        "茯苓",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 1013
+    },
+    {
+      "query_id": "471596d249a68f008345d29d6f959e0e1f807ea779daf6d2b5f096500fd86c16",
+      "objective": 0.7233333587646484,
+      "selected_herbs": [
+        "白术",
+        "茯苓",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 1013
+    },
+    {
+      "query_id": "9fa9ba7a169daa885b128013b6f6daf6410dbb42359b184cf3721a271a114a7a",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "川芎",
+        "黄芪",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 3797
+    },
+    {
+      "query_id": "db0475236d5d98c8792ee3c4a36b492d3568b7d4131775ea228d2ad3c1c0d729",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "白芍",
+        "黄芪",
+        "山茱萸",
+        "熟地黄"
+      ],
+      "enumerated_feasible_subsets": 65536
+    },
+    {
+      "query_id": "54332aac8207cf700d1813644bb345a7924c57a9d0028dee55e70a45459e23a4",
+      "objective": 0.7033333778381348,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 256
+    },
+    {
+      "query_id": "f1fd34755c9b8cb09e73e0a93d39068e51c7474cd58270b7c4ee71d4f01ce30c",
+      "objective": 0.6266666650772095,
+      "selected_herbs": [
+        "白术",
+        "山药"
+      ],
+      "enumerated_feasible_subsets": 32
+    },
+    {
+      "query_id": "3a5020d178cc8e70b7c91f7a5947fbf7c26a3681a2f47b468f8ec1bdefac4f56",
+      "objective": 0.7119298577308655,
+      "selected_herbs": [
+        "黄芪",
+        "鸡血藤",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 256
+    },
+    {
+      "query_id": "a879fb3accb4f4587d9d9e0cda455316fa3e0d02afcbc38608a8b36cd022603a",
+      "objective": 0.8600000143051147,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "天花粉",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 3797
+    },
+    {
+      "query_id": "ebf936463f891bd00d122cd5d7c7c18f6a7f9f6cc423c3fab1f1156c83661379",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "茯苓",
+        "山茱萸",
+        "熟地黄",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 1981
+    },
+    {
+      "query_id": "0d49ba4634d5d97035f4d60d43e35a1a45d5e06956f7cb43a6f9f4260af96227",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "川芎",
+        "茯苓",
+        "山茱萸",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 7099
+    },
+    {
+      "query_id": "31a81f0a2d095948bb2069521608adddf89d8e3e87a8b748b557e6d8683620a9",
+      "objective": 0.8600000143051147,
+      "selected_herbs": [
+        "白芍",
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "天花粉",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "2672069c2530150805967f562831f5b4a5ed96e017fa6f24c764f1fc7933ad7c",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "白芍",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "c91359ac17a042288af64ca1cf86b9f43f3f852ddfce8ba80b9b41f75ff5a075",
+      "objective": 0.5066666603088379,
+      "selected_herbs": [
+        "茯苓",
+        "山茱萸",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 32
+    },
+    {
+      "query_id": "dae966b0bf2ccbd0320ea97e04d9ef1fc32b977602a4b72467278f354885878a",
+      "objective": 0.8600000143051147,
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "鸡血藤",
+        "山茱萸",
+        "熟地黄",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 3797
+    },
+    {
+      "query_id": "986879877381fff032023b30b4cad27c568ef555b4aa6bbe3100612dd02c3c32",
+      "objective": 0.7033333778381348,
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 32
+    },
+    {
+      "query_id": "23c4ad655a0532f02134537b7a01ec0530ba52c9c818cdcf54fd30d9abdf0103",
+      "objective": 0.5066666603088379,
+      "selected_herbs": [
+        "茯苓",
+        "山茱萸",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 32
+    },
+    {
+      "query_id": "f0db8d38026369c870fb36bf79ccbee2647c0122cd1b68c57dd1d9e8725886f4",
+      "objective": 0.7233333587646484,
+      "selected_herbs": [
+        "茯苓",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 1013
+    },
+    {
+      "query_id": "5c7fc4f9f222f1882f3ce2f614115022e6a128315757f281ccc7ed4b8715a07e",
+      "objective": 0.8412500023841858,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "天花粉",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 12911
+    },
+    {
+      "query_id": "55892bec6fc89fc807662597637557e53d52982d32b78e0a209d94cea53eada9",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "川芎",
+        "茯苓",
+        "山茱萸",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 12911
+    },
+    {
+      "query_id": "6f5f7ffa4a2d50d854080e2fd0cb657a87c333b279d319ff890f000a1af43785",
+      "objective": 0.6833333969116211,
+      "selected_herbs": [
+        "川芎",
+        "茯苓",
+        "山茱萸",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 12911
+    },
+    {
+      "query_id": "6a5d64dac1f81188a3b8a19116b06e3242cf6fded956ad209c5e9909a8c2154c",
+      "objective": 0.8799999952316284,
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 1013
+    },
+    {
+      "query_id": "c17872c8cb2502608e6fb4241f5d3405f408efe11fe5e3bed0ad2e93a473bf23",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "茯苓",
+        "山药",
+        "熟地黄",
+        "太子参",
+        "天花粉"
+      ],
+      "enumerated_feasible_subsets": 128
+    },
+    {
+      "query_id": "16bdbc46c57f2c08db8566b27fbbf3e7eea173e5d06fd864d8a32cdcb8b170c8",
+      "objective": 0.8600000143051147,
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "鸡血藤",
+        "熟地黄",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 1981
+    },
+    {
+      "query_id": "aa82d9a258d79db0723b46d0298ec66824f2b4b13e5aada8393fcc2c5aa26567",
+      "objective": 0.8600000143051147,
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "鸡血藤",
+        "山药",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 3797
+    },
+    {
+      "query_id": "a76560e8ea34f90838349d1b9e71e807b8536853d6060dde2ff5db619e07e5a5",
+      "objective": 0.6633333563804626,
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "鸡血藤",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 1013
+    },
+    {
+      "query_id": "8387812f852f1430bc5fe8ada8d6c881492744356e553468202960d6ffb1a75e",
+      "objective": 0.7033333778381348,
+      "selected_herbs": [
+        "白芍",
+        "茯苓",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "68f8213928dbe05864eadd7f8e13d67691ad068692beb509bc82c310f4fdaa40",
+      "objective": 0.8600000143051147,
+      "selected_herbs": [
+        "白芍",
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 65536
+    },
+    {
+      "query_id": "05a82b11a53be2d8cdc3493387b1b6fdf5c727028346fc9bcc9c103d518d7d4b",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "白芍",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "faf3f1d35044a198d42aecd596ce29620f56f241a2e8cda610c69cd5577f5b49",
+      "objective": 0.7033333778381348,
+      "selected_herbs": [
+        "白芍",
+        "茯苓",
+        "山茱萸",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "05d159469d99b508ecd42e5c328a56d5638b5c2e71ea3138e948a1cb5321170a",
+      "objective": 0.7233333587646484,
+      "selected_herbs": [
+        "茯苓",
+        "熟地黄",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "ca059d9bb55a22f05e906674961b683916982746e86526e48838d0e2215ca86e",
+      "objective": 0.7233333587646484,
+      "selected_herbs": [
+        "茯苓",
+        "熟地黄",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "aaf74cecfd71a898c51a847658e5304a7cd10110d6d0fcf69408a31448c655f7",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "白芍",
+        "川芎",
+        "山茱萸",
+        "熟地黄",
+        "太子参"
+      ],
+      "enumerated_feasible_subsets": 65536
+    },
+    {
+      "query_id": "a8b6742f599335a8d6bd564e7936a9576d7d834591fc713f927a1d3aa58dc344",
+      "objective": 0.8600000143051147,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "川芎",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 12911
+    },
+    {
+      "query_id": "18d578233460f80803a638d17bade904a638d07ede798a0b4f74bff9cf1ae858",
+      "objective": 0.6633333563804626,
+      "selected_herbs": [
+        "川芎",
+        "黄芪",
+        "鸡血藤",
+        "山茱萸",
+        "太子参",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 22819
+    },
+    {
+      "query_id": "ed06aeff68024990ae0d55884fc30fde87d492c61d3b0832aebbdbada7ee5a15",
+      "objective": 0.7233333587646484,
+      "selected_herbs": [
+        "白芍",
+        "山茱萸",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "2bc03056ef756a383bff62b7b65f766a46d715b6cc184afdacfa52140c29773f",
+      "objective": 0.6633333563804626,
+      "selected_herbs": [
+        "白芍",
+        "白术",
+        "柴胡",
+        "黄芪",
+        "山茱萸",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 39203
+    },
+    {
+      "query_id": "5a4242858ccf6fa052e5183b9157ead5271953fceaa019c227b43ff3f39c32a4",
+      "objective": 0.7033333778381348,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 1981
+    },
+    {
+      "query_id": "382bcb7518258e7051afdc6e4ead160e96831d1db9f7b17c78b38059aed2e59d",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "黄芪",
+        "鸡血藤",
+        "山药",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 7099
+    },
+    {
+      "query_id": "d86b57d0d91b2ca8cdf2a5db585f4490b1a3fc5eeebb2131264c220e3d68619d",
+      "objective": 0.31333333253860474,
+      "selected_herbs": [
+        "熟地黄"
+      ],
+      "enumerated_feasible_subsets": 2
+    },
+    {
+      "query_id": "451c9c1bb0b75218ed245e8b74de59235798dbc65b1e6b2002957737e7b75aec",
+      "objective": 0.6919298768043518,
+      "selected_herbs": [
+        "黄芪",
+        "鸡血藤",
+        "山药",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "6a8deab0c0c4cec0177f266b6755ba7a21b8de383b725a9c9849b47ae8396fbb",
+      "objective": 0.31333333253860474,
+      "selected_herbs": [
+        "黄芪"
+      ],
+      "enumerated_feasible_subsets": 2
+    },
+    {
+      "query_id": "3ad0b0f3d83ee210224041e4c4c52c691f67e39315c1773ade1820024d3b61dc",
+      "objective": 0.6833333969116211,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "熟地黄",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 511
+    },
+    {
+      "query_id": "ec3f57f921f64bd8cc8e87fb9f1acaacba3386c6d4ccbdde51938c16e49b9621",
+      "objective": 0.8999999761581421,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "山药",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 1013
+    },
+    {
+      "query_id": "612615f34d7cee9060a968e6132371b345a06221717edea4cd7a58f3501049b5",
+      "objective": 0.7033333778381348,
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "enumerated_feasible_subsets": 256
+    },
+    {
+      "query_id": "54e3a5c9fb5c76a049ff4dd970018c59d4db7cec70cdfc01743cb2fc0f623709",
+      "objective": 0.6266666650772095,
+      "selected_herbs": [
+        "黄芪",
+        "熟地黄"
+      ],
+      "enumerated_feasible_subsets": 4
+    },
+    {
+      "query_id": "9a5b8417f8690508bcaf48661f9ff33a58e766d34f90eb2c412a4aefec46cfcf",
+      "objective": 0.9200000166893005,
+      "selected_herbs": [
+        "黄芪",
+        "鸡血藤",
+        "熟地黄",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 256
+    },
+    {
+      "query_id": "cc8075720d5fa80804feb680034c80669ca8340c300e697a58f919cf1458ff8d",
+      "objective": 0.483859658241272,
+      "selected_herbs": [
+        "黄芪",
+        "鸡血藤",
+        "香附"
+      ],
+      "enumerated_feasible_subsets": 128
+    }
+  ]
+}

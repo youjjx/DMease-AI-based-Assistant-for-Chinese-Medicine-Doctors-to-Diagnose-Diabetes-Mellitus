@@ -1,0 +1,20 @@
+{
+  "captured_after_experiments_at": "2026-11-12T02:54:44.422313+00:00",
+  "python": "3.13.7",
+  "os": "Windows",
+  "machine": "AMD64",
+  "packages": {
+    "torch": "2.7.1+cu118",
+    "numpy": "2.4.1",
+    "scipy": "1.17.0",
+    "scikit-learn": "1.9.0",
+    "pandas": "2.3.3",
+    "streamlit": "1.53.1",
+    "matplotlib": "3.10.8",
+    "requests": "2.32.5",
+    "joblib": "1.5.3"
+  },
+  "policy_threads": 1,
+  "syndrome_training_threads": 1,
+  "note": "Versioned environment capture; no package changes between runs and capture."
+}

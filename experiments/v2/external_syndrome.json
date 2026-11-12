@@ -1,0 +1,126 @@
+{
+  "protocol": {
+    "id": "tcmeval-sdt-zero-shot-v1",
+    "dataset": "TCMEval-SDT",
+    "paper": "https://doi.org/10.1038/s41597-025-04772-9",
+    "dataset_doi": "https://doi.org/10.6084/m9.figshare.27184596.v4",
+    "source_url": "https://raw.githubusercontent.com/zhuyan166/TCMEval/main/evaluation/TCMEval-SDT/data/Train_TCM_Data_v1.json",
+    "source_sha256": "cddcf9c7187d43462b8c80b1756527e506b2e8d9d0329171d50477f49bd679cd",
+    "license": "CC-BY-4.0 according to dataset authors; raw records kept outside Git",
+    "sample_rule": "All 200 labelled records in authors' training partition. None used to train or tune DMease. Authors' public test/validation partitions lack gold answers, so this is an external zero-shot audit, not a claimed official test score.",
+    "input": "Clinical Data only; no clinical information annotation, pathogenesis, syndrome, reasoning, answer options or explanatory summary supplied to the predictor",
+    "methods": [
+      "current_negation_aware_graph",
+      "same_graph_literal_keywords"
+    ],
+    "labels": "Split gold TCM Syndrome on ASCII/Chinese semicolons; normalize whitespace and one terminal 证 only. No manually invented clinical synonym alignment.",
+    "metrics": "All-record top1-any-gold hit, top3-any-gold hit, top3 exact set, multilabel micro-F1, macro-F1 on gold label vocabulary. Separately single-gold-label top1 accuracy/F1/kappa with n. Count abstentions and gold-label coverage by the graph. Preserve full denominator; scope-covered strata are secondary only.",
+    "leakage_audit": "Report duplicated clinical text hashes and explicit gold syndrome mentions in input; separately summarize input-without-gold-mention stratum. No text or individual medical details published.",
+    "limits": [
+      "Broad TCM conditions, not diabetes-specific",
+      "Public expert labels are from dataset authors, not newly collected by this project",
+      "Potential overlap with source literature cannot be excluded",
+      "SymMap scope only 24 symptoms and 111 syndromes",
+      "Exact lexical normalization is not clinically validated semantic equivalence",
+      "No tuning after observing scores"
+    ]
+  },
+  "evidence_fingerprint": "f9d7cca2be94fa8a5f52036de8b0ff8fe74031ce0d9b6f0ab469a9372d272af7",
+  "source_lf_sha256": {
+    "scripts/external_syndrome_audit.py": "7517c85675e0c83992385cb45220cde329a871201119b13877a5d9fa93074e84",
+    "src/dmease/evidence_service.py": "4895156125c608eef937254fc9b6cf255c2e64320d05307b89333488b9c48b96",
+    "src/dmease/symptom_parser.py": "3e252f471d162ce25f958cd1341888860e3617382f90505dc36b4f41b1ddb860"
+  },
+  "completed_at": "2026-11-12T02:34:45.326732+00:00",
+  "records": 200,
+  "duplicate_text_excess": 0,
+  "explicit_gold_mentions": 2,
+  "total_gold_labels": 335,
+  "gold_labels_in_graph": 28,
+  "records_with_any_gold_in_graph": 26,
+  "records_with_no_positive_symptom": 68,
+  "evaluation": {
+    "current_negation_aware_graph": {
+      "all_records": {
+        "records": 200,
+        "top1_any_gold_hit": 0.005,
+        "top3_any_gold_hit": 0.01,
+        "top3_exact_set": 0.0,
+        "multilabel_micro_f1": 0.005471956224350205,
+        "macro_f1_gold_labels": 0.00040329994247044937,
+        "abstentions": 68,
+        "single_label_records": 83,
+        "single_label_top1_accuracy": 0.0,
+        "single_label_macro_f1": 0.0,
+        "single_label_kappa": 0.0
+      },
+      "without_explicit_gold_in_input": {
+        "records": 198,
+        "top1_any_gold_hit": 0.005050505050505051,
+        "top3_any_gold_hit": 0.010101010101010102,
+        "top3_exact_set": 0.0,
+        "multilabel_micro_f1": 0.005509641873278237,
+        "macro_f1_gold_labels": 0.00040606227084353467,
+        "abstentions": 67,
+        "single_label_records": 81,
+        "single_label_top1_accuracy": 0.0,
+        "single_label_macro_f1": 0.0,
+        "single_label_kappa": 0.0
+      },
+      "at_least_one_gold_label_in_graph_secondary": {
+        "records": 26,
+        "top1_any_gold_hit": 0.038461538461538464,
+        "top3_any_gold_hit": 0.07692307692307693,
+        "top3_exact_set": 0.0,
+        "multilabel_micro_f1": 0.032,
+        "macro_f1_gold_labels": 0.012380952380952381,
+        "abstentions": 4,
+        "single_label_records": 2,
+        "single_label_top1_accuracy": 0.0,
+        "single_label_macro_f1": 0.0,
+        "single_label_kappa": 0.0
+      }
+    },
+    "same_graph_literal_keywords": {
+      "all_records": {
+        "records": 200,
+        "top1_any_gold_hit": 0.005,
+        "top3_any_gold_hit": 0.01,
+        "top3_exact_set": 0.0,
+        "multilabel_micro_f1": 0.005471956224350205,
+        "macro_f1_gold_labels": 0.00040329994247044937,
+        "abstentions": 68,
+        "single_label_records": 83,
+        "single_label_top1_accuracy": 0.0,
+        "single_label_macro_f1": 0.0,
+        "single_label_kappa": 0.0
+      },
+      "without_explicit_gold_in_input": {
+        "records": 198,
+        "top1_any_gold_hit": 0.005050505050505051,
+        "top3_any_gold_hit": 0.010101010101010102,
+        "top3_exact_set": 0.0,
+        "multilabel_micro_f1": 0.005509641873278237,
+        "macro_f1_gold_labels": 0.00040606227084353467,
+        "abstentions": 67,
+        "single_label_records": 81,
+        "single_label_top1_accuracy": 0.0,
+        "single_label_macro_f1": 0.0,
+        "single_label_kappa": 0.0
+      },
+      "at_least_one_gold_label_in_graph_secondary": {
+        "records": 26,
+        "top1_any_gold_hit": 0.038461538461538464,
+        "top3_any_gold_hit": 0.07692307692307693,
+        "top3_exact_set": 0.0,
+        "multilabel_micro_f1": 0.032,
+        "macro_f1_gold_labels": 0.012380952380952381,
+        "abstentions": 4,
+        "single_label_records": 2,
+        "single_label_top1_accuracy": 0.0,
+        "single_label_macro_f1": 0.0,
+        "single_label_kappa": 0.0
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "tcm-sd-supervised-baselines-v1",
+  "repository": "https://github.com/Borororo/ZY-BERT",
+  "commit": "72a89518392ec28f5dc1c8ed252a6c127ca2145b",
+  "reference": "https://aclanthology.org/2022.ccl-1.80/",
+  "license": "Dataset CC BY-NC-SA 4.0 per author's README; raw data and trained text models kept outside Git",
+  "input_fields": ["chief_complaint", "description", "detection"],
+  "label_field": "norm_syndrome",
+  "forbidden_input_fields": ["user_id", "lcd_id", "lcd_name", "syndrome", "norm_syndrome"],
+  "feature": {"analyzer": "char", "ngram_range": [2, 3], "max_features": 40000, "min_df": 3, "sublinear_tf": true, "max_text_chars": 4096},
+  "candidates": [{"method": "complement_nb", "alpha": 1.0}, {"method": "sgd_logloss", "alpha": 0.0001}, {"method": "sgd_logloss", "alpha": 0.00001}],
+  "training": {"seed": 42, "max_iter": 30, "tol": 0.001, "n_jobs": 1},
+  "selection": "Fit text features on official train only. Select candidate by macro-F1 on official dev records whose normalized input text is absent from train. Freeze classifier before fetching test gold. Publish all candidate validation scores; no post-test tuning.",
+  "evaluation": "Official test accuracy, macro-F1 on fixed 148 train labels, kappa, top3; also exact-text-unseen stratum and source user_id overlap counts without assuming this ID denotes a patient. Evaluate frozen existing graph on same texts. Supplementary TCMEval-SDT transfer is exploratory because its baseline scores were already observed, and label ontology mismatch remains.",
+  "limits": ["General TCM, not diabetes-specific", "Computational retrospective benchmark, not clinical deployment validation", "TF-IDF classifiers are supervised baselines, not LLMs or KAN/PPO", "Unknown overlap of source literature", "Source user_id semantics need verification", "No claim that this reproduces DMease's original 50-patient study"]
+}

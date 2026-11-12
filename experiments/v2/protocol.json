@@ -1,0 +1,16 @@
+{
+  "id": "kan-ppo-diagnosis-v2",
+  "date": "2026-11-12",
+  "base_commit": "9e3a87be16ae13f360907f45976ec3f138446100",
+  "evidence_fingerprint": "f9d7cca2be94fa8a5f52036de8b0ff8fe74031ce0d9b6f0ab469a9372d272af7",
+  "seeds": [42, 43, 44],
+  "variants": ["stable_rbf", "stable_spline", "oracle_spline", "oracle_mlp"],
+  "training": {"warmup_epochs": 60, "critic_warmup_epochs": 30, "ppo_iterations": 180, "episodes": 24, "validation_interval": 15, "gamma": 1.0, "gae_lambda": 0.95, "actor_lr": 0.0001, "critic_lr": 0.0005, "initial_entropy": 0.001, "target_kl": 0.01},
+  "split": "Retain original 464 training queries. Exclude ALL 575 v1 queries from new validation/test. Sort unused triple identities by SHA256('v2:'+id), first 96 validation, next 192 test. No test scoring until all model checkpoints are selected.",
+  "selection": "Choose checkpoint by new validation reference objective, including iteration zero. Freeze each before test. No seed selection. Production policy is unchanged.",
+  "teacher": "Exact subset optimizer is used ONLY on training queries for oracle variants. Greedy teacher for stable variants. Select any allowed member of teacher set; retain audited fallback if none available. Teacher labels are computational, not expert prescriptions.",
+  "scoring": "Same v1 full reference graph and objective for all methods. Score raw selection and shared deterministic delete/add/swap postprocessing separately. No reward-weight tuning.",
+  "baseline": "Greedy, greedy plus identical local search, exact set optimum, and frozen v1 RBF/PPO per seed. Exact test optimum is an evaluation ceiling, never a training label.",
+  "paper_metrics": "Report Jaccard target consistency both on 49 shared targets and on ALL eligible target IDs in the retrieved bundle; associations are not predicted affinity. Retain per-query herb count and PPI coverage. Pathway enrichment is a separate public-database experiment, not clinical replication.",
+  "limits": ["Shared knowledge graph across all queries", "Combinations are not patients", "Model and evidence-drop generalization are different tasks", "Improvements are not assumed; all variants and seeds published", "No external preregistration", "No reuse of new test results for tuning this version"]
+}

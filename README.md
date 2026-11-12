@@ -117,6 +117,53 @@ python scripts/build_experiment_report.py
 
 代码指纹保留实际运行时的字节校验值；离线核验仅容许Git跨平台检出产生的LF/CRLF换行等价，其他内容改变仍会失败。本轮测试查询已被分析，后续方法迭代需要新的冻结评价与独立材料。完整的实施方法、局限及逐查询误差对照见报告。
 
+## 第二轮改进与公开病例评价
+
+“研究复现 → 改进与外部评价”提供策略对照、真实病例辨证指标、通路与靶点一致性，以及可交互的单次集合优化。[完整第二轮报告](experiments/v2/report.html)、[数值汇总](experiments/v2/summary.json)和[监督辨证结果](experiments/v2/supervised_syndrome.json)均可核查。
+
+新增三次B样条KAN、GAE与价值预热、独立学习率、KL提前停止、衰减熵、允许保留预训练检查点，以及仅训练查询上的精确集合示范。保持原来的参考目标；全部12个新模型先按新验证集选定，再对与上一轮不重叠的192个查询统一测试。
+
+| 原始策略 | 新测试综合目标（三种子均值） |
+| --- | --- |
+| 旧版RBF/KAN-PPO | 0.821893 |
+| 稳定RBF方案 | 0.824199 |
+| 三次样条KAN方案 | 0.823329 |
+| 最优集合示范与样条 | 0.822635 |
+| 最优集合示范与MLP | 0.822870 |
+| 确定性证据增益 | 0.825261 |
+
+稳定方案将与贪心的差距缩小约68%，但未超过贪心。其三个种子均选择PPO前检查点，不能将收益归因于PPO。相同的删除/增补/交换搜索提供给所有方法；贪心搜索后为0.826407，精确上界0.826615，190/192个查询达到集合最优。生产模型未按新测试结果替换。
+
+补算论文形式的TCS/Jaccard后，贪心在共享49靶点范围为0.2158，在全部取得的显著关联靶点范围仅0.0061。二值关联覆盖不是预测亲和度；大量非查询靶点会扩大并集。STRING 12.0通路富集也已执行：以当前可选靶点为背景未返回显著通路，整个人类背景下则有较多条目；同一查询的三种策略产生相同靶点集合，不能证明PPI的独立增益。
+
+实际取得了两套作者公开的标注数据，未将其病例原文放入Git：
+
+- **TCMEval-SDT**：200条带答案的公开训练分区，用于冻结系统的外部零样本审计。原图谱前三候选命中2/200；335个金标准证候标签中只有28个能按固定文字规则映射，揭示适用范围和标签对齐缺口。
+- **TCM-SD**：43,180条训练、5,486条验证、5,486条测试，148类证候。只用主诉、病情描述和检查字段，按去除训练重复文本后的验证macro-F1选择监督文本分类器。官方测试准确率**82.46%**、macro-F1 **0.4247**、Kappa **0.8085**；排除与训练/验证重复的测试文本后，4,888条上的准确率为**80.91%**、macro-F1 **0.4113**。不均衡类别和跨数据集迁移仍明显受限，不能只报告准确率。
+
+这是监督文本对照，不是LLM或KAN/PPO。它迁移至TCMEval-SDT时首候选命中4%、前三命中7.5%，说明同域成绩不能代表跨域临床适用性。两套数据均不等同于原论文50例糖尿病病例；82.46%不能冒称复现论文86%。测试中有源user_id跨分区重复，其含义未核实，不宣称患者级独立评价。
+
+复现先完成公开证据初始化，再运行以下命令。报告及数值核验不需病例原文；训练和外部评价会取得公开数据，原始文件和研究模型保存在忽略目录中。建议在独立检出目录重跑，以保留发布结果。
+
+```bash
+python scripts/research_v2.py --prepare
+# 首次检出时重建旧策略对照权重；已有权重可省略这三行
+python scripts/reproduce_policy_v2.py --legacy --seed 42
+python scripts/reproduce_policy_v2.py --legacy --seed 43
+python scripts/reproduce_policy_v2.py --legacy --seed 44
+python scripts/reproduce_policy_v2.py --seed 42
+python scripts/reproduce_policy_v2.py --seed 43
+python scripts/reproduce_policy_v2.py --seed 44
+python scripts/research_v2.py --aggregate
+python scripts/pathway_audit.py
+python scripts/external_syndrome_audit.py
+python scripts/tcm_sd_benchmark.py
+python scripts/verify_v2.py
+python scripts/report_v2.py
+```
+
+新增研究没有填补经测量数据校准的亲和度、论文LLM抽取、体质疗效适配和原病例临床评价。方法差距、数据缺口和所有未支持论文结论的结果均在报告保留。
+
 ## 命令行
 
 ```bash

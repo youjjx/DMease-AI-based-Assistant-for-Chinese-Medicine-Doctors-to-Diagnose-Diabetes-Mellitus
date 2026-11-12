@@ -1,0 +1,16 @@
+{
+  "id": "tcmeval-sdt-zero-shot-v1",
+  "dataset": "TCMEval-SDT",
+  "paper": "https://doi.org/10.1038/s41597-025-04772-9",
+  "dataset_doi": "https://doi.org/10.6084/m9.figshare.27184596.v4",
+  "source_url": "https://raw.githubusercontent.com/zhuyan166/TCMEval/main/evaluation/TCMEval-SDT/data/Train_TCM_Data_v1.json",
+  "source_sha256": "cddcf9c7187d43462b8c80b1756527e506b2e8d9d0329171d50477f49bd679cd",
+  "license": "CC-BY-4.0 according to dataset authors; raw records kept outside Git",
+  "sample_rule": "All 200 labelled records in authors' training partition. None used to train or tune DMease. Authors' public test/validation partitions lack gold answers, so this is an external zero-shot audit, not a claimed official test score.",
+  "input": "Clinical Data only; no clinical information annotation, pathogenesis, syndrome, reasoning, answer options or explanatory summary supplied to the predictor",
+  "methods": ["current_negation_aware_graph", "same_graph_literal_keywords"],
+  "labels": "Split gold TCM Syndrome on ASCII/Chinese semicolons; normalize whitespace and one terminal 证 only. No manually invented clinical synonym alignment.",
+  "metrics": "All-record top1-any-gold hit, top3-any-gold hit, top3 exact set, multilabel micro-F1, macro-F1 on gold label vocabulary. Separately single-gold-label top1 accuracy/F1/kappa with n. Count abstentions and gold-label coverage by the graph. Preserve full denominator; scope-covered strata are secondary only.",
+  "leakage_audit": "Report duplicated clinical text hashes and explicit gold syndrome mentions in input; separately summarize input-without-gold-mention stratum. No text or individual medical details published.",
+  "limits": ["Broad TCM conditions, not diabetes-specific", "Public expert labels are from dataset authors, not newly collected by this project", "Potential overlap with source literature cannot be excluded", "SymMap scope only 24 symptoms and 111 syndromes", "Exact lexical normalization is not clinically validated semantic equivalence", "No tuning after observing scores"]
+}
