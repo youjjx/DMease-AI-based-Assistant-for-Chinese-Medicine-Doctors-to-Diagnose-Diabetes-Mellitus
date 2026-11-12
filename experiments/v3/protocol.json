@@ -1,0 +1,37 @@
+{
+  "id": "dmease-measured-affinity-and-local-extraction-v3",
+  "created_at": "2026-11-12",
+  "status": "Frozen before fitting models or scoring extraction; target identities, API availability, approximate row counts and one example per target were inspected for feasibility.",
+  "affinity": {
+    "source": "https://www.ebi.ac.uk/chembl/api/data/",
+    "targets": {"PPARG": "CHEMBL235", "AKT1": "CHEMBL4282", "INSR": "CHEMBL1981"},
+    "endpoints": ["Ki", "Kd"],
+    "filters": "Human single protein, binding assay, confidence_score=9, standard_flag=1, exact relation =, standard_units nM, finite positive standard_value, no data_validity_comment, no potential_duplicate or annotated assay mutation. Each exclusion counted. Ki and Kd modeled separately; no fabricated inactive samples.",
+    "curation": "RDKit FragmentParent then Uncharger; canonical isomeric SMILES; median pK=9-log10(nM) for each standardized molecule/target/endpoint. Report replicate spread and cross-document overlaps.",
+    "split": "Global non-isomeric Bemis-Murcko scaffold; all acyclic compounds share ACYCLIC. SHA256('dmease-affinity-v3|'+scaffold) first 8 hex digits modulo 100: <70 train, <85 validation, else test. No resplitting. Scaffold assignment shared across all targets/endpoints.",
+    "features": {"type": "Morgan binary fingerprint", "radius": 2, "bits": 2048, "chirality": true},
+    "minimum_counts": {"train": 40, "validation": 15, "test": 15},
+    "candidates": [{"method": "mean"}, {"method": "ridge", "alpha": 1}, {"method": "ridge", "alpha": 10}, {"method": "ridge", "alpha": 100}, {"method": "random_forest", "trees": 300, "min_samples_leaf": 2, "max_features": 0.5}, {"method": "random_forest", "trees": 300, "min_samples_leaf": 5, "max_features": 0.5}],
+    "selection": "Minimum validation MAE, stable candidate order for ties. Save selected model checksum and validation results before evaluating test. Report all candidates on test without reselection. Seed 42; no final refit on validation.",
+    "metrics": ["MAE_pK", "RMSE_pK", "R2", "Spearman", "paired scaffold-bootstrap MAE difference against mean baseline, 2000 replicates, seed 42"],
+    "limits": ["Separate target-specific regressions, not an unseen-target model", "Exact-valued assays only; selection and publication biases remain", "Scaffold-disjoint is not publication-disjoint", "Assay conditions differ; median aggregation does not eliminate heterogeneity", "No whole-herb binding probability or clinical efficacy inference", "TCMSP local ingredient table has no structure identifiers suitable for a verified structure join"]
+  },
+  "extraction": {
+    "source_url": "https://raw.githubusercontent.com/zhuyan166/TCMEval/main/evaluation/TCMEval-SDT/data/Train_TCM_Data_v1.json",
+    "source_sha256": "cddcf9c7187d43462b8c80b1756527e506b2e8d9d0329171d50477f49bd679cd",
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "model_license": "Apache-2.0",
+    "data_license": "CC BY 4.0 per dataset authors; retain medical narratives and generated text locally",
+    "input_field": "Clinical Data",
+    "gold_field": "Clinical Information",
+    "records": 200,
+    "max_input_tokens": 2048,
+    "max_new_tokens": 384,
+    "generation": "float16, batch 1, greedy, do_sample=false, SDPA, seed 42; one generation per record, no repair or prompt tuning based on scores",
+    "prompt_source": "src/dmease/local_extraction.py:build_messages",
+    "grounding": "Require exact evidence substring in full source and term substring in evidence, boolean present, canonical null or one of frozen 24 names; reject malformed items and count them. Reject entire malformed JSON responses. Check generated context truncation separately.",
+    "evaluation": "All 200 records, including failed outputs. Primary: positive canonical concepts against expert Clinical Information projected using frozen symptom dictionary/negation parser, with micro precision/recall/F1, exact set, empty-reference strata, per-concept counts. This is a limited dictionary-projected reference, not full clinical annotation. Secondary strict surface-term comparison to semicolon-split expert information is reported as a diagnostic, not a synonym-aware accuracy estimate. Compare existing rules on same inputs, measure invalid outputs, ungrounded items, token limits and latency. Downstream graph syndrome hit rates on same records are exploratory, using no gold as model input.",
+    "limits": ["These public training records were previously used for exploratory external syndrome evaluation; not an untouched official test", "No training or prompt selection on these records", "Unknown overlap with Qwen pretraining", "Expert information may omit symptoms; projected labels are incomplete", "Grounded quotation does not establish correct medical interpretation", "Small local model experiment does not reproduce the original paper's unspecified LLM"]
+  }
+}

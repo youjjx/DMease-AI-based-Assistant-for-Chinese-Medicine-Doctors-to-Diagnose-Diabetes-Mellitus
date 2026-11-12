@@ -1,0 +1,17 @@
+{
+  "python": "3.13.7",
+  "system": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "torch": "2.7.1+cu118",
+    "transformers": "4.57.6",
+    "huggingface_hub": "0.36.0",
+    "rdkit": "2026.9.2",
+    "numpy": "2.4.1",
+    "scipy": "1.17.0",
+    "scikit-learn": "1.9.0",
+    "joblib": "1.5.3",
+    "matplotlib": "3.10.8",
+    "requests": "2.32.5",
+    "safetensors": "0.7.0"
+  }
+}

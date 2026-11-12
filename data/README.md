@@ -50,7 +50,7 @@ It is not clinical evidence and must not be used for real medical decisions.
 
 STRING 的综合关联分数不是结合亲和度，功能关联也不一定是物理相互作用。TCMSP 的关联包含预测信息，原始 validated、SVM_score、RF_score 保存在关系来源中；缺失值不会伪造为已验证。精确名称未匹配的药材列在报告中，不擅自合并生地黄/地黄等可能存在炮制差异的名称。
 
-正式分析现在使用 `build_evidence_bundle.py` 取得的SymMap关系与STRING关联。语义指纹排除下载时间，关系与显著性字段保持可追溯。TCMSP用于独立路径核查；亲和度预测、完整实体对齐与原论文同病例评价仍未完成。本次导入不包含原论文的108,746条门诊记录或50例专家标注，也不构成论文实验复现。
+正式分析现在使用 `build_evidence_bundle.py` 取得的SymMap关系与STRING关联。语义指纹排除下载时间，关系与显著性字段保持可追溯。TCMSP用于独立路径核查；生产推荐尚未接入实测亲和度预测，完整实体对齐与原论文同病例评价仍未完成。第三轮独立亲和度实验见下文。本次导入不包含原论文的108,746条门诊记录或50例专家标注，也不构成论文实验复现。
 
 ## 第二轮公开病例与通路研究
 
@@ -65,3 +65,13 @@ STRING 的综合关联分数不是结合亲和度，功能关联也不一定是�
 TCMEval-SDT作者测试/验证分区不公开完整答案，本项目没有伪造其答案；使用200条公开有标注分区时明确其身份，不称官方测试分区。TCM-SD只把主诉、病情描述、检查文本作为输入；标识、疾病名称和证候字段不作为特征。重复文本与源user_id重叠计数保留在报告中，后者含义未核实，尚不能保证患者级独立划分。
 
 公开病例的辨证参考标签不是中药疗效或亲和度标签，也不能补出原论文的特定糖尿病病例。生产入口的证候模块仍使用公开图谱，研究分类器不自动替换临床工作流。
+
+## 第三轮实测亲和度与本地模型
+
+`scripts/affinity_benchmark.py`从[ChEMBL官方REST接口](https://chembl.gitbook.io/chembl-interface-documentation/web-services/chembl-data-web-services)取得实测记录。本次接口状态为ChEMBL 37，2026-05-01发布。查询范围是人源PPARG（CHEMBL235/P37231）、AKT1（CHEMBL4282/P31749）、INSR（CHEMBL1981/P06213）的Ki与Kd精确nM值，非完整ChEMBL库。原始响应保存在`data/raw/public/chembl_v3`；全部请求参数、校验值、排除计数见`experiments/v3/affinity_sources.json`。
+
+数据库由ChEMBL团队提供，采用[CC BY-SA 3.0](https://chembl.gitbook.io/chembl-interface-documentation/frequently-asked-questions/general-questions)；本项目所附来源标识、测试pK及相应派生表遵循同一许可，具体范围见`experiments/v3/DATA_LICENSE.txt`。没有提取商业软件属性计算值来拟合其计算过程。本轮使用RDKit计算的结构指纹与实测终点，而不是把关联分数当亲和度。
+
+`scripts/local_extraction_benchmark.py`使用[Qwen2.5-1.5B-Instruct](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct)，固定版本`989aa7980e4cf806f80c7fef2b1adb7bc71aa306`，模型许可Apache-2.0。权重可从作者ModelScope镜像取得，但必须通过固定Hugging Face版本的完整SHA-256校验。推理完全在本机完成，不向远程推理服务发送病例；输入、生成输出与中间缓存保存在`outputs/research_v3`，不随Git分发。
+
+TCMEval症状参考使用其专家Clinical Information，不使用专家证候或推理文本作为模型输入；该字段经词典投影后的24症状集合是有限参考，并不是重新人工标注的完整症状真值。失败记录、长度上限和证据引用失败计数一并报告。公开的样本哈希和混淆计数仅用于复算，不含病例原文。

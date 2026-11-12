@@ -1,0 +1,2667 @@
+{
+  "selection": {
+    "provenance": {
+      "protocol": {
+        "id": "tcm-sd-frequency-weighting-exploratory",
+        "design": "Follow-up motivated by the observed v2 class-frequency diagnostic; the public test results have been seen. This is an exploratory benchmark revision, not a new independent confirmation. Freeze all candidates here before their training; choose only by the same exact-text-unseen validation macro-F1 as v2, and do not adapt after new test scores.",
+        "features": "Reuse the checksum-verified v2 vectorizer fitted on official train only; same input fields, truncation and splits. Do not refit on dev or test.",
+        "candidates": [
+          {
+            "weight_power": 0.25,
+            "alpha": 1e-05
+          },
+          {
+            "weight_power": 0.25,
+            "alpha": 0.0001
+          },
+          {
+            "weight_power": 0.5,
+            "alpha": 1e-05
+          },
+          {
+            "weight_power": 0.5,
+            "alpha": 0.0001
+          },
+          {
+            "weight_power": 1.0,
+            "alpha": 1e-05
+          },
+          {
+            "weight_power": 1.0,
+            "alpha": 0.0001
+          }
+        ],
+        "weights": "w_i=(N/(148*count_train(label_i)))**power; normalize sample weights to arithmetic mean 1 using train counts only.",
+        "training": {
+          "loss": "log_loss",
+          "seed": 42,
+          "max_iter": 30,
+          "tol": 0.001,
+          "n_jobs": 1
+        },
+        "selection": "Compare all six candidates and the frozen unweighted v2 baseline by exact-text-unseen validation macro-F1 on 148 fixed train labels. Include baseline as candidate 0; use first maximum for ties. Save selected checkpoint and all validation results before any new test scoring. If the baseline wins, retain it.",
+        "evaluation": "Report selected model and frozen baseline on official test and text-unseen subset, per-class frequency bands, TCMEval exploratory transfer. All validation candidates retained; no automatic replacement of production diagnosis.",
+        "limits": [
+          "Reused public validation/test benchmark",
+          "General TCM rather than diabetes-specific",
+          "No independent clinical or patient-level validation",
+          "Class weighting may trade overall accuracy for rare-label performance",
+          "No claim of paper clinical accuracy replication"
+        ]
+      },
+      "baseline_sha256": "8533155914c914c3d9d5e2004da2d86481cae7ecf3d23b2ac71ee6fae1536c8f",
+      "source_lf_sha256": {
+        "scripts/imbalance_benchmark_v3.py": "a41c0fb6f9fb8a03d6ac74e4a0d72dc1c8f8c9dd94ba056374be2ddaa82826f7",
+        "scripts/tcm_sd_benchmark.py": "e3b6e42b97ca90766aa44fb3909c6ce5fc95608e2bbc131f97a4800246e20f27"
+      }
+    },
+    "selected_index": 3,
+    "selected_checkpoint_sha256": "3b0f271b990d82e9d2e09ab31dbe42ade5d5b343e5e115e9ffa2df23dcb7ac4b",
+    "validation_records": 4957,
+    "candidates": [
+      {
+        "configuration": {
+          "method": "frozen_unweighted_v2"
+        },
+        "validation": {
+          "records": 4957,
+          "accuracy": 0.7950373209602583,
+          "macro_f1_148_train_labels": 0.3769245887318871,
+          "kappa": 0.7772631718050335,
+          "top3_hit": 0.9209199112366351,
+          "abstentions": 0
+        }
+      },
+      {
+        "configuration": {
+          "weight_power": 0.25,
+          "alpha": 1e-05
+        },
+        "validation": {
+          "records": 4957,
+          "accuracy": 0.8188420415573936,
+          "macro_f1_148_train_labels": 0.5126731184735052,
+          "kappa": 0.804471671473775,
+          "top3_hit": 0.9273754286867056,
+          "abstentions": 0
+        },
+        "checkpoint_sha256": "6f545e7e683ed6e78336a8611c1ba50ec5d1d271990d894d063c82aa7fa75dfa",
+        "weight_min": 0.6196048855781555,
+        "weight_max": 3.5306479930877686,
+        "weight_mean": 1.0
+      },
+      {
+        "configuration": {
+          "weight_power": 0.25,
+          "alpha": 0.0001
+        },
+        "validation": {
+          "records": 4957,
+          "accuracy": 0.7456122654831552,
+          "macro_f1_148_train_labels": 0.2678956347779177,
+          "kappa": 0.72301490180703,
+          "top3_hit": 0.8882388541456526,
+          "abstentions": 0
+        },
+        "checkpoint_sha256": "b88260e8a3105f9df99989c01e40ec0b4ef751af2171157949164b72e102356a",
+        "weight_min": 0.6196048855781555,
+        "weight_max": 3.5306479930877686,
+        "weight_mean": 1.0
+      },
+      {
+        "configuration": {
+          "weight_power": 0.5,
+          "alpha": 1e-05
+        },
+        "validation": {
+          "records": 4957,
+          "accuracy": 0.8137986685495259,
+          "macro_f1_148_train_labels": 0.5642667060474436,
+          "kappa": 0.8002113467438082,
+          "top3_hit": 0.9295945128101675,
+          "abstentions": 0
+        },
+        "checkpoint_sha256": "3b0f271b990d82e9d2e09ab31dbe42ade5d5b343e5e115e9ffa2df23dcb7ac4b",
+        "weight_min": 0.3090837597846985,
+        "weight_max": 10.035877227783203,
+        "weight_mean": 1.0
+      },
+      {
+        "configuration": {
+          "weight_power": 0.5,
+          "alpha": 0.0001
+        },
+        "validation": {
+          "records": 4957,
+          "accuracy": 0.7609441194270729,
+          "macro_f1_148_train_labels": 0.41462661793032934,
+          "kappa": 0.7423185276560202,
+          "top3_hit": 0.9043776477708292,
+          "abstentions": 0
+        },
+        "checkpoint_sha256": "5f41bd5ff331a5b74a2bdc3833d073f6781315ffdcea4dd0595fbee09f784b3f",
+        "weight_min": 0.3090837597846985,
+        "weight_max": 10.035877227783203,
+        "weight_mean": 1.0
+      },
+      {
+        "configuration": {
+          "weight_power": 1.0,
+          "alpha": 1e-05
+        },
+        "validation": {
+          "records": 4957,
+          "accuracy": 0.714746822675005,
+          "macro_f1_148_train_labels": 0.5314393369537016,
+          "kappa": 0.6994080491438732,
+          "top3_hit": 0.8777486382892878,
+          "abstentions": 0
+        },
+        "checkpoint_sha256": "986e344f50472740fdbd133e2fa2eeca7fb036fc986943609dd9f6bfd23152e2",
+        "weight_min": 0.03953343629837036,
+        "weight_max": 41.679534912109375,
+        "weight_mean": 1.0
+      },
+      {
+        "configuration": {
+          "weight_power": 1.0,
+          "alpha": 0.0001
+        },
+        "validation": {
+          "records": 4957,
+          "accuracy": 0.5267298769416986,
+          "macro_f1_148_train_labels": 0.4046188665580534,
+          "kappa": 0.5109479394004031,
+          "top3_hit": 0.7365341940689933,
+          "abstentions": 0
+        },
+        "checkpoint_sha256": "9dc8ea8b01a7fa48dad43ac4bb4dbfc77bb29977c5548f9809bb324b77143b47",
+        "weight_min": 0.03953343629837036,
+        "weight_max": 41.679534912109375,
+        "weight_mean": 1.0
+      }
+    ],
+    "frozen_before_new_test_at": "2026-11-12T06:12:07.879315+00:00"
+  },
+  "completed_at": "2026-11-12T06:12:13.512308+00:00",
+  "results": {
+    "frozen_unweighted_v2": {
+      "official_test": {
+        "records": 5486,
+        "accuracy": 0.8246445497630331,
+        "macro_f1_148_train_labels": 0.4246721430326302,
+        "kappa": 0.8084836979699359,
+        "top3_hit": 0.9389354721108275,
+        "abstentions": 0
+      },
+      "unseen_text_test": {
+        "records": 4888,
+        "accuracy": 0.8091243862520459,
+        "macro_f1_148_train_labels": 0.4112772920665781,
+        "kappa": 0.792732844027841,
+        "top3_hit": 0.9333060556464812,
+        "abstentions": 0
+      },
+      "frequency_bands": [
+        {
+          "training_frequency": "<20",
+          "test_records": 89,
+          "labels": 39,
+          "accuracy": 0.15730337078651685,
+          "macro_f1": 0.17350427350427347
+        },
+        {
+          "training_frequency": "20-99",
+          "test_records": 419,
+          "labels": 66,
+          "accuracy": 0.36754176610978523,
+          "macro_f1": 0.394838101979954
+        },
+        {
+          "training_frequency": "100-999",
+          "test_records": 1315,
+          "labels": 34,
+          "accuracy": 0.7049429657794677,
+          "macro_f1": 0.6505278598926683
+        },
+        {
+          "training_frequency": ">=1000",
+          "test_records": 3663,
+          "labels": 9,
+          "accuracy": 0.9361179361179361,
+          "macro_f1": 0.8786165039038794
+        }
+      ],
+      "by_label": [
+        {
+          "label": "中气下陷证",
+          "train": 25,
+          "test": 4,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "中气不足证",
+          "train": 23,
+          "test": 3,
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "f1": 0.5
+        },
+        {
+          "label": "外伤损络证",
+          "train": 16,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "大肠湿热证",
+          "train": 32,
+          "test": 5,
+          "precision": 1.0,
+          "recall": 0.2,
+          "f1": 0.3333333333333333
+        },
+        {
+          "label": "寒凝血瘀证",
+          "train": 88,
+          "test": 11,
+          "precision": 0.25,
+          "recall": 0.09090909090909091,
+          "f1": 0.13333333333333333
+        },
+        {
+          "label": "寒湿阻络证",
+          "train": 40,
+          "test": 6,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "寒痰阻肺证",
+          "train": 9,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "心肺气虚证",
+          "train": 57,
+          "test": 8,
+          "precision": 1.0,
+          "recall": 0.25,
+          "f1": 0.4
+        },
+        {
+          "label": "心肾不交证",
+          "train": 64,
+          "test": 8,
+          "precision": 0.875,
+          "recall": 0.875,
+          "f1": 0.875
+        },
+        {
+          "label": "心脉痹阻证",
+          "train": 396,
+          "test": 50,
+          "precision": 0.8536585365853658,
+          "recall": 0.7,
+          "f1": 0.7692307692307693
+        },
+        {
+          "label": "心脾两虚证",
+          "train": 11,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "心虚胆怯证",
+          "train": 22,
+          "test": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "心血虚证",
+          "train": 97,
+          "test": 13,
+          "precision": 0.9090909090909091,
+          "recall": 0.7692307692307693,
+          "f1": 0.8333333333333334
+        },
+        {
+          "label": "心阳不振证",
+          "train": 15,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "正虚毒瘀证",
+          "train": 142,
+          "test": 18,
+          "precision": 1.0,
+          "recall": 0.05555555555555555,
+          "f1": 0.10526315789473684
+        },
+        {
+          "label": "正虚毒结证",
+          "train": 69,
+          "test": 9,
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8
+        },
+        {
+          "label": "正虚瘀结证",
+          "train": 1771,
+          "test": 222,
+          "precision": 0.8488372093023255,
+          "recall": 0.9864864864864865,
+          "f1": 0.9125
+        },
+        {
+          "label": "毒邪流窜证",
+          "train": 8,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "气不摄血证",
+          "train": 15,
+          "test": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "气滞痰凝证",
+          "train": 22,
+          "test": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "气滞血瘀证",
+          "train": 4258,
+          "test": 533,
+          "precision": 0.8174204355108877,
+          "recall": 0.9155722326454033,
+          "f1": 0.863716814159292
+        },
+        {
+          "label": "气滞证",
+          "train": 66,
+          "test": 9,
+          "precision": 0.4444444444444444,
+          "recall": 0.4444444444444444,
+          "f1": 0.4444444444444444
+        },
+        {
+          "label": "气虚不摄证",
+          "train": 71,
+          "test": 9,
+          "precision": 1.0,
+          "recall": 0.4444444444444444,
+          "f1": 0.6153846153846154
+        },
+        {
+          "label": "气虚痰结证",
+          "train": 53,
+          "test": 7,
+          "precision": 1.0,
+          "recall": 0.5714285714285714,
+          "f1": 0.7272727272727273
+        },
+        {
+          "label": "气虚血溢证",
+          "train": 12,
+          "test": 2,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666
+        },
+        {
+          "label": "气虚血瘀证",
+          "train": 7380,
+          "test": 923,
+          "precision": 0.7788898999090081,
+          "recall": 0.9274106175514626,
+          "f1": 0.8466864490603363
+        },
+        {
+          "label": "气虚证",
+          "train": 23,
+          "test": 4,
+          "precision": 1.0,
+          "recall": 0.25,
+          "f1": 0.4
+        },
+        {
+          "label": "气血不足证",
+          "train": 61,
+          "test": 8,
+          "precision": 1.0,
+          "recall": 0.125,
+          "f1": 0.2222222222222222
+        },
+        {
+          "label": "气血两虚证",
+          "train": 47,
+          "test": 7,
+          "precision": 1.0,
+          "recall": 0.5714285714285714,
+          "f1": 0.7272727272727273
+        },
+        {
+          "label": "气血亏虚证",
+          "train": 193,
+          "test": 25,
+          "precision": 1.0,
+          "recall": 0.4,
+          "f1": 0.5714285714285714
+        },
+        {
+          "label": "气血失调证",
+          "train": 7,
+          "test": 2,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666
+        },
+        {
+          "label": "气血瘀滞证",
+          "train": 30,
+          "test": 4,
+          "precision": 0.6666666666666666,
+          "recall": 0.5,
+          "f1": 0.5714285714285714
+        },
+        {
+          "label": "气郁痰阻证",
+          "train": 21,
+          "test": 3,
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8
+        },
+        {
+          "label": "气阴两虚证",
+          "train": 764,
+          "test": 96,
+          "precision": 0.788235294117647,
+          "recall": 0.6979166666666666,
+          "f1": 0.7403314917127072
+        },
+        {
+          "label": "气阴亏虚证",
+          "train": 11,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "津亏热结证",
+          "train": 47,
+          "test": 6,
+          "precision": 0.6,
+          "recall": 1.0,
+          "f1": 0.75
+        },
+        {
+          "label": "湿毒蕴结证",
+          "train": 10,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "湿热下注证",
+          "train": 6972,
+          "test": 872,
+          "precision": 0.9794050343249427,
+          "recall": 0.981651376146789,
+          "f1": 0.9805269186712485
+        },
+        {
+          "label": "湿热内蕴证",
+          "train": 99,
+          "test": 13,
+          "precision": 0.8571428571428571,
+          "recall": 0.46153846153846156,
+          "f1": 0.6
+        },
+        {
+          "label": "湿热瘀滞证",
+          "train": 10,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "湿热瘀阻证",
+          "train": 552,
+          "test": 70,
+          "precision": 0.9027777777777778,
+          "recall": 0.9285714285714286,
+          "f1": 0.9154929577464789
+        },
+        {
+          "label": "湿热蕴毒证",
+          "train": 24,
+          "test": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "湿热蕴结证",
+          "train": 462,
+          "test": 58,
+          "precision": 0.631578947368421,
+          "recall": 0.8275862068965517,
+          "f1": 0.7164179104477612
+        },
+        {
+          "label": "湿热阻络证",
+          "train": 111,
+          "test": 14,
+          "precision": 0.9166666666666666,
+          "recall": 0.7857142857142857,
+          "f1": 0.8461538461538461
+        },
+        {
+          "label": "热毒壅结证",
+          "train": 9,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "热毒炽盛证",
+          "train": 31,
+          "test": 5,
+          "precision": 1.0,
+          "recall": 0.2,
+          "f1": 0.3333333333333333
+        },
+        {
+          "label": "热毒蕴结证",
+          "train": 1148,
+          "test": 144,
+          "precision": 0.9791666666666666,
+          "recall": 0.9791666666666666,
+          "f1": 0.9791666666666666
+        },
+        {
+          "label": "热毒蕴肤证",
+          "train": 15,
+          "test": 3,
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "f1": 0.5
+        },
+        {
+          "label": "痰气交阻证",
+          "train": 9,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "痰浊上蒙证",
+          "train": 18,
+          "test": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "痰浊中阻证",
+          "train": 28,
+          "test": 4,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "痰浊内蕴证",
+          "train": 55,
+          "test": 7,
+          "precision": 1.0,
+          "recall": 0.7142857142857143,
+          "f1": 0.8333333333333334
+        },
+        {
+          "label": "痰浊蒙窍证",
+          "train": 250,
+          "test": 32,
+          "precision": 0.6666666666666666,
+          "recall": 0.8125,
+          "f1": 0.7323943661971831
+        },
+        {
+          "label": "痰湿中阻证",
+          "train": 164,
+          "test": 21,
+          "precision": 0.8181818181818182,
+          "recall": 0.42857142857142855,
+          "f1": 0.5625
+        },
+        {
+          "label": "痰湿内阻证",
+          "train": 47,
+          "test": 7,
+          "precision": 1.0,
+          "recall": 0.5714285714285714,
+          "f1": 0.7272727272727273
+        },
+        {
+          "label": "痰湿蒙窍证",
+          "train": 184,
+          "test": 24,
+          "precision": 0.7241379310344828,
+          "recall": 0.875,
+          "f1": 0.7924528301886793
+        },
+        {
+          "label": "痰湿蕴肺证",
+          "train": 1666,
+          "test": 209,
+          "precision": 0.7790697674418605,
+          "recall": 0.9617224880382775,
+          "f1": 0.860813704496788
+        },
+        {
+          "label": "痰湿证",
+          "train": 23,
+          "test": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "痰湿阻滞证",
+          "train": 15,
+          "test": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "痰火扰心证",
+          "train": 48,
+          "test": 6,
+          "precision": 1.0,
+          "recall": 0.16666666666666666,
+          "f1": 0.2857142857142857
+        },
+        {
+          "label": "痰热内扰证",
+          "train": 16,
+          "test": 2,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666
+        },
+        {
+          "label": "痰热壅肺证",
+          "train": 122,
+          "test": 16,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "痰瘀互结证",
+          "train": 274,
+          "test": 35,
+          "precision": 0.8333333333333334,
+          "recall": 0.42857142857142855,
+          "f1": 0.5660377358490566
+        },
+        {
+          "label": "痰瘀滞络证",
+          "train": 78,
+          "test": 10,
+          "precision": 1.0,
+          "recall": 0.3,
+          "f1": 0.46153846153846156
+        },
+        {
+          "label": "痰瘀痹阻证",
+          "train": 423,
+          "test": 54,
+          "precision": 0.8717948717948718,
+          "recall": 0.6296296296296297,
+          "f1": 0.7311827956989247
+        },
+        {
+          "label": "痰蒙清窍证",
+          "train": 21,
+          "test": 3,
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "f1": 0.5
+        },
+        {
+          "label": "痰蒙神窍证",
+          "train": 19,
+          "test": 3,
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "f1": 0.5
+        },
+        {
+          "label": "瘀滞胞宫证",
+          "train": 15,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "瘀血内阻证",
+          "train": 7,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "瘀血阻滞证",
+          "train": 63,
+          "test": 8,
+          "precision": 1.0,
+          "recall": 0.25,
+          "f1": 0.4
+        },
+        {
+          "label": "瘀血阻络证",
+          "train": 280,
+          "test": 35,
+          "precision": 0.6363636363636364,
+          "recall": 0.4,
+          "f1": 0.49122807017543857
+        },
+        {
+          "label": "瘀阻心脉证",
+          "train": 80,
+          "test": 11,
+          "precision": 0.8333333333333334,
+          "recall": 0.45454545454545453,
+          "f1": 0.5882352941176471
+        },
+        {
+          "label": "肝气犯胃证",
+          "train": 64,
+          "test": 9,
+          "precision": 1.0,
+          "recall": 0.7777777777777778,
+          "f1": 0.875
+        },
+        {
+          "label": "肝经湿热证",
+          "train": 150,
+          "test": 19,
+          "precision": 0.8260869565217391,
+          "recall": 1.0,
+          "f1": 0.9047619047619048
+        },
+        {
+          "label": "肝肾两虚证",
+          "train": 15,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "肝肾亏损证",
+          "train": 16,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "肝肾亏虚证",
+          "train": 1295,
+          "test": 162,
+          "precision": 0.7790697674418605,
+          "recall": 0.8271604938271605,
+          "f1": 0.8023952095808383
+        },
+        {
+          "label": "肝肾阴虚证",
+          "train": 172,
+          "test": 22,
+          "precision": 0.75,
+          "recall": 0.4090909090909091,
+          "f1": 0.5294117647058824
+        },
+        {
+          "label": "肝胃不和证",
+          "train": 485,
+          "test": 61,
+          "precision": 0.6,
+          "recall": 0.6885245901639344,
+          "f1": 0.6412213740458015
+        },
+        {
+          "label": "肝胃气滞证",
+          "train": 19,
+          "test": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "肝胃郁热证",
+          "train": 1785,
+          "test": 224,
+          "precision": 0.7410071942446043,
+          "recall": 0.9196428571428571,
+          "f1": 0.8207171314741036
+        },
+        {
+          "label": "肝胆湿热证",
+          "train": 31,
+          "test": 5,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "肝郁气滞证",
+          "train": 109,
+          "test": 14,
+          "precision": 0.75,
+          "recall": 0.42857142857142855,
+          "f1": 0.5454545454545454
+        },
+        {
+          "label": "肝郁脾虚证",
+          "train": 39,
+          "test": 6,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "肝郁血瘀证",
+          "train": 79,
+          "test": 11,
+          "precision": 1.0,
+          "recall": 0.5454545454545454,
+          "f1": 0.7058823529411765
+        },
+        {
+          "label": "肝阳上亢证",
+          "train": 185,
+          "test": 24,
+          "precision": 0.9166666666666666,
+          "recall": 0.4583333333333333,
+          "f1": 0.6111111111111112
+        },
+        {
+          "label": "肝阴不足证",
+          "train": 79,
+          "test": 10,
+          "precision": 0.7777777777777778,
+          "recall": 0.7,
+          "f1": 0.7368421052631579
+        },
+        {
+          "label": "肠燥津伤证",
+          "train": 14,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "肺卫不固证",
+          "train": 42,
+          "test": 6,
+          "precision": 0.8333333333333334,
+          "recall": 0.8333333333333334,
+          "f1": 0.8333333333333334
+        },
+        {
+          "label": "肺肾气虚证",
+          "train": 55,
+          "test": 8,
+          "precision": 0.6666666666666666,
+          "recall": 0.25,
+          "f1": 0.36363636363636365
+        },
+        {
+          "label": "肺阴虚证",
+          "train": 11,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "肾不纳气证",
+          "train": 12,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "肾气虚证",
+          "train": 35,
+          "test": 5,
+          "precision": 1.0,
+          "recall": 0.4,
+          "f1": 0.5714285714285714
+        },
+        {
+          "label": "肾虚寒凝证",
+          "train": 24,
+          "test": 4,
+          "precision": 0.6666666666666666,
+          "recall": 0.5,
+          "f1": 0.5714285714285714
+        },
+        {
+          "label": "肾虚水泛证",
+          "train": 58,
+          "test": 8,
+          "precision": 0.8571428571428571,
+          "recall": 0.75,
+          "f1": 0.8
+        },
+        {
+          "label": "肾虚肝亢证",
+          "train": 29,
+          "test": 4,
+          "precision": 1.0,
+          "recall": 0.75,
+          "f1": 0.8571428571428571
+        },
+        {
+          "label": "肾虚证",
+          "train": 527,
+          "test": 66,
+          "precision": 0.875,
+          "recall": 0.9545454545454546,
+          "f1": 0.9130434782608695
+        },
+        {
+          "label": "肾阳虚证",
+          "train": 7,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "脾气虚证",
+          "train": 29,
+          "test": 4,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "脾肾两虚证",
+          "train": 908,
+          "test": 114,
+          "precision": 0.7971014492753623,
+          "recall": 0.9649122807017544,
+          "f1": 0.873015873015873
+        },
+        {
+          "label": "脾肾气虚证",
+          "train": 14,
+          "test": 2,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666
+        },
+        {
+          "label": "脾肾阳虚证",
+          "train": 83,
+          "test": 11,
+          "precision": 1.0,
+          "recall": 0.09090909090909091,
+          "f1": 0.16666666666666666
+        },
+        {
+          "label": "脾胃不和证",
+          "train": 128,
+          "test": 16,
+          "precision": 0.375,
+          "recall": 0.375,
+          "f1": 0.375
+        },
+        {
+          "label": "脾胃气虚证",
+          "train": 24,
+          "test": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "脾胃湿热证",
+          "train": 8,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "脾胃积热证",
+          "train": 60,
+          "test": 8,
+          "precision": 0.6666666666666666,
+          "recall": 0.25,
+          "f1": 0.36363636363636365
+        },
+        {
+          "label": "脾胃虚寒证",
+          "train": 464,
+          "test": 58,
+          "precision": 0.6338028169014085,
+          "recall": 0.7758620689655172,
+          "f1": 0.6976744186046512
+        },
+        {
+          "label": "脾胃虚弱证",
+          "train": 154,
+          "test": 20,
+          "precision": 0.5555555555555556,
+          "recall": 0.25,
+          "f1": 0.3448275862068966
+        },
+        {
+          "label": "脾胃阳虚证",
+          "train": 17,
+          "test": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "脾虚湿盛证",
+          "train": 60,
+          "test": 8,
+          "precision": 0.8,
+          "recall": 0.5,
+          "f1": 0.6153846153846154
+        },
+        {
+          "label": "脾虚湿蕴证",
+          "train": 31,
+          "test": 5,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "血热证",
+          "train": 138,
+          "test": 18,
+          "precision": 0.5714285714285714,
+          "recall": 0.8888888888888888,
+          "f1": 0.6956521739130435
+        },
+        {
+          "label": "血瘀痰凝证",
+          "train": 155,
+          "test": 20,
+          "precision": 0.76,
+          "recall": 0.95,
+          "f1": 0.8444444444444444
+        },
+        {
+          "label": "血虚证",
+          "train": 19,
+          "test": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        {
+          "label": "血虚风燥证",
+          "train": 38,
+          "test": 5,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "阳虚寒凝证",
+          "train": 23,
+          "test": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "阳虚水泛证",
+          "train": 448,
+          "test": 56,
+          "precision": 0.8679245283018868,
+          "recall": 0.8214285714285714,
+          "f1": 0.8440366972477065
+        },
+        {
+          "label": "阳虚痰凝证",
+          "train": 7,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "阳虚血瘀证",
+          "train": 82,
+          "test": 11,
+          "precision": 1.0,
+          "recall": 0.18181818181818182,
+          "f1": 0.3076923076923077
+        },
+        {
+          "label": "阴虚津亏证",
+          "train": 32,
+          "test": 5,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "阴虚湿热证",
+          "train": 9,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "阴虚火旺证",
+          "train": 159,
+          "test": 21,
+          "precision": 1.0,
+          "recall": 0.5714285714285714,
+          "f1": 0.7272727272727273
+        },
+        {
+          "label": "阴虚血热证",
+          "train": 29,
+          "test": 4,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "阴虚血瘀证",
+          "train": 115,
+          "test": 15,
+          "precision": 0.5,
+          "recall": 0.06666666666666667,
+          "f1": 0.11764705882352941
+        },
+        {
+          "label": "阴虚阳亢证",
+          "train": 265,
+          "test": 34,
+          "precision": 1.0,
+          "recall": 0.8823529411764706,
+          "f1": 0.9375
+        },
+        {
+          "label": "阴虚风动证",
+          "train": 29,
+          "test": 4,
+          "precision": 1.0,
+          "recall": 0.25,
+          "f1": 0.4
+        },
+        {
+          "label": "风寒外袭证",
+          "train": 352,
+          "test": 44,
+          "precision": 0.8695652173913043,
+          "recall": 0.9090909090909091,
+          "f1": 0.8888888888888888
+        },
+        {
+          "label": "风寒湿痹证",
+          "train": 81,
+          "test": 11,
+          "precision": 1.0,
+          "recall": 0.2727272727272727,
+          "f1": 0.42857142857142855
+        },
+        {
+          "label": "风寒湿阻证",
+          "train": 26,
+          "test": 4,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "风寒痹阻证",
+          "train": 23,
+          "test": 4,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "风寒袭肺证",
+          "train": 467,
+          "test": 59,
+          "precision": 0.7213114754098361,
+          "recall": 0.7457627118644068,
+          "f1": 0.7333333333333333
+        },
+        {
+          "label": "风寒袭表证",
+          "train": 46,
+          "test": 6,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666
+        },
+        {
+          "label": "风寒阻络证",
+          "train": 53,
+          "test": 7,
+          "precision": 0.75,
+          "recall": 0.42857142857142855,
+          "f1": 0.5454545454545454
+        },
+        {
+          "label": "风湿热证",
+          "train": 17,
+          "test": 3,
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "f1": 0.5
+        },
+        {
+          "label": "风湿蕴肤证",
+          "train": 24,
+          "test": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "风热伤络证",
+          "train": 20,
+          "test": 3,
+          "precision": 0.6,
+          "recall": 1.0,
+          "f1": 0.75
+        },
+        {
+          "label": "风热外袭证",
+          "train": 14,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "风热毒蕴证",
+          "train": 24,
+          "test": 4,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "风热犯肺证",
+          "train": 58,
+          "test": 8,
+          "precision": 1.0,
+          "recall": 0.25,
+          "f1": 0.4
+        },
+        {
+          "label": "风热血热证",
+          "train": 19,
+          "test": 3,
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8
+        },
+        {
+          "label": "风热袭表证",
+          "train": 24,
+          "test": 4,
+          "precision": 0.6666666666666666,
+          "recall": 0.5,
+          "f1": 0.5714285714285714
+        },
+        {
+          "label": "风痰上扰证",
+          "train": 367,
+          "test": 47,
+          "precision": 0.8,
+          "recall": 0.5106382978723404,
+          "f1": 0.6233766233766234
+        },
+        {
+          "label": "风痰入络证",
+          "train": 305,
+          "test": 39,
+          "precision": 0.9583333333333334,
+          "recall": 0.5897435897435898,
+          "f1": 0.7301587301587301
+        },
+        {
+          "label": "风痰瘀阻证",
+          "train": 2984,
+          "test": 374,
+          "precision": 0.8078817733990148,
+          "recall": 0.8770053475935828,
+          "f1": 0.841025641025641
+        },
+        {
+          "label": "风痰闭窍证",
+          "train": 10,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "风痰闭阻证",
+          "train": 8,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "饮食积滞证",
+          "train": 62,
+          "test": 8,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666
+        },
+        {
+          "label": "髓海不足证",
+          "train": 17,
+          "test": 3,
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8
+        }
+      ],
+      "external_transfer": {
+        "records": 200,
+        "top1": 0.04,
+        "top3": 0.075
+      }
+    },
+    "validation_selected": {
+      "official_test": {
+        "records": 5486,
+        "accuracy": 0.8341232227488151,
+        "macro_f1_148_train_labels": 0.5814170289822072,
+        "kappa": 0.820734958446215,
+        "top3_hit": 0.944586219467736,
+        "abstentions": 0
+      },
+      "unseen_text_test": {
+        "records": 4888,
+        "accuracy": 0.820785597381342,
+        "macro_f1_148_train_labels": 0.5686117941791375,
+        "kappa": 0.8076243924813045,
+        "top3_hit": 0.939443535188216,
+        "abstentions": 0
+      },
+      "frequency_bands": [
+        {
+          "training_frequency": "<20",
+          "test_records": 89,
+          "labels": 39,
+          "accuracy": 0.4044943820224719,
+          "macro_f1": 0.4333333333333333
+        },
+        {
+          "training_frequency": "20-99",
+          "test_records": 419,
+          "labels": 66,
+          "accuracy": 0.6014319809069213,
+          "macro_f1": 0.5669715980339887
+        },
+        {
+          "training_frequency": "100-999",
+          "test_records": 1315,
+          "labels": 34,
+          "accuracy": 0.776425855513308,
+          "macro_f1": 0.6977301525858705
+        },
+        {
+          "training_frequency": ">=1000",
+          "test_records": 3663,
+          "labels": 9,
+          "accuracy": 0.8918918918918919,
+          "macro_f1": 0.8896410701337572
+        }
+      ],
+      "by_label": [
+        {
+          "label": "中气下陷证",
+          "train": 25,
+          "test": 4,
+          "precision": 0.5,
+          "recall": 0.75,
+          "f1": 0.6
+        },
+        {
+          "label": "中气不足证",
+          "train": 23,
+          "test": 3,
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8
+        },
+        {
+          "label": "外伤损络证",
+          "train": 16,
+          "test": 2,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666
+        },
+        {
+          "label": "大肠湿热证",
+          "train": 32,
+          "test": 5,
+          "precision": 0.5,
+          "recall": 0.6,
+          "f1": 0.5454545454545454
+        },
+        {
+          "label": "寒凝血瘀证",
+          "train": 88,
+          "test": 11,
+          "precision": 0.3076923076923077,
+          "recall": 0.36363636363636365,
+          "f1": 0.3333333333333333
+        },
+        {
+          "label": "寒湿阻络证",
+          "train": 40,
+          "test": 6,
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "f1": 0.5
+        },
+        {
+          "label": "寒痰阻肺证",
+          "train": 9,
+          "test": 2,
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5
+        },
+        {
+          "label": "心肺气虚证",
+          "train": 57,
+          "test": 8,
+          "precision": 0.8333333333333334,
+          "recall": 0.625,
+          "f1": 0.7142857142857143
+        },
+        {
+          "label": "心肾不交证",
+          "train": 64,
+          "test": 8,
+          "precision": 1.0,
+          "recall": 0.875,
+          "f1": 0.9333333333333333
+        },
+        {
+          "label": "心脉痹阻证",
+          "train": 396,
+          "test": 50,
+          "precision": 0.7543859649122807,
+          "recall": 0.86,
+          "f1": 0.8037383177570093
+        },
+        {
+          "label": "心脾两虚证",
+          "train": 11,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "心虚胆怯证",
+          "train": 22,
+          "test": 3,
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "f1": 0.5
+        },
+        {
+          "label": "心血虚证",
+          "train": 97,
+          "test": 13,
+          "precision": 0.7058823529411765,
+          "recall": 0.9230769230769231,
+          "f1": 0.8
+        },
+        {
+          "label": "心阳不振证",
+          "train": 15,
+          "test": 2,
+          "precision": 0.6666666666666666,
+          "recall": 1.0,
+          "f1": 0.8
+        },
+        {
+          "label": "正虚毒瘀证",
+          "train": 142,
+          "test": 18,
+          "precision": 0.35714285714285715,
+          "recall": 0.2777777777777778,
+          "f1": 0.3125
+        },
+        {
+          "label": "正虚毒结证",
+          "train": 69,
+          "test": 9,
+          "precision": 0.875,
+          "recall": 0.7777777777777778,
+          "f1": 0.8235294117647058
+        },
+        {
+          "label": "正虚瘀结证",
+          "train": 1771,
+          "test": 222,
+          "precision": 0.8813559322033898,
+          "recall": 0.9369369369369369,
+          "f1": 0.9082969432314411
+        },
+        {
+          "label": "毒邪流窜证",
+          "train": 8,
+          "test": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        {
+          "label": "气不摄血证",
+          "train": 15,
+          "test": 3,
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "f1": 0.5
+        },
+        {
+          "label": "气滞痰凝证",
+          "train": 22,
+          "test": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "气滞血瘀证",
+          "train": 4258,
+          "test": 533,
+          "precision": 0.8705440900562852,
+          "recall": 0.8705440900562852,
+          "f1": 0.8705440900562852
+        },
+        {
+          "label": "气滞证",
+          "train": 66,
+          "test": 9,
+          "precision": 0.4,
+          "recall": 0.4444444444444444,
+          "f1": 0.42105263157894735
+        },
+        {
+          "label": "气虚不摄证",
+          "train": 71,
+          "test": 9,
+          "precision": 0.8,
+          "recall": 0.8888888888888888,
+          "f1": 0.8421052631578947
+        },
+        {
+          "label": "气虚痰结证",
+          "train": 53,
+          "test": 7,
+          "precision": 0.7142857142857143,
+          "recall": 0.7142857142857143,
+          "f1": 0.7142857142857143
+        },
+        {
+          "label": "气虚血溢证",
+          "train": 12,
+          "test": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        {
+          "label": "气虚血瘀证",
+          "train": 7380,
+          "test": 923,
+          "precision": 0.8900462962962963,
+          "recall": 0.8331527627302275,
+          "f1": 0.8606603245663123
+        },
+        {
+          "label": "气虚证",
+          "train": 23,
+          "test": 4,
+          "precision": 0.8,
+          "recall": 1.0,
+          "f1": 0.8888888888888888
+        },
+        {
+          "label": "气血不足证",
+          "train": 61,
+          "test": 8,
+          "precision": 0.3333333333333333,
+          "recall": 0.5,
+          "f1": 0.4
+        },
+        {
+          "label": "气血两虚证",
+          "train": 47,
+          "test": 7,
+          "precision": 0.8333333333333334,
+          "recall": 0.7142857142857143,
+          "f1": 0.7692307692307693
+        },
+        {
+          "label": "气血亏虚证",
+          "train": 193,
+          "test": 25,
+          "precision": 0.7857142857142857,
+          "recall": 0.44,
+          "f1": 0.5641025641025641
+        },
+        {
+          "label": "气血失调证",
+          "train": 7,
+          "test": 2,
+          "precision": 0.6666666666666666,
+          "recall": 1.0,
+          "f1": 0.8
+        },
+        {
+          "label": "气血瘀滞证",
+          "train": 30,
+          "test": 4,
+          "precision": 0.6,
+          "recall": 0.75,
+          "f1": 0.6666666666666666
+        },
+        {
+          "label": "气郁痰阻证",
+          "train": 21,
+          "test": 3,
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8
+        },
+        {
+          "label": "气阴两虚证",
+          "train": 764,
+          "test": 96,
+          "precision": 0.6782608695652174,
+          "recall": 0.8125,
+          "f1": 0.7393364928909952
+        },
+        {
+          "label": "气阴亏虚证",
+          "train": 11,
+          "test": 2,
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5
+        },
+        {
+          "label": "津亏热结证",
+          "train": 47,
+          "test": 6,
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6666666666666666
+        },
+        {
+          "label": "湿毒蕴结证",
+          "train": 10,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "湿热下注证",
+          "train": 6972,
+          "test": 872,
+          "precision": 0.9870892018779343,
+          "recall": 0.9644495412844036,
+          "f1": 0.9756380510440835
+        },
+        {
+          "label": "湿热内蕴证",
+          "train": 99,
+          "test": 13,
+          "precision": 0.6923076923076923,
+          "recall": 0.6923076923076923,
+          "f1": 0.6923076923076923
+        },
+        {
+          "label": "湿热瘀滞证",
+          "train": 10,
+          "test": 2,
+          "precision": 0.3333333333333333,
+          "recall": 0.5,
+          "f1": 0.4
+        },
+        {
+          "label": "湿热瘀阻证",
+          "train": 552,
+          "test": 70,
+          "precision": 0.9078947368421053,
+          "recall": 0.9857142857142858,
+          "f1": 0.9452054794520548
+        },
+        {
+          "label": "湿热蕴毒证",
+          "train": 24,
+          "test": 3,
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8
+        },
+        {
+          "label": "湿热蕴结证",
+          "train": 462,
+          "test": 58,
+          "precision": 0.7333333333333333,
+          "recall": 0.7586206896551724,
+          "f1": 0.7457627118644068
+        },
+        {
+          "label": "湿热阻络证",
+          "train": 111,
+          "test": 14,
+          "precision": 0.8,
+          "recall": 0.8571428571428571,
+          "f1": 0.8275862068965517
+        },
+        {
+          "label": "热毒壅结证",
+          "train": 9,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "热毒炽盛证",
+          "train": 31,
+          "test": 5,
+          "precision": 0.75,
+          "recall": 0.6,
+          "f1": 0.6666666666666666
+        },
+        {
+          "label": "热毒蕴结证",
+          "train": 1148,
+          "test": 144,
+          "precision": 0.9791666666666666,
+          "recall": 0.9791666666666666,
+          "f1": 0.9791666666666666
+        },
+        {
+          "label": "热毒蕴肤证",
+          "train": 15,
+          "test": 3,
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8
+        },
+        {
+          "label": "痰气交阻证",
+          "train": 9,
+          "test": 2,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666
+        },
+        {
+          "label": "痰浊上蒙证",
+          "train": 18,
+          "test": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "痰浊中阻证",
+          "train": 28,
+          "test": 4,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "痰浊内蕴证",
+          "train": 55,
+          "test": 7,
+          "precision": 0.6,
+          "recall": 0.8571428571428571,
+          "f1": 0.7058823529411765
+        },
+        {
+          "label": "痰浊蒙窍证",
+          "train": 250,
+          "test": 32,
+          "precision": 0.6170212765957447,
+          "recall": 0.90625,
+          "f1": 0.7341772151898734
+        },
+        {
+          "label": "痰湿中阻证",
+          "train": 164,
+          "test": 21,
+          "precision": 0.5263157894736842,
+          "recall": 0.47619047619047616,
+          "f1": 0.5
+        },
+        {
+          "label": "痰湿内阻证",
+          "train": 47,
+          "test": 7,
+          "precision": 1.0,
+          "recall": 0.5714285714285714,
+          "f1": 0.7272727272727273
+        },
+        {
+          "label": "痰湿蒙窍证",
+          "train": 184,
+          "test": 24,
+          "precision": 0.7333333333333333,
+          "recall": 0.9166666666666666,
+          "f1": 0.8148148148148148
+        },
+        {
+          "label": "痰湿蕴肺证",
+          "train": 1666,
+          "test": 209,
+          "precision": 0.8493150684931506,
+          "recall": 0.8899521531100478,
+          "f1": 0.8691588785046729
+        },
+        {
+          "label": "痰湿证",
+          "train": 23,
+          "test": 3,
+          "precision": 0.5,
+          "recall": 0.6666666666666666,
+          "f1": 0.5714285714285714
+        },
+        {
+          "label": "痰湿阻滞证",
+          "train": 15,
+          "test": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "痰火扰心证",
+          "train": 48,
+          "test": 6,
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5
+        },
+        {
+          "label": "痰热内扰证",
+          "train": 16,
+          "test": 2,
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5
+        },
+        {
+          "label": "痰热壅肺证",
+          "train": 122,
+          "test": 16,
+          "precision": 0.5833333333333334,
+          "recall": 0.4375,
+          "f1": 0.5
+        },
+        {
+          "label": "痰瘀互结证",
+          "train": 274,
+          "test": 35,
+          "precision": 0.7037037037037037,
+          "recall": 0.5428571428571428,
+          "f1": 0.6129032258064516
+        },
+        {
+          "label": "痰瘀滞络证",
+          "train": 78,
+          "test": 10,
+          "precision": 0.6666666666666666,
+          "recall": 0.6,
+          "f1": 0.631578947368421
+        },
+        {
+          "label": "痰瘀痹阻证",
+          "train": 423,
+          "test": 54,
+          "precision": 0.6833333333333333,
+          "recall": 0.7592592592592593,
+          "f1": 0.7192982456140351
+        },
+        {
+          "label": "痰蒙清窍证",
+          "train": 21,
+          "test": 3,
+          "precision": 0.5,
+          "recall": 0.3333333333333333,
+          "f1": 0.4
+        },
+        {
+          "label": "痰蒙神窍证",
+          "train": 19,
+          "test": 3,
+          "precision": 0.5,
+          "recall": 0.3333333333333333,
+          "f1": 0.4
+        },
+        {
+          "label": "瘀滞胞宫证",
+          "train": 15,
+          "test": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        {
+          "label": "瘀血内阻证",
+          "train": 7,
+          "test": 2,
+          "precision": 0.3333333333333333,
+          "recall": 0.5,
+          "f1": 0.4
+        },
+        {
+          "label": "瘀血阻滞证",
+          "train": 63,
+          "test": 8,
+          "precision": 0.8,
+          "recall": 0.5,
+          "f1": 0.6153846153846154
+        },
+        {
+          "label": "瘀血阻络证",
+          "train": 280,
+          "test": 35,
+          "precision": 0.48717948717948717,
+          "recall": 0.5428571428571428,
+          "f1": 0.5135135135135135
+        },
+        {
+          "label": "瘀阻心脉证",
+          "train": 80,
+          "test": 11,
+          "precision": 0.7272727272727273,
+          "recall": 0.7272727272727273,
+          "f1": 0.7272727272727273
+        },
+        {
+          "label": "肝气犯胃证",
+          "train": 64,
+          "test": 9,
+          "precision": 1.0,
+          "recall": 0.7777777777777778,
+          "f1": 0.875
+        },
+        {
+          "label": "肝经湿热证",
+          "train": 150,
+          "test": 19,
+          "precision": 0.8260869565217391,
+          "recall": 1.0,
+          "f1": 0.9047619047619048
+        },
+        {
+          "label": "肝肾两虚证",
+          "train": 15,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "肝肾亏损证",
+          "train": 16,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "肝肾亏虚证",
+          "train": 1295,
+          "test": 162,
+          "precision": 0.8121212121212121,
+          "recall": 0.8271604938271605,
+          "f1": 0.8195718654434251
+        },
+        {
+          "label": "肝肾阴虚证",
+          "train": 172,
+          "test": 22,
+          "precision": 0.6470588235294118,
+          "recall": 0.5,
+          "f1": 0.5641025641025641
+        },
+        {
+          "label": "肝胃不和证",
+          "train": 485,
+          "test": 61,
+          "precision": 0.7307692307692307,
+          "recall": 0.6229508196721312,
+          "f1": 0.672566371681416
+        },
+        {
+          "label": "肝胃气滞证",
+          "train": 19,
+          "test": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "肝胃郁热证",
+          "train": 1785,
+          "test": 224,
+          "precision": 0.8571428571428571,
+          "recall": 0.8839285714285714,
+          "f1": 0.8703296703296703
+        },
+        {
+          "label": "肝胆湿热证",
+          "train": 31,
+          "test": 5,
+          "precision": 1.0,
+          "recall": 0.4,
+          "f1": 0.5714285714285714
+        },
+        {
+          "label": "肝郁气滞证",
+          "train": 109,
+          "test": 14,
+          "precision": 0.5714285714285714,
+          "recall": 0.5714285714285714,
+          "f1": 0.5714285714285714
+        },
+        {
+          "label": "肝郁脾虚证",
+          "train": 39,
+          "test": 6,
+          "precision": 0.25,
+          "recall": 0.16666666666666666,
+          "f1": 0.2
+        },
+        {
+          "label": "肝郁血瘀证",
+          "train": 79,
+          "test": 11,
+          "precision": 0.75,
+          "recall": 0.8181818181818182,
+          "f1": 0.782608695652174
+        },
+        {
+          "label": "肝阳上亢证",
+          "train": 185,
+          "test": 24,
+          "precision": 0.7222222222222222,
+          "recall": 0.5416666666666666,
+          "f1": 0.6190476190476191
+        },
+        {
+          "label": "肝阴不足证",
+          "train": 79,
+          "test": 10,
+          "precision": 0.8181818181818182,
+          "recall": 0.9,
+          "f1": 0.8571428571428571
+        },
+        {
+          "label": "肠燥津伤证",
+          "train": 14,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "肺卫不固证",
+          "train": 42,
+          "test": 6,
+          "precision": 0.8333333333333334,
+          "recall": 0.8333333333333334,
+          "f1": 0.8333333333333334
+        },
+        {
+          "label": "肺肾气虚证",
+          "train": 55,
+          "test": 8,
+          "precision": 0.75,
+          "recall": 0.75,
+          "f1": 0.75
+        },
+        {
+          "label": "肺阴虚证",
+          "train": 11,
+          "test": 2,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666
+        },
+        {
+          "label": "肾不纳气证",
+          "train": 12,
+          "test": 2,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666
+        },
+        {
+          "label": "肾气虚证",
+          "train": 35,
+          "test": 5,
+          "precision": 1.0,
+          "recall": 0.6,
+          "f1": 0.75
+        },
+        {
+          "label": "肾虚寒凝证",
+          "train": 24,
+          "test": 4,
+          "precision": 0.5,
+          "recall": 0.25,
+          "f1": 0.3333333333333333
+        },
+        {
+          "label": "肾虚水泛证",
+          "train": 58,
+          "test": 8,
+          "precision": 0.7,
+          "recall": 0.875,
+          "f1": 0.7777777777777778
+        },
+        {
+          "label": "肾虚肝亢证",
+          "train": 29,
+          "test": 4,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        {
+          "label": "肾虚证",
+          "train": 527,
+          "test": 66,
+          "precision": 0.8783783783783784,
+          "recall": 0.9848484848484849,
+          "f1": 0.9285714285714286
+        },
+        {
+          "label": "肾阳虚证",
+          "train": 7,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "脾气虚证",
+          "train": 29,
+          "test": 4,
+          "precision": 1.0,
+          "recall": 0.25,
+          "f1": 0.4
+        },
+        {
+          "label": "脾肾两虚证",
+          "train": 908,
+          "test": 114,
+          "precision": 0.8283582089552238,
+          "recall": 0.9736842105263158,
+          "f1": 0.8951612903225806
+        },
+        {
+          "label": "脾肾气虚证",
+          "train": 14,
+          "test": 2,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666
+        },
+        {
+          "label": "脾肾阳虚证",
+          "train": 83,
+          "test": 11,
+          "precision": 0.5,
+          "recall": 0.18181818181818182,
+          "f1": 0.26666666666666666
+        },
+        {
+          "label": "脾胃不和证",
+          "train": 128,
+          "test": 16,
+          "precision": 0.2647058823529412,
+          "recall": 0.5625,
+          "f1": 0.36
+        },
+        {
+          "label": "脾胃气虚证",
+          "train": 24,
+          "test": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "脾胃湿热证",
+          "train": 8,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "脾胃积热证",
+          "train": 60,
+          "test": 8,
+          "precision": 0.6153846153846154,
+          "recall": 1.0,
+          "f1": 0.7619047619047619
+        },
+        {
+          "label": "脾胃虚寒证",
+          "train": 464,
+          "test": 58,
+          "precision": 0.6567164179104478,
+          "recall": 0.7586206896551724,
+          "f1": 0.704
+        },
+        {
+          "label": "脾胃虚弱证",
+          "train": 154,
+          "test": 20,
+          "precision": 0.4117647058823529,
+          "recall": 0.35,
+          "f1": 0.3783783783783784
+        },
+        {
+          "label": "脾胃阳虚证",
+          "train": 17,
+          "test": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "脾虚湿盛证",
+          "train": 60,
+          "test": 8,
+          "precision": 0.5555555555555556,
+          "recall": 0.625,
+          "f1": 0.5882352941176471
+        },
+        {
+          "label": "脾虚湿蕴证",
+          "train": 31,
+          "test": 5,
+          "precision": 0.5,
+          "recall": 0.2,
+          "f1": 0.2857142857142857
+        },
+        {
+          "label": "血热证",
+          "train": 138,
+          "test": 18,
+          "precision": 0.6521739130434783,
+          "recall": 0.8333333333333334,
+          "f1": 0.7317073170731707
+        },
+        {
+          "label": "血瘀痰凝证",
+          "train": 155,
+          "test": 20,
+          "precision": 0.7692307692307693,
+          "recall": 1.0,
+          "f1": 0.8695652173913043
+        },
+        {
+          "label": "血虚证",
+          "train": 19,
+          "test": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        {
+          "label": "血虚风燥证",
+          "train": 38,
+          "test": 5,
+          "precision": 0.6666666666666666,
+          "recall": 0.4,
+          "f1": 0.5
+        },
+        {
+          "label": "阳虚寒凝证",
+          "train": 23,
+          "test": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "阳虚水泛证",
+          "train": 448,
+          "test": 56,
+          "precision": 0.819672131147541,
+          "recall": 0.8928571428571429,
+          "f1": 0.8547008547008547
+        },
+        {
+          "label": "阳虚痰凝证",
+          "train": 7,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "阳虚血瘀证",
+          "train": 82,
+          "test": 11,
+          "precision": 0.8888888888888888,
+          "recall": 0.7272727272727273,
+          "f1": 0.8
+        },
+        {
+          "label": "阴虚津亏证",
+          "train": 32,
+          "test": 5,
+          "precision": 0.5,
+          "recall": 0.4,
+          "f1": 0.4444444444444444
+        },
+        {
+          "label": "阴虚湿热证",
+          "train": 9,
+          "test": 2,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666
+        },
+        {
+          "label": "阴虚火旺证",
+          "train": 159,
+          "test": 21,
+          "precision": 0.7894736842105263,
+          "recall": 0.7142857142857143,
+          "f1": 0.75
+        },
+        {
+          "label": "阴虚血热证",
+          "train": 29,
+          "test": 4,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "阴虚血瘀证",
+          "train": 115,
+          "test": 15,
+          "precision": 0.5333333333333333,
+          "recall": 0.5333333333333333,
+          "f1": 0.5333333333333333
+        },
+        {
+          "label": "阴虚阳亢证",
+          "train": 265,
+          "test": 34,
+          "precision": 0.9705882352941176,
+          "recall": 0.9705882352941176,
+          "f1": 0.9705882352941176
+        },
+        {
+          "label": "阴虚风动证",
+          "train": 29,
+          "test": 4,
+          "precision": 0.5,
+          "recall": 0.25,
+          "f1": 0.3333333333333333
+        },
+        {
+          "label": "风寒外袭证",
+          "train": 352,
+          "test": 44,
+          "precision": 0.8,
+          "recall": 0.9090909090909091,
+          "f1": 0.851063829787234
+        },
+        {
+          "label": "风寒湿痹证",
+          "train": 81,
+          "test": 11,
+          "precision": 0.5555555555555556,
+          "recall": 0.45454545454545453,
+          "f1": 0.5
+        },
+        {
+          "label": "风寒湿阻证",
+          "train": 26,
+          "test": 4,
+          "precision": 0.4,
+          "recall": 1.0,
+          "f1": 0.5714285714285714
+        },
+        {
+          "label": "风寒痹阻证",
+          "train": 23,
+          "test": 4,
+          "precision": 0.25,
+          "recall": 0.25,
+          "f1": 0.25
+        },
+        {
+          "label": "风寒袭肺证",
+          "train": 467,
+          "test": 59,
+          "precision": 0.7419354838709677,
+          "recall": 0.7796610169491526,
+          "f1": 0.7603305785123967
+        },
+        {
+          "label": "风寒袭表证",
+          "train": 46,
+          "test": 6,
+          "precision": 0.42857142857142855,
+          "recall": 0.5,
+          "f1": 0.46153846153846156
+        },
+        {
+          "label": "风寒阻络证",
+          "train": 53,
+          "test": 7,
+          "precision": 0.6,
+          "recall": 0.42857142857142855,
+          "f1": 0.5
+        },
+        {
+          "label": "风湿热证",
+          "train": 17,
+          "test": 3,
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "f1": 0.5
+        },
+        {
+          "label": "风湿蕴肤证",
+          "train": 24,
+          "test": 3,
+          "precision": 0.3333333333333333,
+          "recall": 0.3333333333333333,
+          "f1": 0.3333333333333333
+        },
+        {
+          "label": "风热伤络证",
+          "train": 20,
+          "test": 3,
+          "precision": 0.6,
+          "recall": 1.0,
+          "f1": 0.75
+        },
+        {
+          "label": "风热外袭证",
+          "train": 14,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "风热毒蕴证",
+          "train": 24,
+          "test": 4,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666
+        },
+        {
+          "label": "风热犯肺证",
+          "train": 58,
+          "test": 8,
+          "precision": 0.3333333333333333,
+          "recall": 0.375,
+          "f1": 0.35294117647058826
+        },
+        {
+          "label": "风热血热证",
+          "train": 19,
+          "test": 3,
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8
+        },
+        {
+          "label": "风热袭表证",
+          "train": 24,
+          "test": 4,
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5
+        },
+        {
+          "label": "风痰上扰证",
+          "train": 367,
+          "test": 47,
+          "precision": 0.74,
+          "recall": 0.7872340425531915,
+          "f1": 0.7628865979381443
+        },
+        {
+          "label": "风痰入络证",
+          "train": 305,
+          "test": 39,
+          "precision": 0.8846153846153846,
+          "recall": 0.5897435897435898,
+          "f1": 0.7076923076923077
+        },
+        {
+          "label": "风痰瘀阻证",
+          "train": 2984,
+          "test": 374,
+          "precision": 0.8358974358974359,
+          "recall": 0.8716577540106952,
+          "f1": 0.8534031413612565
+        },
+        {
+          "label": "风痰闭窍证",
+          "train": 10,
+          "test": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "风痰闭阻证",
+          "train": 8,
+          "test": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        {
+          "label": "饮食积滞证",
+          "train": 62,
+          "test": 8,
+          "precision": 0.6,
+          "recall": 0.75,
+          "f1": 0.6666666666666666
+        },
+        {
+          "label": "髓海不足证",
+          "train": 17,
+          "test": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      ],
+      "external_transfer": {
+        "records": 200,
+        "top1": 0.03,
+        "top3": 0.08
+      }
+    }
+  }
+}

@@ -594,10 +594,89 @@ def research_v2_evaluation(service):
     st.download_button("下载第二轮策略结果", json_export(summary), "dmease_research_v2.json", "application/json")
 
 
+def research_v3_evaluation(service):
+    folder = ROOT / "experiments/v3"
+    if not all((folder / name).exists() for name in ("affinity.json", "extraction.json", "syndrome_diagnostics.json")):
+        st.info("第三轮实验结果尚未全部生成。")
+        return
+    section = st.selectbox("第三轮研究项目", ["实测亲和度", "本地模型抽取", "跨数据集诊断", "少样本改进"])
+    if section == "实测亲和度":
+        data = json.loads((folder / "affinity.json").read_text(encoding="utf8"))
+        def method_name(configuration):
+            if configuration["method"] == "mean":
+                return "训练均值"
+            if configuration["method"] == "ridge":
+                return f"岭回归（α={configuration['alpha']}）"
+            return f"随机森林（叶节点≥{configuration['min_samples_leaf']}）"
+        st.caption("ChEMBL人源单蛋白Ki/Kd实测数据；按分子骨架隔离训练、验证和测试，各终点分别建模。")
+        st.dataframe([{"终点": name, "训练化合物": r["counts"]["train"], "验证化合物": r["counts"]["validation"],
+                       "测试化合物": r["counts"]["test"], "状态": "已评价" if r["status"] == "evaluated" else "样本量不足"}
+                      for name,r in data["strata"].items()], hide_index=True, width="stretch")
+        for name,r in data["strata"].items():
+            if r["status"] != "evaluated":
+                continue
+            chosen = r["selection"]["selected_index"]
+            st.write(f"{name}：验证选中模型的测试MAE为{r['test'][chosen]['MAE_pK']:.3f} pK，训练均值基线为{r['test'][0]['MAE_pK']:.3f} pK。")
+            st.dataframe([{"模型": method_name(c["config"]), "验证MAE": c["validation"]["MAE_pK"],
+                           "测试MAE": t["MAE_pK"], "测试R²": t["R2"], "验证选中": i == chosen}
+                          for i,(c,t) in enumerate(zip(r["selection"]["candidates"],r["test"]))], hide_index=True, width="stretch")
+        st.info("这是化合物结合强度预测，尚未与中药成分完成可靠结构连接，不能解释为整味中药的疗效或结合概率。修复前后结果均在报告中保留。")
+    elif section == "本地模型抽取":
+        data = json.loads((folder / "extraction.json").read_text(encoding="utf8"))
+        if data["evidence_fingerprint"] != service.evidence.fingerprint:
+            st.warning("本机词表与报告版本不同，以下指标仅对应报告的固定版本。")
+        st.caption("固定版本Qwen2.5-1.5B-Instruct实际逐条推理；公开200条记录，输入仅为病例文本，输出要求引用原文。")
+        labels = {"rules": "现有规则", "local_llm": "本地语言模型"}
+        st.dataframe([{"方法": labels[m], "记录数": s["canonical_all"]["records"], "精确率": s["canonical_all"]["precision"],
+                       "召回率": s["canonical_all"]["recall"], "F1": s["canonical_all"]["f1"],
+                       "下游证候前三命中": s["downstream_exploratory"]["top3"]} for m,s in data["summary"].items()], hide_index=True, width="stretch")
+        q = data["quality"]
+        st.write(f"JSON格式失败{q['invalid_json']}条，输出达到长度上限{q['output_limit']}条；单条生成耗时中位数{q['median_seconds']:.1f}秒。失败记录计入总分母。")
+        st.warning("参考症状和规则对照使用同一套24症状词典，投影标签不完整且会偏向规则方法。这是接口兼容性研究，不能作为公平的医学抽取排名或临床诊断准确率。当前辅助分析流程仍使用原验证路径。")
+        audit_file = folder / "extraction_format_audit.json"
+        if audit_file.exists():
+            audit = json.loads(audit_file.read_text(encoding="utf8"))
+            st.write(f"格式适配对照：只处理完整对象后的多余引号或外围代码框，JSON失败从{audit['strict_json_failures']}条变为{audit['remaining_json_failures']}条；同一批输出的投影F1为{audit['summary']['f1']:.3f}。")
+            st.caption("这是观察格式问题后的工程处理，不是新的独立模型验证；未补写截断内容。")
+        with st.expander("查看每种症状的抽取统计"):
+            st.dataframe([{"方法": labels[m], "症状": name, "参考阳性": r["gold_count"], "正确抽取": r["tp"],
+                           "多抽": r["fp"], "漏抽": r["fn"], "F1": r["f1"]} for m,items in data["per_concept"].items() for name,r in sorted(items.items())], hide_index=True, width="stretch")
+    elif section == "跨数据集诊断":
+        data = json.loads((folder / "syndrome_diagnostics.json").read_text(encoding="utf8"))
+        t = data["transfer"]
+        st.write(f"外部{t['records']}条病例中，仅{t['records_with_any_known_gold']}条具有分类器认识的证候标签；固定标签表下首候选命中率上限为{t['top1_known_label_ceiling']:.1%}，实际为{t['overall_top1']:.1%}。")
+        st.dataframe([{"每类训练样本数": r["training_frequency"], "证候数": r["labels"], "测试记录数": r["test_records"],
+                       "准确率": r["top1_accuracy"], "前三命中率": r["top3_hit"], "宏平均F1": r["macro_f1"]}
+                      for r in data["frequency_bands"]], hide_index=True, width="stretch")
+        st.dataframe([{"数据": name, "文本长度中位数": r["median_chars"], "字符特征覆盖率": r["mean_ngram_in_vocabulary"]}
+                      for name,r in data["feature_coverage"].items()], hide_index=True, width="stretch")
+        st.caption("复用上一轮冻结分类器；描述标签覆盖、写法差异和少样本问题，没有根据测试结果重新训练或选模。")
+    else:
+        if not (folder / "imbalance.json").exists():
+            st.info("类别加权实验尚未完成。")
+            return
+        data = json.loads((folder / "imbalance.json").read_text(encoding="utf8"))
+        labels = {"frozen_unweighted_v2": "原未加权基线", "validation_selected": "验证选中方案"}
+        st.caption("训练类别频次决定样本权重；固定6个候选与原基线，按验证集宏平均F1选模。")
+        st.dataframe([{"方法": labels[m], "范围": group, "记录数": r[group]["records"], "准确率": r[group]["accuracy"],
+                       "宏平均F1": r[group]["macro_f1_148_train_labels"], "Kappa": r[group]["kappa"]}
+                      for m,r in data["results"].items() for group in ("official_test", "unseen_text_test")], hide_index=True, width="stretch")
+        st.dataframe([{"方法": labels[m], "每类训练样本数": b["training_frequency"], "测试记录": b["test_records"],
+                       "准确率": b["accuracy"], "宏平均F1": b["macro_f1"]}
+                      for m,r in data["results"].items() for b in r["frequency_bands"]], hide_index=True, width="stretch")
+        st.warning("这是一项复用公开测试集的探索性改进，不是新的独立临床验证；收益属于类别加权文本分类，不能归为KAN/PPO收益。")
+    report = folder / "report.html"
+    if report.exists():
+        st.download_button("下载第三轮完整研究报告", report.read_bytes(), "DMease_第三轮研究报告.html", "text/html")
+
+
 def research(service):
     st.subheader("研究复现")
     st.caption("选择公开症状检索组合，使用与辅助分析相同的证据、约束和序贯策略；这里不是临床病例评价。")
-    workspace = st.radio("研究工作区", ["序贯推理", "实验评估", "改进与外部评价"], horizontal=True)
+    workspace = st.radio("研究工作区", ["序贯推理", "实验评估", "改进与外部评价", "亲和度与模型抽取"], horizontal=True)
+    if workspace == "亲和度与模型抽取":
+        research_v3_evaluation(service)
+        return
     if workspace == "改进与外部评价":
         research_v2_evaluation(service)
         return

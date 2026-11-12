@@ -1,0 +1,6 @@
+{
+  "reason": "Explicitly sanitize standardized parent molecules before Murcko decomposition: RDKit 2026.09.2 requires initialized ring information after uncharging. Initial run incorrectly excluded 8 PPARG activities as invalid structures. Initial results and code preserved.",
+  "changes": "Chem.SanitizeMol(parent) after uncharging; numerical constant detection for Spearman. No changes to endpoints, split salt, thresholds, model candidates, hyperparameters or selection criterion.",
+  "prior_test_observed": true,
+  "interpretation": "Corrected evaluation after an implementation repair, not a second independent prospective validation. Initial run is retained for comparison."
+}

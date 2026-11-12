@@ -1,0 +1,184 @@
+{
+  "provenance": {
+    "protocol": {
+      "id": "tcm-sd-frequency-weighting-exploratory",
+      "design": "Follow-up motivated by the observed v2 class-frequency diagnostic; the public test results have been seen. This is an exploratory benchmark revision, not a new independent confirmation. Freeze all candidates here before their training; choose only by the same exact-text-unseen validation macro-F1 as v2, and do not adapt after new test scores.",
+      "features": "Reuse the checksum-verified v2 vectorizer fitted on official train only; same input fields, truncation and splits. Do not refit on dev or test.",
+      "candidates": [
+        {
+          "weight_power": 0.25,
+          "alpha": 1e-05
+        },
+        {
+          "weight_power": 0.25,
+          "alpha": 0.0001
+        },
+        {
+          "weight_power": 0.5,
+          "alpha": 1e-05
+        },
+        {
+          "weight_power": 0.5,
+          "alpha": 0.0001
+        },
+        {
+          "weight_power": 1.0,
+          "alpha": 1e-05
+        },
+        {
+          "weight_power": 1.0,
+          "alpha": 0.0001
+        }
+      ],
+      "weights": "w_i=(N/(148*count_train(label_i)))**power; normalize sample weights to arithmetic mean 1 using train counts only.",
+      "training": {
+        "loss": "log_loss",
+        "seed": 42,
+        "max_iter": 30,
+        "tol": 0.001,
+        "n_jobs": 1
+      },
+      "selection": "Compare all six candidates and the frozen unweighted v2 baseline by exact-text-unseen validation macro-F1 on 148 fixed train labels. Include baseline as candidate 0; use first maximum for ties. Save selected checkpoint and all validation results before any new test scoring. If the baseline wins, retain it.",
+      "evaluation": "Report selected model and frozen baseline on official test and text-unseen subset, per-class frequency bands, TCMEval exploratory transfer. All validation candidates retained; no automatic replacement of production diagnosis.",
+      "limits": [
+        "Reused public validation/test benchmark",
+        "General TCM rather than diabetes-specific",
+        "No independent clinical or patient-level validation",
+        "Class weighting may trade overall accuracy for rare-label performance",
+        "No claim of paper clinical accuracy replication"
+      ]
+    },
+    "baseline_sha256": "8533155914c914c3d9d5e2004da2d86481cae7ecf3d23b2ac71ee6fae1536c8f",
+    "source_lf_sha256": {
+      "scripts/imbalance_benchmark_v3.py": "a41c0fb6f9fb8a03d6ac74e4a0d72dc1c8f8c9dd94ba056374be2ddaa82826f7",
+      "scripts/tcm_sd_benchmark.py": "e3b6e42b97ca90766aa44fb3909c6ce5fc95608e2bbc131f97a4800246e20f27"
+    }
+  },
+  "selected_index": 3,
+  "selected_checkpoint_sha256": "3b0f271b990d82e9d2e09ab31dbe42ade5d5b343e5e115e9ffa2df23dcb7ac4b",
+  "validation_records": 4957,
+  "candidates": [
+    {
+      "configuration": {
+        "method": "frozen_unweighted_v2"
+      },
+      "validation": {
+        "records": 4957,
+        "accuracy": 0.7950373209602583,
+        "macro_f1_148_train_labels": 0.3769245887318871,
+        "kappa": 0.7772631718050335,
+        "top3_hit": 0.9209199112366351,
+        "abstentions": 0
+      }
+    },
+    {
+      "configuration": {
+        "weight_power": 0.25,
+        "alpha": 1e-05
+      },
+      "validation": {
+        "records": 4957,
+        "accuracy": 0.8188420415573936,
+        "macro_f1_148_train_labels": 0.5126731184735052,
+        "kappa": 0.804471671473775,
+        "top3_hit": 0.9273754286867056,
+        "abstentions": 0
+      },
+      "checkpoint_sha256": "6f545e7e683ed6e78336a8611c1ba50ec5d1d271990d894d063c82aa7fa75dfa",
+      "weight_min": 0.6196048855781555,
+      "weight_max": 3.5306479930877686,
+      "weight_mean": 1.0
+    },
+    {
+      "configuration": {
+        "weight_power": 0.25,
+        "alpha": 0.0001
+      },
+      "validation": {
+        "records": 4957,
+        "accuracy": 0.7456122654831552,
+        "macro_f1_148_train_labels": 0.2678956347779177,
+        "kappa": 0.72301490180703,
+        "top3_hit": 0.8882388541456526,
+        "abstentions": 0
+      },
+      "checkpoint_sha256": "b88260e8a3105f9df99989c01e40ec0b4ef751af2171157949164b72e102356a",
+      "weight_min": 0.6196048855781555,
+      "weight_max": 3.5306479930877686,
+      "weight_mean": 1.0
+    },
+    {
+      "configuration": {
+        "weight_power": 0.5,
+        "alpha": 1e-05
+      },
+      "validation": {
+        "records": 4957,
+        "accuracy": 0.8137986685495259,
+        "macro_f1_148_train_labels": 0.5642667060474436,
+        "kappa": 0.8002113467438082,
+        "top3_hit": 0.9295945128101675,
+        "abstentions": 0
+      },
+      "checkpoint_sha256": "3b0f271b990d82e9d2e09ab31dbe42ade5d5b343e5e115e9ffa2df23dcb7ac4b",
+      "weight_min": 0.3090837597846985,
+      "weight_max": 10.035877227783203,
+      "weight_mean": 1.0
+    },
+    {
+      "configuration": {
+        "weight_power": 0.5,
+        "alpha": 0.0001
+      },
+      "validation": {
+        "records": 4957,
+        "accuracy": 0.7609441194270729,
+        "macro_f1_148_train_labels": 0.41462661793032934,
+        "kappa": 0.7423185276560202,
+        "top3_hit": 0.9043776477708292,
+        "abstentions": 0
+      },
+      "checkpoint_sha256": "5f41bd5ff331a5b74a2bdc3833d073f6781315ffdcea4dd0595fbee09f784b3f",
+      "weight_min": 0.3090837597846985,
+      "weight_max": 10.035877227783203,
+      "weight_mean": 1.0
+    },
+    {
+      "configuration": {
+        "weight_power": 1.0,
+        "alpha": 1e-05
+      },
+      "validation": {
+        "records": 4957,
+        "accuracy": 0.714746822675005,
+        "macro_f1_148_train_labels": 0.5314393369537016,
+        "kappa": 0.6994080491438732,
+        "top3_hit": 0.8777486382892878,
+        "abstentions": 0
+      },
+      "checkpoint_sha256": "986e344f50472740fdbd133e2fa2eeca7fb036fc986943609dd9f6bfd23152e2",
+      "weight_min": 0.03953343629837036,
+      "weight_max": 41.679534912109375,
+      "weight_mean": 1.0
+    },
+    {
+      "configuration": {
+        "weight_power": 1.0,
+        "alpha": 0.0001
+      },
+      "validation": {
+        "records": 4957,
+        "accuracy": 0.5267298769416986,
+        "macro_f1_148_train_labels": 0.4046188665580534,
+        "kappa": 0.5109479394004031,
+        "top3_hit": 0.7365341940689933,
+        "abstentions": 0
+      },
+      "checkpoint_sha256": "9dc8ea8b01a7fa48dad43ac4bb4dbfc77bb29977c5548f9809bb324b77143b47",
+      "weight_min": 0.03953343629837036,
+      "weight_max": 41.679534912109375,
+      "weight_mean": 1.0
+    }
+  ],
+  "frozen_before_new_test_at": "2026-11-12T06:12:07.879315+00:00"
+}

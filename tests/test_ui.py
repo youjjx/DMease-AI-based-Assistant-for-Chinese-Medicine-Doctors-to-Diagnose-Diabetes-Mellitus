@@ -105,6 +105,12 @@ def test_research_and_knowledge_pages(tmp_path, monkeypatch, evidence_path):
     comparison = app.dataframe[-1].value
     assert all("黄芪" not in value for value in comparison["候选集合"])
     assert comparison.iloc[1]["参考目标"] >= comparison.iloc[0]["参考目标"] - 1e-7
+    widget(app.radio, "研究工作区").set_value("亲和度与模型抽取").run()
+    assert not app.exception
+    if (APP.parent / "experiments/v3/extraction.json").exists():
+        for section in ("实测亲和度", "本地模型抽取", "跨数据集诊断", "少样本改进"):
+            widget(app.selectbox, "第三轮研究项目").set_value(section).run()
+            assert not app.exception and app.dataframe
     app.session_state["last_activity"] = 0
     app.run()
     assert not app.sidebar.radio and "account" not in app.session_state

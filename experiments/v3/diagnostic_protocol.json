@@ -1,0 +1,8 @@
+{
+  "id": "frozen-syndrome-classifier-transfer-diagnostics",
+  "design": "Post-hoc descriptive audit of the already frozen v2 classifier, after v2 test metrics were inspected. No retraining, prompt/model selection, semantic label remapping or new test-performance claim.",
+  "label_normalization": "Remove whitespace and one terminal 证 only; no inferred clinical synonym equivalence.",
+  "input": "Same three TCM-SD fields and 4096-character limit as v2. TCMEval only Clinical Data. No label or reasoning input.",
+  "outputs": ["Per-label test precision/recall/F1 with training frequency", "Fixed training-frequency bands: <20, 20-99, 100-999, >=1000", "Known-label upper bound and conditional top1/top3 on TCMEval", "Character 2/3-gram vocabulary coverage and input length summaries by dataset", "Exact text duplicate strata"],
+  "privacy": "Aggregates and syndrome label names only; no narratives or user identifiers in Git. Source and model checksums verified against v2."
+}

@@ -1,0 +1,11 @@
+{
+  "id": "tcm-sd-frequency-weighting-exploratory",
+  "design": "Follow-up motivated by the observed v2 class-frequency diagnostic; the public test results have been seen. This is an exploratory benchmark revision, not a new independent confirmation. Freeze all candidates here before their training; choose only by the same exact-text-unseen validation macro-F1 as v2, and do not adapt after new test scores.",
+  "features": "Reuse the checksum-verified v2 vectorizer fitted on official train only; same input fields, truncation and splits. Do not refit on dev or test.",
+  "candidates": [{"weight_power": 0.25, "alpha": 0.00001}, {"weight_power": 0.25, "alpha": 0.0001}, {"weight_power": 0.5, "alpha": 0.00001}, {"weight_power": 0.5, "alpha": 0.0001}, {"weight_power": 1.0, "alpha": 0.00001}, {"weight_power": 1.0, "alpha": 0.0001}],
+  "weights": "w_i=(N/(148*count_train(label_i)))**power; normalize sample weights to arithmetic mean 1 using train counts only.",
+  "training": {"loss": "log_loss", "seed": 42, "max_iter": 30, "tol": 0.001, "n_jobs": 1},
+  "selection": "Compare all six candidates and the frozen unweighted v2 baseline by exact-text-unseen validation macro-F1 on 148 fixed train labels. Include baseline as candidate 0; use first maximum for ties. Save selected checkpoint and all validation results before any new test scoring. If the baseline wins, retain it.",
+  "evaluation": "Report selected model and frozen baseline on official test and text-unseen subset, per-class frequency bands, TCMEval exploratory transfer. All validation candidates retained; no automatic replacement of production diagnosis.",
+  "limits": ["Reused public validation/test benchmark", "General TCM rather than diabetes-specific", "No independent clinical or patient-level validation", "Class weighting may trade overall accuracy for rare-label performance", "No claim of paper clinical accuracy replication"]
+}

@@ -1,0 +1,28 @@
+ChEMBL-derived experimental data
+
+Source and attribution: ChEMBL team, EMBL-EBI; ChEMBL release 37
+(API-reported release date 2026-05-01), retrieved 2026-11-12.
+Official source: https://www.ebi.ac.uk/chembl/
+API documentation: https://chembl.gitbook.io/chembl-interface-documentation/web-services/chembl-data-web-services
+License statement: https://chembl.gitbook.io/chembl-interface-documentation/frequently-asked-questions/general-questions
+
+ChEMBL database content is licensed under Creative Commons Attribution-ShareAlike
+3.0 Unported: https://creativecommons.org/licenses/by-sa/3.0/
+
+The ChEMBL-derived activity identifiers, molecule identifiers, assay/document
+identifiers, pK observations, source metadata and corresponding adapted tables
+in affinity.json, affinity_curated.json, affinity_sources.json, initial_affinity_implementation/*.json,
+and their displayed table/figure equivalents in report.html are provided under
+that same CC BY-SA 3.0 license. This notice does not change the source-code license.
+
+Adaptations by the DMease project: human single-protein and assay-quality filters;
+standardized molecular parents; median aggregation by compound, target and
+endpoint; nM to pK conversion; fixed scaffold split; descriptor-based regression
+and error summaries. The first execution's RDKit ring-information issue and its
+correction are documented in affinity_implementation_amendment.json. ChEMBL does
+not endorse the DMease models or their clinical use.
+
+Other sources remain separately attributed: TCMEval-SDT data CC BY 4.0 per its
+authors; TCM-SD data CC BY-NC-SA 4.0 per its author's repository; Qwen2.5-1.5B-
+Instruct model Apache-2.0. Their raw clinical text and model weights are not
+redistributed in this directory. See data/README.md for citations and scope.

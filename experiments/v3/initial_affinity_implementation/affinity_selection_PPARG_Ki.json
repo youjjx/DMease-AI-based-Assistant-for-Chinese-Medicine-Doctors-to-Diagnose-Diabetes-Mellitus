@@ -1,0 +1,107 @@
+{
+  "provenance": {
+    "protocol_sha256": "25ecee8f41833f2503047ec602cf3ed95d004dcbeb5f3e8b3bd68c3555414a00",
+    "source_lf_sha256": {
+      "scripts/affinity_benchmark.py": "bfa7b28d0846890cdd44273c9e9e9f402128f6def234c107e4154196a83911d4",
+      "src/dmease/affinity_research.py": "10b74f255af305187a5cfda944c215265d534908e9186272dbd35125e3ef7aa9"
+    }
+  },
+  "curated_sha256": "be82be073d3d51d90dc4165a6318f10288a3335b94fa8385b3d3c9ee1839875b",
+  "selected_index": 2,
+  "selected_before_test_at": "2026-11-12T04:40:13.978308+00:00",
+  "candidates": [
+    {
+      "config": {
+        "method": "mean"
+      },
+      "validation": {
+        "records": 40,
+        "MAE_pK": 0.927898976347364,
+        "RMSE_pK": 1.062182908113596,
+        "R2": -0.003432611482381942,
+        "Spearman": null
+      },
+      "checkpoint": "PPARG_Ki_0.joblib",
+      "checkpoint_sha256": "3b6f468ca25d704a0f565eda643961191e23d9940b3b1a2c6393d4b005c627a6"
+    },
+    {
+      "config": {
+        "method": "ridge",
+        "alpha": 1
+      },
+      "validation": {
+        "records": 40,
+        "MAE_pK": 0.5478997368354046,
+        "RMSE_pK": 0.7262200313144626,
+        "R2": 0.5309425462919916,
+        "Spearman": 0.7241427842292559
+      },
+      "checkpoint": "PPARG_Ki_1.joblib",
+      "checkpoint_sha256": "7efa2150d71050f588beca23773e6fac372581d7bde99effdcab6c2b86d61bda"
+    },
+    {
+      "config": {
+        "method": "ridge",
+        "alpha": 10
+      },
+      "validation": {
+        "records": 40,
+        "MAE_pK": 0.5001912942780109,
+        "RMSE_pK": 0.6892820112802384,
+        "R2": 0.577444768470263,
+        "Spearman": 0.773582251425631
+      },
+      "checkpoint": "PPARG_Ki_2.joblib",
+      "checkpoint_sha256": "a870a8647b43e97441f81e727a533e45328f97b4bfa8d2e8af7ddb67764ec57a"
+    },
+    {
+      "config": {
+        "method": "ridge",
+        "alpha": 100
+      },
+      "validation": {
+        "records": 40,
+        "MAE_pK": 0.6273353483361559,
+        "RMSE_pK": 0.7988764790340408,
+        "R2": 0.4323915357287733,
+        "Spearman": 0.7459074073593489
+      },
+      "checkpoint": "PPARG_Ki_3.joblib",
+      "checkpoint_sha256": "21f9408669018d235a77af2fb7bb5626c11a5d8b9fb3c2701949ec9a19e198a1"
+    },
+    {
+      "config": {
+        "method": "random_forest",
+        "trees": 300,
+        "min_samples_leaf": 2,
+        "max_features": 0.5
+      },
+      "validation": {
+        "records": 40,
+        "MAE_pK": 0.5616005048805224,
+        "RMSE_pK": 0.7439227965723014,
+        "R2": 0.5077957849399172,
+        "Spearman": 0.7166377417706034
+      },
+      "checkpoint": "PPARG_Ki_4.joblib",
+      "checkpoint_sha256": "d419d2b7bdb1b76c846dc8024e373e36a5092df4abf710982c87011e155943ed"
+    },
+    {
+      "config": {
+        "method": "random_forest",
+        "trees": 300,
+        "min_samples_leaf": 5,
+        "max_features": 0.5
+      },
+      "validation": {
+        "records": 40,
+        "MAE_pK": 0.5672204549338934,
+        "RMSE_pK": 0.7694208771434776,
+        "R2": 0.4734767830532258,
+        "Spearman": 0.7163766016232558
+      },
+      "checkpoint": "PPARG_Ki_5.joblib",
+      "checkpoint_sha256": "ed7568723f93b6e8c80f6007af89b10e72c2d039006bac0c0878efb913e01006"
+    }
+  ]
+}

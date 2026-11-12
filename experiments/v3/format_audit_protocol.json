@@ -1,0 +1,7 @@
+{
+  "id": "local-extraction-format-postprocessing-audit",
+  "design": "Post-hoc deterministic formatting analysis motivated by malformed responses observed during the primary run. No further model generation, no prompt change, no new clinical terms, and no replacement of strict primary results. Not independent validation.",
+  "allowed_changes": ["Remove an outer Markdown JSON fence only if the entire inside is valid JSON", "Remove one trailing double quote only after a complete JSON object, as confirmed by JSONDecoder.raw_decode"],
+  "forbidden_changes": ["Do not complete missing braces, strings, fields or truncated items", "Do not discard arbitrary prose or extra objects", "Do not coerce booleans, infer symptoms, or change evidence quotations"],
+  "scoring": "Same 200 cached generations and projected reference as primary study; apply identical grounding and canonical-name checks after formatting. Count every adjustment, remaining failure, and all records in denominators."
+}

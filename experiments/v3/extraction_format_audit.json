@@ -1,0 +1,3140 @@
+{
+  "protocol": {
+    "id": "local-extraction-format-postprocessing-audit",
+    "design": "Post-hoc deterministic formatting analysis motivated by malformed responses observed during the primary run. No further model generation, no prompt change, no new clinical terms, and no replacement of strict primary results. Not independent validation.",
+    "allowed_changes": [
+      "Remove an outer Markdown JSON fence only if the entire inside is valid JSON",
+      "Remove one trailing double quote only after a complete JSON object, as confirmed by JSONDecoder.raw_decode"
+    ],
+    "forbidden_changes": [
+      "Do not complete missing braces, strings, fields or truncated items",
+      "Do not discard arbitrary prose or extra objects",
+      "Do not coerce booleans, infer symptoms, or change evidence quotations"
+    ],
+    "scoring": "Same 200 cached generations and projected reference as primary study; apply identical grounding and canonical-name checks after formatting. Count every adjustment, remaining failure, and all records in denominators."
+  },
+  "source_lf_sha256": {
+    "scripts/extraction_format_audit.py": "7914f26fcca886e65fe3c4e47a94d64fd4fa978f6169eb585b11667da15f0937",
+    "src/dmease/grounded_response.py": "e457a5ef0d379e7044a8c0136fcded5fc7ca503ec0825edfac86e2aee826caf5",
+    "src/dmease/local_extraction.py": "40a86ed6897dfbcf551ada166820edc8bc7849517a02112913358b464e443d5a"
+  },
+  "primary_provenance": {
+    "protocol_sha256": "25ecee8f41833f2503047ec602cf3ed95d004dcbeb5f3e8b3bd68c3555414a00",
+    "source_lf_sha256": {
+      "scripts/local_extraction_benchmark.py": "47b3aa6cd0cc310125bf8ae8dc4097b824d41638f0e3737ad1e7a03510bf06ea",
+      "src/dmease/local_extraction.py": "40a86ed6897dfbcf551ada166820edc8bc7849517a02112913358b464e443d5a",
+      "src/dmease/symptom_parser.py": "3e252f471d162ce25f958cd1341888860e3617382f90505dc36b4f41b1ddb860",
+      "src/dmease/evidence_service.py": "4895156125c608eef937254fc9b6cf255c2e64320d05307b89333488b9c48b96"
+    }
+  },
+  "records": 200,
+  "strict_json_failures": 91,
+  "strict_failure_reasons": {
+    "Extra data": 60,
+    "Unterminated string starting at": 24,
+    "Expecting ',' delimiter": 5,
+    "Expecting value": 2
+  },
+  "format_adjustments": {
+    "none": 109,
+    "trailing_quote_after_complete_object": 58,
+    "unrecoverable": 33
+  },
+  "remaining_json_failures": 33,
+  "summary": {
+    "records": 200,
+    "tp": 6,
+    "fp": 20,
+    "fn": 189,
+    "exact": 84,
+    "gold_count": 195,
+    "predicted_count": 26,
+    "precision": 0.23076923076923078,
+    "recall": 0.03076923076923077,
+    "f1": 0.05429864253393665,
+    "exact_set_rate": 0.42
+  },
+  "rows": [
+    {
+      "row_hash": "626714e4d8c0e60c60081d330f49e6393b1af90ef5483d2ef8082ed6aeca4acb",
+      "counts": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 1
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {}
+    },
+    {
+      "row_hash": "994b31b0142ee5f390e5b48bfb33104c8ede5ab015aa4b9df52e8d00fe6805bb",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 21
+      }
+    },
+    {
+      "row_hash": "c96e2760ff435c4740b56da07eb75497193ecd7499f857c498bc7a043ac1e8e7",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "ungrounded": 1
+      }
+    },
+    {
+      "row_hash": "870c7a32f0e4b1c4954884d6dd9ff13e98e1c037dde0bd17fdb3a9b7a0ecf617",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "ungrounded": 2
+      }
+    },
+    {
+      "row_hash": "e2ae84b518d7065def43e661c6bd42ff0c241add6cbf3d27c653e2100c416d8f",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 2
+      }
+    },
+    {
+      "row_hash": "2fdbb96c7a5430cf62fb998767ab431b6ba97141b063b8fe7116bbb60a2e4c22",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "exact": 0,
+        "gold_count": 2,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 2
+      }
+    },
+    {
+      "row_hash": "3c44018e898cd93dbaaaf984c09610fd1777ef0f15f09e3b42cb1d0b5aea49c0",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 3,
+        "exact": 0,
+        "gold_count": 3,
+        "predicted_count": 0
+      },
+      "adjustment": "unrecoverable",
+      "invalid_json": true,
+      "rejected": {}
+    },
+    {
+      "row_hash": "2c95fb8ea04b8dca2efb860377dbe92c7fc192040df2090deffce06c9d856c41",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 3,
+        "exact": 0,
+        "gold_count": 3,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 9
+      }
+    },
+    {
+      "row_hash": "da7d1b32c684e187b310528b15cd8cb219b14a09576f04ef40870ca4a8b3520e",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 6
+      }
+    },
+    {
+      "row_hash": "f1ba7da9c0f1d02879ce8b6d349431af5f3e20159d80eecb6c85ef7bdd8b952e",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 2
+      }
+    },
+    {
+      "row_hash": "2a5325028b49d8e6b12372d9af1079602d13d9068c503708062bbbbd380f4318",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 16
+      }
+    },
+    {
+      "row_hash": "68e4c7ed3290338c59af2b6ffc2eca8ce652aa0c346383eb2f55fa88f65a477a",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 4
+      }
+    },
+    {
+      "row_hash": "8e615de524754140ad40a1ed45137693ab5779c10d2fd91605e1e9ed29881e3e",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "unrecoverable",
+      "invalid_json": true,
+      "rejected": {}
+    },
+    {
+      "row_hash": "ed69a703912c239f58eaf8d9f4170d889fe0f7295b40071f53b1a34328287cac",
+      "counts": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 1
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {}
+    },
+    {
+      "row_hash": "9c78c08e17097b2edae0ace6c87be03009b8e248893709584415b0d11a0b8e7c",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 8
+      }
+    },
+    {
+      "row_hash": "29fae02b7c72fd8585fcc2c2d0365f04017e5e0ef0737da33cc756a01d770afd",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "db834c2967bda7c6803128272f961fd993a95bafd9cfe3bdc3b23a45db85e2d5",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "unrecoverable",
+      "invalid_json": true,
+      "rejected": {}
+    },
+    {
+      "row_hash": "05641169abfab9529564da2ef916c51fc3a518bd11880a2edbed6143d9d495b7",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 4,
+        "exact": 0,
+        "gold_count": 4,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "ungrounded": 1
+      }
+    },
+    {
+      "row_hash": "d2793577f804c9d517ec5e1aa9dfa32acb22c1ec7c4ce47c3d380041c4d0e6fa",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "ungrounded": 1
+      }
+    },
+    {
+      "row_hash": "e76c840e74daa1ff0147e76887f129f463acc066e21e6e1839cd8bd78e7d2b71",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "ungrounded": 1
+      }
+    },
+    {
+      "row_hash": "0dc27b24e8920fc0471396561f73ffda1f28da7f778dcc3e88bf6b9fcdcb15cd",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "991e6caba60898af3666b6f4adf864575edbc2b91bdb9a608f6b5d060a836fa0",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "unrecoverable",
+      "invalid_json": true,
+      "rejected": {}
+    },
+    {
+      "row_hash": "81eb2b09bcf515c9cb9a0d605d6c6d29a6bc5a48394d861e4384f49ac22557ac",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "97b01575548cb6da1694f27da9931ace09aeb5ecb5b8a9be42e60949917f3160",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "ungrounded": 1
+      }
+    },
+    {
+      "row_hash": "1f47441ff4679fe41b88a180d2243a9170cec8ac5eda6c7e9c4616e2cceda55d",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 3,
+        "exact": 0,
+        "gold_count": 3,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "ungrounded": 2
+      }
+    },
+    {
+      "row_hash": "33a166ca0323cabd9af786e18c3c2d5f09ab0160ed1945c797e049f26a51cb29",
+      "counts": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 2,
+        "exact": 0,
+        "gold_count": 2,
+        "predicted_count": 1
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {}
+    },
+    {
+      "row_hash": "bd7ea1cb7455555926824355fdce76d64b96bcc77b9fca99dd92e1709973e070",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 13
+      }
+    },
+    {
+      "row_hash": "9ac5be6d0d88e28c6ee38f1a57494903d15c9347115dbc0bd0ce12d24bd4b556",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "unrecoverable",
+      "invalid_json": true,
+      "rejected": {}
+    },
+    {
+      "row_hash": "eb9dd54173d8908761d31806f49c294b697d6834b8fc04e821ca3f715fab0060",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 3,
+        "exact": 0,
+        "gold_count": 3,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 6
+      }
+    },
+    {
+      "row_hash": "0d052b02463e5c2f34e66e8c2f577fb3b53dc8adb68b5296a7fcd0e0c105cc20",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "ungrounded": 1
+      }
+    },
+    {
+      "row_hash": "58c6941440c2a633dc0181465cb7bf4e3f15660efa9287b5a2c594d66d34dca0",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "exact": 0,
+        "gold_count": 2,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "b571aba110a1d114d1747edb5a0bcfcbb23b7dbf6e3dd747ecb7c3a965a3b486",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "bef16e2aa52a2aaa168b3cac74d6a057aa5eab56b29c110e849d915a6836d9a8",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "ungrounded": 1
+      }
+    },
+    {
+      "row_hash": "dc325f3cee82db5627e47fbc9ba757fdfec6e88f69f5715783b7c6974cb98d2c",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 2
+      }
+    },
+    {
+      "row_hash": "d71a746234a296246e797c43891bda4da751474bb46a288ff7dcaab472c4e7e8",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "0262ea9807f7ca7f6ac5631cc870d215b40a44d90d7e31707b4fb4875b18d36c",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 4,
+        "exact": 0,
+        "gold_count": 4,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 9
+      }
+    },
+    {
+      "row_hash": "c8326f384b02f8d38be9e78107de1903ad0e1f33fc572233842099504cf8fa6e",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "85f4d8a1ad5d3d9e44cc322da59baa933ed47a62391955ee45450cb9aba61518",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "exact": 0,
+        "gold_count": 2,
+        "predicted_count": 0
+      },
+      "adjustment": "unrecoverable",
+      "invalid_json": true,
+      "rejected": {}
+    },
+    {
+      "row_hash": "4089d6932ca106a08cc9fe6ebdeecefd37ac86fbe72cba3b351e47274d59ff2c",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "b215284a12e86550fc1c806bfcf5ba6fd49a9a8ee8824988e1fc5c0b4942e94a",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 4,
+        "exact": 0,
+        "gold_count": 4,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {}
+    },
+    {
+      "row_hash": "61026992289b9262c5c431789c1f9fc81c91f63f35deaadb7aec5cac45bcf122",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "exact": 0,
+        "gold_count": 2,
+        "predicted_count": 0
+      },
+      "adjustment": "unrecoverable",
+      "invalid_json": true,
+      "rejected": {}
+    },
+    {
+      "row_hash": "d9379cc336368354e0e0e98ec4fc4272c9833f70225c8b886ac6889c3d029006",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "ungrounded": 1
+      }
+    },
+    {
+      "row_hash": "5bd73a4749b3832f237112e82de8ac6adb9fc89649db41160304a18d3300def7",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 5,
+        "exact": 0,
+        "gold_count": 5,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 2
+      }
+    },
+    {
+      "row_hash": "a682762e31c570164c3d2998285deef3a91333eff22142ae237872608dfb79ca",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "ungrounded": 1
+      }
+    },
+    {
+      "row_hash": "0a760929a11534a7b8334c0cfd223ce0d1633ebc1d4ee9608f569fd6bcf2bc8f",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "exact": 0,
+        "gold_count": 2,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "aac83ef6bac450c47793c996dd3998bcde965d5d6bf8e3da159638d57b295fe2",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "exact": 0,
+        "gold_count": 2,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 5
+      }
+    },
+    {
+      "row_hash": "8f379bb7e01a39d10326013ef27c31413f61d7abbf262fbc5a2dbd2c7f31b4eb",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "ungrounded": 1
+      }
+    },
+    {
+      "row_hash": "3826f80258fd49943ea5dfd5907dd3203088c15f8fb7b83f2e090ac09ca4aff8",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 1
+      }
+    },
+    {
+      "row_hash": "df5994f13f9dea1fec5bd7db7f28e7f3ddd1b0d2bcb812ad90bd8eb048c1773e",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "exact": 0,
+        "gold_count": 2,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "a63b4ce533c3b3f5dc79b5d2f3bb873f9419dbdcf106ca34bff51dd515bdf99e",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 3,
+        "exact": 0,
+        "gold_count": 3,
+        "predicted_count": 0
+      },
+      "adjustment": "unrecoverable",
+      "invalid_json": true,
+      "rejected": {}
+    },
+    {
+      "row_hash": "b2a11dd12479863693998d3cec3600cc51285a56414d7ea8095b11e538418484",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 3
+      }
+    },
+    {
+      "row_hash": "c8310d69d93a0da41d9c7fd0e94b9b71b36431d027e488776b0d6522161b8d81",
+      "counts": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 1,
+        "predicted_count": 1
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {}
+    },
+    {
+      "row_hash": "365d3ef18f305bc0fa7a17ea126d12420697b75e8623c310419aa63464779e39",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "ungrounded": 1
+      }
+    },
+    {
+      "row_hash": "fa2941fcc64a463b119035396888a88eff89234bd79026029521e79b5c591d89",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "exact": 0,
+        "gold_count": 2,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "7bcea4d6b4da327201e183efd799eb6637ec9566a1110c3b0bc73bd62b92dc12",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "unrecoverable",
+      "invalid_json": true,
+      "rejected": {}
+    },
+    {
+      "row_hash": "476c0e74e5b8a8a3857d04813e4422a2ccb8212f92be9d90e21d39e39e6c5327",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "4322cd21e259d5e8b7f7b66353746d60e9e18a78b1d43fbfe7f161cd5c5f1cb2",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "ungrounded": 1
+      }
+    },
+    {
+      "row_hash": "e67caeaaa9ace434e98b9d370927ae235085d3260da0c84ea396a304884e80aa",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 16
+      }
+    },
+    {
+      "row_hash": "b9524a5d387bdc6bb3b7f70822bb63d0eb8e299386c70c48fdaadfd7a8ff1198",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 2
+      }
+    },
+    {
+      "row_hash": "72996d4e0417331bbce8654b0918ff90c3a1af3864110410bca69d1569ae6805",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "unrecoverable",
+      "invalid_json": true,
+      "rejected": {}
+    },
+    {
+      "row_hash": "f28f4270a93d938c897a8ed7073a29ba6ab257d8e44fd8941b7cec13a5b88aa6",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "exact": 0,
+        "gold_count": 2,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "ungrounded": 1
+      }
+    },
+    {
+      "row_hash": "873fa46900c6a2e436faf9b70a1302378e7c37d82368bb216d2ec21ee8f3ad91",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "unrecoverable",
+      "invalid_json": true,
+      "rejected": {}
+    },
+    {
+      "row_hash": "d2d4ea6cacffc569d785224fbf57acfc138107cf7a1fc292fb0239a24afe98f8",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 6
+      }
+    },
+    {
+      "row_hash": "bfb129adf78966619f10a6f7267add8adf533254f9a2f215d1b35467069313da",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "61f6d2e30afa9c49649ae62ff66cf984f7e8c4cf4e80f2a6f7d6fc30e7f4087b",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "exact": 0,
+        "gold_count": 2,
+        "predicted_count": 0
+      },
+      "adjustment": "unrecoverable",
+      "invalid_json": true,
+      "rejected": {}
+    },
+    {
+      "row_hash": "8142e1293c6790feb1b09c00bcc5885c6a60199e4bef22d528b9102d7f40beea",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "e90278163a4d31031da03d9893c6c70d6948c469c501fc4cab4605302ee25359",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "6c5cab7e47cbc1e42ea3a2f89430e7619d9a468b3e59210d11676896cc224511",
+      "counts": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "exact": 0,
+        "gold_count": 0,
+        "predicted_count": 1
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {}
+    },
+    {
+      "row_hash": "d30605366464797be3a9e64b9759a8796cc4a462ab45745ca120d4a34aa3258a",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "unrecoverable",
+      "invalid_json": true,
+      "rejected": {}
+    },
+    {
+      "row_hash": "ec541185a3f34ccc8fec46988d86c20013b3b7c1fb7e19bb9b706e3f0f92c03d",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 5
+      }
+    },
+    {
+      "row_hash": "b5755d659a32a98d26f7f0116e297597b44db98ec7b8f3853b76c741e486d777",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "608f28c5cd6bdce0b1d04b65eb033bb44fe620bda237701392a2712452c56c80",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "ungrounded": 1
+      }
+    },
+    {
+      "row_hash": "c06c4f3e4e58b1ce83d21b9b0c08497ffc5e61a8d3040b76c5e4ad2ad79e7549",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 11
+      }
+    },
+    {
+      "row_hash": "9e6ae0ee0f2600cb1d0ce021854f383c0106e8f189f152dd6b3def8fc7980025",
+      "counts": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "exact": 0,
+        "gold_count": 0,
+        "predicted_count": 1
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {}
+    },
+    {
+      "row_hash": "bb624e94b84edefb923fb950e9d04258f158156a6f8c2e4c11279ad9db7e3dd0",
+      "counts": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 1
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {}
+    },
+    {
+      "row_hash": "2997ddd8cb7221dfaa420976a2ebb63a1e7931095115c77bfe693a5b9949355f",
+      "counts": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "exact": 0,
+        "gold_count": 0,
+        "predicted_count": 1
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {}
+    },
+    {
+      "row_hash": "f7a4edb1750b016702b28ae8c39e95fed57b6fb344b7210db665696426cc99ad",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "c348bf414a8e4b64a6967a78ebc74ba50ece1672847d468d5584e61abc3fe38d",
+      "counts": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 5,
+        "exact": 0,
+        "gold_count": 6,
+        "predicted_count": 1
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {}
+    },
+    {
+      "row_hash": "fb6c8e5a1b4a227985ba27cc99b74617fe220648c67a1bfca901be4f55070668",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "ungrounded": 1
+      }
+    },
+    {
+      "row_hash": "be2fd62a19d9ae6baa11a3832b3c7c61b173fb3d4e7968bf1e65b40261b5e340",
+      "counts": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "exact": 0,
+        "gold_count": 0,
+        "predicted_count": 1
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {}
+    },
+    {
+      "row_hash": "49d88bd96fa80f54956f09074f387e33ebf6b4ce9b60174d58cd8c0099035829",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "ungrounded": 1
+      }
+    },
+    {
+      "row_hash": "6471cf784d1fa896571f3caf0e5b6eb034e4cdaebbaa25a00c70aae6e2c29934",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 3,
+        "exact": 0,
+        "gold_count": 3,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 2
+      }
+    },
+    {
+      "row_hash": "0ac27437bb9b36134bb07e0d10598c3be376601d2d2c485923ab5be31bf86348",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "unrecoverable",
+      "invalid_json": true,
+      "rejected": {}
+    },
+    {
+      "row_hash": "8f862241b5c76247c0a6e1860c6e77d30808f384063530b15692f30d63c188ce",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 4,
+        "exact": 0,
+        "gold_count": 4,
+        "predicted_count": 0
+      },
+      "adjustment": "unrecoverable",
+      "invalid_json": true,
+      "rejected": {}
+    },
+    {
+      "row_hash": "0f31043a86a352282ee1ad745a5140d71e5d88442bc6560d30fafa071e56b73a",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "8699d09a99abb67ed5894a5ae1a0ed90019fbbd888a2d772640cd21d3dd43d09",
+      "counts": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 2,
+        "exact": 0,
+        "gold_count": 3,
+        "predicted_count": 1
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {}
+    },
+    {
+      "row_hash": "71e35a44727b8d60e61544c4d28b476ed176c89fc4b5927676dac01a68d025dd",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 5,
+        "exact": 0,
+        "gold_count": 5,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 14
+      }
+    },
+    {
+      "row_hash": "1b5332674c0ad952be8f509b07e8e533793a464ae9a9df683b3b7e4b43d65341",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 2
+      }
+    },
+    {
+      "row_hash": "23e6f2f991da33606630048a417d5b6561e789695a0e27e5579d58a019297bd2",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "71e3c26ebc7d2288d586a8fe80e12e4913bd194e6a8c6e4ae3658136b4bb2409",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "exact": 0,
+        "gold_count": 2,
+        "predicted_count": 0
+      },
+      "adjustment": "unrecoverable",
+      "invalid_json": true,
+      "rejected": {}
+    },
+    {
+      "row_hash": "d9d913b5b3ad0856ee8cdaa30ea1da0415a3d861094af867d0d5b85a805362dd",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 9
+      }
+    },
+    {
+      "row_hash": "1ca0fb4d003694d96569909852d4f371d814bf384b8b1e58fdd32722bd75e625",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "unrecoverable",
+      "invalid_json": true,
+      "rejected": {}
+    },
+    {
+      "row_hash": "e999da21c527583d63cae8db415b90aa1f79be0be392dc7f65cff86fce04eda0",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "exact": 0,
+        "gold_count": 2,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "8dd8c15c4ec1db462e10c4e8267b0fcc65e1d35694f9f26cc4d5b026ba547ab3",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "f38738101748e914ec4655c7d2f019845b554f1721fd0d368d0072be220d2119",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 2
+      }
+    },
+    {
+      "row_hash": "2d4dfb433427ea2c7385157add4624165f0daf6ced1e17b6396944e8b9dcb730",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "unrecoverable",
+      "invalid_json": true,
+      "rejected": {}
+    },
+    {
+      "row_hash": "1bcc3c534d1c62e0ad7bf108a2387590c677c4c929ea69633325b11d78a365ef",
+      "counts": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 1,
+        "predicted_count": 1
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {}
+    },
+    {
+      "row_hash": "e69d0958c59f7599ceb3bd15926eec474d75b01a2734ca408f7492829b825ac2",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 5
+      }
+    },
+    {
+      "row_hash": "6370bd29befe618eb64038943910167581626a9b04d2b4f44a7f31937817558e",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "ungrounded": 1
+      }
+    },
+    {
+      "row_hash": "1b375c55958067df71fc2fcd6d830e9973f9b3ee1e733f310ccb6e02ed35a5ec",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 3,
+        "exact": 0,
+        "gold_count": 3,
+        "predicted_count": 0
+      },
+      "adjustment": "unrecoverable",
+      "invalid_json": true,
+      "rejected": {}
+    },
+    {
+      "row_hash": "f45fa8b9e496dd0c2860f489386a1eceda4a0d34460e2d4a378895a447756a51",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "unrecoverable",
+      "invalid_json": true,
+      "rejected": {}
+    },
+    {
+      "row_hash": "428409d964ea23cc15638cf97c6eaefc41d643b97948e2d95694c43284604497",
+      "counts": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 1
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {}
+    },
+    {
+      "row_hash": "52de3c865ab1417e0c1d93b03383aa40e35326c71b633b7bcfcd896408a502da",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "800145e467bd0fdd8410590d4e28bb39536ac031a8239c1eaefcde9c972f6b1d",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "6972fba6402e8c3bc9b0f29e46dd4e842dea7ea6bdbe1be6a13483e5e2682cd9",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "exact": 0,
+        "gold_count": 2,
+        "predicted_count": 0
+      },
+      "adjustment": "unrecoverable",
+      "invalid_json": true,
+      "rejected": {}
+    },
+    {
+      "row_hash": "c0ccb09bacbd04ba360d1b56ba2a0a23c1a3a8fcdbe6c72d304eb2cbc54c2ab8",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "exact": 0,
+        "gold_count": 2,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 11
+      }
+    },
+    {
+      "row_hash": "54532c47b1bbc3d381cd54c4900787fc6186278a3ab76ed231141e0634044046",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "ungrounded": 1
+      }
+    },
+    {
+      "row_hash": "e47fdca04f4674a3a15f7439520ef95698cfde6868b8eb62d8bab3d2768b033a",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "8a2ccf3ea3cd24d30d30b3f989693d570abf05d24e640d2b1e43f3353dbd7dfc",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "2b326a85ca0b833b135a01a4b493766742fb34eff35555c93bff1665ade070e9",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "exact": 0,
+        "gold_count": 2,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 2
+      }
+    },
+    {
+      "row_hash": "9601f93bb4abc9057691e72c3880bb2ac595ddf096d74ff8c9c6d860f8e6eb1c",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "91abc87d3caa2700adfb38b7328cd936778c3188b8c22d4ab14c2889ff599e99",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 6
+      }
+    },
+    {
+      "row_hash": "a58951be3772805163d543c6c27da0a710eb39ef7b36a7ad40c8d0e716084cb3",
+      "counts": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 1
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {}
+    },
+    {
+      "row_hash": "52c94a3718f82890779b885874ec83afa4bbf9472ac40823f81e8cfb76247af7",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "2cf6b7fe16297968cd40b409d60123ce71225deab504323474f3978de26f811f",
+      "counts": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 2,
+        "predicted_count": 1
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {}
+    },
+    {
+      "row_hash": "8e37b8593f9ca58a7615a40d11e95dd9b88bccde532e7fb2af3a17c6b3fe6729",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "a5b1155052f5c16b987c623ea6b9fe48d061230981615cfb8e36d5fb8175cf51",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "2f5432fef1058628a31711d90fee4c92a6e7d843187ab1a8e8c02184ee7c1e25",
+      "counts": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "exact": 0,
+        "gold_count": 0,
+        "predicted_count": 1
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {}
+    },
+    {
+      "row_hash": "95f5d65dec5b1bb93e5f5cf5a683f38b5d50c67206212d92df4f39fffd405531",
+      "counts": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 1
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {}
+    },
+    {
+      "row_hash": "2dd67fdfda3eae86f1dd0272dac643cbcf6e2e5d0e32264a18015b33dd2db7ee",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "ungrounded": 1
+      }
+    },
+    {
+      "row_hash": "6def9b5f52b7f6abcac517a813c7d4c64abbfa66ea9309f17bbd83e6ea36e146",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "75a7f96e6d4bdad9745161dc9ee692de3f98bcbe1b9c2d54e33e267ad9e89881",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "unrecoverable",
+      "invalid_json": true,
+      "rejected": {}
+    },
+    {
+      "row_hash": "ba323ae73f2284ca5cc0513c711c78f7edf1d5790ba2dc010bcc2b8f28422027",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 2
+      }
+    },
+    {
+      "row_hash": "1766ddb2c8ceacab1e60fc7b7e654bd9f05daaa8adf7d7a3fe5763ee00652bf5",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "24fdf6459e66a6becb41ca0edc8d43a8f5d6ab6238d383c906af038fb6e9c542",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "ungrounded": 1
+      }
+    },
+    {
+      "row_hash": "e13b73bb7ed15a9afbe32bff4c4dd4f95754d3195d6b6fe5b26de589a23f4080",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 7
+      }
+    },
+    {
+      "row_hash": "0b10c1158b0f51173b1f4e7d17fbd6282f7a2a7a7a04778252028a09b275fb89",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 9
+      }
+    },
+    {
+      "row_hash": "6b672b2eb4c0f3adf085a5cb1eeb093a1d22d4b0053befe691d31d18593eda6e",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "379369dfb8b9bc293f231b17675b3123fb3cfbdd803ef71682242d542f3d1bd2",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "a6467925d0b9a23ed1e002d4db24393baba4a66938901b9f33cddfcef8ff35db",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "0df63c88cb64eae29bdeedbbf6c01f4c52658cc20a5f35522bb3031c01578970",
+      "counts": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 1
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {}
+    },
+    {
+      "row_hash": "3d0b326f77b45c1972826869180edaeefaa8350e52cfa421b389549808e34d69",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "unrecoverable",
+      "invalid_json": true,
+      "rejected": {}
+    },
+    {
+      "row_hash": "f85f99cc53b6decaaeff376a7b21540c57a095409934fc519f0becbf8eac0760",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "unrecoverable",
+      "invalid_json": true,
+      "rejected": {}
+    },
+    {
+      "row_hash": "2a6fdf7c400dc068c9c593d3e9790d3194c5752e94a396c34d06d7004dd4c205",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "ungrounded": 1
+      }
+    },
+    {
+      "row_hash": "c6a1538894d74b06aea7590182d7f3e2e0f65a75026396b2369d00818b4c5eaa",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "exact": 0,
+        "gold_count": 2,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "a46acb1a47dc86161fd1f5ad6ed37cdc55bd43e1c0b128412110ba06a2ae9c56",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "unrecoverable",
+      "invalid_json": true,
+      "rejected": {}
+    },
+    {
+      "row_hash": "8f551f1f1760b47e82f7cb0f4165633926be42af3159a02a00eadb7fa4b49bed",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 8
+      }
+    },
+    {
+      "row_hash": "00962a14c29d65d5f5ee9d6cc95dcb110d10489543d1f5712f4d6bc3cbf1d6c1",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "2e10bb0500d744635dfa780012d44cb89e1f7fc9392dd29972548050f375ca8c",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "cc2a44d6e8bd41c84d4f72072320c8f0251f798350bfe263ebffd06e00d7c74a",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "22afdef52511f03ceb1e2fa334c037d2cbc19ea51202054d043ad425253bd12c",
+      "counts": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "exact": 0,
+        "gold_count": 0,
+        "predicted_count": 1
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {}
+    },
+    {
+      "row_hash": "fc22b4a267d8efdcc90952eafc24d378531b5dbcb933c21c3f178935e2d14357",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 2
+      }
+    },
+    {
+      "row_hash": "bc00efb58ad844d7c5fa5bfe336f3d6b795d19a9766826bbd24d140348b6b6fd",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "b1c762191c5583385e06dc5408031eb8d562503c7c27016f3d8ad4ad1baeab3d",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "05ffd2b413d249cba50c170c462d65b4cf1ddedbd55d8e1dcce7579a01b0bff4",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "ungrounded": 1
+      }
+    },
+    {
+      "row_hash": "26b25b50e13433c4237b6af79b05f4f381b38304ef3bd50ee87c7fb6e2cf9a98",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "f9c8dad05252a1495d40e0bf7fc7b577dbb656a3a5971fdb449ea4fafc489228",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "unrecoverable",
+      "invalid_json": true,
+      "rejected": {}
+    },
+    {
+      "row_hash": "71e2b0ad04e9a35d928132c6458078282a1e838d6e0dd8831d76fb01ac76ab72",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "ungrounded": 1
+      }
+    },
+    {
+      "row_hash": "095538bbdcc18235ef235fa4bf36e988faa4cfe86450d54d4ef3efbaef947fd8",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "exact": 0,
+        "gold_count": 2,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "fd087de60db5ac1c4cb86e5da2badfe4aed59ea90bc3c5bf85ef237e8c6e20ff",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "7748fccfba7f2738c46a67080a544e75962804cf1982b7ca571d2eab9af4a483",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 2
+      }
+    },
+    {
+      "row_hash": "019cbe6ef8fcead51979dabead5e537fb95f079e009cdd3a0abe15bd6ccf085f",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "f1bac56ec2b990f64e4d3a8aaa0bbbbea85b6ef74f7a110c385f477c0f8b1653",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "unrecoverable",
+      "invalid_json": true,
+      "rejected": {}
+    },
+    {
+      "row_hash": "db2ba05577c4184bd6d1ba5c2751f1cd98a17af62df98625e470f562ad31a4c2",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "unrecoverable",
+      "invalid_json": true,
+      "rejected": {}
+    },
+    {
+      "row_hash": "2fd46567e97798f2a6f17a0baef7edce1d216d86b2e3bf9ccc43390f30043aec",
+      "counts": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 1
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {}
+    },
+    {
+      "row_hash": "ea62c1c45c74ccacecf93ac9519e12b7f66ee9fafe28e99b0092f99ae691711b",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 3,
+        "exact": 0,
+        "gold_count": 3,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "e5a80aac568fdec98d3100fa97ad378e948e1db8750a6934b2ca53234dbc0764",
+      "counts": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "exact": 0,
+        "gold_count": 0,
+        "predicted_count": 1
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {}
+    },
+    {
+      "row_hash": "087e0c47f620855ad27feadea9a84034c0d40ba0be5f4d3f885d6ed52a9168a3",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "unrecoverable",
+      "invalid_json": true,
+      "rejected": {}
+    },
+    {
+      "row_hash": "b0f8629138c7bd3ddb16f5b65e2fa6bfecbc5bb837b490bfe75e2b2fd5c0db5a",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "47a9034a655bc7c9e7fe0cea7bea49b62c627d22af473219eaa33542cfa7d07a",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "bb71d3a3a065f795dc75a066abe9af7a79973827d41510266eedbcac3a3edf2a",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "ungrounded": 1
+      }
+    },
+    {
+      "row_hash": "aeebbaf3edb429fb654d95ad8cdb0b87463f0a2c2931f0bddefccf8a86f11084",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "6ed13e67dd640e232935a6a26ae0f84a3dc7bb86aafd51bd88ebe90d9851acae",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "unrecoverable",
+      "invalid_json": true,
+      "rejected": {}
+    },
+    {
+      "row_hash": "8b195d5d4ee079b60eb4eba5f34cce14665c026965dfa0465f43bd5a9d2f71bb",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "exact": 0,
+        "gold_count": 2,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "99032abbf5aba6fff825a367052f86d366e374ec6842043035a8653ed9764d0a",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "exact": 0,
+        "gold_count": 2,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "0116824736fbb609452873d273c32efcd2f1019cba118afaeaf109ae28f86645",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "1ec10a75579324ea20d7018dca9b1eff71520a72d803c5f28c6d23a9b4050d60",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "exact": 0,
+        "gold_count": 2,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "e79a7663aa2317ee9ba652399fd45ee2bf9244195d7f9796af2a8d62921de8f4",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 3,
+        "exact": 0,
+        "gold_count": 3,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 1
+      }
+    },
+    {
+      "row_hash": "a5a9503700901b5f3f8de8799597f0a1842b73a6dd8f1438131589a365d600b2",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 3,
+        "exact": 0,
+        "gold_count": 3,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1,
+        "ungrounded": 7
+      }
+    },
+    {
+      "row_hash": "d47575f43d6d6747a688de344fab3295c2a73f1cabc719a3188517587b8cb7f7",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "exact": 0,
+        "gold_count": 2,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 9
+      }
+    },
+    {
+      "row_hash": "ae77f45c82889d80d3d5d0e9c60ba375d8aa061093aa55035877caa62c74186b",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "exact": 0,
+        "gold_count": 2,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 15
+      }
+    },
+    {
+      "row_hash": "5e612e80bc236433524fd7375599cdbfcc8f89e9578a86df393fa59cedfe9a06",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "ungrounded": 1
+      }
+    },
+    {
+      "row_hash": "c69684bbab8677483625fea2c9651033f614d62a3c51ab5340fdb5affce9ea81",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "ungrounded": 1
+      }
+    },
+    {
+      "row_hash": "cb5e17cb8581b93d92915903ccd32dd5a68b963bf2f6cecf1f320484b1b4d720",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "312b039faf17a951b1ed2b4e138a971d24dcf2ffc9a580b3b7134cb6d98fb67f",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "exact": 0,
+        "gold_count": 2,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 5
+      }
+    },
+    {
+      "row_hash": "c103f979164b87c2daab169f4d1d45d3d6e7b91307eb82ff112806ef1d35add8",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "03e1118f962d0220d6a56c0ca6734e612252a5fac204d1647a2697269d4e9f9a",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "ungrounded": 1
+      }
+    },
+    {
+      "row_hash": "e72365075e35c6bbae6ae54369b5ff50a81f97ee463f72b18330570ba48c5d0b",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "ungrounded": 1
+      }
+    },
+    {
+      "row_hash": "d5866fca664ddb9944e6adbc006019fa243a0d57bae4f16fb7795fa1318d3e7f",
+      "counts": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 1
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {}
+    },
+    {
+      "row_hash": "9b13d5a8a7bf208617afc9ad9eecb283ed1d33465f7abc864acbf48ce731460c",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "ungrounded": 1
+      }
+    },
+    {
+      "row_hash": "545f1038887d41ac3f72ae7b689a904621c4131ba9128e5230406ca033508680",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "c4800d7e06c6c420501edc70e04f0a86870393416f9f5b3c4ea0746307e77078",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "unrecoverable",
+      "invalid_json": true,
+      "rejected": {}
+    },
+    {
+      "row_hash": "c4f9eb8bd018300760cd4673111814208bed23bdb6c1826148611b5a82d511d0",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "unrecoverable",
+      "invalid_json": true,
+      "rejected": {}
+    },
+    {
+      "row_hash": "bc30c28712486dee98f77bf1eb2625b00f8ee3dcdbf47ace139424cbb99e4c9e",
+      "counts": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 1
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {}
+    },
+    {
+      "row_hash": "4820024c5aac6a70a59569b1650e4806cd1ac9b2511ae230f828007b7cee12b9",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 4,
+        "exact": 0,
+        "gold_count": 4,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "8ac92d39b0b423184bff7dfeece7884a85a83d3f95465a1adc1d6211851700bc",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "exact": 0,
+        "gold_count": 2,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "b911844416e5ca92b120942ff2e9485704d39845d189c205e43b64d2e2a13dbe",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "exact": 0,
+        "gold_count": 2,
+        "predicted_count": 0
+      },
+      "adjustment": "unrecoverable",
+      "invalid_json": true,
+      "rejected": {}
+    },
+    {
+      "row_hash": "0fd9f81182826b3536691b0c09ce8cebee4d087b1c1631911727f1c572e3c01e",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "exact": 0,
+        "gold_count": 1,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "927bfddc1b677b3f3622d125b5bb8af8d524301457e569544cc3931c6130fb3f",
+      "counts": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "exact": 0,
+        "gold_count": 0,
+        "predicted_count": 1
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {}
+    },
+    {
+      "row_hash": "a3fb28b639a4759819aa0fca05db5125f1acce6f50060f53d3588ebdaf784c72",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "exact": 0,
+        "gold_count": 2,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "ungrounded": 1
+      }
+    },
+    {
+      "row_hash": "a8f760ab5fa33f8f965ac8251db7b806e825d357dbf2d10a95d55d92f73a85d1",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "exact": 0,
+        "gold_count": 2,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "5deb9fa069f7c79d6e3bb78d3b3fbb35c216b5953d81311abee639a7cd5ac650",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "cee9e135eed2a098e396c287cf40d299de6558c314b5b666fb94e05920813afa",
+      "counts": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 1,
+        "predicted_count": 1
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {}
+    },
+    {
+      "row_hash": "be5efcff6288733ee5bde735a3e41b672da99eb48f008adca67ee6a4362cc09e",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "987a9ffdf9898c737ce394dd4bb844a49134c4ce418001264c9e25ef8c2c1d6f",
+      "counts": {
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "exact": 0,
+        "gold_count": 0,
+        "predicted_count": 1
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {}
+    },
+    {
+      "row_hash": "68c2f2a4909585b52d8ed32c5ab285cf46924d24f3c896d3d7279d053a6a2dc4",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "6a72c5c771e28250a13c29a93f9267d4513fcf86c5f561f4290732834a2a0069",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "exact": 0,
+        "gold_count": 2,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "unknown_canonical": 1
+      }
+    },
+    {
+      "row_hash": "e6d21e53f08399fa963264c9e3ffe2b7ddff44cfc665bc10dcce282b1c139eba",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "exact": 1,
+        "gold_count": 0,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "ungrounded": 1
+      }
+    },
+    {
+      "row_hash": "85c0a860c8db99720eb03df29520b3b0a12a7e0d8283784912ef94cedeb2d9c1",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "exact": 0,
+        "gold_count": 2,
+        "predicted_count": 0
+      },
+      "adjustment": "trailing_quote_after_complete_object",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 2
+      }
+    },
+    {
+      "row_hash": "a490b145bd30d1db7e8f4e897b3bba714e0ac63a4d289781cde7ba0c8c68eb49",
+      "counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 5,
+        "exact": 0,
+        "gold_count": 5,
+        "predicted_count": 0
+      },
+      "adjustment": "none",
+      "invalid_json": false,
+      "rejected": {
+        "schema": 5
+      }
+    }
+  ]
+}

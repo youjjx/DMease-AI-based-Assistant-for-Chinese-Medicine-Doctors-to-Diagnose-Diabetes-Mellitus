@@ -1,0 +1,11 @@
+{
+  "method": "Fresh local directory, no existing weights; trained all candidates from the published measured snapshot",
+  "results": [
+    {
+      "stratum": "PPARG_Ki",
+      "same_selected_index": true,
+      "maximum_test_MAE_difference": 2.220446049250313e-16,
+      "same_split_counts": true
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "api_status": {
+    "activities": 24527044,
+    "chembl_db_version": "ChEMBL_37",
+    "chembl_release_date": "2026-05-01",
+    "compound_records": 3824604,
+    "disinct_compounds": 2921148,
+    "publications": 101100,
+    "status": "UP",
+    "targets": 18552
+  },
+  "retrieved_at": "2026-11-12T04:41:17.269230+00:00",
+  "requests": [
+    {
+      "url": "https://www.ebi.ac.uk/chembl/api/data/status.json",
+      "params": {},
+      "sha256": "87fe51f4a517284a3c9734330e2756b12b418bb1aa90984ab9a4b8fc9b9e802d",
+      "bytes": 239,
+      "cache_file": "cc9d8d45455dd7a44922895bfd426d4a5dd98e4a9d60cd69e69416a499a87197.json"
+    },
+    {
+      "url": "https://www.ebi.ac.uk/chembl/api/data/target/CHEMBL235.json",
+      "params": {},
+      "sha256": "bbb149ec7a526218a988d47cf25f3945a8e67310a95407d170bd42cd8efa2e06",
+      "bytes": 96147,
+      "cache_file": "0f8e23d1d9938fa59cc34386dedf8ef996365513478a86fa1297c5f837d8bd8a.json"
+    },
+    {
+      "url": "https://www.ebi.ac.uk/chembl/api/data/activity.json",
+      "params": {
+        "target_chembl_id": "CHEMBL235",
+        "standard_type__in": "Ki,Kd",
+        "standard_relation": "=",
+        "standard_units": "nM",
+        "assay_type": "B",
+        "limit": 1000,
+        "offset": 0
+      },
+      "sha256": "87ac5b08205839536636264a8002c76f2737a82a54fb2e4dd1091bd999fc0853",
+      "bytes": 1287630,
+      "cache_file": "7d4e24829ce814dba1e5b29f340f9dcde9a78ff3d04043ef8aab330d374e3f85.json"
+    },
+    {
+      "url": "https://www.ebi.ac.uk/chembl/api/data/assay.json",
+      "params": {
+        "target_chembl_id": "CHEMBL235",
+        "assay_type": "B",
+        "confidence_score": 9,
+        "limit": 1000,
+        "offset": 0
+      },
+      "sha256": "70a1a81369951597273ca76f3245084537e7cd7d1002e75537a8ca36d318d89c",
+      "bytes": 1210577,
+      "cache_file": "81a05aed0406c75a210e8dcfaa2f896830d60e1661addd0305b372fd527b270a.json"
+    },
+    {
+      "url": "https://www.ebi.ac.uk/chembl/api/data/assay.json",
+      "params": {
+        "target_chembl_id": "CHEMBL235",
+        "assay_type": "B",
+        "confidence_score": 9,
+        "limit": 1000,
+        "offset": 1000
+      },
+      "sha256": "9f57a9f0336ebd0188587f96e82a4e8664ae6c617fd7c9686d4e90025d364b91",
+      "bytes": 506621,
+      "cache_file": "f9d0dab6150d9c82df40f4cd2f1560b527f7a0dadfa791dc1525c939137b7e27.json"
+    },
+    {
+      "url": "https://www.ebi.ac.uk/chembl/api/data/target/CHEMBL4282.json",
+      "params": {},
+      "sha256": "07bd5b7f025de685ac3e4ef22f798aadf2f1c8788bbcdefce0350eeb9d37c015",
+      "bytes": 45874,
+      "cache_file": "e5d9cce7c06db353763c8eb9252ac3252094811fde7e5b526b819dd481b86b6b.json"
+    },
+    {
+      "url": "https://www.ebi.ac.uk/chembl/api/data/activity.json",
+      "params": {
+        "target_chembl_id": "CHEMBL4282",
+        "standard_type__in": "Ki,Kd",
+        "standard_relation": "=",
+        "standard_units": "nM",
+        "assay_type": "B",
+        "limit": 1000,
+        "offset": 0
+      },
+      "sha256": "b5db52a4c38d3361c64ec6912e2fcb1e3c82614aadf5efd0836af9f99fc6b032",
+      "bytes": 824562,
+      "cache_file": "5440ecfd82d5fdff85a83c876a565830875b7b24969b5d11dca19e421b7a0cb1.json"
+    },
+    {
+      "url": "https://www.ebi.ac.uk/chembl/api/data/assay.json",
+      "params": {
+        "target_chembl_id": "CHEMBL4282",
+        "assay_type": "B",
+        "confidence_score": 9,
+        "limit": 1000,
+        "offset": 0
+      },
+      "sha256": "66ad2322f908e53cbedee862c8f6999262547ef5aa1e23f45671b9d87cafd1c2",
+      "bytes": 1230914,
+      "cache_file": "7246c3e687aef45a43fa9dfaa372cb6af2733184f200e8dbbbe0d4670a71d987.json"
+    },
+    {
+      "url": "https://www.ebi.ac.uk/chembl/api/data/assay.json",
+      "params": {
+        "target_chembl_id": "CHEMBL4282",
+        "assay_type": "B",
+        "confidence_score": 9,
+        "limit": 1000,
+        "offset": 1000
+      },
+      "sha256": "8496a353146b3cdd4b29641ca3e216da073a2435ea9b252de1a7566737df832c",
+      "bytes": 414136,
+      "cache_file": "32f0dae2cbcdbadd6b2711a167cbc2c1bed0d711ba2d4da45ad40fb1fcafbc14.json"
+    },
+    {
+      "url": "https://www.ebi.ac.uk/chembl/api/data/target/CHEMBL1981.json",
+      "params": {},
+      "sha256": "8f7014c3befadf351fe6ce60653e6f2783efc410814ba1eb2b181b21a450c372",
+      "bytes": 36125,
+      "cache_file": "320f66b1d849efce698e61fefc6673c84634ad0d0a91c9b9df337a7c45a36e95.json"
+    },
+    {
+      "url": "https://www.ebi.ac.uk/chembl/api/data/activity.json",
+      "params": {
+        "target_chembl_id": "CHEMBL1981",
+        "standard_type__in": "Ki,Kd",
+        "standard_relation": "=",
+        "standard_units": "nM",
+        "assay_type": "B",
+        "limit": 1000,
+        "offset": 0
+      },
+      "sha256": "52aab8179c21c108c4f6ca01b3b2f56f886b8aec51e72c3e67e4a1e308bfb063",
+      "bytes": 107708,
+      "cache_file": "7467df2418539629bf94c6d9c21466fee0babd10f78b822b074ac145af80f5cd.json"
+    },
+    {
+      "url": "https://www.ebi.ac.uk/chembl/api/data/assay.json",
+      "params": {
+        "target_chembl_id": "CHEMBL1981",
+        "assay_type": "B",
+        "confidence_score": 9,
+        "limit": 1000,
+        "offset": 0
+      },
+      "sha256": "b8df0f72299b13322225f4ec9fc767049d9c62428b35e27bd3786b873294305b",
+      "bytes": 936776,
+      "cache_file": "d0c28a00065b8049e610bd26a9c4e8d1542d4c8455aa5e9d99c6f0a7d1cff060.json"
+    }
+  ],
+  "audit": {
+    "PPARG": {
+      "target": "CHEMBL235",
+      "pref_name": "Peroxisome proliferator-activated receptor gamma",
+      "components": [
+        "P37231"
+      ],
+      "fetched": 650,
+      "eligible": 351,
+      "excluded_first_reason": {
+        "assay_confidence_not_9": 282,
+        "potential_duplicate": 16,
+        "data_validity_comment": 1
+      }
+    },
+    "AKT1": {
+      "target": "CHEMBL4282",
+      "pref_name": "RAC-alpha serine/threonine-protein kinase",
+      "components": [
+        "P31749"
+      ],
+      "fetched": 340,
+      "eligible": 131,
+      "excluded_first_reason": {
+        "assay_confidence_not_9": 178,
+        "potential_duplicate": 25,
+        "data_validity_comment": 6
+      }
+    },
+    "INSR": {
+      "target": "CHEMBL1981",
+      "pref_name": "Insulin receptor",
+      "components": [
+        "P06213"
+      ],
+      "fetched": 53,
+      "eligible": 25,
+      "excluded_first_reason": {
+        "assay_confidence_not_9": 26,
+        "potential_duplicate": 1,
+        "data_validity_comment": 1
+      }
+    }
+  },
+  "curated_sha256": "bf6144d1bcf4d5145a30d04fb2958e485b2b6a4ccfb837644b905953aa50a12f",
+  "curated_rows": 468
+}
