@@ -21,6 +21,7 @@ checkpoints/
 *.pth
 *.ckpt
 *.pt
+!models/nonclinical_kan_ppo.pt
 
 logs/
 wandb/
@@ -33,6 +34,10 @@ venv/
 env/
 .venv/
 .env
+runtime/
+.streamlit/secrets.toml
+*.db-wal
+*.db-shm
 
 .DS_Store
 Thumbs.db

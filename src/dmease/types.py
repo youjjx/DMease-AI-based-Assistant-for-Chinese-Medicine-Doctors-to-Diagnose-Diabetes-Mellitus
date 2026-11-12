@@ -25,6 +25,7 @@ class PatientProfile:
     conditions: list[str] = field(default_factory=list)
     pregnant: bool = False
     medications: list[str] = field(default_factory=list)
+    forbidden_herbs: list[str] = field(default_factory=list)
     notes: str = ""
 
 
@@ -57,6 +58,7 @@ class AnalysisResult:
     recommendations: list[HerbRecommendation]
     excluded_herbs: dict[str, list[str]]
     safety_notes: list[str]
+    metadata: dict[str, Any] = field(default_factory=dict)
     created_at: str = field(
         default_factory=lambda: datetime.now(timezone.utc).astimezone().isoformat(timespec="seconds")
     )

@@ -35,6 +35,8 @@ class SafetyConstraintEngine:
     def evaluate(self, herb: dict, patient: PatientProfile) -> list[str]:
         reasons: list[str] = []
         contraindications = set(herb.get("contraindications", []))
+        if herb["name"] in patient.forbidden_herbs:
+            reasons.append("命中本次明确禁用中药")
         if patient.pregnant and "妊娠" in contraindications:
             reasons.append("妊娠期禁用或慎用")
         for condition in patient.conditions:

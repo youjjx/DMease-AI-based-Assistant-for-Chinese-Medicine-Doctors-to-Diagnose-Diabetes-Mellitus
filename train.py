@@ -51,6 +51,9 @@ def main() -> None:
             "syndromes": graph.syndrome_names,
             "herbs": graph.herb_names,
             "seed": args.seed,
+            "iterations": args.iterations,
+            "episodes": args.episodes,
+            "data_scope": "nonclinical-graph-derived",
         },
     )
     print(f"Saved checkpoint to {args.output}")

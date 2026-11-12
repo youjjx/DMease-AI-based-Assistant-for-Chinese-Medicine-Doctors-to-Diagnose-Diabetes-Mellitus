@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+from uuid import uuid4
 
 from .constraints import DEFAULT_SAFETY_NOTES
 from .diagnosis import SyndromeReasoner
@@ -32,6 +33,12 @@ class DMeaseService:
         selected_symptoms: list[str] | None = None,
         top_herbs: int = 8,
     ) -> AnalysisResult:
+        if not patient.name.strip():
+            raise ValueError("患者标识不能为空。")
+        if not 1 <= patient.age <= 120:
+            raise ValueError("年龄须在1—120之间。")
+        if not 1 <= top_herbs <= 20:
+            raise ValueError("候选数量须在1—20之间。")
         parsed = self.parser.parse(patient.complaint, selected_symptoms)
         present = [item.canonical for item in parsed if item.present]
         if present:
@@ -48,4 +55,8 @@ class DMeaseService:
             recommendations=recommendations,
             excluded_herbs=excluded,
             safety_notes=list(DEFAULT_SAFETY_NOTES),
+            metadata={"analysis_id": uuid4().hex, "graph_version": self.graph.metadata.get("version", "unknown"),
+                      "ranking_mode": self.recommender.mode, "top_herbs": top_herbs,
+                      "selected_symptoms": list(selected_symptoms or []),
+                      "model": self.recommender.model_metadata},
         )

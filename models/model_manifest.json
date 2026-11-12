@@ -1,0 +1,11 @@
+{
+  "file": "nonclinical_kan_ppo.pt",
+  "sha256": "5cb93f3be60426fea2c0cc547a6b73f88303f8dc1c2be95aeb98caf058d82160",
+  "data_scope": "nonclinical-graph-derived",
+  "command": "python train.py --iterations 50 --episodes 8 --seed 42 --output models/nonclinical_kan_ppo.pt",
+  "graph_version": "1.0.0-nonclinical",
+  "training_iterations": 50,
+  "episodes_per_iteration": 8,
+  "seed": 42,
+  "validation_scope": "checkpoint loading, inference execution, hard constraint preservation; no clinical validation"
+}

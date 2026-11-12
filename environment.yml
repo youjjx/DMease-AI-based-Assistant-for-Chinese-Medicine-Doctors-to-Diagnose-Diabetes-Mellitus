@@ -13,7 +13,7 @@ dependencies:
   - scikit-learn
   - pytorch
   - pip:
-      - streamlit
+      - streamlit>=1.53,<2
       - pytest
       - ruff
 

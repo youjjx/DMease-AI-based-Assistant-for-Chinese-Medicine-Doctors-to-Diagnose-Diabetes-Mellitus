@@ -58,3 +58,12 @@ def test_patient_database_round_trip(tmp_path):
     assert stored is not None
     assert stored["patient"]["name"] == "P003"
     assert service.database.list()[0]["id"] == record_id
+
+
+def test_explicit_exclusions_and_negated_only_input(tmp_path):
+    service = make_service(tmp_path)
+    result = service.analyze(PatientProfile(complaint="口干，容易疲劳", forbidden_herbs=["麦冬"]))
+    assert "麦冬" in result.excluded_herbs
+    assert all(item.name != "麦冬" for item in result.recommendations)
+    empty = service.analyze(PatientProfile(complaint="无口渴，无乏力"))
+    assert not empty.syndromes and not empty.recommendations

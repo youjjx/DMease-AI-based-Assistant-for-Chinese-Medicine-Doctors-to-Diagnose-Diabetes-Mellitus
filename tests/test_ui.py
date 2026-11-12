@@ -1,0 +1,81 @@
+from pathlib import Path
+
+from streamlit.testing.v1 import AppTest
+
+from dmease.auth import AuthStore
+
+APP = Path(__file__).parents[1] / "app.py"
+
+
+def widget(elements, label):
+    return next(x for x in elements if x.label == label)
+
+
+def test_login_analysis_save_reuse_and_logout(tmp_path, monkeypatch):
+    monkeypatch.setenv("DMEASE_DATA_DIR", str(tmp_path))
+    monkeypatch.setenv("DMEASE_CHECKPOINT", str(tmp_path / "absent.pt"))
+    AuthStore(tmp_path / "accounts.db").bootstrap("operator", "Test-password1234")
+    app = AppTest.from_file(str(APP), default_timeout=60).run()
+    assert not app.exception
+    assert not app.sidebar.radio
+    widget(app.text_input, "账号").set_value("operator")
+    widget(app.text_input, "密码").set_value("wrong")
+    widget(app.button, "登录").click().run()
+    assert app.error and not app.sidebar.radio
+    widget(app.text_input, "账号").set_value("operator")
+    widget(app.text_input, "密码").set_value("Test-password1234")
+    widget(app.button, "登录").click().run()
+    assert not app.exception
+    assert app.sidebar.radio[0].value == "首页"
+    widget(app.button, "新建辅助分析").click().run()
+    widget(app.text_input, "患者标识 *").set_value("P001")
+    widget(app.text_input, "已知过敏").set_value("黄芪")
+    widget(app.text_area, "主诉与症状描述 *").set_value("口渴多饮、容易疲劳，口干明显，夜间小便多，无肢体麻木。")
+    widget(app.button, "开始辅助分析").click().run()
+    assert not app.exception
+    assert app.session_state["analysis_step"] == "2 症状与证候"
+    widget(app.button, "下一步：候选与解释").click().run()
+    widget(app.button, "下一步：约束与保存").click().run()
+    assert widget(app.button, "保存本次分析").disabled
+    widget(app.checkbox, "已核对本次输入、约束提示与结果使用范围").check().run()
+    widget(app.button, "保存本次分析").click().run()
+    assert not app.exception
+    assert app.session_state["saved_id"] == 1
+    assert widget(app.button, "保存本次分析").disabled
+    widget(app.button, "前往患者记录").click().run()
+    widget(app.button, "复用资料并重新分析").click().run()
+    assert not app.exception
+    assert widget(app.text_input, "患者标识 *").value == "P001"
+    widget(app.text_area, "主诉与症状描述 *").set_value("")
+    widget(app.button, "开始辅助分析").click().run()
+    assert app.error
+    assert "analysis_result" not in app.session_state
+    widget(app.button, "退出登录").click().run()
+    assert not app.exception and not app.sidebar.radio
+    assert "draft" not in app.session_state and "account" not in app.session_state
+
+
+def test_research_and_knowledge_pages(tmp_path, monkeypatch):
+    monkeypatch.setenv("DMEASE_DATA_DIR", str(tmp_path))
+    monkeypatch.setenv("DMEASE_CHECKPOINT", str(tmp_path / "absent.pt"))
+    AuthStore(tmp_path / "accounts.db").bootstrap("operator", "Test-password1234")
+    app = AppTest.from_file(str(APP), default_timeout=60)
+    import time
+    for key, value in dict(account="operator", credential_revision=1, last_activity=time.time()).items():
+        app.session_state[key] = value
+    app.run()
+    app.sidebar.radio[0].set_value("知识图谱").run()
+    widget(app.radio, "图谱视图").set_value("知识子图").run()
+    assert not app.exception
+    widget(app.radio, "图谱视图").set_value("机制路径").run()
+    assert not app.exception
+    app.sidebar.radio[0].set_value("研究复现").run()
+    widget(app.button, "运行序贯推理").click().run()
+    assert not app.exception
+    widget(app.radio, "研究结果").set_value("选择轨迹").run()
+    assert not app.exception
+    widget(app.radio, "研究结果").set_value("关联矩阵").run()
+    assert not app.exception
+    app.session_state["last_activity"] = 0
+    app.run()
+    assert not app.sidebar.radio and "account" not in app.session_state
