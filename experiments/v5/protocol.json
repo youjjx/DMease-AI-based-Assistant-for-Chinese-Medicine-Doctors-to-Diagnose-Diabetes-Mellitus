@@ -1,0 +1,44 @@
+{
+  "version": "dmease-molecular-planning-v5",
+  "scope": "Identifier-resolved public herb chemistry and molecular evidence retrieval; no clinical efficacy or whole-herb binding probability",
+  "data": {
+    "crosswalk": "Active SymMap v2.0 explicit TCMSP_id/PubChem_CID; exact existing TCMSP herb membership; ambiguous or missing CID excluded, no name guessing",
+    "structures": "PubChem CID property records; validate SMILES/InChIKey; standardized isomeric parent comparison; no connectivity-only joins. Before any test evaluation, additionally reject conflicting molecular-weight paths (tolerance max1Da,0.5%) and parseable elemental-formula conflicts; see identity_amendment.json. Original TCMSP stereostructures not independently retrieved.",
+    "affinity": "Reuse hash-verified ChEMBL37 measured Ki/Kd snapshot (468 rows) from v3; no new independent affinity cohort. Live ChEMBL endpoints were returning HTTP500/timeouts during this round; retain provenance and an audited extension path.",
+    "targets": {"PPARG": "P37231", "AKT1": "P31749", "INSR": "P06213"},
+    "measurement_filter": "Human SINGLE PROTEIN, binding assay confidence9, exact positive nM Ki/Kd; standard_flag1; exclude quality flags, potential duplicates and annotated mutations; exclude aggregated replicate range >1 pK in v5 integration"
+  },
+  "affinity_model": {
+    "features": "Morgan radius2,2048bits,chirality true",
+    "model": "Ridge alpha10,solver lsqr,tol1e-6; fixed from v3 development",
+    "evaluation": "Leave global shared-document/structure/scaffold connected component out. Min40 training rows/fold. Report all skipped rows and coverage. Reused data and prior hyperparameter choice make results exploratory.",
+    "minimum_fit_rows": 40,
+    "minimum_evaluated_rows": 30,
+    "minimum_evaluated_components": 3,
+    "deployment_gate": "LOCO MAE below fold training-mean MAE; >=30 held-out rows,>=3 held-out components; at least40 fit rows. Not an independent confirmation of predictive performance.",
+    "minimum_tanimoto": 0.5,
+    "uncertainty": "90th percentile absolute out-of-component error; descriptive error band, not conformal or calibrated coverage. Predictions only for non-observed structures and similarity>=0.5; use lower band bound for ranking. Missing remains masked, never a negative training label."
+  },
+  "molecular_score": {
+    "transform": "clip((pK-4)/5,0,1), engineering monotonic affinity-evidence index, not binding probability; Ki/Kd separate columns",
+    "herb_aggregation": "Maximum supported constituent index per target/endpoint; preserve winner and all supporting records. No concentration, bioavailability, synergy or action-direction inference.",
+    "set_aggregation": "Maximum index across selected herbs per target/endpoint, then mean over requested target/endpoint columns with any supported evidence. Report missing requested columns separately.",
+    "objective": "(1-w)*old evidence objective + w*molecular index - w*0.02*herb_count; w=0.35 default, thus total herb cost remains0.02. Independent disease-research target context, not invented symptom-target edges. Evaluate w=0 ablation, measured_only ablation.",
+    "missingness": "Zero numeric storage always accompanied by observed/predicted masks; absent target columns excluded from molecular denominator; unknown herb-cell means no evidence credit, not weak binding"
+  },
+  "planning": {
+    "queries": "New hash-selected symptom groups excluding published v1/v2/v4 requests; 160 train,40validation,80test base groups, two engineering profiles per group (budget8 or4 with2 exclusions and2 forbidden pairs). Not patient data or pharmacological contraindications.",
+    "targets": "All three explicit research targets in primary comparison; each query retains target list. Runtime allows subsets and weights; their generalization is not claimed by the fixed-context experiment.",
+    "models": ["residual_kan", "residual_mlp", "kan_without_prior"],
+    "seeds": [42,43,44],
+    "warmup_epochs": 35,
+    "critic_epochs": 15,
+    "ppo_iterations": 100,
+    "episodes": 24,
+    "validation_interval": 10,
+    "temperature": 0.03,
+    "selection": "Validation objective; retain initial, warm and final candidates; tie earlier checkpoint. Choose deployment KAN variant/seed on validation only. Test after all selections saved. Expose raw KAN/PPO and explicit greedy guard separately.",
+    "baselines": ["greedy", "lookahead2", "exact"],
+    "statistics": "Paired symptom-group bootstrap, report objective,gap,hard constraints,chemistry coverage and action changes; no clinical interpretation"
+  }
+}

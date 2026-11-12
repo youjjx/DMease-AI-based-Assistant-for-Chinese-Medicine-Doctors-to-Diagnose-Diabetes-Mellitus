@@ -24,6 +24,7 @@ checkpoints/
 !models/nonclinical_kan_ppo.pt
 !models/public_evidence_kan_ppo.pt
 !models/planning_v4/*.pt
+!models/planning_v5/*.pt
 
 logs/
 wandb/

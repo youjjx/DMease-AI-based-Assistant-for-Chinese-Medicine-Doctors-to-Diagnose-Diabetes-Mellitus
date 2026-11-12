@@ -1,0 +1,471 @@
+{
+  "selection": {
+    "provenance": {
+      "protocol_sha256": "ec982e28270d68228cba1945080ef0e131143eb181807fcf4bbceeb0bac4c39e",
+      "evidence": "f9d7cca2be94fa8a5f52036de8b0ff8fe74031ce0d9b6f0ab469a9372d272af7",
+      "molecular_evidence": "09d66cea4bc0e028352fdcf1a252f6005a241bf3d519a90d21af09166e1d1464",
+      "source_lf_sha256": {
+        "scripts/planning_v5.py": "71f98af0cdfdeb72c9217da48554bc92bd7159958d9925ee2513c0c58a2e13aa",
+        "src/dmease/molecular_planning.py": "113b11765722fa388a6e20d99a53161e3383fd8586ce2b959a7276b419473d66",
+        "src/dmease/planning_v4.py": "c4a4b47ae141687e6364a46f55661df693ee31276ae341a7b0392c0c5d863d28",
+        "src/dmease/evidence_policy.py": "98243dcad03b858ff6c2107323f722d7721b56c7ec0af7507870eb0b5ad09dee",
+        "src/dmease/research_policy.py": "32398cebeb67bfac5388840a9f92660b3de91e36f026cf8ebb303918165103da",
+        "src/dmease/experiment_metrics.py": "b9d67ae30df5f0403fdc3e8d0f462d42467138bd17c7b9d129a4dbdc9b7160d4"
+      },
+      "torch": "2.7.1+cu118",
+      "numpy": "2.4.1",
+      "device": "cpu",
+      "threads": 1
+    },
+    "selected_kan_run": "residual_kan_42",
+    "validation_objective": 0.5107670379266143,
+    "selected_iteration": -1,
+    "final_ppo_run": "residual_kan_43",
+    "final_ppo_validation_objective": 0.5044428015589715,
+    "training_metadata_sha256": {
+      "residual_kan_42": "538a83a30b4677f75a48f88502e69283845336093f573400102645216fe10f62",
+      "residual_kan_43": "ff95ab5684b6b04d538695c0b86e527994682ae965f79445118094d215e78c5a",
+      "residual_kan_44": "b3b02574434f9cb7a167cd1d4bf90cabcbb47089e939a85f83407fb2493dba10",
+      "residual_mlp_42": "e221d7fab6b24d88d0116d07b97bd7edaf6556c61c8a15ce0eae0355391cbda6",
+      "residual_mlp_43": "4093889a454b284e3e03e21ac39780caae1449f481dd44743b91549a02d86216",
+      "residual_mlp_44": "b36c4f50d2ebe5a7a3d98fbb1d4a8c2111c09a5894afcaf3345e970a7e54348b",
+      "kan_without_prior_42": "8fa05bcdeb814fadf045b390ba1d4320508eff615125e879cea8cb5423f0d27c",
+      "kan_without_prior_43": "f4f45159145db6e823f26e8297603aedc92adb2d571cceae8911a3ea360d2fc5",
+      "kan_without_prior_44": "6475f0ad075dc4a05f102fb0ca2622b6fa9368d8d7be938d503c6a32e8611146"
+    }
+  },
+  "summary": {
+    "greedy": {
+      "all": {
+        "objective": 0.530474740018975,
+        "molecular_index": 0.19684313670732081,
+        "mean_gap_to_optimal": 0.0017551109069026982,
+        "hard_violations": 0,
+        "different_from_greedy": 0,
+        "median_ms": 6.851550002465956
+      },
+      "standard": {
+        "objective": 0.5496620150551199,
+        "molecular_index": 0.21938200294971466,
+        "mean_gap_to_optimal": 0.000842326775193214,
+        "hard_violations": 0,
+        "different_from_greedy": 0,
+        "median_ms": 10.285049997037277
+      },
+      "requested_constraints": {
+        "objective": 0.51128746498283,
+        "molecular_index": 0.17430427046492697,
+        "mean_gap_to_optimal": 0.002667895038612182,
+        "hard_violations": 0,
+        "different_from_greedy": 0,
+        "median_ms": 6.135349998658057
+      }
+    },
+    "lookahead2": {
+      "all": {
+        "objective": 0.5311134009120986,
+        "molecular_index": 0.19961815448477865,
+        "mean_gap_to_optimal": 0.0011164500137791022,
+        "hard_violations": 0,
+        "different_from_greedy": 30,
+        "median_ms": 17.265850001422223
+      },
+      "standard": {
+        "objective": 0.5494491801396012,
+        "molecular_index": 0.21938200294971466,
+        "mean_gap_to_optimal": 0.0010551616907119755,
+        "hard_violations": 0,
+        "different_from_greedy": 14,
+        "median_ms": 33.394800004316494
+      },
+      "requested_constraints": {
+        "objective": 0.512777621684596,
+        "molecular_index": 0.17985430601984262,
+        "mean_gap_to_optimal": 0.001177738336846229,
+        "hard_violations": 0,
+        "different_from_greedy": 16,
+        "median_ms": 14.418599999771686
+      }
+    },
+    "exact": {
+      "all": {
+        "objective": 0.5322298509258776,
+        "molecular_index": 0.1990814646705985,
+        "mean_gap_to_optimal": 0.0,
+        "hard_violations": 0,
+        "different_from_greedy": 39,
+        "median_ms": 7.285499999852618
+      },
+      "standard": {
+        "objective": 0.5505043418303132,
+        "molecular_index": 0.21938200294971466,
+        "mean_gap_to_optimal": 0.0,
+        "hard_violations": 0,
+        "different_from_greedy": 21,
+        "median_ms": 35.231400001066504
+      },
+      "requested_constraints": {
+        "objective": 0.5139553600214422,
+        "molecular_index": 0.17878092639148235,
+        "mean_gap_to_optimal": 0.0,
+        "hard_violations": 0,
+        "different_from_greedy": 18,
+        "median_ms": 3.7730500007455703
+      }
+    },
+    "no_molecular_greedy": {
+      "all": {
+        "objective": 0.512857175121177,
+        "molecular_index": 0.11350085749290884,
+        "mean_gap_to_optimal": 0.01937267580470068,
+        "hard_violations": 0,
+        "different_from_greedy": 126,
+        "median_ms": 9.002750000945525
+      },
+      "standard": {
+        "objective": 0.5266352048905567,
+        "molecular_index": 0.11431816881522536,
+        "mean_gap_to_optimal": 0.023869136939756543,
+        "hard_violations": 0,
+        "different_from_greedy": 76,
+        "median_ms": 11.672699998598546
+      },
+      "requested_constraints": {
+        "objective": 0.4990791453517973,
+        "molecular_index": 0.11268354617059231,
+        "mean_gap_to_optimal": 0.014876214669644814,
+        "hard_violations": 0,
+        "different_from_greedy": 50,
+        "median_ms": 7.711099999141879
+      }
+    },
+    "measured_only_greedy": {
+      "all": {
+        "objective": 0.5297916999029926,
+        "molecular_index": 0.20741919786669313,
+        "mean_gap_to_optimal": 0.0024381510228849933,
+        "hard_violations": 0,
+        "different_from_greedy": 23,
+        "median_ms": 8.69299999976647
+      },
+      "standard": {
+        "objective": 0.5496620150551199,
+        "molecular_index": 0.21938200294971466,
+        "mean_gap_to_optimal": 0.000842326775193214,
+        "hard_violations": 0,
+        "different_from_greedy": 4,
+        "median_ms": 12.03364999673795
+      },
+      "requested_constraints": {
+        "objective": 0.5099213847508655,
+        "molecular_index": 0.1954563927836716,
+        "mean_gap_to_optimal": 0.004033975270576773,
+        "hard_violations": 0,
+        "different_from_greedy": 19,
+        "median_ms": 7.453200003510574
+      }
+    },
+    "residual_kan": {
+      "all": {
+        "objective": 0.530474740018975,
+        "molecular_index": 0.19684313670732081,
+        "mean_gap_to_optimal": 0.0017551109069026982,
+        "hard_violations": 0,
+        "different_from_greedy": 0,
+        "median_ms": 13.018350000493228
+      },
+      "standard": {
+        "objective": 0.5496620150551199,
+        "molecular_index": 0.21938200294971466,
+        "mean_gap_to_optimal": 0.000842326775193214,
+        "hard_violations": 0,
+        "different_from_greedy": 0,
+        "median_ms": 17.813300000852905
+      },
+      "requested_constraints": {
+        "objective": 0.51128746498283,
+        "molecular_index": 0.17430427046492697,
+        "mean_gap_to_optimal": 0.002667895038612182,
+        "hard_violations": 0,
+        "different_from_greedy": 0,
+        "median_ms": 10.357650000514695
+      }
+    },
+    "residual_kan_warm": {
+      "all": {
+        "objective": 0.5221197223788437,
+        "molecular_index": 0.19891521926037967,
+        "mean_gap_to_optimal": 0.010110128547033916,
+        "hard_violations": 0,
+        "different_from_greedy": 282,
+        "median_ms": 14.485050003713695
+      },
+      "standard": {
+        "objective": 0.5426732342695196,
+        "molecular_index": 0.21902569606900216,
+        "mean_gap_to_optimal": 0.007831107560793558,
+        "hard_violations": 0,
+        "different_from_greedy": 141,
+        "median_ms": 20.343900003354065
+      },
+      "requested_constraints": {
+        "objective": 0.5015662104881679,
+        "molecular_index": 0.1788047424517572,
+        "mean_gap_to_optimal": 0.012389149533274272,
+        "hard_violations": 0,
+        "different_from_greedy": 141,
+        "median_ms": 11.125550001452211
+      }
+    },
+    "residual_kan_final": {
+      "all": {
+        "objective": 0.5234513017642001,
+        "molecular_index": 0.20643586652974288,
+        "mean_gap_to_optimal": 0.008778549161677562,
+        "hard_violations": 0,
+        "different_from_greedy": 306,
+        "median_ms": 13.269449998915661
+      },
+      "standard": {
+        "objective": 0.5409304349238674,
+        "molecular_index": 0.21938200294971466,
+        "mean_gap_to_optimal": 0.009573906906445825,
+        "hard_violations": 0,
+        "different_from_greedy": 177,
+        "median_ms": 17.25100000112434
+      },
+      "requested_constraints": {
+        "objective": 0.5059721686045329,
+        "molecular_index": 0.19348973010977108,
+        "mean_gap_to_optimal": 0.007983191416909301,
+        "hard_violations": 0,
+        "different_from_greedy": 129,
+        "median_ms": 10.622999998304294
+      }
+    },
+    "residual_mlp": {
+      "all": {
+        "objective": 0.530474740018975,
+        "molecular_index": 0.19684313670732081,
+        "mean_gap_to_optimal": 0.0017551109069026982,
+        "hard_violations": 0,
+        "different_from_greedy": 0,
+        "median_ms": 6.535949996759882
+      },
+      "standard": {
+        "objective": 0.5496620150551199,
+        "molecular_index": 0.21938200294971466,
+        "mean_gap_to_optimal": 0.000842326775193214,
+        "hard_violations": 0,
+        "different_from_greedy": 0,
+        "median_ms": 8.190949996787822
+      },
+      "requested_constraints": {
+        "objective": 0.51128746498283,
+        "molecular_index": 0.17430427046492697,
+        "mean_gap_to_optimal": 0.002667895038612182,
+        "hard_violations": 0,
+        "different_from_greedy": 0,
+        "median_ms": 4.781550000188872
+      }
+    },
+    "residual_mlp_warm": {
+      "all": {
+        "objective": 0.5277905438028586,
+        "molecular_index": 0.20601083075938126,
+        "mean_gap_to_optimal": 0.0044393071230190454,
+        "hard_violations": 0,
+        "different_from_greedy": 203,
+        "median_ms": 6.426749998354353
+      },
+      "standard": {
+        "objective": 0.5455603645175695,
+        "molecular_index": 0.21938200294971466,
+        "mean_gap_to_optimal": 0.004943977312743658,
+        "hard_violations": 0,
+        "different_from_greedy": 109,
+        "median_ms": 8.567600001697429
+      },
+      "requested_constraints": {
+        "objective": 0.5100207230881477,
+        "molecular_index": 0.19263965856904786,
+        "mean_gap_to_optimal": 0.003934636933294434,
+        "hard_violations": 0,
+        "different_from_greedy": 94,
+        "median_ms": 4.642449999664677
+      }
+    },
+    "residual_mlp_final": {
+      "all": {
+        "objective": 0.5248147106779428,
+        "molecular_index": 0.20442630733984213,
+        "mean_gap_to_optimal": 0.0074151402479348,
+        "hard_violations": 0,
+        "different_from_greedy": 263,
+        "median_ms": 6.700699999782955
+      },
+      "standard": {
+        "objective": 0.540748987494409,
+        "molecular_index": 0.21938200294971466,
+        "mean_gap_to_optimal": 0.009755354335904106,
+        "hard_violations": 0,
+        "different_from_greedy": 168,
+        "median_ms": 8.74794999617734
+      },
+      "requested_constraints": {
+        "objective": 0.5088804338614766,
+        "molecular_index": 0.18947061172996957,
+        "mean_gap_to_optimal": 0.0050749261599654935,
+        "hard_violations": 0,
+        "different_from_greedy": 95,
+        "median_ms": 4.546150001260685
+      }
+    },
+    "kan_without_prior": {
+      "all": {
+        "objective": 0.5250446223520674,
+        "molecular_index": 0.19933926210117836,
+        "mean_gap_to_optimal": 0.007185228573810308,
+        "hard_violations": 0,
+        "different_from_greedy": 286,
+        "median_ms": 15.216150000924245
+      },
+      "standard": {
+        "objective": 0.5445313257560134,
+        "molecular_index": 0.21938200294971466,
+        "mean_gap_to_optimal": 0.0059730160742998105,
+        "hard_violations": 0,
+        "different_from_greedy": 137,
+        "median_ms": 20.55734999885317
+      },
+      "requested_constraints": {
+        "objective": 0.5055579189481213,
+        "molecular_index": 0.1792965212526421,
+        "mean_gap_to_optimal": 0.008397441073320806,
+        "hard_violations": 0,
+        "different_from_greedy": 149,
+        "median_ms": 11.548850001418032
+      }
+    },
+    "kan_without_prior_warm": {
+      "all": {
+        "objective": 0.5250446223520674,
+        "molecular_index": 0.19933926210117836,
+        "mean_gap_to_optimal": 0.007185228573810308,
+        "hard_violations": 0,
+        "different_from_greedy": 286,
+        "median_ms": 16.848650000611087
+      },
+      "standard": {
+        "objective": 0.5445313257560134,
+        "molecular_index": 0.21938200294971466,
+        "mean_gap_to_optimal": 0.0059730160742998105,
+        "hard_violations": 0,
+        "different_from_greedy": 137,
+        "median_ms": 21.460749998368556
+      },
+      "requested_constraints": {
+        "objective": 0.5055579189481213,
+        "molecular_index": 0.1792965212526421,
+        "mean_gap_to_optimal": 0.008397441073320806,
+        "hard_violations": 0,
+        "different_from_greedy": 149,
+        "median_ms": 12.56400000420399
+      }
+    },
+    "kan_without_prior_final": {
+      "all": {
+        "objective": 0.5216043539645772,
+        "molecular_index": 0.20876401041944823,
+        "mean_gap_to_optimal": 0.010625496961300574,
+        "hard_violations": 0,
+        "different_from_greedy": 310,
+        "median_ms": 15.393500001664506
+      },
+      "standard": {
+        "objective": 0.5408575523798663,
+        "molecular_index": 0.21938200294971466,
+        "mean_gap_to_optimal": 0.009646789450446763,
+        "hard_violations": 0,
+        "different_from_greedy": 174,
+        "median_ms": 20.948250003129942
+      },
+      "requested_constraints": {
+        "objective": 0.5023511555492878,
+        "molecular_index": 0.19814601788918176,
+        "mean_gap_to_optimal": 0.011604204472154381,
+        "hard_violations": 0,
+        "different_from_greedy": 136,
+        "median_ms": 12.19275000039488
+      }
+    }
+  },
+  "paired_by_symptom_base": {
+    "residual_kan": {
+      "queries": 80,
+      "mean_difference": 6.938893903907229e-19,
+      "query_bootstrap_95ci": [
+        -9.714451465470119e-18,
+        1.1102230246251566e-17
+      ],
+      "sign_flip_p": 1.0,
+      "paired_dz": 0.014717490225400745,
+      "wins_ties_losses": [
+        0,
+        80,
+        0
+      ],
+      "holm_p_three_network_comparisons": 1.0
+    },
+    "residual_mlp": {
+      "queries": 80,
+      "mean_difference": 6.938893903907229e-19,
+      "query_bootstrap_95ci": [
+        -9.714451465470119e-18,
+        1.1102230246251566e-17
+      ],
+      "sign_flip_p": 1.0,
+      "paired_dz": 0.014717490225400745,
+      "wins_ties_losses": [
+        0,
+        80,
+        0
+      ],
+      "holm_p_three_network_comparisons": 1.0
+    },
+    "kan_without_prior": {
+      "queries": 80,
+      "mean_difference": -0.005430117666907607,
+      "query_bootstrap_95ci": [
+        -0.0072684446124848924,
+        -0.003627880124651519
+      ],
+      "sign_flip_p": 4.999750012499375e-05,
+      "paired_dz": -0.649319660151615,
+      "wins_ties_losses": [
+        4,
+        10,
+        66
+      ],
+      "holm_p_three_network_comparisons": 0.00014999250037498125
+    }
+  },
+  "comparison_scope": "All ablation candidate sets rescored under the SAME combined objective; timings include their own proposal. No clinical endpoints.",
+  "selected_iterations": {
+    "residual_kan": [
+      -1,
+      -1,
+      -1
+    ],
+    "residual_mlp": [
+      -1,
+      -1,
+      -1
+    ],
+    "kan_without_prior": [
+      0,
+      0,
+      0
+    ]
+  }
+}

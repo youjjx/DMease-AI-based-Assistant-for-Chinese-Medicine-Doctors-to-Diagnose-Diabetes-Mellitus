@@ -1,0 +1,49 @@
+DMease fifth-round research data provenance and reuse notices
+
+SymMap v2.0, Wu et al., Nucleic Acids Research 47(D1):D1110-D1117,
+https://doi.org/10.1093/nar/gky1021
+Official catalogue: http://www.symmap.org/download/
+TCMSP v2.3, Ru et al., Journal of Cheminformatics 6:13 (2014),
+https://doi.org/10.1186/1758-2946-6-13
+Official source: https://old.tcmsp-e.com/
+STRING12.0, STRING Consortium, https://string-db.org/ ; CC BY4.0.
+
+identifier_links.json, identity_audit.json and the herb membership and graph
+feature portions of molecular_bundle.json/planning_features.json are scoped
+research-derived identifier/feature views, not complete database dumps. They
+retain explicit source identifiers, source URLs, exclusions and provenance.
+No general redistribution license was identified on the SymMap/TCMSP download
+pages. The repository's software license does not grant new rights over those
+source databases; retain attribution and consult their terms for downstream use.
+Raw catalogues, site responses and full SQLite databases remain outside Git.
+
+PubChem, National Center for Biotechnology Information, U.S. National Library
+of Medicine. structures.json and structure fields in molecular_bundle.json
+were retrieved using the official PUG REST CID property interface. Each record
+retains its PubChem CID, property fields, retrieval request and response hash.
+https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest-tutorial
+https://pubchem.ncbi.nlm.nih.gov/docs/policy-and-guidelines
+https://pubchem.ncbi.nlm.nih.gov/docs/downloads
+PubChem compiles data from contributors; this notice does not replace any
+applicable contributor terms or imply that every PubChem annotation is CC0.
+Only structure/property records needed for this study are included.
+
+ChEMBL37, ChEMBL team, EMBL-EBI, https://www.ebi.ac.uk/chembl/
+ChEMBL-derived data are CC BY-SA3.0:
+https://creativecommons.org/licenses/by-sa/3.0/
+This applies to affinity_evaluation.json, affinity_models.json, measured and
+predicted affinity portions of molecular_bundle.json, unsupported_affinities.json
+and corresponding adapted affinity tables/figures. The underlying measured
+snapshot is ../v3/affinity_curated.json, not newly collected measurements.
+Adaptations: replicate-conflict filtering, identity joins, global document and
+scaffold grouping, leave-component-out regression, applicability gating,
+uncertainty bands and monotonic evidence indices. No clinical efficacy or
+endorsement by source providers is implied.
+
+Planning requests are engineering retrieval inputs, not patient records or
+pharmacological contraindication labels. Checkpoints contain learned parameters
+and data/code provenance. UI verification uses explicitly nonclinical engineering
+fixtures; real patient narratives and account secrets are not distributed.
+
+These notices preserve source-specific rights separately from the project's
+license for original software and documentation.

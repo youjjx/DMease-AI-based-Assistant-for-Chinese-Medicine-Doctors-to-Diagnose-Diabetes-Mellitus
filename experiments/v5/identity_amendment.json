@@ -1,0 +1,7 @@
+{
+  "stage": "Data identity audit during initial training, before any v5 test evaluation",
+  "finding": "Initial explicit crossref audit found 38 distinct TCMSP identifiers with a mass difference exceeding max(1Da,0.5%). One corresponding CID had a predicted affinity entry; data identity cannot rely on ID uniqueness alone.",
+  "action": "Stopped the two running KAN training processes; retained preliminary MLP runs and incomplete checkpoints only in ignored outputs/research_v5/pre_identity_audit. Added uniform source-mass and parseable-elemental-formula conflict exclusion, rebuilt all artifacts and retrained all9 runs with the same fixed hyperparameters and query construction.",
+  "selection": "The filter uses molecular identity fields only, never affinity labels, policy rewards or test results. Earlier validation metrics do not constitute independent data; this remains a development study.",
+  "remaining_limit": "Matching formula and mass cannot distinguish every isomer. Stereo identity is preserved from the explicit PubChem CID and exact ChEMBL standardized structure, but original TCMSP stereostructures were not independently obtained. No name-based or connectivity-only fallback is used."
+}

@@ -1,0 +1,16 @@
+{
+  "scope": "End-to-end UI check; inputs are engineering fixtures, not clinical cases.",
+  "published_snapshot": false,
+  "structure_view": true,
+  "network_steps": 3,
+  "model": {
+    "run": "residual_kan_43",
+    "iteration": 100,
+    "checkpoint_sha256": "9a016e7a27d319f73299c83dd9ca8f42accb8f7e94fb96d0f176190507f9a79f",
+    "selection": "final PPO run chosen by validation"
+  },
+  "patient_record_persisted": true,
+  "saved_candidate_count": 3,
+  "reuse_invalidates_result": true,
+  "logout_clears_results": true
+}

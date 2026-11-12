@@ -1,0 +1,36 @@
+{
+  "provenance": {
+    "protocol_sha256": "ec982e28270d68228cba1945080ef0e131143eb181807fcf4bbceeb0bac4c39e",
+    "evidence": "f9d7cca2be94fa8a5f52036de8b0ff8fe74031ce0d9b6f0ab469a9372d272af7",
+    "molecular_evidence": "09d66cea4bc0e028352fdcf1a252f6005a241bf3d519a90d21af09166e1d1464",
+    "source_lf_sha256": {
+      "scripts/planning_v5.py": "71f98af0cdfdeb72c9217da48554bc92bd7159958d9925ee2513c0c58a2e13aa",
+      "src/dmease/molecular_planning.py": "113b11765722fa388a6e20d99a53161e3383fd8586ce2b959a7276b419473d66",
+      "src/dmease/planning_v4.py": "c4a4b47ae141687e6364a46f55661df693ee31276ae341a7b0392c0c5d863d28",
+      "src/dmease/evidence_policy.py": "98243dcad03b858ff6c2107323f722d7721b56c7ec0af7507870eb0b5ad09dee",
+      "src/dmease/research_policy.py": "32398cebeb67bfac5388840a9f92660b3de91e36f026cf8ebb303918165103da",
+      "src/dmease/experiment_metrics.py": "b9d67ae30df5f0403fdc3e8d0f462d42467138bd17c7b9d129a4dbdc9b7160d4"
+    },
+    "torch": "2.7.1+cu118",
+    "numpy": "2.4.1",
+    "device": "cpu",
+    "threads": 1
+  },
+  "selected_kan_run": "residual_kan_42",
+  "validation_objective": 0.5107670379266143,
+  "selected_iteration": -1,
+  "final_ppo_run": "residual_kan_43",
+  "final_ppo_validation_objective": 0.5044428015589715,
+  "training_metadata_sha256": {
+    "residual_kan_42": "538a83a30b4677f75a48f88502e69283845336093f573400102645216fe10f62",
+    "residual_kan_43": "ff95ab5684b6b04d538695c0b86e527994682ae965f79445118094d215e78c5a",
+    "residual_kan_44": "b3b02574434f9cb7a167cd1d4bf90cabcbb47089e939a85f83407fb2493dba10",
+    "residual_mlp_42": "e221d7fab6b24d88d0116d07b97bd7edaf6556c61c8a15ce0eae0355391cbda6",
+    "residual_mlp_43": "4093889a454b284e3e03e21ac39780caae1449f481dd44743b91549a02d86216",
+    "residual_mlp_44": "b36c4f50d2ebe5a7a3d98fbb1d4a8c2111c09a5894afcaf3345e970a7e54348b",
+    "kan_without_prior_42": "8fa05bcdeb814fadf045b390ba1d4320508eff615125e879cea8cb5423f0d27c",
+    "kan_without_prior_43": "f4f45159145db6e823f26e8297603aedc92adb2d571cceae8911a3ea360d2fc5",
+    "kan_without_prior_44": "6475f0ad075dc4a05f102fb0ca2622b6fa9368d8d7be938d503c6a32e8611146"
+  },
+  "frozen_before_test_at": "2026-11-12T10:42:13.635104+00:00"
+}

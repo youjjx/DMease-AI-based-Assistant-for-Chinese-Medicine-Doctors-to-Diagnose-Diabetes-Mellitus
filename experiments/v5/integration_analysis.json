@@ -1,0 +1,3188 @@
+{
+  "deployment_selection": {
+    "provenance": {
+      "protocol_sha256": "ec982e28270d68228cba1945080ef0e131143eb181807fcf4bbceeb0bac4c39e",
+      "evidence": "f9d7cca2be94fa8a5f52036de8b0ff8fe74031ce0d9b6f0ab469a9372d272af7",
+      "molecular_evidence": "09d66cea4bc0e028352fdcf1a252f6005a241bf3d519a90d21af09166e1d1464",
+      "source_lf_sha256": {
+        "scripts/planning_v5.py": "71f98af0cdfdeb72c9217da48554bc92bd7159958d9925ee2513c0c58a2e13aa",
+        "src/dmease/molecular_planning.py": "113b11765722fa388a6e20d99a53161e3383fd8586ce2b959a7276b419473d66",
+        "src/dmease/planning_v4.py": "c4a4b47ae141687e6364a46f55661df693ee31276ae341a7b0392c0c5d863d28",
+        "src/dmease/evidence_policy.py": "98243dcad03b858ff6c2107323f722d7721b56c7ec0af7507870eb0b5ad09dee",
+        "src/dmease/research_policy.py": "32398cebeb67bfac5388840a9f92660b3de91e36f026cf8ebb303918165103da",
+        "src/dmease/experiment_metrics.py": "b9d67ae30df5f0403fdc3e8d0f462d42467138bd17c7b9d129a4dbdc9b7160d4"
+      },
+      "torch": "2.7.1+cu118",
+      "numpy": "2.4.1",
+      "device": "cpu",
+      "threads": 1
+    },
+    "selected_kan_run": "residual_kan_42",
+    "validation_objective": 0.5107670379266143,
+    "selected_iteration": -1,
+    "final_ppo_run": "residual_kan_43",
+    "final_ppo_validation_objective": 0.5044428015589715,
+    "training_metadata_sha256": {
+      "residual_kan_42": "538a83a30b4677f75a48f88502e69283845336093f573400102645216fe10f62",
+      "residual_kan_43": "ff95ab5684b6b04d538695c0b86e527994682ae965f79445118094d215e78c5a",
+      "residual_kan_44": "b3b02574434f9cb7a167cd1d4bf90cabcbb47089e939a85f83407fb2493dba10",
+      "residual_mlp_42": "e221d7fab6b24d88d0116d07b97bd7edaf6556c61c8a15ce0eae0355391cbda6",
+      "residual_mlp_43": "4093889a454b284e3e03e21ac39780caae1449f481dd44743b91549a02d86216",
+      "residual_mlp_44": "b36c4f50d2ebe5a7a3d98fbb1d4a8c2111c09a5894afcaf3345e970a7e54348b",
+      "kan_without_prior_42": "8fa05bcdeb814fadf045b390ba1d4320508eff615125e879cea8cb5423f0d27c",
+      "kan_without_prior_43": "f4f45159145db6e823f26e8297603aedc92adb2d571cceae8911a3ea360d2fc5",
+      "kan_without_prior_44": "6475f0ad075dc4a05f102fb0ca2622b6fa9368d8d7be938d503c6a32e8611146"
+    },
+    "frozen_before_test_at": "2026-11-12T10:42:13.635104+00:00"
+  },
+  "summary": {
+    "molecular_greedy": {
+      "objective": 0.530474740018975,
+      "molecular_index": 0.19684313670732081,
+      "symptom_coverage": 0.8560416702181101,
+      "mean_herbs": 4.73125,
+      "herb_selection_counts": {
+        "丹参": 127,
+        "茯苓": 83,
+        "黄芪": 130,
+        "山茱萸": 87,
+        "天花粉": 39,
+        "葛根": 47,
+        "太子参": 84,
+        "白芍": 16,
+        "香附": 23,
+        "熟地黄": 27,
+        "柴胡": 35,
+        "川芎": 6,
+        "白术": 9,
+        "山药": 12,
+        "鸡血藤": 7,
+        "薏苡仁": 23,
+        "淫羊藿": 1,
+        "麦冬": 1
+      },
+      "hard_violations": 0
+    },
+    "final_ppo": {
+      "objective": 0.5265296441726386,
+      "molecular_index": 0.21019644513726235,
+      "symptom_coverage": 0.8439769383519888,
+      "mean_herbs": 4.5,
+      "herb_selection_counts": {
+        "丹参": 147,
+        "茯苓": 86,
+        "黄芪": 117,
+        "天花粉": 38,
+        "葛根": 41,
+        "柴胡": 44,
+        "山茱萸": 92,
+        "太子参": 86,
+        "白芍": 17,
+        "熟地黄": 25,
+        "白术": 5,
+        "香附": 5,
+        "薏苡仁": 12,
+        "淫羊藿": 3,
+        "麦冬": 1,
+        "川芎": 1
+      },
+      "hard_violations": 0
+    },
+    "final_ppo_guarded": {
+      "objective": 0.5318877516368403,
+      "molecular_index": 0.19828945836052297,
+      "symptom_coverage": 0.8570870574563741,
+      "mean_herbs": 4.7125,
+      "herb_selection_counts": {
+        "丹参": 129,
+        "茯苓": 84,
+        "黄芪": 122,
+        "山茱萸": 89,
+        "天花粉": 41,
+        "葛根": 47,
+        "太子参": 85,
+        "白芍": 16,
+        "香附": 21,
+        "熟地黄": 27,
+        "柴胡": 36,
+        "川芎": 5,
+        "白术": 11,
+        "山药": 10,
+        "鸡血藤": 7,
+        "薏苡仁": 21,
+        "淫羊藿": 2,
+        "麦冬": 1
+      },
+      "hard_violations": 0
+    },
+    "without_molecular": {
+      "objective": 0.512857175121177,
+      "molecular_index": 0.11350085749290884,
+      "symptom_coverage": 0.8582812543958426,
+      "mean_herbs": 4.4875,
+      "herb_selection_counts": {
+        "茯苓": 87,
+        "黄芪": 117,
+        "山茱萸": 82,
+        "天花粉": 48,
+        "香附": 42,
+        "葛根": 46,
+        "川芎": 32,
+        "太子参": 91,
+        "白芍": 21,
+        "白术": 19,
+        "熟地黄": 27,
+        "柴胡": 45,
+        "薏苡仁": 19,
+        "山药": 17,
+        "鸡血藤": 8,
+        "丹参": 16,
+        "麦冬": 1
+      },
+      "hard_violations": 0
+    },
+    "measured_only": {
+      "objective": 0.5297916999029926,
+      "molecular_index": 0.20741919786669313,
+      "symptom_coverage": 0.8521130990236998,
+      "mean_herbs": 4.73125,
+      "herb_selection_counts": {
+        "丹参": 143,
+        "茯苓": 77,
+        "黄芪": 126,
+        "山茱萸": 86,
+        "天花粉": 38,
+        "葛根": 46,
+        "太子参": 83,
+        "白芍": 15,
+        "香附": 24,
+        "熟地黄": 27,
+        "柴胡": 32,
+        "川芎": 6,
+        "白术": 13,
+        "山药": 12,
+        "鸡血藤": 7,
+        "薏苡仁": 21,
+        "麦冬": 1
+      },
+      "hard_violations": 0
+    }
+  },
+  "chemistry_changes_selection": {
+    "queries": 160,
+    "changed": 126
+  },
+  "final_ppo_vs_greedy_descriptive": {
+    "queries": 80,
+    "mean_difference": -0.003945095846336343,
+    "query_bootstrap_95ci": [
+      -0.006159662257202437,
+      -0.0017465140551072651
+    ],
+    "sign_flip_p": 0.00044997750112494374,
+    "paired_dz": -0.39647388197078554,
+    "wins_ties_losses": [
+      9,
+      26,
+      45
+    ]
+  },
+  "guard_used_network": 12,
+  "guard_rows": [
+    {
+      "query_id": "dc26449a1c85c0dd00dfab88702367e0cbc25bedcb4a0d4af76f8233c2ad799b",
+      "base_id": "eea888d968b042ee4aab34146ae928a9040d5ec8c9f942a3deb259ffd7fe0462",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "天花粉",
+        "葛根"
+      ],
+      "objective": 0.5072837212979793,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 0.9230769276618958,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.012136500001361128,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "23d1ab8c02ac021364b3b7544de30b7d2bcce7df21aba80643fbfdbb623e8355",
+      "base_id": "eea888d968b042ee4aab34146ae928a9040d5ec8c9f942a3deb259ffd7fe0462",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "葛根"
+      ],
+      "objective": 0.4685337060391903,
+      "symptom_coverage": 0.699999988079071,
+      "target_coverage": 0.7692307829856873,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.0061626000024261884,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "94b49c0bf42a6693cce556b012ccc0277cfe5219c604c753d1483d783d77332f",
+      "base_id": "e9fdfb097596ed8df0a6b5ccc410cb9437fa0671719671b76cf48274a74bf465",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "葛根"
+      ],
+      "objective": 0.5097837196290492,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 0.8333333134651184,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.009861400001682341,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "3054df26719460048856da13c3efe9e119764eddd973d496c207e78d5f7ae72f",
+      "base_id": "e9fdfb097596ed8df0a6b5ccc410cb9437fa0671719671b76cf48274a74bf465",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "葛根"
+      ],
+      "objective": 0.48464250092208383,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 0.7916666865348816,
+      "molecular_index": 0.11362139135599136,
+      "seconds": 0.006248700003197882,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "ac054a40553a448fdc9a1bc9a802e3b5716f276cf7570f3f540c69f3970e4bb0",
+      "base_id": "a68a1efdb0ab20597f5a1dcf7c1c266539b5027bc32660f2f337728133b9bdb6",
+      "profile": "standard",
+      "selected_herbs": [
+        "白芍",
+        "丹参",
+        "黄芪",
+        "山茱萸",
+        "香附",
+        "葛根"
+      ],
+      "objective": 0.5222837010324002,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.013851400006387848,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "990270b6288613e085e52f27d591397a7492398ba8661b54443dca27c4dbf27f",
+      "base_id": "a68a1efdb0ab20597f5a1dcf7c1c266539b5027bc32660f2f337728133b9bdb6",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "黄芪",
+        "山茱萸",
+        "香附",
+        "葛根"
+      ],
+      "objective": 0.48704131369292736,
+      "symptom_coverage": 0.7666666507720947,
+      "target_coverage": 0.8999999761581421,
+      "molecular_index": 0.11362139135599136,
+      "seconds": 0.00630760000058217,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "8a102c58cc386f6b2c75e4f66789c234376be098685e99ecbc32cf7db1875e22",
+      "base_id": "6072554cd115724880c577296718c1f35d2647d80825ae89e6cf0fcadafc973e",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "熟地黄"
+      ],
+      "objective": 0.5367837072312832,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 0.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.005220899998676032,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "cae12e73070b9493e45fb1713a5b2eef002fe4ba04db801741a0bf21a4e722ec",
+      "base_id": "6072554cd115724880c577296718c1f35d2647d80825ae89e6cf0fcadafc973e",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "熟地黄"
+      ],
+      "objective": 0.5367837072312832,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 0.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.004698999997344799,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "fb27787bd52c9b64fa80323771638e1c8e19d14076a878c71a4a485e6ad08d1d",
+      "base_id": "85679f30f799f8a3e924f87295a45a52c10eced7e3ac4d7ac0f6d30702765fb5",
+      "profile": "standard",
+      "selected_herbs": [
+        "柴胡",
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "熟地黄",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "objective": 0.5667837227284909,
+      "symptom_coverage": 1.0,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.01714699999865843,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "1474e72e10ab70a07d90cd56d8476539056479e210ff824947d3d2723df01619",
+      "base_id": "85679f30f799f8a3e924f87295a45a52c10eced7e3ac4d7ac0f6d30702765fb5",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "熟地黄",
+        "太子参"
+      ],
+      "objective": 0.5384503656327724,
+      "symptom_coverage": 1.0,
+      "target_coverage": 0.5555555820465088,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.008333199999469798,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "58ceb1b5e6a41fe4c0a944b99a0108d25c9c3f2bdb7618752ff419f6f09966ac",
+      "base_id": "3b3ed4f19aaaed0bb51f0e0a897c5469f74bb38c6c546af6dc96ced551e4fe6d",
+      "profile": "standard",
+      "selected_herbs": [
+        "白芍",
+        "川芎",
+        "丹参",
+        "山茱萸",
+        "熟地黄",
+        "太子参"
+      ],
+      "objective": 0.6067836979329586,
+      "symptom_coverage": 1.0,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.010353400000894908,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "f734e9c29ab2fbf3d62b75df5c12e1419dc9c1999e0b8b0126356cbc9bb7807a",
+      "base_id": "3b3ed4f19aaaed0bb51f0e0a897c5469f74bb38c6c546af6dc96ced551e4fe6d",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "山茱萸",
+        "熟地黄"
+      ],
+      "objective": 0.5664712154567242,
+      "symptom_coverage": 0.9583333134651184,
+      "target_coverage": 0.692307710647583,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.008544199998141266,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "788f34a76f9a4c8dc193dff95fe76352951e01124889b36cef8df95ddc67660a",
+      "base_id": "183fb84d7ad7f0f2700b0a50728bf7e300d3e04703821c6ce864893f3d8cd066",
+      "profile": "standard",
+      "selected_herbs": [
+        "白芍",
+        "丹参",
+        "茯苓",
+        "山茱萸",
+        "太子参"
+      ],
+      "objective": 0.617033694833517,
+      "symptom_coverage": 1.0,
+      "target_coverage": 0.949999988079071,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.012258099995960947,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "9bae6c6c79afdb92f5e4ea14e6710379824f3615eaa852aa8fbd099a902bc315",
+      "base_id": "183fb84d7ad7f0f2700b0a50728bf7e300d3e04703821c6ce864893f3d8cd066",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "山茱萸",
+        "太子参"
+      ],
+      "objective": 0.6114898675382137,
+      "symptom_coverage": 0.9666666984558105,
+      "target_coverage": 0.8999999761581421,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.0061993999988771975,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "a359b814f931bccb4c4fcab7a41bef963bcc74c8322d737b0a2472358c3f8a2f",
+      "base_id": "1a63f237b0c6ec72744e1db95e5db027951a2408b61d55d3dec93bccf10bf8fb",
+      "profile": "standard",
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "丹参",
+        "黄芪",
+        "葛根"
+      ],
+      "objective": 0.6117837058007717,
+      "symptom_coverage": 1.0,
+      "target_coverage": 0.9230769276618958,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.010402100000646897,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "e56b0b8e19ea1864cd16ff3356fbd2580fdff03d71c1fe85dbd7d0ef0e44f877",
+      "base_id": "1a63f237b0c6ec72744e1db95e5db027951a2408b61d55d3dec93bccf10bf8fb",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "白术",
+        "丹参",
+        "黄芪",
+        "葛根"
+      ],
+      "objective": 0.6102837198674678,
+      "symptom_coverage": 1.0,
+      "target_coverage": 0.8461538553237915,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.010192100002313964,
+      "hard_violations": 0,
+      "used_network": true
+    },
+    {
+      "query_id": "d5563d7d27dd188d397a29542d478677a4f1484b51968dccc1dbfffebfa40f0b",
+      "base_id": "368695eb469878682cb1281c11a39b7cc06da33545fcb555a60c3270772914a8",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "天花粉"
+      ],
+      "objective": 0.5011586824357509,
+      "symptom_coverage": 0.75,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.008960599996498786,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "6500107fc6559440316cb08d9b295053f2c95fec01f772207742f7ed5a943044",
+      "base_id": "368695eb469878682cb1281c11a39b7cc06da33545fcb555a60c3270772914a8",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉"
+      ],
+      "objective": 0.42898625557124614,
+      "symptom_coverage": 0.6875,
+      "target_coverage": 0.75,
+      "molecular_index": 0.11362139135599136,
+      "seconds": 0.0052938999942853115,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "72ea37269d7ea8a92f8c9009f1a2c1d8120c60472c93bb92134b6c0cac26aa21",
+      "base_id": "61b92fb61f60e6e7ef32e9507b887bc444a6d5a33856c54b5cb5fcfefb9a8df1",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "山药"
+      ],
+      "objective": 0.6667836994826793,
+      "symptom_coverage": 1.0,
+      "target_coverage": 0.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.0043528999958653,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "c1f77accf1ec8ca3def556846646b4b1fd387f3839b1123eaa622c5cdfd9a480",
+      "base_id": "61b92fb61f60e6e7ef32e9507b887bc444a6d5a33856c54b5cb5fcfefb9a8df1",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "山药"
+      ],
+      "objective": 0.6667836994826793,
+      "symptom_coverage": 1.0,
+      "target_coverage": 0.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.0053124999976716936,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "a7b02639ddc0c84c0f44af4f28848be153f16e185f48334a332752cb6b06efc7",
+      "base_id": "8b1f52a38f1000b5ab058ee4ac7dd37a893f0e7c8a357e28812c9698a65bdd5c",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "山茱萸",
+        "熟地黄",
+        "太子参",
+        "天花粉"
+      ],
+      "objective": 0.6067836979329586,
+      "symptom_coverage": 1.0,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.010159899997233879,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "fdbc25570980a26fa7cc2f17cd09d67f49ee09103167787efddd442c635e546d",
+      "base_id": "8b1f52a38f1000b5ab058ee4ac7dd37a893f0e7c8a357e28812c9698a65bdd5c",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "茯苓",
+        "山茱萸",
+        "熟地黄",
+        "太子参"
+      ],
+      "objective": 0.571725976958871,
+      "symptom_coverage": 1.0,
+      "target_coverage": 0.8888888955116272,
+      "molecular_index": 0.11326467245817184,
+      "seconds": 0.00963979999505682,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "2604e4602b4a8fa179b7d0134b558cfded46a3ec32c218f4972dad91a43cc5ea",
+      "base_id": "a942e7d76b86bb73f49891e946bfdf0e99968ce446568b8b164102983f273b19",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "太子参"
+      ],
+      "objective": 0.40678371497988697,
+      "symptom_coverage": 0.6000000238418579,
+      "target_coverage": 0.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.009684999997261912,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "99447bc7a684722fd5b20d3169346713660eb8ce21e3bcf7a5044857f1b339bd",
+      "base_id": "a942e7d76b86bb73f49891e946bfdf0e99968ce446568b8b164102983f273b19",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "太子参"
+      ],
+      "objective": 0.40678371497988697,
+      "symptom_coverage": 0.6000000238418579,
+      "target_coverage": 0.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.004678000004787464,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "2d1cb338aa4b3509b8119d9ac279ae2e9b8d1faac3931ffb73e3f1d9637bc78b",
+      "base_id": "af4a3473e2c05fb90f05dc356626e6b321ae197c0564d29cf80dee54768a02bb",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "鸡血藤",
+        "太子参",
+        "香附"
+      ],
+      "objective": 0.5011586824357509,
+      "symptom_coverage": 0.75,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.00889669999742182,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "f95d88d4adef70d5960735a862fab0127dafc40038e64b9c534fb99d3dc04654",
+      "base_id": "af4a3473e2c05fb90f05dc356626e6b321ae197c0564d29cf80dee54768a02bb",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "鸡血藤",
+        "山药"
+      ],
+      "objective": 0.4762853605002164,
+      "symptom_coverage": 0.75,
+      "target_coverage": 0.8571428656578064,
+      "molecular_index": 0.11362139135599136,
+      "seconds": 0.007399900001473725,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "5cb290ec613eb22589d5bb7bf80fbb7167aaf1e69a995f65614bb32f549a2168",
+      "base_id": "b665b1b2b52619779cb60f514481f1aac2e191ac591e72c79ec6532555e521fc",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉"
+      ],
+      "objective": 0.5422836886346339,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.0071119999993243255,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "962d790c030725d10716c20394c039c1d2129ed8e7d2f72fe8ad114780fb4426",
+      "base_id": "b665b1b2b52619779cb60f514481f1aac2e191ac591e72c79ec6532555e521fc",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "太子参",
+        "天花粉"
+      ],
+      "objective": 0.52264108222723,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 1.0,
+      "molecular_index": 0.10611733794212341,
+      "seconds": 0.005623800003377255,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "9577d0b0be1f64ee7fd01a69749006f96296207d1be9909361fea4c2be2007c2",
+      "base_id": "81b377df3bdb6b5e606489c7fd48056300d9d73b6a638c1d5f29b953c881bcb0",
+      "profile": "standard",
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "丹参",
+        "黄芪",
+        "葛根"
+      ],
+      "objective": 0.5272837089002133,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 0.9230769276618958,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.009591000001819339,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "172936256c3b7064a6638d58fee4d8d749b7dbba217c58b2374f80b94c8fb586",
+      "base_id": "81b377df3bdb6b5e606489c7fd48056300d9d73b6a638c1d5f29b953c881bcb0",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "白术",
+        "丹参",
+        "黄芪",
+        "葛根"
+      ],
+      "objective": 0.5257837229669093,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 0.8461538553237915,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.006684799998765811,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "76c83463a76b98274ef7c6a4bc1b84269eba76fa46b9360b55e63100e4cf53de",
+      "base_id": "a3c5f8964702729730acea5efb4840f66fcc95eecf211c0c9b73d40aa43aa7ed",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "山茱萸",
+        "天花粉"
+      ],
+      "objective": 0.4355337196290493,
+      "symptom_coverage": 0.5,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.005449499993119389,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "99967bac3391c9f8fd82c6dcce6d8b34a65080516824b8074aab312442639068",
+      "base_id": "a3c5f8964702729730acea5efb4840f66fcc95eecf211c0c9b73d40aa43aa7ed",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "山茱萸"
+      ],
+      "objective": 0.3278774463832378,
+      "symptom_coverage": 0.4375,
+      "target_coverage": 0.75,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.004278500004147645,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "0b7798ba6ec08bb5aaa798f1aa419e9be40789869d02a06e3514665deab4e8ce",
+      "base_id": "dfe67238e7452a0cce188ccd67a02c52f3ca903d9bd92f36f74aafaf5f18bed4",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "山茱萸",
+        "太子参",
+        "天花粉"
+      ],
+      "objective": 0.6267836855351924,
+      "symptom_coverage": 1.0,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.00910930000100052,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "c1cba9968a45cbd861822e07bde8f2cbb2112efca1a93a23886dd016542c0c3e",
+      "base_id": "dfe67238e7452a0cce188ccd67a02c52f3ca903d9bd92f36f74aafaf5f18bed4",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "山茱萸"
+      ],
+      "objective": 0.5374444418847562,
+      "symptom_coverage": 0.949999988079071,
+      "target_coverage": 0.7142857313156128,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.0054689000025973655,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "d74be2b73b333b0eb8c8f8cdcda63e173aa08a333972d554f771b9e929459442",
+      "base_id": "4a4d4445a29e49c47167f366ed36ebd5c55aa0a0d982b6e4c34dedd92214a619",
+      "profile": "standard",
+      "selected_herbs": [
+        "白芍",
+        "丹参",
+        "黄芪",
+        "鸡血藤",
+        "山茱萸",
+        "香附"
+      ],
+      "objective": 0.5222837010324002,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.012464200000977144,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "f6d5fe92e847a88079cf8e3c04b07fe474d21888e88d903daceffffae080e663",
+      "base_id": "4a4d4445a29e49c47167f366ed36ebd5c55aa0a0d982b6e4c34dedd92214a619",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "白芍",
+        "丹参",
+        "黄芪",
+        "山茱萸"
+      ],
+      "objective": 0.5189503842294216,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 0.7777777910232544,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.0065080999993369915,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "2805cd3ebce58001ab0da22405e69d5a7ee4d2068885186dedf0371c1e0628eb",
+      "base_id": "19a4a369945be404b84b91db15221769ee6edbf1d5909d08df795ed24c25ab95",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "天花粉",
+        "葛根"
+      ],
+      "objective": 0.5222837010324002,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.011505299997224938,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "5af2705e8d3a01e7f35186fddbe7b229ec7b578c74409527e56cb117fc77171c",
+      "base_id": "19a4a369945be404b84b91db15221769ee6edbf1d5909d08df795ed24c25ab95",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "葛根"
+      ],
+      "objective": 0.4799363189637661,
+      "symptom_coverage": 0.699999988079071,
+      "target_coverage": 0.8181818127632141,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.006372199997713324,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "7a962aee61f005fa0f17dd8da1ef9e89c6e58a950f8b5642786744adbd8cde15",
+      "base_id": "611ddf6ecc9a60033c45115d6b38487cd924cf1cfab2a09ce3fdf4157417da11",
+      "profile": "standard",
+      "selected_herbs": [
+        "柴胡",
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "香附",
+        "薏苡仁"
+      ],
+      "objective": 0.4700961793363095,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 0.9375,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.012813900000764988,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "bfd71cf28cf18c0602464a6469856217379f226c6ef731c08d642446e83f6539",
+      "base_id": "611ddf6ecc9a60033c45115d6b38487cd924cf1cfab2a09ce3fdf4157417da11",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "山茱萸"
+      ],
+      "objective": 0.41774667327105997,
+      "symptom_coverage": 0.7666666507720947,
+      "target_coverage": 0.625,
+      "molecular_index": 0.11362139135599136,
+      "seconds": 0.0064717999994172715,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "7dbf28b0574ddd0c4acb7de0e47896977743e2c4648e948326495e85985bccc0",
+      "base_id": "280dcc85b774808534e453798ccda4f5f4eaf37fbd60620e3862ca2ca4512a92",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "山药",
+        "太子参",
+        "薏苡仁"
+      ],
+      "objective": 0.5422836886346339,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.00791670000035083,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "ecfc3d4a69ed6454c2914e621685802c097ccb525fcc554f6db65b309a837cb1",
+      "base_id": "280dcc85b774808534e453798ccda4f5f4eaf37fbd60620e3862ca2ca4512a92",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "山茱萸",
+        "太子参"
+      ],
+      "objective": 0.5232837134301662,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 0.800000011920929,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.010117699996044394,
+      "hard_violations": 0,
+      "used_network": true
+    },
+    {
+      "query_id": "aba3d0136a1d1d74b5fb36411c56ee5f408f98eacd5ce48024f472e73883a118",
+      "base_id": "d995ea03eadf619441641d164ba99dc02f97d3749b46e47c3ff84ee0bfcc88ed",
+      "profile": "standard",
+      "selected_herbs": [
+        "柴胡",
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "objective": 0.5867837103307246,
+      "symptom_coverage": 1.0,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.01294400000188034,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "258b03296ad6e4b763e00595afd262fc74f01ca2e2f41b054e31cd0547c6ca47",
+      "base_id": "d995ea03eadf619441641d164ba99dc02f97d3749b46e47c3ff84ee0bfcc88ed",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "太子参"
+      ],
+      "objective": 0.5555337124764919,
+      "symptom_coverage": 1.0,
+      "target_coverage": 0.6153846383094788,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.006060300001990981,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "74fc3b15977b64afc2584573818b78dfe6703b0459cd232765e88022e29dd412",
+      "base_id": "e6331b0a4894d3ada814a23a12702cf8e3dc4e4e2a5b7d83d5456431da4f79c3",
+      "profile": "standard",
+      "selected_herbs": [
+        "柴胡",
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "天花粉",
+        "薏苡仁"
+      ],
+      "objective": 0.556783712118864,
+      "symptom_coverage": 1.0,
+      "target_coverage": 0.8461538553237915,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.013070200002402999,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "ee197d68959497de6baf9fd41bcee269c1dfab956b4eba4c3d86bd479881bfe4",
+      "base_id": "e6331b0a4894d3ada814a23a12702cf8e3dc4e4e2a5b7d83d5456431da4f79c3",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "山茱萸"
+      ],
+      "objective": 0.5037258398979902,
+      "symptom_coverage": 0.9166666865348816,
+      "target_coverage": 0.692307710647583,
+      "molecular_index": 0.11362139135599136,
+      "seconds": 0.006069899995054584,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "cef3b92b692856deeaac052563e5c1908c11c5e857570eac977779a711471c62",
+      "base_id": "27462681bdd1fc99e0faa90f852aa93557b19dcafaa64863f390720683d1512c",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "objective": 0.6067836979329586,
+      "symptom_coverage": 1.0,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.013622600003145635,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "976bf2f9b5fba016b98f7c76507dbeb10d1cf61ee0cd7bbb04e7fc369e2937f5",
+      "base_id": "27462681bdd1fc99e0faa90f852aa93557b19dcafaa64863f390720683d1512c",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉"
+      ],
+      "objective": 0.5853924823254347,
+      "symptom_coverage": 1.0,
+      "target_coverage": 0.875,
+      "molecular_index": 0.11362139135599136,
+      "seconds": 0.006516699999338016,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "0ce9e0ece5ffa561335318c7d0e98aab9665d797706b246b86b0aba61f9e1d61",
+      "base_id": "8c89c0b06bb2e013136b454df3c2975da083ffeccb0edf156cc340c983b102a4",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "香附",
+        "葛根"
+      ],
+      "objective": 0.6467837118804454,
+      "symptom_coverage": 1.0,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.006959600003028754,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "bc337779100d4b84b40063f81ebb1aa986a887cf3e0875ecfc5cbcd8215d8988",
+      "base_id": "8c89c0b06bb2e013136b454df3c2975da083ffeccb0edf156cc340c983b102a4",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "香附",
+        "葛根"
+      ],
+      "objective": 0.6467837118804454,
+      "symptom_coverage": 1.0,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.0052024999968125485,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "2b0e9298812a72f46f275f59ac64af02774aa5b7947e9bffbb465e20186ef167",
+      "base_id": "316072d0bfb723ddbcf98d807fb708eec3a4b279e77ebc7d042330e41df3d404",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "太子参",
+        "葛根"
+      ],
+      "objective": 0.610221227377653,
+      "symptom_coverage": 1.0,
+      "target_coverage": 0.8125,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.008532499996363185,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "5fcb2364324c16aa45ac51415ae5d0255a42d72cd08d2aa8c63edebca3858c24",
+      "base_id": "316072d0bfb723ddbcf98d807fb708eec3a4b279e77ebc7d042330e41df3d404",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "葛根"
+      ],
+      "objective": 0.5814711839854717,
+      "symptom_coverage": 1.0,
+      "target_coverage": 0.625,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.005981300004350487,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "d229e48d848fc2ba5169b06311d918d138bfb49388faf1a4a005e1a835862489",
+      "base_id": "760115f5c8db0da68b9f3d35d83d2e2835cf80ce81b72ddcc30ed19d630ae0f4",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "葛根"
+      ],
+      "objective": 0.5611586839854718,
+      "symptom_coverage": 0.75,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.006177499999466818,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "a534779f11bcac1f5d2d0d73f24b2569eeb70eb0f7154f7cb3056a53432a2529",
+      "base_id": "760115f5c8db0da68b9f3d35d83d2e2835cf80ce81b72ddcc30ed19d630ae0f4",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "柴胡",
+        "黄芪"
+      ],
+      "objective": 0.46289249627292156,
+      "symptom_coverage": 0.75,
+      "target_coverage": 0.6666666865348816,
+      "molecular_index": 0.11362139135599136,
+      "seconds": 0.004294999998819549,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "a4a60f3630db6d4cfae75400b18c98e5fb40a8b9402897c269aba5f93ecb0062",
+      "base_id": "caaa0343ea435cab6f44737a111d9dfef33dc83c712e7ad98a6ad97ad3421ed4",
+      "profile": "standard",
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "丹参",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "薏苡仁"
+      ],
+      "objective": 0.5022837134301662,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.010771900000690948,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "e43c0aebd4240e7ebeeb255f9880b57607b5411aa86e97cd5bfbcc5f95efba74",
+      "base_id": "caaa0343ea435cab6f44737a111d9dfef33dc83c712e7ad98a6ad97ad3421ed4",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "黄芪",
+        "山茱萸"
+      ],
+      "objective": 0.46243415002524857,
+      "symptom_coverage": 0.7666666507720947,
+      "target_coverage": 0.75,
+      "molecular_index": 0.11362139135599136,
+      "seconds": 0.005102499999338761,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "7cd8cd3f3455d2aa944e7d615bf386155a6dde73fc7200cbdd407a43b860cf76",
+      "base_id": "3d5a37229e3152a8ba804923fa8ef110065d2535aaf0a6de7d6bf34d48c2e15f",
+      "profile": "standard",
+      "selected_herbs": [
+        "柴胡",
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "太子参"
+      ],
+      "objective": 0.6090564297139643,
+      "symptom_coverage": 1.0,
+      "target_coverage": 0.9090909361839294,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.009845500004303176,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "70ddaabf10c4ed3a36fa4e7e55624e5ad8a2e348115c7aef548bfd34134bc62a",
+      "base_id": "3d5a37229e3152a8ba804923fa8ef110065d2535aaf0a6de7d6bf34d48c2e15f",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "太子参"
+      ],
+      "objective": 0.5950791769921779,
+      "symptom_coverage": 1.0,
+      "target_coverage": 0.8181818127632141,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.0062440000037895516,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "f3a46621311b048096cd4cd7e581388fe43b25aa356ec0c5c31b182c004bed9e",
+      "base_id": "8ab4c7f61409af9054a4f8519e5203fd705f1530ca9b8483244b730abfb5687e",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "太子参",
+        "薏苡仁"
+      ],
+      "objective": 0.5578363650739193,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.005781800005934201,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "8cdad32e10d5c599310de288ec509eeb6886af385e41fbfe9606cba1650ca307",
+      "base_id": "8ab4c7f61409af9054a4f8519e5203fd705f1530ca9b8483244b730abfb5687e",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "黄芪",
+        "淫羊藿",
+        "葛根"
+      ],
+      "objective": 0.5479065746963023,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 1.0,
+      "molecular_index": 0.13386835157871246,
+      "seconds": 0.013956399998278357,
+      "hard_violations": 0,
+      "used_network": true
+    },
+    {
+      "query_id": "9ba4c06da5d6f6a2b002a6314453b3c4ee425ffd4778d3f856b85b19c4830b3a",
+      "base_id": "1f40ca81a3a26146e29761be3bcd2b81b144c5f8963308700a09751f909d39c0",
+      "profile": "standard",
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "丹参",
+        "黄芪",
+        "薏苡仁"
+      ],
+      "objective": 0.5422836886346339,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.008618500003649388,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "e31677f97efedca950a84a7f483e8db4a345605ce9955b5a11150c31c0e86529",
+      "base_id": "1f40ca81a3a26146e29761be3bcd2b81b144c5f8963308700a09751f909d39c0",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "白术",
+        "柴胡",
+        "丹参",
+        "薏苡仁"
+      ],
+      "objective": 0.5379086994826794,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 0.875,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.013128300000971649,
+      "hard_violations": 0,
+      "used_network": true
+    },
+    {
+      "query_id": "27b501b1246df3966df351365001687b9bcb5b78a974c96f958217070f4310e9",
+      "base_id": "ac2e27e29665cdd37d6403c93f0eb8b62a19f4b2b4df063ed2e2a91bee17465c",
+      "profile": "standard",
+      "selected_herbs": [
+        "白芍",
+        "丹参",
+        "黄芪",
+        "山茱萸",
+        "熟地黄",
+        "葛根"
+      ],
+      "objective": 0.5222837010324002,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.013823100001900457,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "056da66e72a97236f1e4f5408d06f3b29c3dbd233218a96519715bb8ca11d857",
+      "base_id": "ac2e27e29665cdd37d6403c93f0eb8b62a19f4b2b4df063ed2e2a91bee17465c",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "熟地黄",
+        "葛根"
+      ],
+      "objective": 0.4853670441806316,
+      "symptom_coverage": 0.7333333492279053,
+      "target_coverage": 0.8333333134651184,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.006088400004955474,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "67ce5afa95adc5203d105a9d6e04c854d4f5ecdb901c872f143e342df170ee8e",
+      "base_id": "252e26b668346bbc2e507c71820183f175091f083ec40e62c8cf9674de139edb",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "葛根"
+      ],
+      "objective": 0.6067836979329586,
+      "symptom_coverage": 1.0,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.011583100000279956,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "ecb79898e65a2871d5732701bfa528e3167b5956de68a9b518ca3a1eba5444db",
+      "base_id": "252e26b668346bbc2e507c71820183f175091f083ec40e62c8cf9674de139edb",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "葛根"
+      ],
+      "objective": 0.5676587277352809,
+      "symptom_coverage": 0.949999988079071,
+      "target_coverage": 0.7692307829856873,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.006219499999133404,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "e2809fe2f9717cc094d69adae6d52c5d0e8bc4432d9bad589a35a5c8587c175c",
+      "base_id": "e8b7dea977b3ffe33606ffb19830d95245699efc8800aa3796ede4f0e0803e0f",
+      "profile": "standard",
+      "selected_herbs": [
+        "白芍",
+        "丹参",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "葛根"
+      ],
+      "objective": 0.5677836963832379,
+      "symptom_coverage": 1.0,
+      "target_coverage": 0.800000011920929,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.011295999996946193,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "09f42c324efde913606c5577388f4d6451fb0cad92ef97aa302f73a44ac79333",
+      "base_id": "e8b7dea977b3ffe33606ffb19830d95245699efc8800aa3796ede4f0e0803e0f",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "山茱萸",
+        "太子参"
+      ],
+      "objective": 0.5629140251576901,
+      "symptom_coverage": 0.9666666984558105,
+      "target_coverage": 0.6800000071525574,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.0061706000051344745,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "a291f8517fd5fb7d4b6ac167ca5a14efceb00db00a0a662e719cd6c163ec89b7",
+      "base_id": "9af8c44dc6b533c575ac4ecd247670f6cc18018db4be19eab58d09c48e6ee7a8",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "山茱萸",
+        "太子参",
+        "天花粉"
+      ],
+      "objective": 0.4699712382256985,
+      "symptom_coverage": 0.75,
+      "target_coverage": 0.800000011920929,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.01874369999859482,
+      "hard_violations": 0,
+      "used_network": true
+    },
+    {
+      "query_id": "378666f4a6c22e598f4e4d08bc02cd9b397a5680de8c0d35cdeee5b89eb0a707",
+      "base_id": "9af8c44dc6b533c575ac4ecd247670f6cc18018db4be19eab58d09c48e6ee7a8",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "茯苓",
+        "山茱萸",
+        "太子参",
+        "天花粉"
+      ],
+      "objective": 0.4528301601558924,
+      "symptom_coverage": 0.75,
+      "target_coverage": 0.800000011920929,
+      "molecular_index": 0.11326467245817184,
+      "seconds": 0.013886999993701465,
+      "hard_violations": 0,
+      "used_network": true
+    },
+    {
+      "query_id": "234fe2dcc86e79ab43bd50218c7746188916312231087ff134eb38dc7ffbd228",
+      "base_id": "874edbeb093f2ea6fd52180aaf80f2b01881a429e9e1e38353f915405530034e",
+      "profile": "standard",
+      "selected_herbs": [
+        "柴胡",
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "葛根"
+      ],
+      "objective": 0.5682122828662396,
+      "symptom_coverage": 1.0,
+      "target_coverage": 0.9047619104385376,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.02701060000254074,
+      "hard_violations": 0,
+      "used_network": true
+    },
+    {
+      "query_id": "4bcce033b556b71a33339cdb055a6372c319eccc32f6b39677644c74b6e92847",
+      "base_id": "874edbeb093f2ea6fd52180aaf80f2b01881a429e9e1e38353f915405530034e",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "山茱萸",
+        "太子参"
+      ],
+      "objective": 0.5191069518476725,
+      "symptom_coverage": 1.0,
+      "target_coverage": 0.6190476417541504,
+      "molecular_index": 0.11326467245817184,
+      "seconds": 0.00663459999486804,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "c7439e2632c8e3720aac37d65b45148539fcd5e6131784fc5c88d9908a204d6f",
+      "base_id": "d86feea23ae8f42eff911dc6a6fc042577042dd1e78247f7e2eb17e350ebe6f2",
+      "profile": "standard",
+      "selected_herbs": [
+        "柴胡",
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "山药",
+        "太子参"
+      ],
+      "objective": 0.5742836901843547,
+      "symptom_coverage": 1.0,
+      "target_coverage": 0.8333333134651184,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.010926199996902142,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "b51fc716c8852d68bfb02c0c9dd4c55755e6f4424d5d43404d43bc64ae53ed3d",
+      "base_id": "d86feea23ae8f42eff911dc6a6fc042577042dd1e78247f7e2eb17e350ebe6f2",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "山药",
+        "太子参"
+      ],
+      "objective": 0.5447674823254347,
+      "symptom_coverage": 1.0,
+      "target_coverage": 0.75,
+      "molecular_index": 0.11362139135599136,
+      "seconds": 0.006408299996110145,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "ae96d06995de93dff7a173c55100b8189f27462ae5bdea56fb61fa81691e10fd",
+      "base_id": "266e1fc43c175ad0d3b199f1f847ff916dde441010baf363c297ea8faaaefc7c",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "天花粉",
+        "葛根"
+      ],
+      "objective": 0.5227837072312832,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 0.8999999761581421,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.010903099995630328,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "5c2f62bb242c2671e581b4e756772b3e64d38d894fbf1b8c14f1566b23641255",
+      "base_id": "266e1fc43c175ad0d3b199f1f847ff916dde441010baf363c297ea8faaaefc7c",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "葛根"
+      ],
+      "objective": 0.5167837196290492,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 0.800000011920929,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.006821499999205116,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "49d531367e27aa01a9e5c5d72f2d8ff4b5097fbe8819dbd90ade4e79a2606bcc",
+      "base_id": "e5501b00e00d5cf257334c3371515a4800aac601c7a1ae86facffd42e79efdab",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "山茱萸",
+        "熟地黄",
+        "天花粉"
+      ],
+      "objective": 0.6267836855351924,
+      "symptom_coverage": 1.0,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.016736400000809226,
+      "hard_violations": 0,
+      "used_network": true
+    },
+    {
+      "query_id": "52f61474dcc555879ee9f7b214f493362527e33816d70ddef66a444a18639175",
+      "base_id": "e5501b00e00d5cf257334c3371515a4800aac601c7a1ae86facffd42e79efdab",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "天花粉"
+      ],
+      "objective": 0.5041424823254347,
+      "symptom_coverage": 0.75,
+      "target_coverage": 1.0,
+      "molecular_index": 0.11362139135599136,
+      "seconds": 0.004513800005952362,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "e683e419a21c1217bfade1db947c174e15e42a3397b804538d2f3bff390134c2",
+      "base_id": "2ef6ba44461b2dc1f82a38a53a592778b6f80ff1436e0eebc5573566db1a3569",
+      "profile": "standard",
+      "selected_herbs": [
+        "川芎",
+        "丹参",
+        "黄芪",
+        "山茱萸",
+        "太子参"
+      ],
+      "objective": 0.5422836886346339,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.007921600001282059,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "46f1760d207cfb03636737d70e1ccf7afb0395378c63d6098da3c7a8191b9005",
+      "base_id": "2ef6ba44461b2dc1f82a38a53a592778b6f80ff1436e0eebc5573566db1a3569",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "山茱萸",
+        "太子参"
+      ],
+      "objective": 0.5406170689761638,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 0.8888888955116272,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.005906200000026729,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "70f4ca0a6b9e64d653628ab40823f970317314aa72a4d8f4508bc8d1917d6021",
+      "base_id": "6b11f7f5d34694949b9b2aea6867d537797454bc0d258a33958168ee5e8b36d6",
+      "profile": "standard",
+      "selected_herbs": [
+        "白芍",
+        "丹参",
+        "黄芪",
+        "山茱萸",
+        "香附"
+      ],
+      "objective": 0.6267836855351924,
+      "symptom_coverage": 1.0,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.009602699996321462,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "f1c71b966a0d51860fac934a883592b8838b295cdb272eb3d1dddb53cf233912",
+      "base_id": "6b11f7f5d34694949b9b2aea6867d537797454bc0d258a33958168ee5e8b36d6",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "白术",
+        "丹参",
+        "山茱萸",
+        "薏苡仁"
+      ],
+      "objective": 0.6002003842294217,
+      "symptom_coverage": 0.9666666984558105,
+      "target_coverage": 0.8571428656578064,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.0068113000015728176,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "94049224fbb1ff4baa7b8c0c4b3b2f5c0415f0c6aba1529b1e7af1eb6179b61d",
+      "base_id": "fa3bbbc05ff3352aeac1fb7897bc833d9a650f99f005099f226e0fe0df41aa8c",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "天花粉",
+        "葛根"
+      ],
+      "objective": 0.6067836979329586,
+      "symptom_coverage": 1.0,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.01226429999951506,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "522f8a8211891d24c00e06b55ad6c1e656a445a68d99d02d0830c46294c7c55e",
+      "base_id": "fa3bbbc05ff3352aeac1fb7897bc833d9a650f99f005099f226e0fe0df41aa8c",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "葛根"
+      ],
+      "objective": 0.5609911215752363,
+      "symptom_coverage": 0.9375,
+      "target_coverage": 0.9090909361839294,
+      "molecular_index": 0.11362139135599136,
+      "seconds": 0.00651310000102967,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "e6bb4f13c5632b2f13ecb6eee8e09b52a6ba40f3d994f0e66d9692f99b398f0a",
+      "base_id": "5ca0ab9db3d9a9bd59f73c61215c4b45d2a5a41968e15e6da4ba7b0a8296598e",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "葛根"
+      ],
+      "objective": 0.5259503842294216,
+      "symptom_coverage": 0.6666666865348816,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.006396999997377861,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "86531ec9fa55fdcb94c1c95f53aeefa83057e4946d21795ad21d25ed832c981a",
+      "base_id": "5ca0ab9db3d9a9bd59f73c61215c4b45d2a5a41968e15e6da4ba7b0a8296598e",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "葛根"
+      ],
+      "objective": 0.5259503842294216,
+      "symptom_coverage": 0.6666666865348816,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.0062752000012551434,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "6633afbaba22f5d2af476a3ba3e7b2c3336654de433d0f2ff663a4aab54696f0",
+      "base_id": "063d0f34326ad817808ee11244de66a9d45504196df321a09163120beb3bc714",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "熟地黄",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "objective": 0.5460273827016353,
+      "symptom_coverage": 1.0,
+      "target_coverage": 0.9411764740943909,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.012761400001181755,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "78c12f4f4b4addb4d8158e326703de3a31c2b823e446cd17138c7560861ad9a8",
+      "base_id": "063d0f34326ad817808ee11244de66a9d45504196df321a09163120beb3bc714",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "黄芪",
+        "熟地黄",
+        "太子参",
+        "天花粉"
+      ],
+      "objective": 0.4428841126412153,
+      "symptom_coverage": 0.8500000238418579,
+      "target_coverage": 0.5882353186607361,
+      "molecular_index": 0.11362139135599136,
+      "seconds": 0.006059999999706633,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "c0b2aa7dcf2f5e422a04690b1b1f19fa7b52cab26e598fcfc3d71bd08a03878e",
+      "base_id": "845beb1e2bbc13be7df2d469c690b44a5f12dc4fa5c549dbf6a45196ab4e61a9",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "熟地黄",
+        "香附",
+        "葛根"
+      ],
+      "objective": 0.6267836855351924,
+      "symptom_coverage": 1.0,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.009991799997806083,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "4bb4e9b47b8b74ec5ee118f54c280ba3bb488bb42b2af2a7a6b0026237081ece",
+      "base_id": "845beb1e2bbc13be7df2d469c690b44a5f12dc4fa5c549dbf6a45196ab4e61a9",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "熟地黄",
+        "葛根"
+      ],
+      "objective": 0.6251170658767222,
+      "symptom_coverage": 1.0,
+      "target_coverage": 0.8888888955116272,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.006144099999801256,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "0fd48adda4d6d59a4d2a69e60077dcd72f6787cdda21d14fc7eb64fce0049d94",
+      "base_id": "d38a745ea9ab9e06b94df338d4de74f6846fc4d4fb4a662d2d7e584874dec821",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "熟地黄",
+        "太子参",
+        "香附",
+        "葛根"
+      ],
+      "objective": 0.4897836932837963,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 0.8333333134651184,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.01257919999625301,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "4fa95b28760b0b2137043e97120d5a0bb8789c6db1d681f248aafe27ac7d6c29",
+      "base_id": "d38a745ea9ab9e06b94df338d4de74f6846fc4d4fb4a662d2d7e584874dec821",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "黄芪",
+        "熟地黄",
+        "太子参",
+        "葛根"
+      ],
+      "objective": 0.4440175009220839,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 0.5833333134651184,
+      "molecular_index": 0.11362139135599136,
+      "seconds": 0.00669719999859808,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "8efa38123f4f53d6c36941d444ca19d1c90ec2c02622b7cef7ae1a65057b40bc",
+      "base_id": "4808a17ba132243a06fa37e477dca2721cb5f01813001765e5e1fbc62001d145",
+      "profile": "standard",
+      "selected_herbs": [
+        "白芍",
+        "丹参",
+        "茯苓",
+        "山茱萸",
+        "太子参"
+      ],
+      "objective": 0.6267836855351924,
+      "symptom_coverage": 1.0,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.016610300001048017,
+      "hard_violations": 0,
+      "used_network": true
+    },
+    {
+      "query_id": "aaf52996281f71cc0b390a0e2b0486d56eacbea6660fce685c4834e67069548e",
+      "base_id": "4808a17ba132243a06fa37e477dca2721cb5f01813001765e5e1fbc62001d145",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "山茱萸",
+        "太子参"
+      ],
+      "objective": 0.6096795224845408,
+      "symptom_coverage": 0.9583333134651184,
+      "target_coverage": 0.9166666865348816,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.011070200001995545,
+      "hard_violations": 0,
+      "used_network": true
+    },
+    {
+      "query_id": "32a2c1d6fe9cdd25ea60c9e1bde0f088f70875fc77ce1a06fe62e4fb706a11bb",
+      "base_id": "c1fd79987c221fafe7e4e6784916cfd642b883a743b7c0a753369d92c2fbd3a6",
+      "profile": "standard",
+      "selected_herbs": [
+        "柴胡",
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "天花粉",
+        "薏苡仁",
+        "葛根"
+      ],
+      "objective": 0.4672837460935116,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 0.9230769276618958,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.01677820000622887,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "4e7278fc0a3f9967422ebb5274f4ed90824e6d63a0a038896a7f77878a2a307e",
+      "base_id": "c1fd79987c221fafe7e4e6784916cfd642b883a743b7c0a753369d92c2fbd3a6",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "葛根"
+      ],
+      "objective": 0.39810082440078265,
+      "symptom_coverage": 0.6666666269302368,
+      "target_coverage": 0.692307710647583,
+      "molecular_index": 0.11362139135599136,
+      "seconds": 0.005709500001103152,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "cef0accbbef4f7377b2af65922627a040655370a18fdc65e489bd24c573adbd4",
+      "base_id": "c1f5e17f667e0d4e82f821d92dca90f5d5de2e146769b6f14dcc7b4f32a21619",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "天花粉"
+      ],
+      "objective": 0.5890564421117306,
+      "symptom_coverage": 1.0,
+      "target_coverage": 0.9090909361839294,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.009231600000930484,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "8731fadf160e20d065557596fb83d0c5fb1ccdbe3de485b0e1df2d14d46b4417",
+      "base_id": "c1f5e17f667e0d4e82f821d92dca90f5d5de2e146769b6f14dcc7b4f32a21619",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "山茱萸"
+      ],
+      "objective": 0.5384996080100537,
+      "symptom_coverage": 0.949999988079071,
+      "target_coverage": 0.6363636255264282,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.004892099997960031,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "ced4bfd30e00074b7a0b77555809684f3d6d7ee83bdb3132f6e015598b80ad51",
+      "base_id": "8d3ca7e27b1421040c801f43f48d7e5588dc0f8278f6f5f5a814ddd85ad4efa5",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "熟地黄"
+      ],
+      "objective": 0.5778363526761531,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.008275200001662597,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "98dea2ed3fc90aa483ca5fb97c0fe9db1f1e68af5e1cfa8491f311c5b243349d",
+      "base_id": "8d3ca7e27b1421040c801f43f48d7e5588dc0f8278f6f5f5a814ddd85ad4efa5",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "熟地黄"
+      ],
+      "objective": 0.5778363526761531,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.0064362999983131886,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "b7221f08f6b71c885b0d2ab11a673af05f7d43cc71ac9e00d57669e6b9a59de9",
+      "base_id": "79020e5a4b1d4ca616b9d94be23fb8706e886f80991054da1af8235ddc188fe8",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "山茱萸",
+        "熟地黄",
+        "太子参",
+        "淫羊藿"
+      ],
+      "objective": 0.6267836855351924,
+      "symptom_coverage": 1.0,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.007278500001120847,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "44c92e28c60e39930b01eec139313f33982187aae09b25f0126c832b85a27f69",
+      "base_id": "79020e5a4b1d4ca616b9d94be23fb8706e886f80991054da1af8235ddc188fe8",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "山茱萸",
+        "熟地黄",
+        "太子参",
+        "香附"
+      ],
+      "objective": 0.6096426462084055,
+      "symptom_coverage": 1.0,
+      "target_coverage": 1.0,
+      "molecular_index": 0.11326467245817184,
+      "seconds": 0.0042757000046549365,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "dae82ecbee256a800bf028e224ca4efc2c12200782438d307065bd5b19624cd4",
+      "base_id": "7b0ceb7d3cff1cdb253bba65e8b84e32a68867e706d3b5301b7cae881deae55a",
+      "profile": "standard",
+      "selected_herbs": [
+        "白芍",
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "天花粉",
+        "葛根"
+      ],
+      "objective": 0.5867837103307246,
+      "symptom_coverage": 1.0,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.01839289999770699,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "3ab8a39a88ec67fb39ea39326668a76cc05a115b40e7d3b4f7176009e0d456fe",
+      "base_id": "7b0ceb7d3cff1cdb253bba65e8b84e32a68867e706d3b5301b7cae881deae55a",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "柴胡",
+        "山茱萸",
+        "太子参",
+        "天花粉"
+      ],
+      "objective": 0.5057064001709223,
+      "symptom_coverage": 0.9166666865348816,
+      "target_coverage": 0.7058823704719543,
+      "molecular_index": 0.11326467245817184,
+      "seconds": 0.00652280000213068,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "9f62d9bdbc2d4adb0db3186bca7205f1e439d410ff674f3ac04306a76a2a4f31",
+      "base_id": "bc699b60acb04687ba734b734bdd6c53e740c6bb1a8c1eeb8d38b9dc9e7a4cc7",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "天花粉"
+      ],
+      "objective": 0.5222837010324002,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.008087900001555681,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "617490f845ee4b48b564d0e645e005bdcd4b42640f6df43d197d2e6d3fb6604c",
+      "base_id": "bc699b60acb04687ba734b734bdd6c53e740c6bb1a8c1eeb8d38b9dc9e7a4cc7",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "天花粉"
+      ],
+      "objective": 0.486267499372363,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 0.800000011920929,
+      "molecular_index": 0.11362139135599136,
+      "seconds": 0.004697899996244814,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "43962057182dc7418d6c3c5b783b3596af638923a2e0dfbf45a0d3bde21b772f",
+      "base_id": "b5c81aa31a55aed48081587b077c7038ba71c2ad12757ec4ea49d8c54ce57dd5",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "山茱萸",
+        "葛根"
+      ],
+      "objective": 0.6467837118804454,
+      "symptom_coverage": 1.0,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.008470000000670552,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "36c95be726569ba7e776e395b2c26fc12ef651eca8849ed776dee3259d097956",
+      "base_id": "b5c81aa31a55aed48081587b077c7038ba71c2ad12757ec4ea49d8c54ce57dd5",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "山茱萸",
+        "葛根"
+      ],
+      "objective": 0.6467837118804454,
+      "symptom_coverage": 1.0,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.006126599997514859,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "1e50a6eb0e57d8f0e9f50ae4104353889fb068c146a7725df7bc419aa0a018dc",
+      "base_id": "27b266498556afb6d57c1ac321697b21d9e5ccdde9c86efc4bde840f2002699c",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉"
+      ],
+      "objective": 0.5211586700379848,
+      "symptom_coverage": 0.75,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.010665100002370309,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "ec69ff252842fc1f32f595ac749c3b3997d91128ad7c0d917de667ffedd65347",
+      "base_id": "27b266498556afb6d57c1ac321697b21d9e5ccdde9c86efc4bde840f2002699c",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "太子参",
+        "麦冬"
+      ],
+      "objective": 0.41493103441596035,
+      "symptom_coverage": 0.6875,
+      "target_coverage": 0.5714285969734192,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.005157100000360515,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "b720fac68b90c166f873df5297584bae2d847546bd619514a6ccdbbfca5b966d",
+      "base_id": "d5596364cafe33f32a403a0d4d21d339c52fca8aac5b4412b2aa386be3a8a6f9",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "鸡血藤",
+        "山药",
+        "薏苡仁"
+      ],
+      "objective": 0.6267836855351924,
+      "symptom_coverage": 1.0,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.008104000000457745,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "ae3902c60cabc5219701e6d2ab61bce04f65d6fb76365271acc94d1827be8bee",
+      "base_id": "d5596364cafe33f32a403a0d4d21d339c52fca8aac5b4412b2aa386be3a8a6f9",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "茯苓",
+        "鸡血藤",
+        "山药",
+        "薏苡仁"
+      ],
+      "objective": 0.6096426462084055,
+      "symptom_coverage": 1.0,
+      "target_coverage": 1.0,
+      "molecular_index": 0.11326467245817184,
+      "seconds": 0.0050718999991659075,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "8f8e0d9296ad3d14878efb5aa9b7298aa8f7ff47bde67f1845a7f79ec99c4946",
+      "base_id": "2ef90ed251d7ff9753c7602ec8f52bb009674462f96be2f77e06d1ac74db7c9b",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "葛根"
+      ],
+      "objective": 0.5078719840943813,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 0.8235294222831726,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.01286650000110967,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "ebdebbf4fe8c0e33126f1f67ab6f8e6ca5310447a7361df0baed06b0f4fa3b00",
+      "base_id": "2ef90ed251d7ff9753c7602ec8f52bb009674462f96be2f77e06d1ac74db7c9b",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "川芎",
+        "山茱萸",
+        "太子参",
+        "葛根"
+      ],
+      "objective": 0.4320396875292063,
+      "symptom_coverage": 0.7666666507720947,
+      "target_coverage": 0.7058823704719543,
+      "molecular_index": 0.11326467245817184,
+      "seconds": 0.0067043999952147715,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "a2cef02df5f0d0fa306d5a1ea71ce276d798e1043eea0dc4b24e7cd5980531ea",
+      "base_id": "5010da76055bcf037870b8d7d828e40c8992e6061898a94db7d2176292bfd598",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "山茱萸",
+        "太子参"
+      ],
+      "objective": 0.6467837118804454,
+      "symptom_coverage": 1.0,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.009567700006300583,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "454b789b5bf20724c7d6c831394f03b36cadecea762a7eac29b401c9a0199ef3",
+      "base_id": "5010da76055bcf037870b8d7d828e40c8992e6061898a94db7d2176292bfd598",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "白术",
+        "丹参",
+        "山茱萸",
+        "太子参"
+      ],
+      "objective": 0.5355994993150234,
+      "symptom_coverage": 0.75,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.007695400003285613,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "161e70f0b8860920a9204d3b7731d8c96ab2f96666c1b8aab2f31860681fccb6",
+      "base_id": "92766fa9c9d6ade1b9c3e4cff9be8fa48acf0a991d4f4aec969966f7cb6fa11f",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "山茱萸",
+        "太子参",
+        "薏苡仁"
+      ],
+      "objective": 0.468888979524374,
+      "symptom_coverage": 0.6000000238418579,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.006627499999012798,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "d6760a900d88b037c6207ce14b0162225db8381bb728fad702421f45cec9d409",
+      "base_id": "92766fa9c9d6ade1b9c3e4cff9be8fa48acf0a991d4f4aec969966f7cb6fa11f",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "山茱萸",
+        "太子参",
+        "薏苡仁"
+      ],
+      "objective": 0.468888979524374,
+      "symptom_coverage": 0.6000000238418579,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.004609700001310557,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "8e63aede8766bf6832fe504e244b109df89eaddb721f98e167e390d3c716ce8a",
+      "base_id": "66a51cc69509bd0893475044ec4d868fd08079b8dba7f5fa2c6cdfbc5ebb41c0",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "山茱萸",
+        "太子参",
+        "天花粉",
+        "香附"
+      ],
+      "objective": 0.5222837010324002,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.009024999999382999,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "33d2fc317a8345c75548fa3f955e8afc61ec4e0ce3ffd1132280bcf2d0a8527d",
+      "base_id": "66a51cc69509bd0893475044ec4d868fd08079b8dba7f5fa2c6cdfbc5ebb41c0",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "山茱萸",
+        "太子参"
+      ],
+      "objective": 0.4322837227284908,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 0.5,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.0050489000059315,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "f63897db35773f002cfa3a4354961e57c3bcce7397923d9398f65f0853701cc3",
+      "base_id": "bfd87f604d10a804b11f67b05a76c0d12ffb827a0eec3d0fa604a7f7062e4331",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "鸡血藤",
+        "熟地黄",
+        "香附"
+      ],
+      "objective": 0.4044152604043484,
+      "symptom_coverage": 0.5,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.006962100000237115,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "8bd981018d8d97618fa2da35354f80bf9c0470edd966ce6f26c774562e876fe4",
+      "base_id": "bfd87f604d10a804b11f67b05a76c0d12ffb827a0eec3d0fa604a7f7062e4331",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "鸡血藤",
+        "熟地黄"
+      ],
+      "objective": 0.355994223922491,
+      "symptom_coverage": 0.5,
+      "target_coverage": 0.6666666865348816,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.004441199998836964,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "47e353576cbb0b3219464dd2bf6c122604d8cca7d55bc89a4c158074087c6341",
+      "base_id": "c687e0826d591903815c806beec9ca553eccd5d22465095120706e898cc50a8f",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "天花粉"
+      ],
+      "objective": 0.5422836886346339,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.006630000003497116,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "d09783f7b2ac88d412e49b788837bb76d5a95408eedec9ac59e2493a186a9a43",
+      "base_id": "c687e0826d591903815c806beec9ca553eccd5d22465095120706e898cc50a8f",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "山茱萸"
+      ],
+      "objective": 0.45990869638323784,
+      "symptom_coverage": 0.75,
+      "target_coverage": 0.75,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.004735499998787418,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "b3aed6e8b3facad02b7fc04a9ebd7b63740c84fe9ab16f52059db5f8220c6204",
+      "base_id": "a485056712efe670e918f8731ebbafbf8561c75c04a913d43839b0deb1acca7e",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "香附",
+        "葛根"
+      ],
+      "objective": 0.5867837103307246,
+      "symptom_coverage": 1.0,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.012343499998678453,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "c0ef8af8a5b79b9a4dcad38e368b885287efb2371c23af21d9ff57c6a39cd544",
+      "base_id": "a485056712efe670e918f8731ebbafbf8561c75c04a913d43839b0deb1acca7e",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "香附"
+      ],
+      "objective": 0.5447674823254347,
+      "symptom_coverage": 1.0,
+      "target_coverage": 0.75,
+      "molecular_index": 0.11362139135599136,
+      "seconds": 0.006350399999064393,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "ed6341095d06f2b020401c499f781a7760a48a44d34a9e8b53a57d9af801cc28",
+      "base_id": "cfc5ef748b7b0ada036c9a1c90d5e55267c53201468d1e8fa5ad8348e21940b1",
+      "profile": "standard",
+      "selected_herbs": [
+        "柴胡",
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "天花粉",
+        "薏苡仁"
+      ],
+      "objective": 0.4700961793363095,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 0.9375,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.010292099999787752,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "acdd990ca05c067b83f87dc7ab691b766c817d74e7f7de18654736fd78f89a30",
+      "base_id": "cfc5ef748b7b0ada036c9a1c90d5e55267c53201468d1e8fa5ad8348e21940b1",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "柴胡",
+        "丹参",
+        "茯苓",
+        "山茱萸"
+      ],
+      "objective": 0.4406795674264431,
+      "symptom_coverage": 0.7333333492279053,
+      "target_coverage": 0.5625,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.011808700000983663,
+      "hard_violations": 0,
+      "used_network": true
+    },
+    {
+      "query_id": "9d38dd0bf667983c94594d9b342af054bc69a15b3d497c72dcb3164a98f31bba",
+      "base_id": "ef4e0c17e60fe00700f311ca522c2c883102048411f94496c6a7c3067e0124bc",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "天花粉"
+      ],
+      "objective": 0.5649979958236218,
+      "symptom_coverage": 1.0,
+      "target_coverage": 0.7857142686843872,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.010453800001414493,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "1e3abacb49e7e8522888c201dbd3f35840a645a808d802ff896a729fc8451cab",
+      "base_id": "ef4e0c17e60fe00700f311ca522c2c883102048411f94496c6a7c3067e0124bc",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "山茱萸",
+        "太子参",
+        "天花粉"
+      ],
+      "objective": 0.5276944124400615,
+      "symptom_coverage": 0.9214285612106323,
+      "target_coverage": 0.6428571343421936,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.01381260000198381,
+      "hard_violations": 0,
+      "used_network": true
+    },
+    {
+      "query_id": "8fcd0d8cc1544ba1e0bdb86e6bfbefdf84d2fed810b70f031c2dc5fbc0e4ce46",
+      "base_id": "3ca11fa64f5fb6c3edbde8e12822f57424b55a4f4e91aa401cad0f8c017b2975",
+      "profile": "standard",
+      "selected_herbs": [
+        "柴胡",
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "天花粉",
+        "薏苡仁",
+        "葛根"
+      ],
+      "objective": 0.5667837227284909,
+      "symptom_coverage": 1.0,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.012564199998450931,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "863f5561bac405553c0e0f4d4e044ad3d27b6e560f347eb57825698d3b161bb9",
+      "base_id": "3ca11fa64f5fb6c3edbde8e12822f57424b55a4f4e91aa401cad0f8c017b2975",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "天花粉"
+      ],
+      "objective": 0.5149758440703154,
+      "symptom_coverage": 0.9166666865348816,
+      "target_coverage": 0.75,
+      "molecular_index": 0.11362139135599136,
+      "seconds": 0.005935900000622496,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "a3a87c82f0caf792a9b54d424e3a8da53ee4c59075ea49314ed70bc463dd9210",
+      "base_id": "b6ab65515dd3db4c5f82e25cd4241afdea7defb471bd0b98112e3e08fc439dca",
+      "profile": "standard",
+      "selected_herbs": [
+        "白芍",
+        "柴胡",
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "太子参"
+      ],
+      "objective": 0.5437212320268153,
+      "symptom_coverage": 1.0,
+      "target_coverage": 0.800000011920929,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.013745399999606889,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "323b46d1f311c82accbce94dbb5ee508b90fe9eddc8569d7da4bd05626af2f52",
+      "base_id": "b6ab65515dd3db4c5f82e25cd4241afdea7defb471bd0b98112e3e08fc439dca",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "太子参"
+      ],
+      "objective": 0.532167022794485,
+      "symptom_coverage": 0.9333332777023315,
+      "target_coverage": 0.6399999856948853,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.006210999999893829,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "3bfe03eb4f9d3ed18bd8241f8d3f485571bde59c7709c79f5aa9db2077e05982",
+      "base_id": "929e73c95083d78df91fbb237b39d377765bfc2d54ef9a6848a23c9ff555fbe8",
+      "profile": "standard",
+      "selected_herbs": [
+        "柴胡",
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉",
+        "薏苡仁"
+      ],
+      "objective": 0.4861114861667157,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 0.9473684430122375,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.012190599998575635,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "7081fa906184b9aa284aa00762481bc71652eaeace95c70a640da8f48d6b27dc",
+      "base_id": "929e73c95083d78df91fbb237b39d377765bfc2d54ef9a6848a23c9ff555fbe8",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "柴胡",
+        "茯苓",
+        "黄芪",
+        "太子参"
+      ],
+      "objective": 0.45100472693145277,
+      "symptom_coverage": 0.7666666507720947,
+      "target_coverage": 0.7368420958518982,
+      "molecular_index": 0.11362139135599136,
+      "seconds": 0.006881600005726796,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "2b2904b5541a1186dc20fe8b3528cf336c96ae92e5e8958714a6b9f9a664d298",
+      "base_id": "5d019f26ab6b74510f3d1c89d7f8dc8ca606f887caced771e7b694c685cedc7a",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "熟地黄",
+        "太子参"
+      ],
+      "objective": 0.6267836855351924,
+      "symptom_coverage": 1.0,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.008011300000362098,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "4672af90db97b5d83a94e3d88259aa2ecd10e5ee720b1ea69cb9efc274a69c92",
+      "base_id": "5d019f26ab6b74510f3d1c89d7f8dc8ca606f887caced771e7b694c685cedc7a",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "熟地黄",
+        "太子参"
+      ],
+      "objective": 0.5716274463832378,
+      "symptom_coverage": 0.9375,
+      "target_coverage": 0.75,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.005556299998715986,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "30840de62f23e84c5591b5e995a9f4ea6e4d7be8680acdb9dd84c8aa0cf71a8b",
+      "base_id": "7bd8aa5a3549f9ef45c1ecb54e6b737a49daf23f3a17622732dbddb3ee22ab05",
+      "profile": "standard",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "山茱萸",
+        "太子参"
+      ],
+      "objective": 0.5234314405620097,
+      "symptom_coverage": 0.75,
+      "target_coverage": 0.9090909361839294,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.010277999994286802,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "99e8c2521546ec7000d4566038afef43482b56dfd250cdbd4931612968604ae0",
+      "base_id": "7bd8aa5a3549f9ef45c1ecb54e6b737a49daf23f3a17622732dbddb3ee22ab05",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "茯苓",
+        "山茱萸",
+        "太子参"
+      ],
+      "objective": 0.5234314405620097,
+      "symptom_coverage": 0.75,
+      "target_coverage": 0.9090909361839294,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.0057707000014488585,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "9502fad1e73917bf68f9ec2c53b7f8ad25eecbeed69c545a2138e9ae43ff65ed",
+      "base_id": "8e550ab45f11d670d81658dd6096d08f665a3845acba8282a22d9dfe68e19062",
+      "profile": "standard",
+      "selected_herbs": [
+        "白芍",
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "山茱萸"
+      ],
+      "objective": 0.48811707362532614,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 0.75,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.009845799999311566,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "c1a5168db981e36038846101af5d484172aa646f14455842018ea077f43deb35",
+      "base_id": "8e550ab45f11d670d81658dd6096d08f665a3845acba8282a22d9dfe68e19062",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "白芍",
+        "山茱萸",
+        "香附",
+        "薏苡仁"
+      ],
+      "objective": 0.4466009800583124,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 0.625,
+      "molecular_index": 0.11326467245817184,
+      "seconds": 0.006713800001307391,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "fba2e9616f35cd0684e6b165d14783b01501fcca202df7e71b39327adebfcd9a",
+      "base_id": "022e4eb3543ae34e3f235b640381493e2f1ceaa1b69079ef093ac0413ecd14f1",
+      "profile": "standard",
+      "selected_herbs": [
+        "柴胡",
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "香附",
+        "薏苡仁"
+      ],
+      "objective": 0.4692837382256985,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 0.9333333373069763,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.011777100000472274,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "49f099f2a3c6f4461b0ca84f6b77064339cd99c8ed7a18d1d7178fcae15bae51",
+      "base_id": "022e4eb3543ae34e3f235b640381493e2f1ceaa1b69079ef093ac0413ecd14f1",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "柴胡",
+        "丹参",
+        "黄芪",
+        "山茱萸"
+      ],
+      "objective": 0.40980455812811856,
+      "symptom_coverage": 0.7333333492279053,
+      "target_coverage": 0.46666666865348816,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.006146199993963819,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "67e51c807b42c8e40aeb624ad2cace6cb07b2112821b39cd647490fdd758ad99",
+      "base_id": "ac5b060cf27beaef74a3a85ba76ac354d202bd74cd4d595d047c4d80d84496b7",
+      "profile": "standard",
+      "selected_herbs": [
+        "柴胡",
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "山药",
+        "薏苡仁",
+        "葛根"
+      ],
+      "objective": 0.5662573876082896,
+      "symptom_coverage": 1.0,
+      "target_coverage": 0.8947368264198303,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.01295150000078138,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "e3d7d1119087edbdc210e552015e0d28c534cc819aacfed2a258ebdae5e7d615",
+      "base_id": "ac5b060cf27beaef74a3a85ba76ac354d202bd74cd4d595d047c4d80d84496b7",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "柴胡",
+        "山药",
+        "薏苡仁",
+        "葛根"
+      ],
+      "objective": 0.5090352003723383,
+      "symptom_coverage": 0.8833333253860474,
+      "target_coverage": 0.7368420958518982,
+      "molecular_index": 0.11326467245817184,
+      "seconds": 0.005981800000881776,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "6fbde5ae1d10001606cd49e1b1ad92addd9af8a670c7e2c3d531123b74155d3c",
+      "base_id": "092fecadda38788b493973797e645e8368ef5f4196ddc04a911887f964f66e5d",
+      "profile": "standard",
+      "selected_herbs": [
+        "白芍",
+        "柴胡",
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "太子参"
+      ],
+      "objective": 0.561575371235609,
+      "symptom_coverage": 1.0,
+      "target_coverage": 0.8846153616905212,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.012166000000433996,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "b0ae3ffa25336e061386730f35f45fc580fd964e2aa5fd3f82974ab6687f0770",
+      "base_id": "092fecadda38788b493973797e645e8368ef5f4196ddc04a911887f964f66e5d",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "白术",
+        "丹参",
+        "山茱萸",
+        "太子参"
+      ],
+      "objective": 0.5203253739774227,
+      "symptom_coverage": 0.9166666865348816,
+      "target_coverage": 0.6153846383094788,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.005953599997155834,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "53f895dc979a61373a10687d51345841cc56871c485f3630e8f4aeb9d823b449",
+      "base_id": "35ece511b4fa29cbac557407990d3533c0e6978daf1a31a7a3db2e01926549b3",
+      "profile": "standard",
+      "selected_herbs": [
+        "白芍",
+        "丹参",
+        "山茱萸",
+        "太子参"
+      ],
+      "objective": 0.4777837180793285,
+      "symptom_coverage": 0.6000000238418579,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.008739400000195019,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "ca93238534ecf2689e30d6a2b7c41c05c9c60fdb292a75d92be62661e944f08e",
+      "base_id": "35ece511b4fa29cbac557407990d3533c0e6978daf1a31a7a3db2e01926549b3",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "山茱萸",
+        "太子参"
+      ],
+      "objective": 0.4525932283103466,
+      "symptom_coverage": 0.5666666626930237,
+      "target_coverage": 0.8571428656578064,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.005848999993759207,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "2eae03270e58c048c0eba1afd391413b44ea5fb5884608a91e1fb7a1f6fca803",
+      "base_id": "81b84c241c6d255953e42b369b9e56662509fa0ba970b861c60188d7aae56e9c",
+      "profile": "standard",
+      "selected_herbs": [
+        "柴胡",
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "薏苡仁"
+      ],
+      "objective": 0.5392310710847378,
+      "symptom_coverage": 1.0,
+      "target_coverage": 0.7894737124443054,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.01375479999842355,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "4fab0a821cb39b70511d4de464b95dde73c37736af561379b00c633f849c9ddd",
+      "base_id": "81b84c241c6d255953e42b369b9e56662509fa0ba970b861c60188d7aae56e9c",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "柴胡",
+        "丹参",
+        "茯苓",
+        "黄芪"
+      ],
+      "objective": 0.5070479476153851,
+      "symptom_coverage": 0.9583333134651184,
+      "target_coverage": 0.4736842215061188,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.005984900002658833,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "8b112981c218c839331464ff8ea09cf72bdc855009fa75dbb722c153c11637c7",
+      "base_id": "ac33a2c711ab0e0f1a8f145f1a3cf93b097c065ee9dac739bbcc5b500e53d644",
+      "profile": "standard",
+      "selected_herbs": [
+        "柴胡",
+        "丹参",
+        "茯苓",
+        "黄芪",
+        "山茱萸",
+        "太子参",
+        "天花粉"
+      ],
+      "objective": 0.48728373369574546,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 0.9230769276618958,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.011655900001642294,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "12c1acbdebe375574f6c34caed0b8bf11b22ab9b9d752269aeb02b1b941131c4",
+      "base_id": "ac33a2c711ab0e0f1a8f145f1a3cf93b097c065ee9dac739bbcc5b500e53d644",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "茯苓",
+        "黄芪",
+        "太子参",
+        "天花粉"
+      ],
+      "objective": 0.4428925198763609,
+      "symptom_coverage": 0.75,
+      "target_coverage": 0.7692307829856873,
+      "molecular_index": 0.11362139135599136,
+      "seconds": 0.005970999998680782,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "fa57359f19633eedeb8ced574fcaa2e0a1a7b726421da29303698873be99d672",
+      "base_id": "b1c4b2f39d1d882467ad23937f9d9a4fb60853de3f9edcdd677c05fdbab6ee91",
+      "profile": "standard",
+      "selected_herbs": [
+        "白芍",
+        "丹参",
+        "黄芪",
+        "山茱萸",
+        "葛根"
+      ],
+      "objective": 0.5422836886346339,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.009797599996090867,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "f409b785f4b5d2b8c50f60f10f139887e71a99c01a04991c59fa90f4b8fd0c0b",
+      "base_id": "b1c4b2f39d1d882467ad23937f9d9a4fb60853de3f9edcdd677c05fdbab6ee91",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "丹参",
+        "黄芪",
+        "山茱萸",
+        "葛根"
+      ],
+      "objective": 0.5288670473992825,
+      "symptom_coverage": 0.7666666507720947,
+      "target_coverage": 0.9230769276618958,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.006524600001284853,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "c8cc0f77b24cfbfcc07421758e048e05c41196aae247cd798f4be9ea3eed594a",
+      "base_id": "2bf4bec9f5af131e438fb02a072a716ae6e00720f51617863453090cef02c6cf",
+      "profile": "standard",
+      "selected_herbs": [
+        "柴胡",
+        "丹参",
+        "黄芪",
+        "山茱萸",
+        "熟地黄",
+        "太子参"
+      ],
+      "objective": 0.46378371807932856,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 0.699999988079071,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.011042599995562341,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "a4523086d12e8aad4dae335daa28ed7cd20f48189ef5443e6a60fc340c6651e3",
+      "base_id": "2bf4bec9f5af131e438fb02a072a716ae6e00720f51617863453090cef02c6cf",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "黄芪",
+        "山茱萸",
+        "熟地黄",
+        "太子参"
+      ],
+      "objective": 0.4061008316725493,
+      "symptom_coverage": 0.800000011920929,
+      "target_coverage": 0.5,
+      "molecular_index": 0.11362139135599136,
+      "seconds": 0.006681300001218915,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "d3f91e9e6aa1c6c34c2b3cbe18d724e2185455d4ae7b7fb63e08f107b9523540",
+      "base_id": "8c60242b0127ad0abd64b933911e34821eb2d47b9cf5d90d490dfd2e0c93c215",
+      "profile": "standard",
+      "selected_herbs": [
+        "川芎",
+        "丹参",
+        "黄芪",
+        "山茱萸",
+        "太子参"
+      ],
+      "objective": 0.6267836855351924,
+      "symptom_coverage": 1.0,
+      "target_coverage": 1.0,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.007761700006085448,
+      "hard_violations": 0,
+      "used_network": false
+    },
+    {
+      "query_id": "924e89ceb2d5810a13b46b69ff8b1d173b0a249105c6f7e4d19da158153de44b",
+      "base_id": "8c60242b0127ad0abd64b933911e34821eb2d47b9cf5d90d490dfd2e0c93c215",
+      "profile": "requested_constraints",
+      "selected_herbs": [
+        "川芎",
+        "丹参",
+        "黄芪",
+        "山茱萸"
+      ],
+      "objective": 0.5817836963832379,
+      "symptom_coverage": 1.0,
+      "target_coverage": 0.6666666865348816,
+      "molecular_index": 0.21938200294971466,
+      "seconds": 0.0049119000032078475,
+      "hard_violations": 0,
+      "used_network": false
+    }
+  ],
+  "scope": "Final model/run chosen using validation only. Guard explicitly computes two trajectories; any gain from the guard is not attributed to raw PPO. All ablations rescored under combined objective."
+}

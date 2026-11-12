@@ -1,0 +1,9 @@
+{
+  "completed_at": "2026-11-12T10:16:29.862016+00:00",
+  "source_lf_sha256": {
+    "scripts/chemistry_v5.py": "d834bd52e8b552f171f16246ea97debd9f7ff8b004f60a9f7c504f0177dcdcae",
+    "scripts/affinity_chain_v5.py": "4a4923281ae52c48444270d825346cbc69a1e7461f24ab92e02545efdbd3b4c2",
+    "scripts/affinity_v4.py": "384228b0c08076a61cc962236ee40cef549226f9fc52f36d6663ec42c70a89f6",
+    "src/dmease/affinity_research.py": "7cfa739772d6a59b5c5d63f5c5c87a65129a13ddc88353af53a35c7e929da0d0"
+  }
+}

@@ -1,5 +1,9 @@
 # Data Layout
 
+第五轮新增发布范围的公开证据快照 `experiments/v5/planning_features.json`，以及经过身份过滤的 `molecular_bundle.json`。前者是实际模型输入和界面所需的关系子集；后者包含1,128条药材成分连接、816个PubChem结构、2条匹配实测及84条域内预测。它们不是完整原始数据库。可直接运行发布版本，重新采集仍按下述原始数据布局进行。
+
+本轮新增结构来自PubChem实际CID查询；实测亲和度复用已核验的ChEMBL37快照。每条边保留来源标识，存在多个候选CID、分子量或元素式冲突的路径不进入推荐。原始数据库立体结构没有全部独立取得，预测适用域和误差带也不构成临床验证。详见 `experiments/v5/DATA_LICENSE.txt`、`identity_audit.json`、`affinity_evaluation.json` 和 `source_availability.json`。
+
 The original paper describes three data sources:
 
 - Classical TCM literature: 30 foundational books after OCR correction.

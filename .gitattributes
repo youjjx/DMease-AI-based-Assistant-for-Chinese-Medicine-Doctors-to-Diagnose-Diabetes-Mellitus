@@ -1,3 +1,6 @@
 experiments/v4/*.json text eol=lf
 experiments/v4/**/*.json text eol=lf
 models/planning_v4/*.pt binary
+experiments/v5/*.json text eol=lf
+experiments/v5/**/*.json text eol=lf
+models/planning_v5/*.pt binary

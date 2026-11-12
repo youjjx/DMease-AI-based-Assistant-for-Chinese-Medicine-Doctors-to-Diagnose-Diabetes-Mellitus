@@ -1,0 +1,26 @@
+{
+  "requests": [
+    {
+      "method": "GET",
+      "url": "https://www.ebi.ac.uk/chembl/api/data/molecule/CHEMBL50.json",
+      "params": null,
+      "checked_at": "2026-11-12T10:37:13.121152+00:00",
+      "error": "ReadTimeout"
+    },
+    {
+      "method": "POST",
+      "url": "http://www.symmap.org/related_components/",
+      "params": {
+        "rrid": "SMHB00580",
+        "table_name": "Ingredient",
+        "filter": "0"
+      },
+      "checked_at": "2026-11-12T10:37:13.121595+00:00",
+      "status": 502,
+      "content_type": "text/html; charset=utf-8",
+      "response_bytes": 157,
+      "valid_json": false
+    }
+  ],
+  "note": "Availability check only; failures are not empty scientific data. Curated ChEMBL37 snapshot and PubChem property cache are versioned separately."
+}

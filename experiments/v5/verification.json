@@ -1,0 +1,54 @@
+{
+  "molecular_fingerprint": "09d66cea4bc0e028352fdcf1a252f6005a241bf3d519a90d21af09166e1d1464",
+  "identity_links_verified": 1128,
+  "structures_verified": 816,
+  "affinity_entries_verified": 86,
+  "max_prediction_reconstruction_error": 3.1688250601291656e-07,
+  "planning_rows_rescored": 5120,
+  "max_objective_error": 0.0,
+  "verified_checkpoints": 27,
+  "independent_scalar_exact_checks": [
+    {
+      "query_id": "23d1ab8c02ac021364b3b7544de30b7d2bcce7df21aba80643fbfdbb623e8355",
+      "feasible_subsets": 2973,
+      "objective": 0.4685337060391903
+    },
+    {
+      "query_id": "3054df26719460048856da13c3efe9e119764eddd973d496c207e78d5f7ae72f",
+      "feasible_subsets": 2973,
+      "objective": 0.48464250092208383
+    },
+    {
+      "query_id": "990270b6288613e085e52f27d591397a7492398ba8661b54443dca27c4dbf27f",
+      "feasible_subsets": 2973,
+      "objective": 0.48704131369292736
+    },
+    {
+      "query_id": "cae12e73070b9493e45fb1713a5b2eef002fe4ba04db801741a0bf21a4e722ec",
+      "feasible_subsets": 2973,
+      "objective": 0.5367837072312832
+    },
+    {
+      "query_id": "1474e72e10ab70a07d90cd56d8476539056479e210ff824947d3d2723df01619",
+      "feasible_subsets": 2973,
+      "objective": 0.5384503656327724
+    },
+    {
+      "query_id": "f734e9c29ab2fbf3d62b75df5c12e1419dc9c1999e0b8b0126356cbc9bb7807a",
+      "feasible_subsets": 2973,
+      "objective": 0.5664712154567242
+    },
+    {
+      "query_id": "9bae6c6c79afdb92f5e4ea14e6710379824f3615eaa852aa8fbd099a902bc315",
+      "feasible_subsets": 2973,
+      "objective": 0.6114898675382137
+    },
+    {
+      "query_id": "e56b0b8e19ea1864cd16ff3356fbd2580fdff03d71c1fe85dbd7d0ef0e44f877",
+      "feasible_subsets": 2973,
+      "objective": 0.6102837198674678
+    }
+  ],
+  "test_base_groups": 80,
+  "scope": "Offline feature-snapshot and artifact audit; molecular structure reconstruction is not independent chemical or clinical validation."
+}

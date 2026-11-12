@@ -18,7 +18,9 @@ ROOT = Path(__file__).resolve().parent
 DATA = Path(os.environ.get("DMEASE_DATA_DIR", str(ROOT / "runtime")))
 DEFAULT_CHECKPOINT = ROOT / "models/public_evidence_kan_ppo.pt"
 CHECKPOINT = Path(os.environ.get("DMEASE_CHECKPOINT", str(DEFAULT_CHECKPOINT)))
-BUNDLE = Path(os.environ.get("DMEASE_EVIDENCE_BUNDLE", str(ROOT / "data/processed/evidence_bundle.json")))
+PUBLISHED_BUNDLE = ROOT / "experiments/v5/planning_features.json"
+DEFAULT_BUNDLE = ROOT / "data/processed/evidence_bundle.json"
+BUNDLE = Path(os.environ.get("DMEASE_EVIDENCE_BUNDLE", str(DEFAULT_BUNDLE if DEFAULT_BUNDLE.exists() else PUBLISHED_BUNDLE)))
 PAGES = ["首页", "辅助分析", "患者记录", "知识图谱", "研究复现", "系统与账号"]
 STEPS = ["1 资料录入", "2 症状与证候", "3 候选与解释", "4 约束与保存"]
 CONSTITUTIONS = ["平和质", "气虚质", "阴虚质", "阳虚质", "痰湿质", "湿热质", "血瘀质", "气郁质", "特禀质"]
@@ -39,6 +41,9 @@ def load_auth(path):
 
 @st.cache_resource
 def load_service(path, checkpoint, modified, bundle, bundle_modified):
+    if Path(bundle).resolve() == PUBLISHED_BUNDLE.resolve():
+        from dmease.molecular_feature_graph import published_service
+        return published_service(bundle, Path(path) / "patients.db", checkpoint)
     return DMeaseService(bundle, Path(path) / "patients.db", checkpoint)
 
 
@@ -177,7 +182,10 @@ def input_form(service):
         forbidden = st.multiselect("本次明确禁用中药", service.graph.herb_names, default=[x for x in draft.get("forbidden_herbs", []) if x in service.graph.herb_names])
         pair_text = st.text_area("本次配伍排除", "\n".join("、".join(x) for x in draft.get("forbidden_pairs", [])),
                                 placeholder="每行填写两味当前范围内的中药，用顿号或逗号分隔；填写后不会同时入选。", height=80)
-        strategy = st.selectbox("选择策略", ["默认（依据验证集表现）", "公开证据增益", "KAN/PPO对照"])
+        strategy = st.selectbox("选择策略", ["默认（依据验证集表现）", "公开证据增益", "KAN/PPO对照",
+            "分子证据增益", "分子KAN/PPO", "分子KAN/PPO＋贪心核对"])
+        if strategy.startswith("分子"):
+            st.caption("连接药材、成分、分子结构和Ki/Kd证据。分子KAN/PPO使用完成训练的模型；贪心核对会另算候选集后按同一目标择优，结果中注明实际采用者。")
         top_k = st.slider("候选中药数量上限", 1, 12, int(st.session_state.get("draft_top_k", 8)))
         submitted = st.form_submit_button("开始辅助分析", type="primary", width="stretch")
         saved_draft = st.form_submit_button("保存输入草稿")
@@ -204,9 +212,14 @@ def input_form(service):
             st.error("性别与妊娠状态不一致，请核对。")
         else:
             try:
-                result = service.analyze(PatientProfile(**draft), selected, top_k,
-                                         strategy={"默认（依据验证集表现）": None, "公开证据增益": "greedy", "KAN/PPO对照": "kan"}[strategy])
-            except ValueError as error:
+                if strategy.startswith("分子"):
+                    from dmease.molecular_runtime import analyze as molecular_analyze
+                    result = molecular_analyze(service, PatientProfile(**draft), selected, top_k, ROOT,
+                        {"分子证据增益": "molecular_greedy", "分子KAN/PPO": "molecular_kan", "分子KAN/PPO＋贪心核对": "molecular_guarded"}[strategy])
+                else:
+                    result = service.analyze(PatientProfile(**draft), selected, top_k,
+                                             strategy={"默认（依据验证集表现）": None, "公开证据增益": "greedy", "KAN/PPO对照": "kan"}[strategy])
+            except (ValueError, OSError) as error:
                 st.error(str(error))
                 return
             if not any(x.present for x in result.parsed_symptoms):
@@ -255,7 +268,7 @@ def analysis(service, owner):
                           for x in result.recommendations], hide_index=True, width="stretch")
             chosen = st.selectbox("选择候选查看解释", [x.name for x in result.recommendations])
             herb = next(x for x in result.recommendations if x.name == chosen)
-            st.caption("排序依据公开数据库的关联覆盖；不能将入选顺序解释为处方或疗效优劣。")
+            st.caption("排序依据本次选择的证据目标；分子模式另计成分亲和度索引。候选顺序不能解释为处方或疗效优劣。")
             for path in herb.evidence_paths:
                 st.write("• " + path)
             for warning in herb.warnings:
@@ -272,6 +285,10 @@ def analysis(service, owner):
                     else:
                         st.info("当前公开数据索引未收录该名称对应的完整路径。")
         trace = result.metadata.get("trace", {})
+        if result.metadata.get("molecular_evidence"):
+            from dmease.research_v5_ui import display_result as display_molecular_result
+            with st.expander("分子链路、模型与数据缺口", expanded=True):
+                display_molecular_result(result.metadata["molecular_evidence"], key="patient_molecular")
         st.write("逐步选择过程")
         st.dataframe([{"步骤": x["step"], "中药": x["herb"], "新增证据增益": x["marginal_evidence_gain"],
                        "策略概率": x.get("policy_probability"), "未覆盖证据量": sum(x["residual_evidence"].values())}
@@ -673,7 +690,11 @@ def research_v3_evaluation(service):
 def research(service):
     st.subheader("研究复现")
     st.caption("选择公开症状检索组合，使用与辅助分析相同的证据、约束和序贯策略；这里不是临床病例评价。")
-    workspace = st.radio("研究工作区", ["序贯推理", "实验评估", "改进与外部评价", "亲和度与模型抽取", "结构化抽取与约束规划"], horizontal=True)
+    workspace = st.radio("研究工作区", ["序贯推理", "实验评估", "改进与外部评价", "亲和度与模型抽取", "结构化抽取与约束规划", "成分结构与分子推荐"], horizontal=True)
+    if workspace == "成分结构与分子推荐":
+        from dmease.research_v5_ui import show
+        show(service, ROOT)
+        return
     if workspace == "结构化抽取与约束规划":
         from dmease.research_v4_ui import show
         show(service, ROOT)
@@ -758,6 +779,12 @@ def settings(service, auth, owner):
             with st.expander("查看模型完整元数据"):
                 st.json(service.recommender.model_metadata)
         st.caption("部署者可通过DMEASE_CHECKPOINT指定训练检查点；更换检查点后重新加载页面即可识别更新。")
+        molecular_selection = ROOT / "experiments/v5/planning_selection.json"
+        if molecular_selection.exists():
+            selection = json.loads(molecular_selection.read_text(encoding="utf8"))
+            st.write("**分子KAN/PPO完整训练模型**　" + selection["final_ppo_run"] + "；100次PPO更新。")
+            st.caption("分子证据版本：" + selection["provenance"]["molecular_evidence"])
+            st.caption("分子策略在辅助分析中单独选择；实测、预测与缺失信息随结果保存。")
     elif section == "修改密码":
         with st.form("change_password", clear_on_submit=True):
             old = st.text_input("当前密码", type="password", max_chars=128)
@@ -783,7 +810,7 @@ def settings(service, auth, owner):
 ### 部署维护
 账号密码以随机盐和PBKDF2摘要保存。部署者应备份运行数据目录，并在共享网络部署时配置HTTPS与访问控制。
 ### 模型运行
-公开证据KAN/PPO训练入口为scripts/train_evidence_policy.py。辅助分析与研究页使用同一个序贯环境，每一步更新证据覆盖、已选药材与约束。缺少匹配模型时使用同一公开证据的增益策略，不使用构造数据。体质与病史仅记录，尚未完成经验证的个体化学习。""")
+公开关联KAN/PPO训练入口为scripts/train_evidence_policy.py，分子证据模型入口为scripts/planning_v5.py。辅助分析与研究页共享对应的序贯环境。分子模式逐步更新成分亲和度索引、缺失掩码、已选药材与约束；模型缺失或版本不符会报错。体质与病史仅记录，尚未完成经验证的个体化学习。""")
 
 
 auth = load_auth(str(DATA))
@@ -803,7 +830,8 @@ with st.sidebar:
     st.caption(f"{VERSION} · 当前账号：{owner}")
     page = st.radio("功能导航", PAGES, key="navigation")
     st.divider()
-    st.caption("数据：SymMap / STRING公开关联")
+    st.caption("数据：发布范围的公开证据快照" if getattr(service.evidence, "origin_mode", "") == "published_public_feature_snapshot"
+               else "数据：本机构建的SymMap / STRING公开关系")
     st.button("退出登录", on_click=clear_session, args=("已退出登录。",), width="stretch")
 st.title(SOFTWARE_NAME)
 st.caption(f"{VERSION}  /  {page}")
