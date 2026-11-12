@@ -1,0 +1,484 @@
+{
+  "provenance": {
+    "protocol_sha256": "9f5a5c3f1dcc50da239e736344c51e093dc666e0e8d45977e181fccb7c25327d",
+    "evidence_fingerprint": "f9d7cca2be94fa8a5f52036de8b0ff8fe74031ce0d9b6f0ab469a9372d272af7",
+    "code_sha256": {
+      "scripts/run_experiments.py": "f6bb7a03327b848d45298734dae333928843196b1bd0ceea62b2d71c0b3da9ee",
+      "scripts/train_evidence_policy.py": "9a8fb10250eb227a0254b007cda836a9bd8a97184a6fa6dae7f8f780ada6201d",
+      "src/dmease/experiment_metrics.py": "b9d67ae30df5f0403fdc3e8d0f462d42467138bd17c7b9d129a4dbdc9b7160d4",
+      "src/dmease/evidence_policy.py": "98243dcad03b858ff6c2107323f722d7721b56c7ec0af7507870eb0b5ad09dee",
+      "src/dmease/kan.py": "1302357aad39c37778f8ef44e2240bd2a05ca4fd8bf8e72e2db0dde3b08cb048",
+      "src/dmease/ppo.py": "15b0df53466aaf0131b96259503c33e552351f0c6a5f3764bb1371240f4b6854"
+    },
+    "python": "3.13.7",
+    "torch": "2.7.1+cu118",
+    "numpy": "2.4.1",
+    "threads": 1,
+    "device": "cpu"
+  },
+  "protocol": {
+    "protocol_id": "public-evidence-experiments-v1",
+    "created_date": "2026-11-12",
+    "base_commit": "4826e24e5624da44d4a8e49b586982189a9b6642",
+    "evidence_fingerprint": "f9d7cca2be94fa8a5f52036de8b0ff8fe74031ce0d9b6f0ab469a9372d272af7",
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "ppo_iterations": 120,
+    "warmup_epochs": 60,
+    "episodes_per_iteration": 12,
+    "validation_interval": 10,
+    "variants": [
+      "full",
+      "mlp",
+      "without_ppi",
+      "without_direct",
+      "without_targets",
+      "warm_start_only",
+      "ppo_only"
+    ],
+    "training_split": "Existing stable query hash split: 464 training, 49 validation, 62 test queries",
+    "evaluation_rule": "All selected sets are rescored on the SAME unmodified reference graph and default objective; ablated training rewards are not compared as performance metrics",
+    "model_selection": "Validation reference objective only. Test results are descriptive and do not select production models or parameters. Existing production checkpoint remains unchanged.",
+    "statistics": "Average each paired query difference across the three fixed seeds; bootstrap query units 10000 times, sign-flip Monte Carlo 20000 times, Holm correction across six full-model comparisons. Query overlap means inferential independence is not established; results are conditional descriptive evidence, not clinical inference.",
+    "sensitivity": {
+      "herb_cost": [
+        0,
+        0.01,
+        0.02,
+        0.05,
+        0.1
+      ],
+      "max_steps": [
+        1,
+        3,
+        5,
+        8,
+        12
+      ],
+      "ppi_weight": [
+        0,
+        0.05,
+        0.1,
+        0.2
+      ]
+    },
+    "missing_evidence": {
+      "drop_fractions": [
+        0.1,
+        0.25,
+        0.5
+      ],
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "rule": "Remove observed direct/symptom-target/herb-target entries for selection; score on intact reference. No fabricated edges."
+    },
+    "constraints": [
+      "exclude_first_baseline_choice",
+      "exclude_all",
+      "only_one_allowed",
+      "forbid_first_two_as_pair"
+    ],
+    "optimality": "Exhaustive enumeration of all potentially useful herb subsets up to 8 herbs on each of the 62 unconstrained test queries; identical default reference objective",
+    "parser": "Explicit developer-authored linguistic fixtures and grammar templates over public symptom names. Report before/after as development regression evaluation, never clinical diagnostic accuracy.",
+    "limits": [
+      "Public graph shared across query splits",
+      "No patient records or clinical labels",
+      "Not the paper's affinity-based reward",
+      "No claim that a database association is therapeutic benefit",
+      "No external preregistration claimed"
+    ]
+  },
+  "split_counts": {
+    "train": 464,
+    "validation": 49,
+    "test": 62
+  },
+  "ablations": {
+    "full": {
+      "parameters": 111956,
+      "seed_mean": {
+        "objective": 0.8182255002439663,
+        "symptom_evidence_coverage": 0.8682795724561138,
+        "target_evidence_coverage": 0.848074794776978,
+        "ppi_edge_coverage": 0.6612903225806451,
+        "herb_count": 3.78494623655914,
+        "hard_constraint_violations": 0.0,
+        "duplicate_count": 0.0,
+        "symptom_coverage_upper_bound_ignoring_pair_conflicts": 0.8682795724561138
+      },
+      "seed_std": {
+        "objective": 0.00014241941794429394,
+        "symptom_evidence_coverage": 0.0,
+        "target_evidence_coverage": 0.001095541242460904,
+        "ppi_edge_coverage": 0.0,
+        "herb_count": 0.009312101115961698,
+        "hard_constraint_violations": 0.0,
+        "duplicate_count": 0.0,
+        "symptom_coverage_upper_bound_ignoring_pair_conflicts": 0.0
+      },
+      "target_available_queries": 53,
+      "ppi_available_queries": 41,
+      "target_coverage_when_available": [
+        0.9928274143416926,
+        0.9906076586471414,
+        0.9928274143416926
+      ],
+      "ppi_coverage_when_available": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "mlp": {
+      "parameters": 106100,
+      "seed_mean": {
+        "objective": 0.8192134026878625,
+        "symptom_evidence_coverage": 0.8682795724561138,
+        "target_evidence_coverage": 0.847066730260849,
+        "ppi_edge_coverage": 0.6612903225806451,
+        "herb_count": 3.7204301075268815,
+        "hard_constraint_violations": 0.0,
+        "duplicate_count": 0.0,
+        "symptom_coverage_upper_bound_ignoring_pair_conflicts": 0.8682795724561138
+      },
+      "seed_std": {
+        "objective": 0.0006418975885269954,
+        "symptom_evidence_coverage": 0.0,
+        "target_evidence_coverage": 0.0010955412424608398,
+        "ppi_edge_coverage": 0.0,
+        "herb_count": 0.0246375037363217,
+        "hard_constraint_violations": 0.0,
+        "duplicate_count": 0.0,
+        "symptom_coverage_upper_bound_ignoring_pair_conflicts": 0.0
+      },
+      "target_available_queries": 53,
+      "ppi_available_queries": 41,
+      "target_coverage_when_available": [
+        0.9916481690586738,
+        0.9894284133641225,
+        0.9916481690586738
+      ],
+      "ppi_coverage_when_available": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "without_ppi": {
+      "parameters": 111956,
+      "seed_mean": {
+        "objective": 0.8172838487612304,
+        "symptom_evidence_coverage": 0.8682795724561138,
+        "target_evidence_coverage": 0.8503123025099436,
+        "ppi_edge_coverage": 0.6548387100619655,
+        "herb_count": 3.849462365591398,
+        "hard_constraint_violations": 0.0,
+        "duplicate_count": 0.0,
+        "symptom_coverage_upper_bound_ignoring_pair_conflicts": 0.8682795724561138
+      },
+      "seed_std": {
+        "objective": 0.001612944514873857,
+        "symptom_evidence_coverage": 0.0,
+        "target_evidence_coverage": 0.0005820063197475901,
+        "ppi_edge_coverage": 0.0,
+        "herb_count": 0.07272983472294985,
+        "hard_constraint_violations": 0.0,
+        "duplicate_count": 0.0,
+        "symptom_coverage_upper_bound_ignoring_pair_conflicts": 0.0
+      },
+      "target_available_queries": 53,
+      "ppi_available_queries": 41,
+      "target_coverage_when_available": [
+        0.9943118758921353,
+        0.9954911211751541,
+        0.9943118758921353
+      ],
+      "ppi_coverage_when_available": [
+        0.9902439030205331,
+        0.9902439030205331,
+        0.9902439030205331
+      ]
+    },
+    "without_direct": {
+      "parameters": 111956,
+      "seed_mean": {
+        "objective": 0.6411365869865623,
+        "symptom_evidence_coverage": 0.6335125483812823,
+        "target_evidence_coverage": 0.8548387096774194,
+        "ppi_edge_coverage": 0.6612903225806451,
+        "herb_count": 3.3494623655913975,
+        "hard_constraint_violations": 0.0,
+        "duplicate_count": 0.0,
+        "symptom_coverage_upper_bound_ignoring_pair_conflicts": 0.8682795724561138
+      },
+      "seed_std": {
+        "objective": 0.010753991796223158,
+        "symptom_evidence_coverage": 0.020880250934117054,
+        "target_evidence_coverage": 0.0,
+        "ppi_edge_coverage": 0.0,
+        "herb_count": 0.1647478865166083,
+        "hard_constraint_violations": 0.0,
+        "duplicate_count": 0.0,
+        "symptom_coverage_upper_bound_ignoring_pair_conflicts": 0.0
+      },
+      "target_available_queries": 53,
+      "ppi_available_queries": 41,
+      "target_coverage_when_available": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "ppi_coverage_when_available": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "without_targets": {
+      "parameters": 111956,
+      "seed_mean": {
+        "objective": 0.5518254962980107,
+        "symptom_evidence_coverage": 0.7396206709966865,
+        "target_evidence_coverage": 0.20253167281387954,
+        "ppi_edge_coverage": 0.05973182326202752,
+        "herb_count": 1.6236559139784947,
+        "hard_constraint_violations": 0.0,
+        "duplicate_count": 0.0,
+        "symptom_coverage_upper_bound_ignoring_pair_conflicts": 0.8682795724561138
+      },
+      "seed_std": {
+        "objective": 0.025414189387650166,
+        "symptom_evidence_coverage": 0.01035647480528835,
+        "target_evidence_coverage": 0.05855245907591812,
+        "ppi_edge_coverage": 0.033969910389762485,
+        "herb_count": 0.07956262681155243,
+        "hard_constraint_violations": 0.0,
+        "duplicate_count": 0.0,
+        "symptom_coverage_upper_bound_ignoring_pair_conflicts": 0.0
+      },
+      "target_available_queries": 53,
+      "ppi_available_queries": 41,
+      "target_coverage_when_available": [
+        0.3141356723488502,
+        0.21316246688365936,
+        0.18347339177469038
+      ],
+      "ppi_coverage_when_available": [
+        0.14960801474204877,
+        0.058943089915484914,
+        0.062427410628737474
+      ]
+    },
+    "warm_start_only": {
+      "parameters": 111956,
+      "seed_mean": {
+        "objective": 0.8202633718329091,
+        "symptom_evidence_coverage": 0.8682795724561138,
+        "target_evidence_coverage": 0.8476992412920921,
+        "ppi_edge_coverage": 0.6612903225806451,
+        "herb_count": 3.6774193548387095,
+        "hard_constraint_violations": 0.0,
+        "duplicate_count": 0.0,
+        "symptom_coverage_upper_bound_ignoring_pair_conflicts": 0.8682795724561138
+      },
+      "seed_std": {
+        "objective": 0.0005587255341150024,
+        "symptom_evidence_coverage": 0.0,
+        "target_evidence_coverage": 0.0,
+        "ppi_edge_coverage": 0.0,
+        "herb_count": 0.027936303347885095,
+        "hard_constraint_violations": 0.0,
+        "duplicate_count": 0.0,
+        "symptom_coverage_upper_bound_ignoring_pair_conflicts": 0.0
+      },
+      "target_available_queries": 53,
+      "ppi_available_queries": 41,
+      "target_coverage_when_available": [
+        0.9916481690586738,
+        0.9916481690586738,
+        0.9916481690586738
+      ],
+      "ppi_coverage_when_available": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "ppo_only": {
+      "parameters": 111956,
+      "seed_mean": {
+        "objective": 0.8122503794329141,
+        "symptom_evidence_coverage": 0.8682795724561138,
+        "target_evidence_coverage": 0.8475125627492064,
+        "ppi_edge_coverage": 0.6612903225806451,
+        "herb_count": 4.075268817204301,
+        "hard_constraint_violations": 0.0,
+        "duplicate_count": 0.0,
+        "symptom_coverage_upper_bound_ignoring_pair_conflicts": 0.8682795724561138
+      },
+      "seed_std": {
+        "objective": 0.003034342204800058,
+        "symptom_evidence_coverage": 0.0,
+        "target_evidence_coverage": 0.00206935568020388,
+        "ppi_edge_coverage": 0.0,
+        "herb_count": 0.13526608199364648,
+        "hard_constraint_violations": 0.0,
+        "duplicate_count": 0.0,
+        "symptom_coverage_upper_bound_ignoring_pair_conflicts": 0.0
+      },
+      "target_available_queries": 53,
+      "ppi_available_queries": 41,
+      "target_coverage_when_available": [
+        0.9928274143416926,
+        0.9928274143416926,
+        0.9886345424742069
+      ],
+      "ppi_coverage_when_available": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "full_minus_variant": {
+    "mlp": {
+      "queries": 62,
+      "mean_difference": -0.0009879024438960555,
+      "query_bootstrap_95ci": [
+        -0.0024260759994547795,
+        0.0005174766384786205
+      ],
+      "sign_flip_p": 0.216089195540223,
+      "paired_dz": -0.16359631344877418,
+      "wins_ties_losses": [
+        7,
+        40,
+        15
+      ],
+      "holm_p": 0.432178391080446
+    },
+    "without_ppi": {
+      "queries": 62,
+      "mean_difference": 0.0009416514827359143,
+      "query_bootstrap_95ci": [
+        -0.0008989553778402248,
+        0.00290322880591116
+      ],
+      "sign_flip_p": 0.3765311734413279,
+      "paired_dz": 0.12367050037630223,
+      "wins_ties_losses": [
+        13,
+        40,
+        9
+      ],
+      "holm_p": 0.432178391080446
+    },
+    "without_direct": {
+      "queries": 62,
+      "mean_difference": 0.17708891325740406,
+      "query_bootstrap_95ci": [
+        0.11711161388585004,
+        0.24339745995258127
+      ],
+      "sign_flip_p": 4.999750012499375e-05,
+      "paired_dz": 0.7018132123338731,
+      "wins_ties_losses": [
+        39,
+        11,
+        12
+      ],
+      "holm_p": 0.0002999850007499625
+    },
+    "without_targets": {
+      "queries": 62,
+      "mean_difference": 0.2664000039459557,
+      "query_bootstrap_95ci": [
+        0.22099542489014967,
+        0.3126277376346851
+      ],
+      "sign_flip_p": 4.999750012499375e-05,
+      "paired_dz": 1.4329724266152735,
+      "wins_ties_losses": [
+        52,
+        10,
+        0
+      ],
+      "holm_p": 0.0002999850007499625
+    },
+    "warm_start_only": {
+      "queries": 62,
+      "mean_difference": -0.002037871588942824,
+      "query_bootstrap_95ci": [
+        -0.0033534941493823934,
+        -0.0007526877746787147
+      ],
+      "sign_flip_p": 0.004249787510624469,
+      "paired_dz": -0.3813124180404055,
+      "wins_ties_losses": [
+        3,
+        41,
+        18
+      ],
+      "holm_p": 0.012749362531873407
+    },
+    "ppo_only": {
+      "queries": 62,
+      "mean_difference": 0.005975120811052222,
+      "query_bootstrap_95ci": [
+        0.003906809506557321,
+        0.00826902736418991
+      ],
+      "sign_flip_p": 4.999750012499375e-05,
+      "paired_dz": 0.6777714108521601,
+      "wins_ties_losses": [
+        31,
+        28,
+        3
+      ],
+      "holm_p": 0.0002999850007499625
+    }
+  },
+  "baseline_greedy": {
+    "queries": 62,
+    "mean": {
+      "objective": 0.8212311138068477,
+      "symptom_evidence_coverage": 0.8682795724561138,
+      "target_evidence_coverage": 0.8476992412920921,
+      "ppi_edge_coverage": 0.6612903225806451,
+      "herb_count": 3.629032258064516,
+      "hard_constraint_violations": 0.0,
+      "duplicate_count": 0.0,
+      "symptom_coverage_upper_bound_ignoring_pair_conflicts": 0.8682795724561138
+    },
+    "target_available_queries": 53,
+    "target_coverage_when_available": 0.9916481690586738,
+    "ppi_available_queries": 41,
+    "ppi_coverage_when_available": 1.0,
+    "violation_total": 0
+  },
+  "constraints_evaluated": 1488,
+  "constraint_violations": 0,
+  "exact_subsets_evaluated": 1247121,
+  "exact_minus_greedy": {
+    "queries": 62,
+    "mean_difference": 0.002237905417719195,
+    "query_bootstrap_95ci": [
+      0.0009072624627620943,
+      0.0038508090280717417
+    ],
+    "sign_flip_p": 0.007699615019249037,
+    "paired_dz": 0.35376739305245,
+    "wins_ties_losses": [
+      7,
+      55,
+      0
+    ]
+  },
+  "completed_at": "2026-11-12T02:04:56.864842+00:00"
+}

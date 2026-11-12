@@ -457,9 +457,85 @@ def public_evidence_page():
     st.download_button("导出当前公开检索结果", json_export(rows), "public_evidence.json", "application/json")
 
 
+def experimental_evaluation(service):
+    folder = ROOT / "experiments/results"
+    path = folder / "summary.json"
+    if not path.exists():
+        st.info("此版本尚未附带扩展实验报告。")
+        return
+    report = json.loads(path.read_text(encoding="utf8"))
+    st.caption("固定公开图谱上的工程实验：464个训练查询、49个验证查询、62个测试查询；三个随机种子。查询不是病例。")
+    if report["provenance"]["evidence_fingerprint"] != service.evidence.fingerprint:
+        st.warning("实验报告与本机当前证据版本不同，下列结果仅描述报告所记录的版本。")
+    names = {"full": "KAN + PPO", "mlp": "MLP + PPO", "without_ppi": "移除PPI",
+             "without_direct": "移除直接关系", "without_targets": "移除靶点及PPI",
+             "warm_start_only": "仅模仿预训练", "ppo_only": "仅PPO训练"}
+    section = st.selectbox("实验项目", ["模型与消融", "约束压力测试", "参数敏感性", "证据缺失", "精确最优解对照", "文本解析回归"])
+    if section == "模型与消融":
+        st.dataframe([{"方法": names[k], "综合目标均值": v["seed_mean"]["objective"],
+                       "种子间标准差": v["seed_std"]["objective"], "平均候选数": v["seed_mean"]["herb_count"],
+                       "参数量": v["parameters"]} for k, v in report["ablations"].items()], hide_index=True, width="stretch")
+        st.write(f"证据增益基线综合目标：{report['baseline_greedy']['mean']['objective']:.6f}。")
+        st.caption("所有候选集合均在同一完整参考图谱和目标下重新评分；当前结果不支持KAN/PPO优于简单基线。模型和默认参数不按测试结果更换。")
+        baseline = report["baseline_greedy"]
+        st.write(f"靶点证据可用查询：{baseline['target_available_queries']}/62；PPI证据可用查询：{baseline['ppi_available_queries']}/62。")
+        st.caption("缺少证据的查询与有证据时的覆盖率分开统计，避免将数据缺失解释为算法失败或疗效为零。")
+        with st.expander("配对比较与统计方法"):
+            st.dataframe([{"对照": names[k], "完整模型减对照": v["mean_difference"],
+                           "区间下限": v["query_bootstrap_95ci"][0], "区间上限": v["query_bootstrap_95ci"][1],
+                           "Holm调整p": v["holm_p"]} for k, v in report["full_minus_variant"].items()], hide_index=True)
+            st.caption("先平均三个固定种子的每查询差值，再按查询重采样。症状组合存在重叠，独立性未成立；区间和p值只作条件性描述，不是临床统计证据。")
+    elif section == "约束压力测试":
+        data = json.loads((folder / "constraints.json").read_text(encoding="utf8"))
+        labels = {"exclude_first_baseline_choice": "排除基线首选", "exclude_all": "全部排除",
+                  "only_one_allowed": "仅允许一种", "forbid_first_two_as_pair": "排除首两味同时入选"}
+        st.metric("违反指定约束次数 / 总查询执行次数", f"{report['constraint_violations']} / {report['constraints_evaluated']}")
+        st.dataframe([{"场景": labels[r["scenario"]], "策略": r["mode"], "种子": r["seed"],
+                       "有效约束查询": r["active_constraint_queries"], "违规次数": r["violation_total"],
+                       "平均候选数": r["mean"]["herb_count"]} for r in data["results"]], hide_index=True, width="stretch")
+        st.caption("测试的是明确输入的排除规则，规则用于检查程序行为，不构成药物禁忌知识或临床安全性验证。")
+    elif section in ("参数敏感性", "证据缺失"):
+        filename = "sensitivity.json" if section == "参数敏感性" else "missing_evidence.json"
+        data = json.loads((folder / filename).read_text(encoding="utf8"))
+        rows = [{**{k: r[k] for k in ("parameter", "value") if k in r},
+                 **{k: r[k] for k in ("drop_fraction", "mode", "seed") if k in r},
+                 "参考综合目标": r["mean"]["objective"], "平均候选数": r["mean"]["herb_count"]} for r in data["results"]]
+        st.dataframe(rows, hide_index=True, width="stretch")
+        st.caption("参数仅改变选择过程，评分仍使用完整参考图谱和默认目标。证据缺失实验只删除已观察到的关系；模型使用完整图谱训练的固定权重，不重新训练。")
+    elif section == "精确最优解对照":
+        data = json.loads((folder / "optimality.json").read_text(encoding="utf8"))
+        st.write(f"已检查{report['exact_subsets_evaluated']:,}个可行子集，数量上限为8味。")
+        stats = data["exact_minus_greedy"]
+        st.metric("最优解相对证据增益的平均目标差", f"{stats['mean_difference']:.6f}")
+        st.write(f"62个查询中，最优解更高 / 相同 / 更低：{stats['wins_ties_losses']}（数值容差为0.000001）。")
+        st.dataframe([{"查询标识": r["query_id"], "最优参考目标": r["objective"],
+                       "候选集合": "、".join(r["selected_herbs"]), "检查子集数": r["enumerated_feasible_subsets"]}
+                      for r in data["exact"]], hide_index=True, width="stretch")
+        st.caption("这是给定图谱与工程目标的集合最优解，不表示最佳处方。枚举仅适用于当前小规模范围。")
+    else:
+        before = json.loads((folder / "parser_before.json").read_text(encoding="utf8"))
+        after = json.loads((folder / "parser_after.json").read_text(encoding="utf8"))
+        st.dataframe([{"版本": label, "用例数": r["cases"], "完全一致数": r["exact_matches"],
+                       "实体及状态micro-F1": r["entity_state_micro_f1"]}
+                      for label, r in [("修复前", before["summary"]["all"]), ("修复后", after["summary"]["all"])]], hide_index=True)
+        st.warning("164条用例由开发过程编写或模板展开，参与了规则修复。这是回归检查，不是独立测试集、专家标注或临床识别准确率。")
+        fixed = [r for r in before["rows"] if not r["exact"]]
+        with st.expander("查看修复前的错误用例"):
+            st.dataframe([{"文本": r["text"], "预期": json.dumps(r["expected"], ensure_ascii=False),
+                           "原输出": json.dumps(r["predicted"], ensure_ascii=False)} for r in fixed], hide_index=True)
+    st.download_button("下载实验汇总 JSON", json_export(report), "dmease_experiments.json", "application/json")
+    html = ROOT / "experiments/report.html"
+    if html.exists():
+        st.download_button("下载完整实验报告", html.read_bytes(), "DMease_实验报告.html", "text/html")
+
+
 def research(service):
     st.subheader("研究复现")
     st.caption("选择公开症状检索组合，使用与辅助分析相同的证据、约束和序贯策略；这里不是临床病例评价。")
+    workspace = st.radio("研究工作区", ["序贯推理", "实验评估"], horizontal=True)
+    if workspace == "实验评估":
+        experimental_evaluation(service)
+        return
     defaults = [x for x in ["口渴", "乏力", "尿频"] if x in service.graph.symptom_names]
     selected = st.multiselect("选择研究症状", service.graph.symptom_names, default=defaults)
     forbidden = st.multiselect("研究排除中药", service.graph.herb_names)
@@ -499,6 +575,7 @@ def research(service):
         st.dataframe(attribution, width="stretch")
         st.caption("梯度属于模型局部敏感度，不是医学因果关系。无匹配KAN模型时使用证据增益策略，梯度为空。")
     else:
+        experimental_evaluation(service)
         path = ROOT / "models/public_evidence_evaluation.json"
         if path.exists():
             report = json.loads(path.read_text(encoding="utf8"))

@@ -1,0 +1,2513 @@
+{
+  "label": "before",
+  "case_sha256": "f6c781052fb2243938c4f85397377987a44082a524a8eb71b68178078bd5d1a0",
+  "parser_sha256": "331d5c355ded9b322f150036e9494b35e0cb8f8cb86387f404c9f1ad1e7ede42",
+  "evidence_fingerprint": "f9d7cca2be94fa8a5f52036de8b0ff8fe74031ce0d9b6f0ab469a9372d272af7",
+  "scope": "Agent-authored development fixtures and generated grammar templates; no clinical records or expert labels",
+  "summary": {
+    "all": {
+      "cases": 164,
+      "exact_matches": 80,
+      "entity_state_micro_f1": 0.5242165242165242,
+      "fp": 87,
+      "fn": 80
+    },
+    "curated_development": {
+      "cases": 20,
+      "exact_matches": 11,
+      "entity_state_micro_f1": 0.7017543859649122,
+      "fp": 9,
+      "fn": 8
+    },
+    "generated_grammar": {
+      "cases": 144,
+      "exact_matches": 69,
+      "entity_state_micro_f1": 0.4897959183673469,
+      "fp": 78,
+      "fn": 72
+    }
+  },
+  "rows": [
+    {
+      "id": "manual-00",
+      "group": "curated_development",
+      "text": "无明显诱因出现口渴",
+      "expected": {
+        "口渴": true
+      },
+      "predicted": {
+        "口渴": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "manual-01",
+      "group": "curated_development",
+      "text": "乏力已消失，目前口渴",
+      "expected": {
+        "乏力": false,
+        "口渴": true
+      },
+      "predicted": {
+        "乏力": true,
+        "口渴": true
+      },
+      "exact": false,
+      "tp": 1,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "manual-02",
+      "group": "curated_development",
+      "text": "否认乏力，但口渴明显",
+      "expected": {
+        "乏力": false,
+        "口渴": true
+      },
+      "predicted": {
+        "口渴": true,
+        "乏力": false
+      },
+      "exact": true,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "manual-03",
+      "group": "curated_development",
+      "text": "夜尿频多",
+      "expected": {
+        "夜尿频多": true
+      },
+      "predicted": {
+        "夜尿频多": true,
+        "尿频": true
+      },
+      "exact": false,
+      "tp": 1,
+      "fp": 1,
+      "fn": 0
+    },
+    {
+      "id": "manual-04",
+      "group": "curated_development",
+      "text": "并非没有乏力",
+      "expected": {
+        "乏力": true
+      },
+      "predicted": {
+        "乏力": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "manual-05",
+      "group": "curated_development",
+      "text": "没有乏力，口渴未缓解",
+      "expected": {
+        "乏力": false,
+        "口渴": true
+      },
+      "predicted": {
+        "口渴": true,
+        "乏力": false
+      },
+      "exact": true,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "manual-06",
+      "group": "curated_development",
+      "text": "无口渴及乏力",
+      "expected": {
+        "口渴": false,
+        "乏力": false
+      },
+      "predicted": {
+        "乏力": false,
+        "口渴": false
+      },
+      "exact": true,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "manual-07",
+      "group": "curated_development",
+      "text": "无乏力；口渴",
+      "expected": {
+        "乏力": false,
+        "口渴": true
+      },
+      "predicted": {
+        "口渴": true,
+        "乏力": false
+      },
+      "exact": true,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "manual-08",
+      "group": "curated_development",
+      "text": "既往口渴，现无口渴",
+      "expected": {
+        "口渴": false
+      },
+      "predicted": {
+        "口渴": true
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "manual-09",
+      "group": "curated_development",
+      "text": "无论何时都感到乏力",
+      "expected": {
+        "乏力": true
+      },
+      "predicted": {
+        "乏力": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "manual-10",
+      "group": "curated_development",
+      "text": "口渴已好转，但仍存在",
+      "expected": {
+        "口渴": true
+      },
+      "predicted": {
+        "口渴": true
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "manual-11",
+      "group": "curated_development",
+      "text": "乏力不明显",
+      "expected": {
+        "乏力": true
+      },
+      "predicted": {
+        "乏力": true
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "manual-12",
+      "group": "curated_development",
+      "text": "否认口渴\n乏力",
+      "expected": {
+        "口渴": false,
+        "乏力": true
+      },
+      "predicted": {
+        "乏力": true,
+        "口渴": false
+      },
+      "exact": true,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "manual-13",
+      "group": "curated_development",
+      "text": "口渴不存在，乏力持续",
+      "expected": {
+        "口渴": false,
+        "乏力": true
+      },
+      "predicted": {
+        "乏力": true,
+        "口渴": true
+      },
+      "exact": false,
+      "tp": 1,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "manual-14",
+      "group": "curated_development",
+      "text": "不伴肢体麻木，口渴",
+      "expected": {
+        "肢体麻木": false,
+        "口渴": true
+      },
+      "predicted": {
+        "口渴": true,
+        "肢体麻木": false
+      },
+      "exact": true,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "manual-15",
+      "group": "curated_development",
+      "text": "不能否认存在乏力",
+      "expected": {
+        "乏力": true
+      },
+      "predicted": {
+        "乏力": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "manual-16",
+      "group": "curated_development",
+      "text": "主诉：暂无可描述的不适",
+      "expected": {},
+      "predicted": {},
+      "exact": true,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "manual-17",
+      "group": "curated_development",
+      "text": "从未出现乏力",
+      "expected": {
+        "乏力": false
+      },
+      "predicted": {
+        "乏力": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "manual-18",
+      "group": "curated_development",
+      "text": "昨夜乏力，今天未见乏力",
+      "expected": {
+        "乏力": false
+      },
+      "predicted": {
+        "乏力": true
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "manual-19",
+      "group": "curated_development",
+      "text": "口渴但没有乏力",
+      "expected": {
+        "口渴": true,
+        "乏力": false
+      },
+      "predicted": {
+        "口渴": true,
+        "乏力": false
+      },
+      "exact": true,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00046-0",
+      "group": "generated_grammar",
+      "text": "出现便溏",
+      "expected": {
+        "便溏": true
+      },
+      "predicted": {
+        "便溏": true
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00046-1",
+      "group": "generated_grammar",
+      "text": "否认便溏",
+      "expected": {
+        "便溏": false
+      },
+      "predicted": {
+        "便溏": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00046-2",
+      "group": "generated_grammar",
+      "text": "未见便溏",
+      "expected": {
+        "便溏": false
+      },
+      "predicted": {
+        "便溏": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00046-3",
+      "group": "generated_grammar",
+      "text": "便溏已消失",
+      "expected": {
+        "便溏": false
+      },
+      "predicted": {
+        "便溏": true
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00046-4",
+      "group": "generated_grammar",
+      "text": "无明显诱因出现便溏",
+      "expected": {
+        "便溏": true
+      },
+      "predicted": {
+        "便溏": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00046-5",
+      "group": "generated_grammar",
+      "text": "并非没有便溏",
+      "expected": {
+        "便溏": true
+      },
+      "predicted": {
+        "便溏": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00139-0",
+      "group": "generated_grammar",
+      "text": "出现刺痛",
+      "expected": {
+        "刺痛": true
+      },
+      "predicted": {
+        "刺痛": true
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00139-1",
+      "group": "generated_grammar",
+      "text": "否认刺痛",
+      "expected": {
+        "刺痛": false
+      },
+      "predicted": {
+        "刺痛": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00139-2",
+      "group": "generated_grammar",
+      "text": "未见刺痛",
+      "expected": {
+        "刺痛": false
+      },
+      "predicted": {
+        "刺痛": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00139-3",
+      "group": "generated_grammar",
+      "text": "刺痛已消失",
+      "expected": {
+        "刺痛": false
+      },
+      "predicted": {
+        "刺痛": true
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00139-4",
+      "group": "generated_grammar",
+      "text": "无明显诱因出现刺痛",
+      "expected": {
+        "刺痛": true
+      },
+      "predicted": {
+        "刺痛": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00139-5",
+      "group": "generated_grammar",
+      "text": "并非没有刺痛",
+      "expected": {
+        "刺痛": true
+      },
+      "predicted": {
+        "刺痛": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00183-0",
+      "group": "generated_grammar",
+      "text": "出现盗汗",
+      "expected": {
+        "盗汗": true
+      },
+      "predicted": {
+        "盗汗": true
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00183-1",
+      "group": "generated_grammar",
+      "text": "否认盗汗",
+      "expected": {
+        "盗汗": false
+      },
+      "predicted": {
+        "盗汗": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00183-2",
+      "group": "generated_grammar",
+      "text": "未见盗汗",
+      "expected": {
+        "盗汗": false
+      },
+      "predicted": {
+        "盗汗": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00183-3",
+      "group": "generated_grammar",
+      "text": "盗汗已消失",
+      "expected": {
+        "盗汗": false
+      },
+      "predicted": {
+        "盗汗": true
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00183-4",
+      "group": "generated_grammar",
+      "text": "无明显诱因出现盗汗",
+      "expected": {
+        "盗汗": true
+      },
+      "predicted": {
+        "盗汗": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00183-5",
+      "group": "generated_grammar",
+      "text": "并非没有盗汗",
+      "expected": {
+        "盗汗": true
+      },
+      "predicted": {
+        "盗汗": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00213-0",
+      "group": "generated_grammar",
+      "text": "出现多食",
+      "expected": {
+        "多食": true
+      },
+      "predicted": {
+        "多食": true
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00213-1",
+      "group": "generated_grammar",
+      "text": "否认多食",
+      "expected": {
+        "多食": false
+      },
+      "predicted": {
+        "多食": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00213-2",
+      "group": "generated_grammar",
+      "text": "未见多食",
+      "expected": {
+        "多食": false
+      },
+      "predicted": {
+        "多食": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00213-3",
+      "group": "generated_grammar",
+      "text": "多食已消失",
+      "expected": {
+        "多食": false
+      },
+      "predicted": {
+        "多食": true
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00213-4",
+      "group": "generated_grammar",
+      "text": "无明显诱因出现多食",
+      "expected": {
+        "多食": true
+      },
+      "predicted": {
+        "多食": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00213-5",
+      "group": "generated_grammar",
+      "text": "并非没有多食",
+      "expected": {
+        "多食": true
+      },
+      "predicted": {
+        "多食": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00240-0",
+      "group": "generated_grammar",
+      "text": "出现乏力",
+      "expected": {
+        "乏力": true
+      },
+      "predicted": {
+        "乏力": true
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00240-1",
+      "group": "generated_grammar",
+      "text": "否认乏力",
+      "expected": {
+        "乏力": false
+      },
+      "predicted": {
+        "乏力": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00240-2",
+      "group": "generated_grammar",
+      "text": "未见乏力",
+      "expected": {
+        "乏力": false
+      },
+      "predicted": {
+        "乏力": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00240-3",
+      "group": "generated_grammar",
+      "text": "乏力已消失",
+      "expected": {
+        "乏力": false
+      },
+      "predicted": {
+        "乏力": true
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00240-4",
+      "group": "generated_grammar",
+      "text": "无明显诱因出现乏力",
+      "expected": {
+        "乏力": true
+      },
+      "predicted": {
+        "乏力": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00240-5",
+      "group": "generated_grammar",
+      "text": "并非没有乏力",
+      "expected": {
+        "乏力": true
+      },
+      "predicted": {
+        "乏力": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00292-0",
+      "group": "generated_grammar",
+      "text": "出现腹胀",
+      "expected": {
+        "腹胀": true
+      },
+      "predicted": {
+        "腹胀": true
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00292-1",
+      "group": "generated_grammar",
+      "text": "否认腹胀",
+      "expected": {
+        "腹胀": false
+      },
+      "predicted": {
+        "腹胀": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00292-2",
+      "group": "generated_grammar",
+      "text": "未见腹胀",
+      "expected": {
+        "腹胀": false
+      },
+      "predicted": {
+        "腹胀": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00292-3",
+      "group": "generated_grammar",
+      "text": "腹胀已消失",
+      "expected": {
+        "腹胀": false
+      },
+      "predicted": {
+        "腹胀": true
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00292-4",
+      "group": "generated_grammar",
+      "text": "无明显诱因出现腹胀",
+      "expected": {
+        "腹胀": true
+      },
+      "predicted": {
+        "腹胀": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00292-5",
+      "group": "generated_grammar",
+      "text": "并非没有腹胀",
+      "expected": {
+        "腹胀": true
+      },
+      "predicted": {
+        "腹胀": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00573-0",
+      "group": "generated_grammar",
+      "text": "出现口干",
+      "expected": {
+        "口干": true
+      },
+      "predicted": {
+        "口干": true
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00573-1",
+      "group": "generated_grammar",
+      "text": "否认口干",
+      "expected": {
+        "口干": false
+      },
+      "predicted": {
+        "口干": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00573-2",
+      "group": "generated_grammar",
+      "text": "未见口干",
+      "expected": {
+        "口干": false
+      },
+      "predicted": {
+        "口干": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00573-3",
+      "group": "generated_grammar",
+      "text": "口干已消失",
+      "expected": {
+        "口干": false
+      },
+      "predicted": {
+        "口干": true
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00573-4",
+      "group": "generated_grammar",
+      "text": "无明显诱因出现口干",
+      "expected": {
+        "口干": true
+      },
+      "predicted": {
+        "口干": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00573-5",
+      "group": "generated_grammar",
+      "text": "并非没有口干",
+      "expected": {
+        "口干": true
+      },
+      "predicted": {
+        "口干": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00577-0",
+      "group": "generated_grammar",
+      "text": "出现口渴",
+      "expected": {
+        "口渴": true
+      },
+      "predicted": {
+        "口渴": true
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00577-1",
+      "group": "generated_grammar",
+      "text": "否认口渴",
+      "expected": {
+        "口渴": false
+      },
+      "predicted": {
+        "口渴": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00577-2",
+      "group": "generated_grammar",
+      "text": "未见口渴",
+      "expected": {
+        "口渴": false
+      },
+      "predicted": {
+        "口渴": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00577-3",
+      "group": "generated_grammar",
+      "text": "口渴已消失",
+      "expected": {
+        "口渴": false
+      },
+      "predicted": {
+        "口渴": true
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00577-4",
+      "group": "generated_grammar",
+      "text": "无明显诱因出现口渴",
+      "expected": {
+        "口渴": true
+      },
+      "predicted": {
+        "口渴": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00577-5",
+      "group": "generated_grammar",
+      "text": "并非没有口渴",
+      "expected": {
+        "口渴": true
+      },
+      "predicted": {
+        "口渴": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00732-0",
+      "group": "generated_grammar",
+      "text": "出现尿频",
+      "expected": {
+        "尿频": true
+      },
+      "predicted": {
+        "尿频": true
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00732-1",
+      "group": "generated_grammar",
+      "text": "否认尿频",
+      "expected": {
+        "尿频": false
+      },
+      "predicted": {
+        "尿频": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00732-2",
+      "group": "generated_grammar",
+      "text": "未见尿频",
+      "expected": {
+        "尿频": false
+      },
+      "predicted": {
+        "尿频": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00732-3",
+      "group": "generated_grammar",
+      "text": "尿频已消失",
+      "expected": {
+        "尿频": false
+      },
+      "predicted": {
+        "尿频": true
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00732-4",
+      "group": "generated_grammar",
+      "text": "无明显诱因出现尿频",
+      "expected": {
+        "尿频": true
+      },
+      "predicted": {
+        "尿频": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00732-5",
+      "group": "generated_grammar",
+      "text": "并非没有尿频",
+      "expected": {
+        "尿频": true
+      },
+      "predicted": {
+        "尿频": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00808-0",
+      "group": "generated_grammar",
+      "text": "出现气短",
+      "expected": {
+        "气短": true
+      },
+      "predicted": {
+        "气短": true
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00808-1",
+      "group": "generated_grammar",
+      "text": "否认气短",
+      "expected": {
+        "气短": false
+      },
+      "predicted": {
+        "气短": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00808-2",
+      "group": "generated_grammar",
+      "text": "未见气短",
+      "expected": {
+        "气短": false
+      },
+      "predicted": {
+        "气短": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00808-3",
+      "group": "generated_grammar",
+      "text": "气短已消失",
+      "expected": {
+        "气短": false
+      },
+      "predicted": {
+        "气短": true
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00808-4",
+      "group": "generated_grammar",
+      "text": "无明显诱因出现气短",
+      "expected": {
+        "气短": true
+      },
+      "predicted": {
+        "气短": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00808-5",
+      "group": "generated_grammar",
+      "text": "并非没有气短",
+      "expected": {
+        "气短": true
+      },
+      "predicted": {
+        "气短": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00826-0",
+      "group": "generated_grammar",
+      "text": "出现情志抑郁",
+      "expected": {
+        "情志抑郁": true
+      },
+      "predicted": {
+        "情志抑郁": true
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00826-1",
+      "group": "generated_grammar",
+      "text": "否认情志抑郁",
+      "expected": {
+        "情志抑郁": false
+      },
+      "predicted": {
+        "情志抑郁": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00826-2",
+      "group": "generated_grammar",
+      "text": "未见情志抑郁",
+      "expected": {
+        "情志抑郁": false
+      },
+      "predicted": {
+        "情志抑郁": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00826-3",
+      "group": "generated_grammar",
+      "text": "情志抑郁已消失",
+      "expected": {
+        "情志抑郁": false
+      },
+      "predicted": {
+        "情志抑郁": true
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00826-4",
+      "group": "generated_grammar",
+      "text": "无明显诱因出现情志抑郁",
+      "expected": {
+        "情志抑郁": true
+      },
+      "predicted": {
+        "情志抑郁": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00826-5",
+      "group": "generated_grammar",
+      "text": "并非没有情志抑郁",
+      "expected": {
+        "情志抑郁": true
+      },
+      "predicted": {
+        "情志抑郁": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00970-0",
+      "group": "generated_grammar",
+      "text": "出现失眠",
+      "expected": {
+        "失眠": true
+      },
+      "predicted": {
+        "失眠": true
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00970-1",
+      "group": "generated_grammar",
+      "text": "否认失眠",
+      "expected": {
+        "失眠": false
+      },
+      "predicted": {
+        "失眠": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00970-2",
+      "group": "generated_grammar",
+      "text": "未见失眠",
+      "expected": {
+        "失眠": false
+      },
+      "predicted": {
+        "失眠": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS00970-3",
+      "group": "generated_grammar",
+      "text": "失眠已消失",
+      "expected": {
+        "失眠": false
+      },
+      "predicted": {
+        "失眠": true
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00970-4",
+      "group": "generated_grammar",
+      "text": "无明显诱因出现失眠",
+      "expected": {
+        "失眠": true
+      },
+      "predicted": {
+        "失眠": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS00970-5",
+      "group": "generated_grammar",
+      "text": "并非没有失眠",
+      "expected": {
+        "失眠": true
+      },
+      "predicted": {
+        "失眠": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01007-0",
+      "group": "generated_grammar",
+      "text": "出现视物模糊",
+      "expected": {
+        "视物模糊": true
+      },
+      "predicted": {
+        "视物模糊": true
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01007-1",
+      "group": "generated_grammar",
+      "text": "否认视物模糊",
+      "expected": {
+        "视物模糊": false
+      },
+      "predicted": {
+        "视物模糊": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01007-2",
+      "group": "generated_grammar",
+      "text": "未见视物模糊",
+      "expected": {
+        "视物模糊": false
+      },
+      "predicted": {
+        "视物模糊": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01007-3",
+      "group": "generated_grammar",
+      "text": "视物模糊已消失",
+      "expected": {
+        "视物模糊": false
+      },
+      "predicted": {
+        "视物模糊": true
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01007-4",
+      "group": "generated_grammar",
+      "text": "无明显诱因出现视物模糊",
+      "expected": {
+        "视物模糊": true
+      },
+      "predicted": {
+        "视物模糊": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01007-5",
+      "group": "generated_grammar",
+      "text": "并非没有视物模糊",
+      "expected": {
+        "视物模糊": true
+      },
+      "predicted": {
+        "视物模糊": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01027-0",
+      "group": "generated_grammar",
+      "text": "出现水肿",
+      "expected": {
+        "水肿": true
+      },
+      "predicted": {
+        "水肿": true
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01027-1",
+      "group": "generated_grammar",
+      "text": "否认水肿",
+      "expected": {
+        "水肿": false
+      },
+      "predicted": {
+        "水肿": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01027-2",
+      "group": "generated_grammar",
+      "text": "未见水肿",
+      "expected": {
+        "水肿": false
+      },
+      "predicted": {
+        "水肿": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01027-3",
+      "group": "generated_grammar",
+      "text": "水肿已消失",
+      "expected": {
+        "水肿": false
+      },
+      "predicted": {
+        "水肿": true
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01027-4",
+      "group": "generated_grammar",
+      "text": "无明显诱因出现水肿",
+      "expected": {
+        "水肿": true
+      },
+      "predicted": {
+        "水肿": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01027-5",
+      "group": "generated_grammar",
+      "text": "并非没有水肿",
+      "expected": {
+        "水肿": true
+      },
+      "predicted": {
+        "水肿": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01235-0",
+      "group": "generated_grammar",
+      "text": "出现五心烦热",
+      "expected": {
+        "五心烦热": true
+      },
+      "predicted": {
+        "五心烦热": true
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01235-1",
+      "group": "generated_grammar",
+      "text": "否认五心烦热",
+      "expected": {
+        "五心烦热": false
+      },
+      "predicted": {
+        "五心烦热": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01235-2",
+      "group": "generated_grammar",
+      "text": "未见五心烦热",
+      "expected": {
+        "五心烦热": false
+      },
+      "predicted": {
+        "五心烦热": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01235-3",
+      "group": "generated_grammar",
+      "text": "五心烦热已消失",
+      "expected": {
+        "五心烦热": false
+      },
+      "predicted": {
+        "五心烦热": true
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01235-4",
+      "group": "generated_grammar",
+      "text": "无明显诱因出现五心烦热",
+      "expected": {
+        "五心烦热": true
+      },
+      "predicted": {
+        "五心烦热": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01235-5",
+      "group": "generated_grammar",
+      "text": "并非没有五心烦热",
+      "expected": {
+        "五心烦热": true
+      },
+      "predicted": {
+        "五心烦热": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01333-0",
+      "group": "generated_grammar",
+      "text": "出现心悸",
+      "expected": {
+        "心悸": true
+      },
+      "predicted": {
+        "心悸": true
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01333-1",
+      "group": "generated_grammar",
+      "text": "否认心悸",
+      "expected": {
+        "心悸": false
+      },
+      "predicted": {
+        "心悸": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01333-2",
+      "group": "generated_grammar",
+      "text": "未见心悸",
+      "expected": {
+        "心悸": false
+      },
+      "predicted": {
+        "心悸": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01333-3",
+      "group": "generated_grammar",
+      "text": "心悸已消失",
+      "expected": {
+        "心悸": false
+      },
+      "predicted": {
+        "心悸": true
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01333-4",
+      "group": "generated_grammar",
+      "text": "无明显诱因出现心悸",
+      "expected": {
+        "心悸": true
+      },
+      "predicted": {
+        "心悸": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01333-5",
+      "group": "generated_grammar",
+      "text": "并非没有心悸",
+      "expected": {
+        "心悸": true
+      },
+      "predicted": {
+        "心悸": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01354-0",
+      "group": "generated_grammar",
+      "text": "出现形体消瘦",
+      "expected": {
+        "形体消瘦": true
+      },
+      "predicted": {
+        "形体消瘦": true
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01354-1",
+      "group": "generated_grammar",
+      "text": "否认形体消瘦",
+      "expected": {
+        "形体消瘦": false
+      },
+      "predicted": {
+        "形体消瘦": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01354-2",
+      "group": "generated_grammar",
+      "text": "未见形体消瘦",
+      "expected": {
+        "形体消瘦": false
+      },
+      "predicted": {
+        "形体消瘦": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01354-3",
+      "group": "generated_grammar",
+      "text": "形体消瘦已消失",
+      "expected": {
+        "形体消瘦": false
+      },
+      "predicted": {
+        "形体消瘦": true
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01354-4",
+      "group": "generated_grammar",
+      "text": "无明显诱因出现形体消瘦",
+      "expected": {
+        "形体消瘦": true
+      },
+      "predicted": {
+        "形体消瘦": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01354-5",
+      "group": "generated_grammar",
+      "text": "并非没有形体消瘦",
+      "expected": {
+        "形体消瘦": true
+      },
+      "predicted": {
+        "形体消瘦": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01408-0",
+      "group": "generated_grammar",
+      "text": "出现胸胁胀满",
+      "expected": {
+        "胸胁胀满": true
+      },
+      "predicted": {
+        "胸胁胀满": true
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01408-1",
+      "group": "generated_grammar",
+      "text": "否认胸胁胀满",
+      "expected": {
+        "胸胁胀满": false
+      },
+      "predicted": {
+        "胸胁胀满": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01408-2",
+      "group": "generated_grammar",
+      "text": "未见胸胁胀满",
+      "expected": {
+        "胸胁胀满": false
+      },
+      "predicted": {
+        "胸胁胀满": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01408-3",
+      "group": "generated_grammar",
+      "text": "胸胁胀满已消失",
+      "expected": {
+        "胸胁胀满": false
+      },
+      "predicted": {
+        "胸胁胀满": true
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01408-4",
+      "group": "generated_grammar",
+      "text": "无明显诱因出现胸胁胀满",
+      "expected": {
+        "胸胁胀满": true
+      },
+      "predicted": {
+        "胸胁胀满": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01408-5",
+      "group": "generated_grammar",
+      "text": "并非没有胸胁胀满",
+      "expected": {
+        "胸胁胀满": true
+      },
+      "predicted": {
+        "胸胁胀满": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01542-0",
+      "group": "generated_grammar",
+      "text": "出现腰膝酸软",
+      "expected": {
+        "腰膝酸软": true
+      },
+      "predicted": {
+        "腰膝酸软": true
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01542-1",
+      "group": "generated_grammar",
+      "text": "否认腰膝酸软",
+      "expected": {
+        "腰膝酸软": false
+      },
+      "predicted": {
+        "腰膝酸软": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01542-2",
+      "group": "generated_grammar",
+      "text": "未见腰膝酸软",
+      "expected": {
+        "腰膝酸软": false
+      },
+      "predicted": {
+        "腰膝酸软": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01542-3",
+      "group": "generated_grammar",
+      "text": "腰膝酸软已消失",
+      "expected": {
+        "腰膝酸软": false
+      },
+      "predicted": {
+        "腰膝酸软": true
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01542-4",
+      "group": "generated_grammar",
+      "text": "无明显诱因出现腰膝酸软",
+      "expected": {
+        "腰膝酸软": true
+      },
+      "predicted": {
+        "腰膝酸软": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01542-5",
+      "group": "generated_grammar",
+      "text": "并非没有腰膝酸软",
+      "expected": {
+        "腰膝酸软": true
+      },
+      "predicted": {
+        "腰膝酸软": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01556-0",
+      "group": "generated_grammar",
+      "text": "出现夜尿频多",
+      "expected": {
+        "夜尿频多": true
+      },
+      "predicted": {
+        "夜尿频多": true,
+        "尿频": true
+      },
+      "exact": false,
+      "tp": 1,
+      "fp": 1,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01556-1",
+      "group": "generated_grammar",
+      "text": "否认夜尿频多",
+      "expected": {
+        "夜尿频多": false
+      },
+      "predicted": {
+        "夜尿频多": false,
+        "尿频": false
+      },
+      "exact": false,
+      "tp": 1,
+      "fp": 1,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01556-2",
+      "group": "generated_grammar",
+      "text": "未见夜尿频多",
+      "expected": {
+        "夜尿频多": false
+      },
+      "predicted": {
+        "夜尿频多": false,
+        "尿频": false
+      },
+      "exact": false,
+      "tp": 1,
+      "fp": 1,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01556-3",
+      "group": "generated_grammar",
+      "text": "夜尿频多已消失",
+      "expected": {
+        "夜尿频多": false
+      },
+      "predicted": {
+        "夜尿频多": true,
+        "尿频": true
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 2,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01556-4",
+      "group": "generated_grammar",
+      "text": "无明显诱因出现夜尿频多",
+      "expected": {
+        "夜尿频多": true
+      },
+      "predicted": {
+        "夜尿频多": false,
+        "尿频": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 2,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01556-5",
+      "group": "generated_grammar",
+      "text": "并非没有夜尿频多",
+      "expected": {
+        "夜尿频多": true
+      },
+      "predicted": {
+        "夜尿频多": false,
+        "尿频": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 2,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01655-0",
+      "group": "generated_grammar",
+      "text": "出现肢冷",
+      "expected": {
+        "肢冷": true
+      },
+      "predicted": {
+        "肢冷": true
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01655-1",
+      "group": "generated_grammar",
+      "text": "否认肢冷",
+      "expected": {
+        "肢冷": false
+      },
+      "predicted": {
+        "肢冷": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01655-2",
+      "group": "generated_grammar",
+      "text": "未见肢冷",
+      "expected": {
+        "肢冷": false
+      },
+      "predicted": {
+        "肢冷": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01655-3",
+      "group": "generated_grammar",
+      "text": "肢冷已消失",
+      "expected": {
+        "肢冷": false
+      },
+      "predicted": {
+        "肢冷": true
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01655-4",
+      "group": "generated_grammar",
+      "text": "无明显诱因出现肢冷",
+      "expected": {
+        "肢冷": true
+      },
+      "predicted": {
+        "肢冷": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01655-5",
+      "group": "generated_grammar",
+      "text": "并非没有肢冷",
+      "expected": {
+        "肢冷": true
+      },
+      "predicted": {
+        "肢冷": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01667-0",
+      "group": "generated_grammar",
+      "text": "出现肢体困重",
+      "expected": {
+        "肢体困重": true
+      },
+      "predicted": {
+        "肢体困重": true
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01667-1",
+      "group": "generated_grammar",
+      "text": "否认肢体困重",
+      "expected": {
+        "肢体困重": false
+      },
+      "predicted": {
+        "肢体困重": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01667-2",
+      "group": "generated_grammar",
+      "text": "未见肢体困重",
+      "expected": {
+        "肢体困重": false
+      },
+      "predicted": {
+        "肢体困重": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01667-3",
+      "group": "generated_grammar",
+      "text": "肢体困重已消失",
+      "expected": {
+        "肢体困重": false
+      },
+      "predicted": {
+        "肢体困重": true
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01667-4",
+      "group": "generated_grammar",
+      "text": "无明显诱因出现肢体困重",
+      "expected": {
+        "肢体困重": true
+      },
+      "predicted": {
+        "肢体困重": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01667-5",
+      "group": "generated_grammar",
+      "text": "并非没有肢体困重",
+      "expected": {
+        "肢体困重": true
+      },
+      "predicted": {
+        "肢体困重": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01669-0",
+      "group": "generated_grammar",
+      "text": "出现肢体麻木",
+      "expected": {
+        "肢体麻木": true
+      },
+      "predicted": {
+        "肢体麻木": true
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01669-1",
+      "group": "generated_grammar",
+      "text": "否认肢体麻木",
+      "expected": {
+        "肢体麻木": false
+      },
+      "predicted": {
+        "肢体麻木": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01669-2",
+      "group": "generated_grammar",
+      "text": "未见肢体麻木",
+      "expected": {
+        "肢体麻木": false
+      },
+      "predicted": {
+        "肢体麻木": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01669-3",
+      "group": "generated_grammar",
+      "text": "肢体麻木已消失",
+      "expected": {
+        "肢体麻木": false
+      },
+      "predicted": {
+        "肢体麻木": true
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01669-4",
+      "group": "generated_grammar",
+      "text": "无明显诱因出现肢体麻木",
+      "expected": {
+        "肢体麻木": true
+      },
+      "predicted": {
+        "肢体麻木": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01669-5",
+      "group": "generated_grammar",
+      "text": "并非没有肢体麻木",
+      "expected": {
+        "肢体麻木": true
+      },
+      "predicted": {
+        "肢体麻木": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01707-0",
+      "group": "generated_grammar",
+      "text": "出现自汗",
+      "expected": {
+        "自汗": true
+      },
+      "predicted": {
+        "自汗": true
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01707-1",
+      "group": "generated_grammar",
+      "text": "否认自汗",
+      "expected": {
+        "自汗": false
+      },
+      "predicted": {
+        "自汗": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01707-2",
+      "group": "generated_grammar",
+      "text": "未见自汗",
+      "expected": {
+        "自汗": false
+      },
+      "predicted": {
+        "自汗": false
+      },
+      "exact": true,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    {
+      "id": "SMTS01707-3",
+      "group": "generated_grammar",
+      "text": "自汗已消失",
+      "expected": {
+        "自汗": false
+      },
+      "predicted": {
+        "自汗": true
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01707-4",
+      "group": "generated_grammar",
+      "text": "无明显诱因出现自汗",
+      "expected": {
+        "自汗": true
+      },
+      "predicted": {
+        "自汗": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    },
+    {
+      "id": "SMTS01707-5",
+      "group": "generated_grammar",
+      "text": "并非没有自汗",
+      "expected": {
+        "自汗": true
+      },
+      "predicted": {
+        "自汗": false
+      },
+      "exact": false,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1
+    }
+  ]
+}

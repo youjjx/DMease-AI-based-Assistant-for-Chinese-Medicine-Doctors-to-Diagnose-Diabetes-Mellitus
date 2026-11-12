@@ -86,6 +86,14 @@ def test_research_and_knowledge_pages(tmp_path, monkeypatch, evidence_path):
     assert not app.exception
     widget(app.radio, "研究结果").set_value("关联矩阵").run()
     assert not app.exception
+    widget(app.radio, "研究工作区").set_value("实验评估").run()
+    assert not app.exception
+    assert any("证据版本不同" in x.value for x in app.warning)
+    for section in ("约束压力测试", "参数敏感性", "证据缺失", "精确最优解对照", "文本解析回归", "模型与消融"):
+        widget(app.selectbox, "实验项目").set_value(section).run()
+        assert not app.exception
+    widget(app.radio, "研究工作区").set_value("序贯推理").run()
+    assert not app.exception
     app.session_state["last_activity"] = 0
     app.run()
     assert not app.sidebar.radio and "account" not in app.session_state

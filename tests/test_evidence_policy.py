@@ -114,3 +114,25 @@ def test_timestamp_changes_do_not_invalidate_semantic_evidence(tmp_path, evidenc
     data["files"] = [{"retrieved_at": "different download time"}]
     evidence_path.write_text(json.dumps(data), encoding="utf8")
     assert EvidenceGraph(evidence_path).signature == old
+
+
+@pytest.mark.parametrize("text,expected", [
+    ("无特殊诱因出现口渴", {"口渴": True}),
+    ("乏力症状已经消失；口渴持续", {"乏力": False, "口渴": True}),
+    ("未否认乏力", {"乏力": True}),
+    ("今天乏力，昨天未见乏力", {"乏力": True}),
+    ("既往乏力，现未见乏力", {"乏力": False}),
+    ("口渴已明显缓解", {"口渴": True}),
+])
+def test_parser_scope_and_current_state_regressions(evidence_path, text, expected):
+    from dmease.symptom_parser import SymptomParser
+    parser = SymptomParser(EvidenceGraph(evidence_path).symptoms)
+    assert {x.canonical: x.present for x in parser.parse(text)} == expected
+
+
+def test_specific_symptom_is_not_double_counted():
+    from dmease.symptom_parser import SymptomParser
+    parser = SymptomParser([{"name": "尿频", "aliases": []}, {"name": "夜尿频多", "aliases": []}])
+    parsed = parser.parse("夜尿频多，但白天也有尿频")
+    assert len(parsed) == 2  # Separate daytime assertion remains distinct.
+    assert len(parser.parse("夜尿频多")) == 1
